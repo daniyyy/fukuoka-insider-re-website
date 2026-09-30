@@ -7,27 +7,31 @@ import { useRef, useState } from "react";
 
 import type { Locale } from "@/config/site";
 import { toolsCopy, type ToolKey } from "@/data/tools";
-import { calculatePurchaseCost, calculateRentalInitialCost, formatYen, type PurchaseInputs, type RentalInputs } from "@/lib/tools/calculators";
+import { RentalEstimator } from "@/components/tools/RentalEstimator";
+import { calculatePurchaseCost, formatYen, type PurchaseInputs } from "@/lib/tools/calculators";
 import { trackEvent } from "@/lib/analytics/events";
 
-const rentalFields = ["monthlyRent", "upfrontMonths", "depositMonths", "keyMoneyMonths", "brokerage", "guarantor", "insurance", "other"] as const;
 const purchaseFields = ["propertyPrice", "brokerage", "registration", "taxes", "financing", "insurance", "other"] as const;
-const rentalExample: RentalInputs = { monthlyRent: 100_000, upfrontMonths: 1, depositMonths: 0, keyMoneyMonths: 0, brokerage: 0, guarantor: 0, insurance: 0, other: 0 };
 const purchaseExample: PurchaseInputs = { propertyPrice: 30_000_000, brokerage: 0, registration: 0, taxes: 0, financing: 0, insurance: 0, other: 0 };
 
-const stringify = (values: RentalInputs | PurchaseInputs): Record<string, string> =>
+const stringify = (values: PurchaseInputs): Record<string, string> =>
   Object.fromEntries(Object.entries(values).map(([key, value]) => [key, String(value)]));
 
 export function CostEstimator({ locale, tool }: { locale: Locale; tool: ToolKey }) {
+  if (tool === "rental-initial-cost") return <RentalEstimator locale={locale} />;
+  return <PurchaseEstimator locale={locale} />;
+}
+
+function PurchaseEstimator({ locale }: { locale: Locale }) {
+  const tool: ToolKey = "purchase-cost";
   const t = toolsCopy[locale].tools[tool];
-  const isRental = tool === "rental-initial-cost";
-  const fields = isRental ? rentalFields : purchaseFields;
-  const [values, setValues] = useState<Record<string, string>>(() => stringify(isRental ? rentalExample : purchaseExample));
+  const fields = purchaseFields;
+  const [values, setValues] = useState<Record<string, string>>(() => stringify(purchaseExample));
   const started = useRef(false);
   const completed = useRef(false);
   const numbers = Object.fromEntries(fields.map((key) => [key, values[key]?.trim() === "" ? Number.NaN : Number(values[key])])) as Record<string, number>;
-  const result = isRental ? calculateRentalInitialCost(numbers as RentalInputs) : calculatePurchaseCost(numbers as PurchaseInputs);
-  const servicePath = isRental ? "rent" : "buy-sell";
+  const result = calculatePurchaseCost(numbers as PurchaseInputs);
+  const servicePath = "buy-sell";
 
   return (
     <section className="fi-estimator" aria-label={t.title}>
@@ -56,7 +60,7 @@ export function CostEstimator({ locale, tool }: { locale: Locale; tool: ToolKey 
                       setValues(next);
                       if (!started.current) { trackEvent({ name: "calculator_start", locale, source: "calculator", tool }); started.current = true; }
                       const parsed = Object.fromEntries(fields.map((field) => [field, next[field]?.trim() === "" ? Number.NaN : Number(next[field])])) as Record<string, number>;
-                      const valid = isRental ? calculateRentalInitialCost(parsed as RentalInputs) : calculatePurchaseCost(parsed as PurchaseInputs);
+                      const valid = calculatePurchaseCost(parsed as PurchaseInputs);
                       if (valid && !completed.current) { trackEvent({ name: "calculator_complete", locale, source: "calculator", tool }); completed.current = true; }
                     }}
                     aria-describedby={t.fields[key].hint ? `cost-hint-${key}` : undefined}
