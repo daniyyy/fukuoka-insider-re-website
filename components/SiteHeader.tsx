@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnalyticsLink } from "@/components/analytics/AnalyticsLink";
 import { BrandLockup } from "@/components/BrandLockup";
+import { ArrowIcon } from "@/components/site/Icons";
 import { hasFaq, hasGuides, type Locale, siteConfig } from "@/config/site";
 
 const labels = {
@@ -20,6 +21,7 @@ const labels = {
     menuClose: "關閉選單",
     navigation: "主要導覽",
     language: "語言",
+    estimator: "租屋初期費用估算",
   },
   ja: {
     services: "サービス",
@@ -34,6 +36,7 @@ const labels = {
     menuClose: "メニューを閉じる",
     navigation: "メインナビゲーション",
     language: "言語",
+    estimator: "賃貸初期費用の概算",
   },
   en: {
     services: "Services",
@@ -48,6 +51,7 @@ const labels = {
     menuClose: "Close menu",
     navigation: "Main navigation",
     language: "Language",
+    estimator: "Rental cost estimator",
   },
 } as const;
 
@@ -143,6 +147,10 @@ export function SiteHeader({ locale, currentPath, localePaths, tone = "solid" }:
             {links.map(([href, text]) => (
               <Link className="fi-menu__link" href={href} key={text} onClick={() => setOpen(false)}>{text}</Link>
             ))}
+            <Link className="fi-menu__tool" href={`/${locale}/tools/rental-initial-cost`} onClick={() => setOpen(false)}>
+              {copy.estimator}
+              <ArrowIcon />
+            </Link>
             <LanguageLinks currentPath={currentPath} locale={locale} localePaths={localePaths} label={copy.language} />
             <AnalyticsLink
               className="fi-button fi-button--light fi-menu__cta"

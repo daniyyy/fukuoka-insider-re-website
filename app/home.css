@@ -113,6 +113,34 @@
   .fi-service-row { padding: 1.875rem 0; }
 }
 
+/* Estimate — preview of the rental estimator: a white "statement" card with one input and one figure */
+.fi-home-estimate { padding-block: var(--fi-section); }
+.fi-home-estimate__grid { display: grid; gap: 2.5rem; align-items: center; padding-top: var(--fi-space-5); border-top: 1px solid var(--fi-ink); }
+.fi-home-estimate__copy { display: grid; gap: 1.25rem; max-width: 34rem; }
+.fi-home-estimate__copy .fi-h2 { margin: 0; }
+.fi-home-estimate__copy .fi-phrase { display: inline-block; }
+.fi-teaser-card {
+  display: grid; gap: 0.75rem; padding: 1.75rem 1.5rem; background: #fff;
+  box-shadow: 0 40px 70px -48px rgb(var(--fi-ink-rgb) / 0.45);
+}
+.fi-teaser-card__label { font-weight: 500; }
+.fi-teaser-card .fi-amount input { min-height: 3.5rem; font-size: 1.375rem; }
+.fi-teaser-card__result {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.25rem 1rem;
+  margin-top: 0.75rem; padding-top: 1rem; border-top: 1px dashed var(--fi-line-strong);
+}
+.fi-teaser-card__result span { font-size: var(--fi-size-small); font-weight: 500; }
+.fi-teaser-card__result strong {
+  font-family: var(--fi-font-display); font-weight: 500; font-size: clamp(2.5rem, 2rem + 1.8vw, 3.5rem); line-height: 1;
+  color: var(--fi-slate); font-variant-numeric: lining-nums tabular-nums; font-feature-settings: "lnum" 1;
+}
+.fi-teaser-card__note { margin: 0; font-size: var(--fi-size-meta); line-height: 1.75; color: var(--fi-muted); }
+.fi-teaser-card__cta { margin-top: 0.75rem; justify-content: space-between; }
+@media (min-width: 68.75rem) {
+  .fi-home-estimate__grid { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 5.5rem; }
+  .fi-teaser-card { padding: 2.25rem 2.5rem; }
+}
+
 /* Trust — "We are based in Fukuoka." */
 .fi-home-trust { padding-block: var(--fi-section); background: var(--fi-stone); }
 .fi-home-trust__grid { display: grid; gap: 2.5rem; }

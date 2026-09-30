@@ -360,6 +360,10 @@
 .fi-article-aside__box { display: grid; gap: 0.75rem; justify-items: start; padding: 1.75rem; background: var(--fi-stone); }
 .fi-article-aside__box h2 { margin: 0; font-size: var(--fi-size-meta); font-weight: 500; color: var(--fi-slate); }
 .fi-article-aside__box p { margin: 0; font-family: var(--fi-font-serif); font-weight: 600; font-size: 1.125rem; }
+.fi-article-aside__box--tool { background: var(--fi-night); color: var(--fi-on-dark); }
+.fi-article-aside__box--tool h2 { color: var(--fi-on-dark-muted); }
+.fi-article-aside__box--tool p { font-family: var(--fi-font-sans); font-weight: 400; font-size: var(--fi-size-small); line-height: 1.8; }
+.fi-article-aside__box--tool .fi-text-link { color: var(--fi-on-dark); }
 @media (min-width: 68.75rem) {
   .fi-article-body__grid { grid-template-columns: minmax(0, 8fr) minmax(0, 3.5fr); gap: 5rem; }
   .fi-article-aside { position: sticky; top: 7rem; }

@@ -290,6 +290,12 @@ body {
   border-bottom: 1px solid rgb(var(--fi-on-dark-rgb) / 0.14);
   font-family: var(--fi-font-serif); font-weight: 600; font-size: 1.375rem;
 }
+/* Secondary entry under the four main links: the rental estimator (Danny, 2026-09-30) */
+.fi-menu__tool {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.5rem; margin-top: 0.75rem; padding: 0 1rem;
+  background: rgb(var(--fi-on-dark-rgb) / 0.07); font-size: 0.9375rem; font-weight: 500;
+}
+.fi-menu__tool svg { width: 1.125rem; height: 1.125rem; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; }
 .fi-menu .fi-locale { padding: 1rem 0 0.5rem; border: 0; font-size: 0.9375rem; }
 .fi-menu .fi-locale a:first-child { justify-content: flex-start; }
 .fi-menu__cta { margin-top: 1rem; }

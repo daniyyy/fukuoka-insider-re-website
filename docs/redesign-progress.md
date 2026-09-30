@@ -399,3 +399,9 @@
 - Section 01 "每月費用" now has three required fields (rent, common-area fee, other monthly charges, default ¥1,100) and shows the monthly total. The one-off "24-hour support" item became "預付其他每月費用" (2 months × other monthly charges).
 - Guarantor = months × monthly total. Default example total is now ¥668,300.
 - Open for Danny: whether to add 費用估算 to the header menu (recommendation in chat: keep the header at 4 items; link the estimator from the homepage, rent/buy pages, renting guides and the mobile menu).
+
+## 2026-09-30 — Estimator entry points (Danny: keep the header at 4 items)
+- Homepage: new "先算一算" block after Services (3 languages). One rent field → estimated total using the estimator's example settings (assumptions stated), button opens the full estimator with that rent prefilled (?rent=).
+- Renting guide articles (zh-TW): dark "初期費用估算" box under the service box in the sidebar (article end on mobile).
+- Mobile menu: "租屋初期費用估算" row under the four main links.
+- Decisions recorded in 03_DECISIONS.md.

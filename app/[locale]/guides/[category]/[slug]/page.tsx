@@ -120,6 +120,13 @@ export default async function GuideArticlePage({ params }: PageProps) {
                   <p>{serviceName ?? categoryLabel}</p>
                   <AnalyticsLink className="fi-text-link" href={serviceHref} event={{ name: "guide_to_service_click", locale, source: "guide-article", service: guide.serviceContext }}>{t.serviceCta}<ArrowIcon /></AnalyticsLink>
                 </div>
+                {guide.category === "renting" ? (
+                  <div className="fi-article-aside__box fi-article-aside__box--tool">
+                    <h2>{t.toolTitle}</h2>
+                    <p>{t.toolBody}</p>
+                    <Link className="fi-text-link" href={`/${locale}/tools/rental-initial-cost`}>{t.toolCta}<ArrowIcon /></Link>
+                  </div>
+                ) : null}
               </aside>
             </div>
           </div>

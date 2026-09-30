@@ -10,6 +10,8 @@ import { ServiceStage } from "@/components/site/ServiceStage";
 import { serviceImages } from "@/data/service-pages";
 import { HakataPanel } from "@/components/site/HakataPanel";
 import { ConsultBand } from "@/components/site/ConsultBand";
+import { EstimatorTeaser } from "@/components/tools/EstimatorTeaser";
+import { toolsCopy } from "@/data/tools";
 import { ArrowIcon as Arrow, ExternalIcon as External } from "@/components/site/Icons";
 import { asset, hasGuides, isLocale, type Locale, siteConfig } from "@/config/site";
 import { getFeaturedGuides } from "@/lib/content/adapter";
@@ -267,6 +269,17 @@ export default async function LocaleHome({
               };
             })}
           />
+        </section>
+
+        {/* Rental estimator preview: initial costs are what clients ask about most (Danny, 2026-09-30). */}
+        <section className="fi-home-estimate" aria-labelledby="estimate-title">
+          <div className="fi-shell fi-home-estimate__grid">
+            <div className="fi-home-estimate__copy">
+              <h2 className="fi-h2" id="estimate-title">{toolsCopy[locale].teaser.title.split("|").map((phrase) => <span className="fi-phrase" key={phrase}>{phrase}</span>)}</h2>
+              <p className="fi-body">{toolsCopy[locale].teaser.body}</p>
+            </div>
+            <EstimatorTeaser locale={locale} />
+          </div>
         </section>
 
         <section className="fi-home-trust" aria-labelledby="trust-title">

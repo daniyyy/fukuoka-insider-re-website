@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import { AnalyticsLink } from "@/components/analytics/AnalyticsLink";
 import { ArrowIcon } from "@/components/site/Icons";
@@ -58,7 +58,7 @@ const withCommas = (raw: string) => (/^\d+$/.test(raw) ? Number(raw).toLocaleStr
  * Number field that always shows thousands separators for yen (100,000).
  * The caret is kept after the same digit when separators are added or removed while typing.
  */
-function AmountInput({ id, value, unit, months, invalid, describedBy, required, onChange }: {
+export function AmountInput({ id, value, unit, months, invalid, describedBy, required, onChange }: {
   id: string; value: string; unit: string; months?: boolean; invalid?: boolean; describedBy?: string; required?: boolean; onChange: (value: string) => void;
 }) {
   const ref = useRef<HTMLInputElement>(null);
@@ -130,6 +130,15 @@ export function RentalEstimator({ locale, guides = { items: {} } }: { locale: Lo
   const { base, values, included } = state;
   const started = useRef(false);
   const completed = useRef(false);
+
+  // Arriving from the homepage preview (?rent=80000): start from the rent the visitor already entered.
+  useEffect(() => {
+    const rent = new URLSearchParams(window.location.search).get("rent");
+    // One-time read of the URL after hydration (the server does not know the query), so the state update is intended.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (rent && /^\d{1,12}$/.test(rent)) setState((current) => ({ ...current, base: { ...current.base, rent } }));
+  }, []);
+
   const inputs = toInputs(state);
   const result = calculateRentalInitialCost(inputs);
   const monthly = baseKeys.every((key) => validYen(inputs[key])) ? rentalMonthlyTotal(inputs) : null;

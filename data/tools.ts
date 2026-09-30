@@ -35,8 +35,11 @@ type ToolText = {
 
 export const toolsCopy: Record<Locale, {
   indexTitle: string; indexIntro: string; indexNote: string; open: string; back: string; labels: Record<ToolKey, string>; tools: Record<ToolKey, ToolText>;
+  /** Homepage block that previews the rental estimator. {fee} and {other} are filled from the estimator's example values; "|" separates heading phrases kept unbroken. */
+  teaser: { title: string; body: string; rentLabel: string; resultLabel: string; assumption: string; cta: string };
 }> = {
   "zh-TW": {
+    teaser: { title: "簽約要準備多少錢？|先算一算。", body: "在日本租屋，除了月租，簽約時還要付禮金、敷金、仲介費、保證公司費用等，合計往往是月租的好幾倍。輸入月租，先看大概金額；再用估算工具逐項調整。", rentLabel: "每月租金", resultLabel: "初期費用大約", assumption: "以共益費 {fee}、其他每月費用 {other} 及一般項目（預付 2 個月、禮金和敷金各 1 個月等）計算，只供參考。", cta: "逐項估算" },
     indexTitle: "費用估算工具", indexIntro: "輸入目前知道的金額，先整理租屋或買房可能需要準備的費用。", indexNote: "以下結果只依輸入項目加總，不是物件報價。未填的費用不會自動估入。", open: "開始估算", back: "所有估算工具", labels: { "rental-initial-cost": "租屋初期費用", "purchase-cost": "買房費用" },
     tools: {
       "rental-initial-cost": {
@@ -67,6 +70,7 @@ export const toolsCopy: Record<Locale, {
     },
   },
   ja: {
+    teaser: { title: "契約時にいくら必要？|まずは試算を。", body: "日本の賃貸では、家賃のほかに礼金・敷金・仲介手数料・保証料などが契約時にかかり、合計は家賃の数か月分になるのが一般的です。月額賃料を入力して目安を確認し、概算ツールで項目ごとに調整できます。", rentLabel: "月額賃料", resultLabel: "初期費用の目安", assumption: "共益費 {fee}、その他の月額費用 {other}、一般的な項目（前家賃2か月、礼金・敷金各1か月など）で計算した参考値です。", cta: "項目ごとに試算する" },
     indexTitle: "費用の概算ツール", indexIntro: "分かっている金額を入力し、賃貸や購入時に必要な費用を整理できます。", indexNote: "結果は入力値の合計です。物件の見積書ではなく、未入力の費用は自動加算されません。", open: "計算する", back: "ツール一覧", labels: { "rental-initial-cost": "賃貸初期費用", "purchase-cost": "購入費用" },
     tools: {
       "rental-initial-cost": {
@@ -97,6 +101,7 @@ export const toolsCopy: Record<Locale, {
     },
   },
   en: {
+    teaser: { title: "How much do you need at signing?| Estimate it first.", body: "Renting in Japan means paying more than the first month's rent: key money, deposit, brokerage and guarantee fees are due at signing, and together they usually come to several months' rent. Enter a monthly rent for a quick figure, then adjust each item in the estimator.", rentLabel: "Monthly rent", resultLabel: "Estimated initial cost", assumption: "Based on a {fee} common-area fee, {other} in other monthly charges and the usual items (2 months paid in advance, 1 month each of key money and deposit, and so on). For reference only.", cta: "Estimate item by item" },
     indexTitle: "Cost estimators", indexIntro: "Enter the amounts you know to organise potential rental or purchase costs.", indexNote: "Results add only the values you enter. They are not a property quotation, and missing costs are not automatically estimated.", open: "Estimate costs", back: "All estimators", labels: { "rental-initial-cost": "Rental initial costs", "purchase-cost": "Purchase costs" },
     tools: {
       "rental-initial-cost": {
