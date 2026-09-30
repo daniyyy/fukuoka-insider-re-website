@@ -5,6 +5,9 @@ import { defineConfig } from "vite";
 const localBindingConfig = {
   main: "./worker/index.ts",
   compatibility_flags: ["nodejs_compat"],
+  // vinext serves public/ files (images, fonts, icons) by handing them to the ASSETS binding.
+  // Without this binding, deployed pages load but every image and font returns an empty file.
+  assets: { binding: "ASSETS" },
 };
 
 export default defineConfig(async () => {
