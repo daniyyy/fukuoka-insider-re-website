@@ -21,6 +21,12 @@ Reply to Danny in Traditional Chinese, concise, with few technical terms. Use En
 - Ask Danny before changing page architecture, language policy, or anything in `03_DECISIONS.md`.
 - Work on a git branch, commit per stage, and update `docs/redesign-progress.md` at the end of each session.
 
+## Deployment
+- GitHub `daniyyy/fukuoka-insider-re-website` (main) → Cloudflare Workers `fukuoka-insider-re-website` builds and deploys automatically on every push.
+- Test address: https://fukuoka-insider-re-website.ktp21505.workers.dev/ (noindex). Do not add a custom domain or route, or change DNS, without Danny's final confirmation.
+- Keep Danny's local folder (D:\☆Claude Workspace\danny-obs\Fukuoka Insider_Website) in sync with the same files and commit there too.
+- `vite.config.ts` must keep `assets: { binding: "ASSETS" }`; without it images and fonts are empty on Cloudflare.
+
 ## Commands
 - `pnpm install` — after dependency changes
 - `pnpm dev` → http://localhost:5173/re/zh-TW/

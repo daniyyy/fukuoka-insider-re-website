@@ -8,7 +8,7 @@ To connect a provider later: choose a privacy-conscious provider, decide the con
 
 ## Deployment gate
 
-The site is a local prototype. It is not deployed or connected to the existing WordPress site. `app/layout.tsx` keeps `noindex, nofollow`; `app/robots.ts` disallows `/re/`; legal pages have an additional draft noindex flag and are excluded from the current sitemap. Do not enable indexing, change DNS, or claim `/re/` integration before management approval and infrastructure verification.
+Since 2026-09-30 the prototype is deployed to a Cloudflare Workers test address (https://fukuoka-insider-re-website.ktp21505.workers.dev/, project `fukuoka-insider-re-website`, auto-deployed from GitHub `daniyyy/fukuoka-insider-re-website` main). It is not connected to the existing WordPress site or www.fukuokainsider.com. `app/layout.tsx` keeps `noindex, nofollow`; `app/robots.ts` disallows `/re/`; legal pages have an additional draft noindex flag and are excluded from the current sitemap. Do not enable indexing, change DNS, or claim `/re/` integration before management approval and infrastructure verification.
 
 Configuration to confirm before deployment:
 

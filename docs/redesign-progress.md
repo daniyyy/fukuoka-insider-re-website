@@ -360,3 +360,13 @@
 - 建議流程：GitHub（私人倉庫，存放網站）→ Cloudflare Workers 連接 GitHub 自動部署 → 先用測試網址（*.workers.dev）給 Danny 試 → 設定後台 → 最後把 fukuokainsider.com 的 DNS 交給 Cloudflare 管理，/re 由新網站負責，其餘仍由 WordPress 負責。
 - 待 Danny：開 GitHub 及 Cloudflare 帳號、在 Claude 設定連接 GitHub；告訴 Claude 網域及 WordPress 主機在哪家公司。
 - 本機預覽（預覽網站.bat）Danny 開不到，待看錯誤畫面。
+
+## 2026-09-30（續）— 測試網址上線
+
+- GitHub 私人倉庫：`daniyyy/fukuoka-insider-re-website`（main 分支 = 網站現況）。Claude GitHub App 已授權此倉庫。
+- Cloudflare Workers 專案：`fukuoka-insider-re-website`（Danny 的 Cloudflare 帳號），已連接 GitHub；每次推送 main 會自動建置及部署（pnpm run build → npx wrangler deploy）。
+- 測試網址：https://fukuoka-insider-re-website.ktp21505.workers.dev/ （自動轉到 /re/zh-TW）。仍為 noindex；未發布文章不會出現。
+- 修正：Cloudflare 上圖片／字體原本是空檔案（缺少 ASSETS 綁定），已在 vite.config.ts 加入 `assets: { binding: "ASSETS" }`。
+- 已檢查：三語主要頁面 25 頁正常、圖片／字體／圖示正常、未發布文章 404、/ja/help 404。
+- 工作方式：Claude 在 GitHub 倉庫修改並推送（自動上線到測試網址），同時把相同檔案同步到 Danny 電腦的網站資料夾並 commit（本機資料夾保留完整舊歷史，GitHub 從 2026-09-30 快照開始）。
+- 下一步：Danny 把測試網址給 Ricky 看；等 Ricky 查清 fukuokainsider.com 網域資料後，接上 www.fukuokainsider.com/re；部署後加後台＋中文維護手冊。
