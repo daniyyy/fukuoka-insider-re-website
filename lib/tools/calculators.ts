@@ -1,18 +1,20 @@
 /** All amounts are JPY. Editable inputs are examples, not official rates or quotations. */
 
 /**
- * Rental initial costs (Danny, 2026-09-30): each item can be ticked on or off.
- * - "yen" items are entered as an amount (monthly items count one month).
- * - "months" items are entered as a number of months and multiplied by a base:
- *   rent only (key money, deposit, brokerage) or rent + common-area fee (guarantee company).
+ * Rental initial costs (Danny, 2026-09-30).
+ * - Monthly rent and common-area fee are required base figures (no tick box).
+ * - Every cost item has a tick box; unticked items are left out of the total.
+ * - "yen" items are entered as an amount; "months" items are a number of months times a base:
+ *   rent, common-area fee, or rent + common-area fee (guarantee company).
  */
-export const rentalItemKeys = ["rent", "commonFee", "support24h", "keyMoney", "deposit", "brokerage", "guarantor", "insurance", "keyExchange", "aircon", "other"] as const;
+export const rentalItemKeys = ["prepaidRent", "prepaidFee", "support24h", "keyMoney", "deposit", "brokerage", "guarantor", "insurance", "keyExchange", "cleaning", "aircon", "other"] as const;
 export type RentalItemKey = (typeof rentalItemKeys)[number];
-export type RentalItemSpec = { key: RentalItemKey; unit: "yen" | "months"; base?: "rent" | "rentAndFee" };
+export type RentalBaseKey = "rent" | "commonFee";
+export type RentalItemSpec = { key: RentalItemKey; unit: "yen" | "months"; base?: "rent" | "fee" | "rentAndFee" };
 
 export const rentalItems: RentalItemSpec[] = [
-  { key: "rent", unit: "yen" },
-  { key: "commonFee", unit: "yen" },
+  { key: "prepaidRent", unit: "months", base: "rent" },
+  { key: "prepaidFee", unit: "months", base: "fee" },
   { key: "support24h", unit: "yen" },
   { key: "keyMoney", unit: "months", base: "rent" },
   { key: "deposit", unit: "months", base: "rent" },
@@ -20,35 +22,41 @@ export const rentalItems: RentalItemSpec[] = [
   { key: "guarantor", unit: "months", base: "rentAndFee" },
   { key: "insurance", unit: "yen" },
   { key: "keyExchange", unit: "yen" },
+  { key: "cleaning", unit: "yen" },
   { key: "aircon", unit: "yen" },
   { key: "other", unit: "yen" },
 ];
 
-export type RentalInputs = { values: Record<RentalItemKey, number>; included: Record<RentalItemKey, boolean> };
+export type RentalInputs = {
+  rent: number;
+  commonFee: number;
+  values: Record<RentalItemKey, number>;
+  included: Record<RentalItemKey, boolean>;
+};
 
 /** Example figures shown when the page opens (Danny's defaults, 2026-09-30). */
 export const rentalExample: RentalInputs = {
-  values: { rent: 100_000, commonFee: 5_000, support24h: 1_100, keyMoney: 1, deposit: 1, brokerage: 1.1, guarantor: 1, insurance: 20_000, keyExchange: 20_000, aircon: 0, other: 0 },
-  included: { rent: true, commonFee: true, support24h: true, keyMoney: true, deposit: true, brokerage: true, guarantor: true, insurance: true, keyExchange: true, aircon: false, other: false },
+  rent: 100_000,
+  commonFee: 5_000,
+  values: { prepaidRent: 2, prepaidFee: 2, support24h: 1_100, keyMoney: 1, deposit: 1, brokerage: 1.1, guarantor: 1, insurance: 20_000, keyExchange: 20_000, cleaning: 0, aircon: 0, other: 0 },
+  included: { prepaidRent: true, prepaidFee: true, support24h: true, keyMoney: true, deposit: true, brokerage: true, guarantor: true, insurance: true, keyExchange: true, cleaning: false, aircon: false, other: false },
 };
 
 const MAX_YEN = 1_000_000_000_000;
-const validYen = (value: number) => Number.isInteger(value) && value >= 0 && value <= MAX_YEN;
-const validMonths = (value: number) => Number.isFinite(value) && value >= 0 && value <= 24;
+export const validYen = (value: number) => Number.isInteger(value) && value >= 0 && value <= MAX_YEN;
+export const validMonths = (value: number) => Number.isFinite(value) && value >= 0 && value <= 24;
 
-/** Amount of one item (before the tick box is applied); null if its input is invalid. */
+/** Amount of one item (before its tick box is applied); null if its input or the base figures are invalid. */
 export function rentalItemAmount(spec: RentalItemSpec, input: RentalInputs): number | null {
   const value = input.values[spec.key];
   if (spec.unit === "yen") return validYen(value) ? value : null;
-  if (!validMonths(value)) return null;
-  const rent = input.values.rent;
-  const fee = input.values.commonFee;
-  if (!validYen(rent) || (spec.base === "rentAndFee" && !validYen(fee))) return null;
-  const base = spec.base === "rentAndFee" ? rent + fee : rent;
+  if (!validMonths(value) || !validYen(input.rent) || !validYen(input.commonFee)) return null;
+  const base = spec.base === "fee" ? input.commonFee : spec.base === "rentAndFee" ? input.rent + input.commonFee : input.rent;
   return Math.round(base * value);
 }
 
 export function calculateRentalInitialCost(input: RentalInputs): CostResult | null {
+  if (!validYen(input.rent) || !validYen(input.commonFee)) return null;
   const lines: CostLine[] = [];
   for (const spec of rentalItems) {
     if (!input.included[spec.key]) continue;
@@ -58,7 +66,7 @@ export function calculateRentalInitialCost(input: RentalInputs): CostResult | nu
   }
   const total = lines.reduce((sum, line) => sum + line.amount, 0);
   if (!Number.isSafeInteger(total)) return null;
-  return { lines, total, additionalCosts: total - (lines.find((line) => line.key === "rent")?.amount ?? 0) };
+  return { lines, total, additionalCosts: total - (lines.find((line) => line.key === "prepaidRent")?.amount ?? 0) };
 }
 
 export type PurchaseInputs = {

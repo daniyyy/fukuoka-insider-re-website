@@ -393,6 +393,14 @@
 .fi-field input[aria-invalid="true"] { border-color: #9a3b2e; }
 .fi-field small { font-size: 0.75rem; line-height: 1.6; color: var(--fi-muted); }
 /* Rental estimator: one row per cost item with a tick box (unticked = left out of the total) */
+.fi-cost-base { display: grid; gap: 1.25rem; margin: 0; padding: 1.25rem 0 0.5rem; border-top: 1px solid var(--fi-ink); }
+.fi-cost-base__field { display: grid; gap: 0.4rem; }
+.fi-cost-base__field label { font-size: var(--fi-size-body); font-weight: 500; color: var(--fi-ink); }
+.fi-cost-base__field small { font-size: 0.75rem; line-height: 1.6; color: var(--fi-muted); }
+.fi-cost-base__field .fi-cost-item__input { max-width: none; }
+@media (min-width: 40rem) { .fi-cost-base { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; } }
+.fi-estimator__reference { margin: 0; font-size: var(--fi-size-small); font-weight: 500; color: var(--fi-ink); }
+.fi-estimator__sticky span small { display: block; font-size: 0.6875rem; opacity: 0.75; }
 .fi-cost-items { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--fi-ink); }
 .fi-cost-item {
   display: grid; grid-template-columns: 1.5rem minmax(0, 1fr); gap: 0.625rem 0.875rem; align-items: start;

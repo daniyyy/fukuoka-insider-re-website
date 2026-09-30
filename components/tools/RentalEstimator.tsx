@@ -14,34 +14,49 @@ import {
   rentalExample,
   rentalItemAmount,
   rentalItems,
+  validYen,
+  type RentalBaseKey,
   type RentalInputs,
   type RentalItemKey,
 } from "@/lib/tools/calculators";
 
 type Values = Record<RentalItemKey, string>;
 type Included = Record<RentalItemKey, boolean>;
+type Base = Record<RentalBaseKey, string>;
+type State = { base: Base; values: Values; included: Included };
 
-const toInputs = (values: Values, included: Included): RentalInputs => ({
-  values: Object.fromEntries(rentalItems.map(({ key }) => [key, values[key].trim() === "" ? Number.NaN : Number(values[key])])) as Record<RentalItemKey, number>,
+const num = (raw: string) => (raw.trim() === "" ? Number.NaN : Number(raw));
+const baseKeys: RentalBaseKey[] = ["rent", "commonFee"];
+
+const toInputs = ({ base, values, included }: State): RentalInputs => ({
+  rent: num(base.rent),
+  commonFee: num(base.commonFee),
+  values: Object.fromEntries(rentalItems.map(({ key }) => [key, num(values[key])])) as Record<RentalItemKey, number>,
   included,
 });
 
 /**
- * Rental initial cost estimator: one row per cost item, each with a tick box.
- * Unticked items stay editable but are left out of the total.
+ * Rental initial cost estimator.
+ * Monthly rent and common-area fee come first and are always required (no tick box).
+ * Each cost item below has a tick box; unticked items stay editable but are left out of the total.
  */
 export function RentalEstimator({ locale }: { locale: Locale }) {
   const t = toolsCopy[locale].tools["rental-initial-cost"];
-  const [values, setValues] = useState<Values>(() => Object.fromEntries(rentalItems.map(({ key }) => [key, String(rentalExample.values[key])])) as Values);
-  const [included, setIncluded] = useState<Included>(() => ({ ...rentalExample.included }));
+  const [state, setState] = useState<State>(() => ({
+    base: { rent: String(rentalExample.rent), commonFee: String(rentalExample.commonFee) },
+    values: Object.fromEntries(rentalItems.map(({ key }) => [key, String(rentalExample.values[key])])) as Values,
+    included: { ...rentalExample.included },
+  }));
+  const { base, values, included } = state;
   const started = useRef(false);
   const completed = useRef(false);
-  const inputs = toInputs(values, included);
+  const inputs = toInputs(state);
   const result = calculateRentalInitialCost(inputs);
 
-  const track = (nextValues: Values, nextIncluded: Included) => {
+  const update = (next: State) => {
+    setState(next);
     if (!started.current) { trackEvent({ name: "calculator_start", locale, source: "calculator", tool: "rental-initial-cost" }); started.current = true; }
-    if (!completed.current && calculateRentalInitialCost(toInputs(nextValues, nextIncluded))) {
+    if (!completed.current && calculateRentalInitialCost(toInputs(next))) {
       trackEvent({ name: "calculator_complete", locale, source: "calculator", tool: "rental-initial-cost" });
       completed.current = true;
     }
@@ -51,15 +66,45 @@ export function RentalEstimator({ locale }: { locale: Locale }) {
     <section className="fi-estimator" aria-label={t.title}>
       <div className="fi-shell fi-estimator__grid">
         <div className="fi-estimator__form">
-          <h2>{t.inputTitle}</h2>
           <p className="fi-estimator__sample">{t.sample}</p>
+          <h2>{t.baseTitle}</h2>
+          <div className="fi-cost-base">
+            {baseKeys.map((key) => {
+              const raw = base[key];
+              const field = t.fields[key];
+              const invalid = !validYen(num(raw));
+              return (
+                <div className="fi-cost-base__field" key={key}>
+                  <label htmlFor={`cost-${key}`}>{field.label}</label>
+                  <div className="fi-cost-item__input">
+                    <input
+                      id={`cost-${key}`}
+                      type="number"
+                      inputMode="numeric"
+                      min="0"
+                      step="1"
+                      required
+                      value={raw}
+                      aria-invalid={invalid || undefined}
+                      aria-describedby={`cost-hint-${key}`}
+                      onChange={(event) => update({ ...state, base: { ...base, [key]: event.target.value } })}
+                    />
+                    <span className="fi-cost-item__unit">{t.unitYen}</span>
+                  </div>
+                  {field.hint ? <small id={`cost-hint-${key}`}>{field.hint}</small> : null}
+                </div>
+              );
+            })}
+          </div>
+          <h2>{t.inputTitle}</h2>
           <ul className="fi-cost-items">
             {rentalItems.map((spec) => {
               const { key, unit } = spec;
               const raw = values[key];
               const on = included[key];
               const amount = rentalItemAmount(spec, inputs);
-              const invalid = amount === null && (unit === "yen" || raw.trim() === "" || Number.isNaN(Number(raw)) || Number(raw) < 0 || Number(raw) > 24);
+              const value = num(raw);
+              const invalid = unit === "yen" ? amount === null : !(Number.isFinite(value) && value >= 0 && value <= 24);
               const field = t.fields[key];
               return (
                 <li className={`fi-cost-item${on ? "" : " is-off"}`} key={key}>
@@ -68,11 +113,7 @@ export function RentalEstimator({ locale }: { locale: Locale }) {
                     type="checkbox"
                     id={`include-${key}`}
                     checked={on}
-                    onChange={(event) => {
-                      const next = { ...included, [key]: event.target.checked };
-                      setIncluded(next);
-                      track(values, next);
-                    }}
+                    onChange={(event) => update({ ...state, included: { ...included, [key]: event.target.checked } })}
                     aria-label={`${t.includeLabel ?? ""} ${field.label}`.trim()}
                   />
                   <div className="fi-cost-item__text">
@@ -91,16 +132,12 @@ export function RentalEstimator({ locale }: { locale: Locale }) {
                         value={raw}
                         aria-invalid={invalid || undefined}
                         aria-describedby={field.hint ? `cost-hint-${key}` : undefined}
-                        onChange={(event) => {
-                          const next = { ...values, [key]: event.target.value };
-                          setValues(next);
-                          track(next, included);
-                        }}
+                        onChange={(event) => update({ ...state, values: { ...values, [key]: event.target.value } })}
                       />
                       <span className="fi-cost-item__unit">{unit === "months" ? t.unitMonths : t.unitYen}</span>
                     </div>
                     {unit === "months" ? (
-                      <output className="fi-cost-item__amount" htmlFor={`cost-${key} cost-rent`}>{amount === null ? "—" : `= ${formatYen(amount, locale)}`}</output>
+                      <output className="fi-cost-item__amount" htmlFor={`cost-${key} ${spec.base === "fee" ? "cost-commonFee" : spec.base === "rentAndFee" ? "cost-rent cost-commonFee" : "cost-rent"}`}>{amount === null ? "—" : `= ${formatYen(amount, locale)}`}</output>
                     ) : null}
                   </div>
                 </li>
@@ -109,7 +146,7 @@ export function RentalEstimator({ locale }: { locale: Locale }) {
           </ul>
           {result ? (
             <div className="fi-estimator__sticky" aria-hidden="true">
-              <span>{t.total}</span>
+              <span>{t.total}<small>{t.reference}</small></span>
               <strong>{formatYen(result.total, locale)}</strong>
             </div>
           ) : null}
@@ -124,6 +161,7 @@ export function RentalEstimator({ locale }: { locale: Locale }) {
                 ))}
               </dl>
               <div className="fi-estimator__total" aria-live="polite"><span>{t.total}</span><strong>{formatYen(result.total, locale)}</strong></div>
+              <p className="fi-estimator__reference">{t.reference}</p>
             </>
           ) : <p className="fi-estimator__note" role="alert">{t.invalid}</p>}
           <p className="fi-estimator__note">{t.note}</p>

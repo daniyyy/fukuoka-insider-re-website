@@ -379,3 +379,11 @@
 - 月數項目旁即時顯示換算金額；手機版底部固定顯示估算合計。三語同步。
 - 取消原本的「需預付租金（月）」欄；日割租金請填在「其他」。
 - 待 Danny 確認：共益費示例 ¥5,000、24 小時服務示例 ¥1,100、禮金／敷金預設 1 個月、保證公司以租金＋共益費計算。
+
+## 2026-09-30 — Rental estimator, round 2 (Danny's feedback)
+- Monthly rent and common-area fee moved to the top as required fields (no tick box).
+- New items: rent paid in advance and common-area fee paid in advance (default 2 months each), plus move-out cleaning paid in advance (tickable, off by default).
+- Guarantee company fee is based on rent + common-area fee. Default example total is ¥666,100.
+- Clearer hints for every item in 3 languages; a "reference only, not a quote" line under the total (desktop and mobile sticky bar).
+- zh-TW tool page ends with "延伸閱讀": 4 published initial-cost guides + link to all guides.
+- Open for Danny: confirm the sample values (共益費 ¥5,000, 24h ¥1,100, 禮金/敷金 1 month each).
