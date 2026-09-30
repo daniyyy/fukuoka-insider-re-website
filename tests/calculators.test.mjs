@@ -22,6 +22,7 @@ test("rental example uses Danny's defaults and adds ticked items only", () => {
   assert.equal(byKey.keyExchange, 20_000);
   assert.equal("cleaning" in byKey, false);
   assert.equal("aircon" in byKey, false);
+  assert.equal("disinfection" in byKey, false);
   assert.equal(result.total, 666_100);
   assert.equal(result.additionalCosts, 466_100);
 });
@@ -42,6 +43,11 @@ test("month-based items follow rent, common-area fee and fractional months", () 
   assert.equal(byKey.brokerage, 88_000);
   assert.equal(byKey.prepaidRent, 160_000);
   assert.equal(byKey.prepaidFee, 4_500);
+});
+
+test("usual costs are ticked and property-dependent costs are not", async () => {
+  const { rentalItems } = await import("../lib/tools/calculators.ts");
+  for (const spec of rentalItems) assert.equal(rentalExample.included[spec.key], spec.group === "standard", spec.key);
 });
 
 test("rent and common-area fee are always required", () => {

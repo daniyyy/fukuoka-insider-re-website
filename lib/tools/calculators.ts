@@ -7,24 +7,27 @@
  * - "yen" items are entered as an amount; "months" items are a number of months times a base:
  *   rent, common-area fee, or rent + common-area fee (guarantee company).
  */
-export const rentalItemKeys = ["prepaidRent", "prepaidFee", "support24h", "keyMoney", "deposit", "brokerage", "guarantor", "insurance", "keyExchange", "cleaning", "aircon", "other"] as const;
+export const rentalItemKeys = ["prepaidRent", "prepaidFee", "support24h", "keyMoney", "deposit", "brokerage", "guarantor", "insurance", "keyExchange", "cleaning", "aircon", "disinfection", "other"] as const;
 export type RentalItemKey = (typeof rentalItemKeys)[number];
 export type RentalBaseKey = "rent" | "commonFee";
-export type RentalItemSpec = { key: RentalItemKey; unit: "yen" | "months"; base?: "rent" | "fee" | "rentAndFee" };
+/** "standard": charged on almost every contract. "optional": only when the property lists it. */
+export type RentalItemGroup = "standard" | "optional";
+export type RentalItemSpec = { key: RentalItemKey; unit: "yen" | "months"; base?: "rent" | "fee" | "rentAndFee"; group: RentalItemGroup };
 
 export const rentalItems: RentalItemSpec[] = [
-  { key: "prepaidRent", unit: "months", base: "rent" },
-  { key: "prepaidFee", unit: "months", base: "fee" },
-  { key: "support24h", unit: "yen" },
-  { key: "keyMoney", unit: "months", base: "rent" },
-  { key: "deposit", unit: "months", base: "rent" },
-  { key: "brokerage", unit: "months", base: "rent" },
-  { key: "guarantor", unit: "months", base: "rentAndFee" },
-  { key: "insurance", unit: "yen" },
-  { key: "keyExchange", unit: "yen" },
-  { key: "cleaning", unit: "yen" },
-  { key: "aircon", unit: "yen" },
-  { key: "other", unit: "yen" },
+  { key: "prepaidRent", unit: "months", base: "rent", group: "standard" },
+  { key: "prepaidFee", unit: "months", base: "fee", group: "standard" },
+  { key: "support24h", unit: "yen", group: "standard" },
+  { key: "keyMoney", unit: "months", base: "rent", group: "standard" },
+  { key: "deposit", unit: "months", base: "rent", group: "standard" },
+  { key: "brokerage", unit: "months", base: "rent", group: "standard" },
+  { key: "guarantor", unit: "months", base: "rentAndFee", group: "standard" },
+  { key: "insurance", unit: "yen", group: "standard" },
+  { key: "keyExchange", unit: "yen", group: "standard" },
+  { key: "cleaning", unit: "yen", group: "optional" },
+  { key: "aircon", unit: "yen", group: "optional" },
+  { key: "disinfection", unit: "yen", group: "optional" },
+  { key: "other", unit: "yen", group: "optional" },
 ];
 
 export type RentalInputs = {
@@ -38,8 +41,8 @@ export type RentalInputs = {
 export const rentalExample: RentalInputs = {
   rent: 100_000,
   commonFee: 5_000,
-  values: { prepaidRent: 2, prepaidFee: 2, support24h: 1_100, keyMoney: 1, deposit: 1, brokerage: 1.1, guarantor: 1, insurance: 20_000, keyExchange: 20_000, cleaning: 0, aircon: 0, other: 0 },
-  included: { prepaidRent: true, prepaidFee: true, support24h: true, keyMoney: true, deposit: true, brokerage: true, guarantor: true, insurance: true, keyExchange: true, cleaning: false, aircon: false, other: false },
+  values: { prepaidRent: 2, prepaidFee: 2, support24h: 1_100, keyMoney: 1, deposit: 1, brokerage: 1.1, guarantor: 1, insurance: 20_000, keyExchange: 20_000, cleaning: 0, aircon: 0, disinfection: 0, other: 0 },
+  included: { prepaidRent: true, prepaidFee: true, support24h: true, keyMoney: true, deposit: true, brokerage: true, guarantor: true, insurance: true, keyExchange: true, cleaning: false, aircon: false, disinfection: false, other: false },
 };
 
 const MAX_YEN = 1_000_000_000_000;

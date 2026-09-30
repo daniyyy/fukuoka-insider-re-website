@@ -387,3 +387,9 @@
 - Clearer hints for every item in 3 languages; a "reference only, not a quote" line under the total (desktop and mobile sticky bar).
 - zh-TW tool page ends with "延伸閱讀": 4 published initial-cost guides + link to all guides.
 - Open for Danny: confirm the sample values (共益費 ¥5,000, 24h ¥1,100, 禮金/敷金 1 month each).
+
+## 2026-09-30 — Rental estimator, round 3 (grouping, guide links, visual pass)
+- Three numbered groups (Danny): 01 monthly rent + common-area fee (required, stone panel); 02 costs charged on most contracts (ticked by default); 03 costs that depend on the property (unticked: move-out cleaning, air-con cleaning, new "disinfection and pest control", other).
+- Guides reachable while filling in (zh-TW only): the overview guide sits at the top of group 02; "相關文章" links under deposit (敷引), guarantor, 24-hour support and key replacement. They open in a new tab so entries are kept. The "延伸閱讀" list stays at the bottom.
+- Visual: numbered group heads (Cormorant numerals in moat green), brand-coloured tick boxes, unticked rows recede (dashed field, struck-through amount), amounts show thousands separators while typing (caret kept; full-width digits accepted), dark result card with a "monthly rent + fee" line; the purchase estimator shares the dark card.
+- Desktop result card is pinned by its bottom edge, so the total and consult button stay visible on 720–900px-tall screens.

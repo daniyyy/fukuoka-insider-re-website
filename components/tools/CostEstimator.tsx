@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 
 import type { Locale } from "@/config/site";
 import { toolsCopy, type ToolKey } from "@/data/tools";
-import { RentalEstimator } from "@/components/tools/RentalEstimator";
+import { RentalEstimator, type RentalGuideLinks } from "@/components/tools/RentalEstimator";
 import { calculatePurchaseCost, formatYen, type PurchaseInputs } from "@/lib/tools/calculators";
 import { trackEvent } from "@/lib/analytics/events";
 
@@ -17,8 +17,8 @@ const purchaseExample: PurchaseInputs = { propertyPrice: 30_000_000, brokerage: 
 const stringify = (values: PurchaseInputs): Record<string, string> =>
   Object.fromEntries(Object.entries(values).map(([key, value]) => [key, String(value)]));
 
-export function CostEstimator({ locale, tool }: { locale: Locale; tool: ToolKey }) {
-  if (tool === "rental-initial-cost") return <RentalEstimator locale={locale} />;
+export function CostEstimator({ locale, tool, rentalGuides }: { locale: Locale; tool: ToolKey; rentalGuides?: RentalGuideLinks }) {
+  if (tool === "rental-initial-cost") return <RentalEstimator locale={locale} guides={rentalGuides} />;
   return <PurchaseEstimator locale={locale} />;
 }
 
@@ -86,7 +86,7 @@ function PurchaseEstimator({ locale }: { locale: Locale }) {
           ) : <p className="fi-estimator__note" role="alert">{t.invalid}</p>}
           <p className="fi-estimator__note">{t.note}</p>
           <div className="fi-estimator__actions">
-            <AnalyticsLink className="fi-button" href={`/${locale}/contact`} event={{ name: "consultation_cta_click", locale, source: "calculator" }}>{locale === "zh-TW" ? "免費諮詢" : locale === "ja" ? "無料相談" : "Free Consultation"}<ArrowIcon /></AnalyticsLink>
+            <AnalyticsLink className="fi-button fi-button--light" href={`/${locale}/contact`} event={{ name: "consultation_cta_click", locale, source: "calculator" }}>{locale === "zh-TW" ? "免費諮詢" : locale === "ja" ? "無料相談" : "Free Consultation"}<ArrowIcon /></AnalyticsLink>
             <Link className="fi-text-link" href={`/${locale}/services/${servicePath}`}>{t.related}<ArrowIcon /></Link>
           </div>
         </section>

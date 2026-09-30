@@ -22,6 +22,15 @@ type ToolText = {
   baseTitle?: string;
   reference?: string;
   readMore?: string;
+  baseNote?: string;
+  groupStandard?: string;
+  groupStandardNote?: string;
+  groupOptional?: string;
+  groupOptionalNote?: string;
+  explainerLead?: string;
+  itemGuide?: string;
+  newTab?: string;
+  monthly?: string;
 };
 
 export const toolsCopy: Record<Locale, {
@@ -31,7 +40,7 @@ export const toolsCopy: Record<Locale, {
     indexTitle: "費用估算工具", indexIntro: "輸入目前知道的金額，先整理租屋或買房可能需要準備的費用。", indexNote: "以下結果只依輸入項目加總，不是物件報價。未填的費用不會自動估入。", open: "開始估算", back: "所有估算工具", labels: { "rental-initial-cost": "租屋初期費用", "purchase-cost": "買房費用" },
     tools: {
       "rental-initial-cost": {
-        title: "租屋初期費用估算", intro: "先填月租和共益費，再勾選適用的項目，估算簽約時大約要準備多少。", sample: "已填入示例金額，請改成物件資料上的數字；不適用的項目取消勾選即可。", baseTitle: "每月租金與共益費", inputTitle: "初期費用項目", resultTitle: "費用明細", total: "估算合計", reference: "只供參考，並非報價", additional: "預付房租以外費用", note: "合計只包括已勾選的項目。實際需付的金額與付款期限，以物件提供的費用明細為準。", invalid: "請輸入 0 或以上的有效數字；月數不可超過 24。", action: "詢問租屋服務", related: "租屋服務", unitYen: "日圓", unitMonths: "個月", includeLabel: "計入", readMore: "延伸閱讀", fields: {
+        title: "租屋初期費用估算", intro: "先填月租和共益費，再勾選適用的項目，估算簽約時大約要準備多少。", sample: "已填入示例金額，請改成物件資料上的數字；不適用的項目取消勾選即可。", baseTitle: "每月租金與共益費", inputTitle: "初期費用項目", resultTitle: "費用明細", total: "估算合計", reference: "只供參考，並非報價", additional: "預付房租以外費用", note: "合計只包括已勾選的項目。實際需付的金額與付款期限，以物件提供的費用明細為準。", invalid: "請輸入 0 或以上的有效數字；月數不可超過 24。", action: "詢問租屋服務", related: "租屋服務", unitYen: "日圓", unitMonths: "個月", includeLabel: "計入", baseNote: "必填。填入物件資料上的金額，下面按月計算的項目會自動跟著變。", groupStandard: "簽約時一般需要的費用", groupStandardNote: "大部分物件都會收；物件沒有的項目，取消勾選即可。", groupOptional: "視物件而定的費用", groupOptionalNote: "不是每個物件都有；物件資料有列出才勾選。", explainerLead: "不清楚這些費用是什麼？", itemGuide: "相關文章", newTab: "（在新分頁開啟）", monthly: "每月租金＋共益費", readMore: "延伸閱讀", fields: {
           rent: { label: "每月租金", hint: "物件資料上的月租（不含共益費）" },
           commonFee: { label: "每月共益費", hint: "即大廈管理費；沒有的話填 0" },
           prepaidRent: { label: "預付房租", hint: "簽約時預付的租金，一般是入住當月（按日計）加下個月，約 2 個月" },
@@ -45,7 +54,8 @@ export const toolsCopy: Record<Locale, {
           keyExchange: { label: "換鑰匙費", hint: "為新租客更換門鎖；金額視乎房型及鑰匙種類" },
           cleaning: { label: "預繳退房清潔費", hint: "部分物件會在簽約時預收退房時的清潔費" },
           aircon: { label: "空調清潔", hint: "部分物件會在入住時收取" },
-          other: { label: "其他", hint: "例如消毒、抗菌施工等其他已知費用" },
+          disinfection: { label: "室內消毒・除蟲費", hint: "入住前的消毒及防蟲施工；多為 1.5–2 萬日圓" },
+          other: { label: "其他", hint: "例如淨水器、町內會費等其他已知費用" },
         },
       },
       "purchase-cost": {
@@ -59,7 +69,7 @@ export const toolsCopy: Record<Locale, {
     indexTitle: "費用の概算ツール", indexIntro: "分かっている金額を入力し、賃貸や購入時に必要な費用を整理できます。", indexNote: "結果は入力値の合計です。物件の見積書ではなく、未入力の費用は自動加算されません。", open: "計算する", back: "ツール一覧", labels: { "rental-initial-cost": "賃貸初期費用", "purchase-cost": "購入費用" },
     tools: {
       "rental-initial-cost": {
-        title: "賃貸初期費用の概算", intro: "月額賃料と共益費を入力し、該当する項目にチェックを入れて、契約時に必要な金額の目安を確認できます。", sample: "入力例が入っています。物件資料の金額に変更し、該当しない項目はチェックを外してください。", baseTitle: "月額賃料・共益費", inputTitle: "初期費用の項目", resultTitle: "内訳", total: "概算合計", reference: "参考値です（見積りではありません）", additional: "前家賃以外", note: "チェックした項目のみを合計しています。実際の金額と支払期日は、物件の初期費用明細でご確認ください。", invalid: "0 以上の有効な数値を入力してください。月数は 24 以下です。", action: "賃貸について相談", related: "賃貸サービス", unitYen: "円", unitMonths: "か月", includeLabel: "含める", readMore: "関連記事", fields: {
+        title: "賃貸初期費用の概算", intro: "月額賃料と共益費を入力し、該当する項目にチェックを入れて、契約時に必要な金額の目安を確認できます。", sample: "入力例が入っています。物件資料の金額に変更し、該当しない項目はチェックを外してください。", baseTitle: "月額賃料・共益費", inputTitle: "初期費用の項目", resultTitle: "内訳", total: "概算合計", reference: "参考値です（見積りではありません）", additional: "前家賃以外", note: "チェックした項目のみを合計しています。実際の金額と支払期日は、物件の初期費用明細でご確認ください。", invalid: "0 以上の有効な数値を入力してください。月数は 24 以下です。", action: "賃貸について相談", related: "賃貸サービス", unitYen: "円", unitMonths: "か月", includeLabel: "含める", baseNote: "必須項目です。物件資料の金額を入力すると、月数で計算する項目に自動で反映されます。", groupStandard: "契約時に一般的にかかる費用", groupStandardNote: "ほとんどの物件でかかります。該当しない項目はチェックを外してください。", groupOptional: "物件によってかかる費用", groupOptionalNote: "すべての物件にあるわけではありません。物件資料に記載がある場合のみチェックしてください。", explainerLead: "それぞれの費用について詳しく知りたい方へ", itemGuide: "関連記事", newTab: "（新しいタブで開きます）", monthly: "月額賃料＋共益費", readMore: "関連記事", fields: {
           rent: { label: "月額賃料", hint: "物件資料に記載の賃料（共益費を除く）" },
           commonFee: { label: "共益費（月額）", hint: "管理費とも呼ばれる共用部分の費用。ない場合は0" },
           prepaidRent: { label: "前家賃", hint: "契約時に前払いする賃料。入居月の日割り分と翌月分で約2か月が一般的" },
@@ -73,7 +83,8 @@ export const toolsCopy: Record<Locale, {
           keyExchange: { label: "鍵交換費用", hint: "入居者の入れ替わりに合わせて鍵を交換する費用。間取りや鍵の種類により異なります" },
           cleaning: { label: "退去時クリーニング費（前払い）", hint: "契約時に退去時のクリーニング費用を前払いする物件もあります" },
           aircon: { label: "エアコンクリーニング", hint: "入居時に請求される物件もあります" },
-          other: { label: "その他", hint: "消毒・抗菌施工費など、分かっているその他の費用" },
+          disinfection: { label: "室内消毒・害虫駆除費", hint: "入居前の消毒・防虫施工。1.5〜2万円程度が多い" },
+          other: { label: "その他", hint: "浄水器、町内会費など、分かっているその他の費用" },
         },
       },
       "purchase-cost": {
@@ -87,7 +98,7 @@ export const toolsCopy: Record<Locale, {
     indexTitle: "Cost estimators", indexIntro: "Enter the amounts you know to organise potential rental or purchase costs.", indexNote: "Results add only the values you enter. They are not a property quotation, and missing costs are not automatically estimated.", open: "Estimate costs", back: "All estimators", labels: { "rental-initial-cost": "Rental initial costs", "purchase-cost": "Purchase costs" },
     tools: {
       "rental-initial-cost": {
-        title: "Rental initial cost estimate", intro: "Enter the monthly rent and common-area fee, then tick the items that apply to estimate what to prepare at signing.", sample: "Example amounts are filled in. Replace them with the property's figures and untick anything that does not apply.", baseTitle: "Monthly rent and fee", inputTitle: "Initial cost items", resultTitle: "Cost breakdown", total: "Estimated total", reference: "For reference only, not a quote", additional: "Costs besides rent paid in advance", note: "Only ticked items are added. Confirm the actual amounts and payment deadline with the property's cost breakdown.", invalid: "Enter valid numbers of zero or more. Month counts cannot exceed 24.", action: "Enquire about renting", related: "Rental service", unitYen: "JPY", unitMonths: "months", includeLabel: "Include", readMore: "Further reading", fields: {
+        title: "Rental initial cost estimate", intro: "Enter the monthly rent and common-area fee, then tick the items that apply to estimate what to prepare at signing.", sample: "Example amounts are filled in. Replace them with the property's figures and untick anything that does not apply.", baseTitle: "Monthly rent and fee", inputTitle: "Initial cost items", resultTitle: "Cost breakdown", total: "Estimated total", reference: "For reference only, not a quote", additional: "Costs besides rent paid in advance", note: "Only ticked items are added. Confirm the actual amounts and payment deadline with the property's cost breakdown.", invalid: "Enter valid numbers of zero or more. Month counts cannot exceed 24.", action: "Enquire about renting", related: "Rental service", unitYen: "JPY", unitMonths: "months", includeLabel: "Include", baseNote: "Required. Enter the figures from the property details; items charged in months update automatically.", groupStandard: "Costs charged on most contracts", groupStandardNote: "Most properties charge these. Untick anything the property does not charge.", groupOptional: "Costs that depend on the property", groupOptionalNote: "Not every property charges these. Tick them only if the property details list them.", explainerLead: "Not sure what these costs are?", itemGuide: "Related guide", newTab: "(opens in a new tab)", monthly: "Monthly rent + common-area fee", readMore: "Further reading", fields: {
           rent: { label: "Monthly rent", hint: "The rent shown for the property, excluding the common-area fee" },
           commonFee: { label: "Common-area fee (monthly)", hint: "Also called the management fee; enter 0 if there is none" },
           prepaidRent: { label: "Rent paid in advance", hint: "Paid at signing, usually the pro-rated move-in month plus the next month (about 2 months)" },
@@ -101,7 +112,8 @@ export const toolsCopy: Record<Locale, {
           keyExchange: { label: "Key replacement", hint: "The locks are changed for each new tenant; the cost depends on the unit and lock type" },
           cleaning: { label: "Move-out cleaning (paid in advance)", hint: "Some properties collect the move-out cleaning fee at signing" },
           aircon: { label: "Air-conditioner cleaning", hint: "Charged at move-in for some properties" },
-          other: { label: "Other", hint: "Any other known costs, such as disinfection" },
+          disinfection: { label: "Disinfection and pest control", hint: "Treatment before move-in to prevent insects; usually ¥15,000–20,000" },
+          other: { label: "Other", hint: "Any other known costs, such as a water filter or neighbourhood association fee" },
         },
       },
       "purchase-cost": {
