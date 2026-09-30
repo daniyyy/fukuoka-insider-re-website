@@ -271,17 +271,6 @@ export default async function LocaleHome({
           />
         </section>
 
-        {/* Rental estimator preview: initial costs are what clients ask about most (Danny, 2026-09-30). */}
-        <section className="fi-home-estimate" aria-labelledby="estimate-title">
-          <div className="fi-shell fi-home-estimate__grid">
-            <div className="fi-home-estimate__copy">
-              <h2 className="fi-h2" id="estimate-title">{toolsCopy[locale].teaser.title.split("|").map((phrase) => <span className="fi-phrase" key={phrase}>{phrase}</span>)}</h2>
-              <p className="fi-body">{toolsCopy[locale].teaser.body}</p>
-            </div>
-            <EstimatorTeaser locale={locale} />
-          </div>
-        </section>
-
         <section className="fi-home-trust" aria-labelledby="trust-title">
           <div className="fi-shell fi-home-trust__grid">
             <figure className="fi-home-trust__photo">
@@ -361,6 +350,19 @@ export default async function LocaleHome({
               <Portrait person="ricky" alt={alt("Ricky，代表取締役", "Ricky（代表取締役）", "Ricky, Representative Director")} name="Ricky" position={locale === "en" ? "Representative Director" : "代表取締役"} />
               <Portrait person="danny" alt={alt("Danny，宅地建物取引士", "Danny（宅地建物取引士）", "Danny, Licensed Real Estate Transaction Specialist")} name="Danny" position={locale === "en" ? "Licensed Real Estate Transaction Specialist" : "宅地建物取引士"} />
             </div>
+          </div>
+        </section>
+
+        {/* Estimator preview, placed with FAQ as the "before you contact us" step (Danny, 2026-09-30).
+            Rental gets the live figure (the most common question); buying links to its own estimator. */}
+        <section className="fi-home-estimate" aria-labelledby="estimate-title">
+          <div className="fi-shell fi-home-estimate__grid">
+            <div className="fi-home-estimate__copy">
+              <h2 className="fi-h2" id="estimate-title">{toolsCopy[locale].teaser.title.split("|").map((phrase) => <span className="fi-phrase" key={phrase}>{phrase}</span>)}</h2>
+              <p className="fi-body">{toolsCopy[locale].teaser.body}</p>
+              <Link className="fi-text-link" href={`/${locale}/tools/purchase-cost`}>{toolsCopy[locale].teaser.buyLink}<Arrow /></Link>
+            </div>
+            <EstimatorTeaser locale={locale} />
           </div>
         </section>
 

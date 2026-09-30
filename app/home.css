@@ -114,9 +114,9 @@
 }
 
 /* Estimate — preview of the rental estimator: a white "statement" card with one input and one figure */
-.fi-home-estimate { padding-block: var(--fi-section); }
+.fi-home-estimate { padding-bottom: var(--fi-section); }
 .fi-home-estimate__grid { display: grid; gap: 2.5rem; align-items: center; padding-top: var(--fi-space-5); border-top: 1px solid var(--fi-ink); }
-.fi-home-estimate__copy { display: grid; gap: 1.25rem; max-width: 34rem; }
+.fi-home-estimate__copy { display: grid; gap: 1.25rem; justify-items: start; max-width: 34rem; }
 .fi-home-estimate__copy .fi-h2 { margin: 0; }
 .fi-home-estimate__copy .fi-phrase { display: inline-block; }
 .fi-teaser-card {

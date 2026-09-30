@@ -405,3 +405,4 @@
 - Renting guide articles (zh-TW): dark "初期費用估算" box under the service box in the sidebar (article end on mobile).
 - Mobile menu: "租屋初期費用估算" row under the four main links.
 - Decisions recorded in 03_DECISIONS.md.
+- Follow-up (Danny: right after Services it read as if we only do renting): the homepage estimate block moved to after "About", just before FAQ, as the "before you contact us" step. Added a purchase-cost estimator link under the text (no live figure for buying: costs vary too much by case to preset).
