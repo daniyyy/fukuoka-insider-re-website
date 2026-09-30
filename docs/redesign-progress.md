@@ -406,3 +406,4 @@
 - Mobile menu: "租屋初期費用估算" row under the four main links.
 - Decisions recorded in 03_DECISIONS.md.
 - Follow-up (Danny: right after Services it read as if we only do renting): the homepage estimate block moved to after "About", just before FAQ, as the "before you contact us" step. Added a purchase-cost estimator link under the text (no live figure for buying: costs vary too much by case to preset).
+- Follow-up 2 (Danny): the block moved back to right after Services and now covers both: "租屋或買房，先了解要準備多少。" with a Renting card (live figure) and a Buying card (cost items only, no amounts, per Danny; link to the purchase estimator). Desktop: side by side; phones and tablets: swipe with a 租屋／買房 switch that follows the swipe.

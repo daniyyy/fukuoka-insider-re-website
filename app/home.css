@@ -113,32 +113,62 @@
   .fi-service-row { padding: 1.875rem 0; }
 }
 
-/* Estimate — preview of the rental estimator: a white "statement" card with one input and one figure */
+/* Estimate — renting and buying cost previews: side by side on desktop, swipe on phones */
 .fi-home-estimate { padding-bottom: var(--fi-section); }
-.fi-home-estimate__grid { display: grid; gap: 2.5rem; align-items: center; padding-top: var(--fi-space-5); border-top: 1px solid var(--fi-ink); }
-.fi-home-estimate__copy { display: grid; gap: 1.25rem; justify-items: start; max-width: 34rem; }
-.fi-home-estimate__copy .fi-h2 { margin: 0; }
-.fi-home-estimate__copy .fi-phrase { display: inline-block; }
-.fi-teaser-card {
-  display: grid; gap: 0.75rem; padding: 1.75rem 1.5rem; background: #fff;
+.fi-home-estimate__head { display: grid; gap: 1.25rem; padding-top: var(--fi-space-5); margin-bottom: var(--fi-space-4); border-top: 1px solid var(--fi-ink); }
+.fi-home-estimate__head .fi-h2 { margin: 0; }
+.fi-home-estimate__head .fi-body { max-width: 36rem; }
+.fi-phrase { display: inline-block; }
+@media (min-width: 68.75rem) {
+  .fi-home-estimate__head { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 5.5rem; align-items: end; margin-bottom: var(--fi-space-5); }
+}
+
+.fi-estimates { display: grid; gap: 1rem; }
+.fi-estimates__switch { display: inline-flex; justify-self: start; border: 1px solid var(--fi-ink); }
+.fi-estimates__switch button {
+  min-width: 5.5rem; min-height: 2.75rem; padding: 0 1.25rem; border: 0; background: transparent;
+  font: inherit; font-size: var(--fi-size-small); font-weight: 500; color: var(--fi-ink); cursor: pointer;
+}
+.fi-estimates__switch button[aria-pressed="true"] { background: var(--fi-ink); color: var(--fi-on-dark); }
+.fi-estimates__switch button:focus-visible { outline: 2px solid var(--fi-slate); outline-offset: 2px; }
+.fi-estimates__track {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 86%; gap: 0.875rem;
+  margin-inline: calc(var(--fi-gutter) * -1); padding: 0.25rem var(--fi-gutter) 3rem;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--fi-gutter); scrollbar-width: none;
+}
+.fi-estimates__track::-webkit-scrollbar { display: none; }
+.fi-estimate-card {
+  display: flex; flex-direction: column; gap: 0.75rem; padding: 1.75rem 1.5rem; background: #fff; scroll-snap-align: start;
   box-shadow: 0 40px 70px -48px rgb(var(--fi-ink-rgb) / 0.45);
 }
-.fi-teaser-card__label { font-weight: 500; }
-.fi-teaser-card .fi-amount input { min-height: 3.5rem; font-size: 1.375rem; }
-.fi-teaser-card__result {
+.fi-estimate-card__head { display: grid; gap: 0.5rem; justify-items: start; margin-bottom: 0.5rem; }
+.fi-estimate-card__tag { padding: 0.125rem 0.625rem; background: var(--fi-slate); color: var(--fi-on-dark); font-size: var(--fi-size-meta); font-weight: 500; letter-spacing: 0.04em; }
+.fi-estimate-card__head h3 { margin: 0; font-family: var(--fi-font-serif); font-weight: 600; font-size: var(--fi-size-h3); line-height: 1.45; }
+.fi-estimate-card__label { font-weight: 500; }
+.fi-estimate-card .fi-amount input { min-height: 3.5rem; font-size: 1.375rem; }
+.fi-estimate-card__result {
   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.25rem 1rem;
-  margin-top: 0.75rem; padding-top: 1rem; border-top: 1px dashed var(--fi-line-strong);
+  margin-top: 0.5rem; padding-top: 1rem; border-top: 1px dashed var(--fi-line-strong);
 }
-.fi-teaser-card__result span { font-size: var(--fi-size-small); font-weight: 500; }
-.fi-teaser-card__result strong {
+.fi-estimate-card__result span { font-size: var(--fi-size-small); font-weight: 500; }
+.fi-estimate-card__result strong {
   font-family: var(--fi-font-display); font-weight: 500; font-size: clamp(2.5rem, 2rem + 1.8vw, 3.5rem); line-height: 1;
   color: var(--fi-slate); font-variant-numeric: lining-nums tabular-nums; font-feature-settings: "lnum" 1;
 }
-.fi-teaser-card__note { margin: 0; font-size: var(--fi-size-meta); line-height: 1.75; color: var(--fi-muted); }
-.fi-teaser-card__cta { margin-top: 0.75rem; justify-content: space-between; }
-@media (min-width: 68.75rem) {
-  .fi-home-estimate__grid { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 5.5rem; }
-  .fi-teaser-card { padding: 2.25rem 2.5rem; }
+.fi-estimate-card__items { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--fi-line-strong); }
+.fi-estimate-card__items li {
+  display: flex; justify-content: space-between; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px dashed var(--fi-line-strong);
+  font-size: var(--fi-size-small); color: var(--fi-ink);
+}
+.fi-estimate-card__items li::after { content: "¥ —"; color: var(--fi-muted); font-variant-numeric: lining-nums; }
+.fi-estimate-card__note { margin: 0; font-size: var(--fi-size-meta); line-height: 1.75; color: var(--fi-muted); }
+/* Buttons sit on the same line in both cards */
+.fi-estimate-card__cta { margin-top: auto; justify-content: space-between; }
+.fi-estimate-card__note { margin-bottom: 0.75rem; }
+@media (min-width: 56rem) {
+  .fi-estimates__switch { display: none; }
+  .fi-estimates__track { grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin: 0; padding: 0; overflow: visible; }
+  .fi-estimate-card { padding: 2.25rem 2.5rem; }
 }
 
 /* Trust — "We are based in Fukuoka." */

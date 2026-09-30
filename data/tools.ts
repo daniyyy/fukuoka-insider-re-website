@@ -35,11 +35,17 @@ type ToolText = {
 
 export const toolsCopy: Record<Locale, {
   indexTitle: string; indexIntro: string; indexNote: string; open: string; back: string; labels: Record<ToolKey, string>; tools: Record<ToolKey, ToolText>;
-  /** Homepage block that previews the rental estimator. {fee} and {other} are filled from the estimator's example values; "|" separates heading phrases kept unbroken. */
-  teaser: { title: string; body: string; rentLabel: string; resultLabel: string; assumption: string; cta: string; buyLink: string };
+  /** Homepage block previewing both estimators (Danny, 2026-09-30): renting shows a live figure from the
+      estimator's example settings ({fee}, {other} filled in); buying lists the cost items only, because purchase
+      costs vary too much by property and brokerage amounts are not published. "|" separates heading phrases. */
+  teaser: {
+    title: string; body: string; switchLabel: string;
+    rentTag: string; rentTitle: string; rentLabel: string; resultLabel: string; assumption: string; cta: string;
+    buyTag: string; buyTitle: string; buyItems: string[]; buyNote: string; buyCta: string;
+  };
 }> = {
   "zh-TW": {
-    teaser: { title: "簽約要準備多少錢？|先算一算。", body: "在日本租屋，除了月租，簽約時還要付禮金、敷金、仲介費、保證公司費用等，合計往往是月租的好幾倍。輸入月租，先看大概金額；再用估算工具逐項調整。", rentLabel: "每月租金", resultLabel: "初期費用大約", assumption: "以共益費 {fee}、其他每月費用 {other} 及一般項目（預付 2 個月、禮金和敷金各 1 個月等）計算，只供參考。", cta: "逐項估算", buyLink: "準備買房？估算買房費用" },
+    teaser: { title: "租屋或買房，|先了解要準備多少。", body: "除了月租或物件價格，簽約時還有各種費用。租屋可以輸入月租，即時看到大約金額；買房費用視乎物件及融資條件，可用估算工具逐項整理。", switchLabel: "選擇估算類別", rentTag: "租屋", rentTitle: "簽約時的初期費用", rentLabel: "每月租金", resultLabel: "初期費用大約", assumption: "以共益費 {fee}、其他每月費用 {other} 及一般項目（預付 2 個月、禮金和敷金各 1 個月等）計算，只供參考。", cta: "逐項估算", buyTag: "買房", buyTitle: "物件價格以外的費用", buyItems: ["仲介費", "登記及專業費用", "稅金", "融資相關費用", "保險"], buyNote: "金額視乎物件及融資條件而定。可把已知的金額逐項輸入，整理出總預算。", buyCta: "估算買房費用" },
     indexTitle: "費用估算工具", indexIntro: "輸入目前知道的金額，先整理租屋或買房可能需要準備的費用。", indexNote: "以下結果只依輸入項目加總，不是物件報價。未填的費用不會自動估入。", open: "開始估算", back: "所有估算工具", labels: { "rental-initial-cost": "租屋初期費用", "purchase-cost": "買房費用" },
     tools: {
       "rental-initial-cost": {
@@ -70,7 +76,7 @@ export const toolsCopy: Record<Locale, {
     },
   },
   ja: {
-    teaser: { title: "契約時にいくら必要？|まずは試算を。", body: "日本の賃貸では、家賃のほかに礼金・敷金・仲介手数料・保証料などが契約時にかかり、合計は家賃の数か月分になるのが一般的です。月額賃料を入力して目安を確認し、概算ツールで項目ごとに調整できます。", rentLabel: "月額賃料", resultLabel: "初期費用の目安", assumption: "共益費 {fee}、その他の月額費用 {other}、一般的な項目（前家賃2か月、礼金・敷金各1か月など）で計算した参考値です。", cta: "項目ごとに試算する", buyLink: "購入をご検討の方は、購入費用を概算" },
+    teaser: { title: "賃貸でも購入でも、|まず費用の目安を。", body: "家賃や物件価格のほかに、契約時にはさまざまな費用がかかります。賃貸は月額賃料を入力するとすぐに目安が表示されます。購入費用は物件や融資条件によって異なるため、概算ツールで項目ごとに整理できます。", switchLabel: "概算の種類を選ぶ", rentTag: "賃貸", rentTitle: "契約時の初期費用", rentLabel: "月額賃料", resultLabel: "初期費用の目安", assumption: "共益費 {fee}、その他の月額費用 {other}、一般的な項目（前家賃2か月、礼金・敷金各1か月など）で計算した参考値です。", cta: "項目ごとに試算する", buyTag: "購入", buyTitle: "物件価格以外の費用", buyItems: ["仲介手数料", "登記・専門家費用", "税金", "融資関連費用", "保険料"], buyNote: "金額は物件や融資条件によって異なります。分かっている金額を項目ごとに入力し、総予算を整理できます。", buyCta: "購入費用を概算する" },
     indexTitle: "費用の概算ツール", indexIntro: "分かっている金額を入力し、賃貸や購入時に必要な費用を整理できます。", indexNote: "結果は入力値の合計です。物件の見積書ではなく、未入力の費用は自動加算されません。", open: "計算する", back: "ツール一覧", labels: { "rental-initial-cost": "賃貸初期費用", "purchase-cost": "購入費用" },
     tools: {
       "rental-initial-cost": {
@@ -101,7 +107,7 @@ export const toolsCopy: Record<Locale, {
     },
   },
   en: {
-    teaser: { title: "How much do you need at signing?| Estimate it first.", body: "Renting in Japan means paying more than the first month's rent: key money, deposit, brokerage and guarantee fees are due at signing, and together they usually come to several months' rent. Enter a monthly rent for a quick figure, then adjust each item in the estimator.", rentLabel: "Monthly rent", resultLabel: "Estimated initial cost", assumption: "Based on a {fee} common-area fee, {other} in other monthly charges and the usual items (2 months paid in advance, 1 month each of key money and deposit, and so on). For reference only.", cta: "Estimate item by item", buyLink: "Buying instead? Estimate purchase costs" },
+    teaser: { title: "Renting or buying,| know what to prepare.", body: "Beyond the rent or the purchase price, several costs are due at signing. For renting, enter a monthly rent for an instant estimate. Purchase costs depend on the property and financing, so the estimator lets you list them item by item.", switchLabel: "Choose an estimate", rentTag: "Renting", rentTitle: "Initial costs at signing", rentLabel: "Monthly rent", resultLabel: "Estimated initial cost", assumption: "Based on a {fee} common-area fee, {other} in other monthly charges and the usual items (2 months paid in advance, 1 month each of key money and deposit, and so on). For reference only.", cta: "Estimate item by item", buyTag: "Buying", buyTitle: "Costs besides the purchase price", buyItems: ["Agency fee", "Registration and professional fees", "Taxes", "Financing costs", "Insurance"], buyNote: "Amounts depend on the property and financing. Enter the figures you know, item by item, to build your total budget.", buyCta: "Estimate purchase costs" },
     indexTitle: "Cost estimators", indexIntro: "Enter the amounts you know to organise potential rental or purchase costs.", indexNote: "Results add only the values you enter. They are not a property quotation, and missing costs are not automatically estimated.", open: "Estimate costs", back: "All estimators", labels: { "rental-initial-cost": "Rental initial costs", "purchase-cost": "Purchase costs" },
     tools: {
       "rental-initial-cost": {
