@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="48" viewBox="0 0 72 48">
+  <!-- Hakata-ori "kenjō" inspired tile: a parent-and-child stripe group, one gold thread, and a dokko (vajra) motif. -->
+  <g fill="#2f5249">
+    <rect x="0" y="0" width="2" height="48"/>
+    <rect x="5" y="0" width="7" height="48"/>
+    <rect x="15" y="0" width="2" height="48"/>
+    <path d="M48 4 52.5 12 49.6 20v8l2.9 8L48 44l-4.5-8 2.9-8v-8l-2.9-8z"/>
+  </g>
+  <rect x="27" y="0" width="1.2" height="48" fill="#a8843f"/>
+</svg>

@@ -1,0 +1,141 @@
+import type { Guide, GuideCategory, GuideLocale } from "@/lib/content/types";
+
+export const guideCategoryCopy: Record<GuideLocale, Record<GuideCategory, { label: string; description: string }>> = {
+  "zh-TW": {
+    renting: { label: "租屋", description: "了解福岡租屋的準備、申請條件與入住前需要確認的事項。" },
+    buying: { label: "買房", description: "整理購買目的、地區選擇及交易前的基本準備。" },
+    selling: { label: "賣房", description: "出售福岡物業前可先整理的資料、條件與一般安排。" },
+    "property-management": { label: "物業管理", description: "出租物業及度假別墅等不常使用的住處：了解管理內容與委託範圍。" },
+    "taxes-procedures": { label: "稅務與手續", description: "房地產相關費用、文件及需要向專業人士確認的事項。" },
+    "living-in-fukuoka": { label: "福岡生活", description: "從交通、地區與生活機能理解在福岡居住的實際環境。" },
+  },
+  en: {
+    renting: { label: "Renting", description: "Practical preparation, application conditions, and move-in points for renting in Fukuoka." },
+    buying: { label: "Buying", description: "How to define your purpose, preferred area, and basic preparation before a purchase." },
+    selling: { label: "Selling", description: "Property information, proposed terms, and general preparation before a sale." },
+    "property-management": { label: "Property Management", description: "Everyday support for rental property, holiday homes, and other second homes." },
+    "taxes-procedures": { label: "Taxes & Procedures", description: "Costs, documents, and matters that require confirmation with the relevant professionals." },
+    "living-in-fukuoka": { label: "Living in Fukuoka", description: "Neighbourhood, transport, and daily-life context for living in Fukuoka." },
+  },
+};
+
+export const seedGuides: Guide[] = [
+  {
+    id: "renting-home-search-zh", canonicalKey: "renting-home-search", locale: "zh-TW", slug: "fukuoka-home-search-first-steps", category: "renting",
+    title: "剛到福岡，從哪裡開始找合適的住處？", excerpt: "找房前，可先確認希望居住的區域、通勤時間、預算及申請條件。",
+    body: [
+      { type: "paragraph", text: "在開始查看物件前，先整理地區、預算、入住日期與目前所在地，通常能更快判斷哪些選項適合進一步確認。" },
+      { type: "heading", id: "criteria", text: "先整理基本條件" },
+      { type: "list", items: ["希望地區與可接受的通勤時間", "每月租金與初期費用預算", "預計入住日期、入住人數及在留情況", "寵物、停車位或其他必要條件"] },
+      { type: "heading", id: "application", text: "申請條件因物件而異" },
+      { type: "paragraph", text: "出租方、管理公司或保証公司會按個別物件與申請人情況決定審查。人在海外時，可先確認需要的資料及目前可安排的申請方式。" },
+    ],
+    status: "draft", featured: true, featuredOrder: 1,
+    coverImage: "/images/guide-apartment.webp", coverAlt: "明亮的福岡住宅客廳與窗外城市景觀", tags: ["租屋", "申請", "搬家"],
+    seoDescription: "準備在福岡租屋時，可先整理地區、預算、入住日期與申請條件。", author: "Fukuoka Insider Real Estate", relatedGuideIds: ["fukuoka-area-zh"], serviceContext: "rent",
+  },
+  {
+    id: "renting-home-search-en", canonicalKey: "renting-home-search", locale: "en", slug: "fukuoka-home-search-first-steps", category: "renting",
+    title: "Where to begin when looking for a home in Fukuoka", excerpt: "Start with your preferred area, commute, budget, timing, and application circumstances.",
+    body: [
+      { type: "paragraph", text: "Before reviewing listings, set out the area, budget, move-in date, and where you are currently based. This makes it easier to identify options worth checking in detail." },
+      { type: "heading", id: "criteria", text: "Set out the basic criteria" },
+      { type: "list", items: ["Preferred area and acceptable commute", "Monthly rent and initial-cost budget", "Move-in date, occupants, and residence status", "Pets, parking, or other essential requirements"] },
+      { type: "heading", id: "application", text: "Application conditions vary" },
+      { type: "paragraph", text: "The landlord, management company, or guarantor company decides screening for each property and applicant. If you are overseas, first confirm the documents and application arrangements currently available." },
+    ],
+    status: "draft", featured: true, featuredOrder: 1,
+    coverImage: "/images/guide-apartment.webp", coverAlt: "A bright home interior with a Fukuoka city view", tags: ["renting", "application", "moving"],
+    seoDescription: "Prepare your area, budget, timing, and application information before starting a rental search in Fukuoka.", author: "Fukuoka Insider Real Estate", relatedGuideIds: ["fukuoka-area-en"], serviceContext: "rent",
+  },
+  {
+    id: "moving-checklist-zh", canonicalKey: "moving-to-fukuoka-checklist", locale: "zh-TW", slug: "moving-to-fukuoka-checklist", category: "living-in-fukuoka",
+    title: "搬到福岡前，可先確認的三件事", excerpt: "除了住處，也可先了解交通、生活機能及入住後需要處理的事項。",
+    body: [
+      { type: "paragraph", text: "選擇住處時，同時考慮每日移動與入住後的生活安排，會比只比較租金或房間大小更實際。" },
+      { type: "heading", id: "daily-life", text: "把日常需要放進找房條件" },
+      { type: "list", items: ["上班、上學或常用地點的交通方式", "超市、醫療與日常採購距離", "入住日期與水電、網絡等安排"] },
+      { type: "paragraph", text: "不同地區的生活節奏及交通選項不同。若仍在海外，可先列出最常使用的地點，再縮小希望範圍。" },
+    ],
+    status: "draft", featured: true, featuredOrder: 2,
+    coverImage: "/images/guide-waterfront.webp", coverAlt: "福岡水岸與城市生活環境", tags: ["搬家", "交通", "生活"],
+    author: "Fukuoka Insider Real Estate", relatedGuideIds: ["fukuoka-area-zh", "renting-home-search-zh"], serviceContext: "living-support",
+  },
+  {
+    id: "moving-checklist-en", canonicalKey: "moving-to-fukuoka-checklist", locale: "en", slug: "moving-to-fukuoka-checklist", category: "living-in-fukuoka",
+    title: "Three things to check before moving to Fukuoka", excerpt: "Look beyond the home itself to transport, daily amenities, and move-in arrangements.",
+    body: [
+      { type: "paragraph", text: "A practical housing choice includes daily movement and move-in arrangements, not only rent or floor area." },
+      { type: "heading", id: "daily-life", text: "Include everyday needs in your criteria" },
+      { type: "list", items: ["Transport to work, school, or regular destinations", "Access to groceries, medical care, and daily shopping", "Move-in timing and utilities or internet arrangements"] },
+      { type: "paragraph", text: "Neighbourhoods differ in rhythm and transport options. If you are overseas, list the places you expect to use most before narrowing the search area." },
+    ],
+    status: "draft", featured: true, featuredOrder: 2,
+    coverImage: "/images/guide-waterfront.webp", coverAlt: "Fukuoka waterfront and urban daily-life context", tags: ["moving", "transport", "daily life"],
+    author: "Fukuoka Insider Real Estate", relatedGuideIds: ["fukuoka-area-en", "renting-home-search-en"], serviceContext: "living-support",
+  },
+  {
+    id: "management-overseas-zh", canonicalKey: "managing-property-from-overseas", locale: "zh-TW", slug: "managing-fukuoka-property-from-overseas", category: "property-management",
+    title: "不在福岡時，物業可以如何管理？", excerpt: "了解出租物業及第二居所可安排的日常管理內容。",
+    body: [
+      { type: "paragraph", text: "物業管理應先確認物業現況、使用方式及希望委託的工作，而不是預設所有物業都需要相同服務。" },
+      { type: "heading", id: "scope", text: "先確定管理範圍" },
+      { type: "list", items: ["出租物業的租客聯絡、收款與維修協調", "第二居所的定期查看與基本管理", "需要屋主決定時的聯絡與記錄方式"] },
+      { type: "paragraph", text: "實際服務範圍、頻率及費用應在開始前按物業情況確認。" },
+    ],
+    status: "draft", featured: true, featuredOrder: 3,
+    coverImage: "/images/guide-planning.webp", coverAlt: "木桌上的物業資料與規劃用品", tags: ["物業管理", "第二居所", "海外屋主"],
+    author: "Fukuoka Insider Real Estate", relatedGuideIds: ["fukuoka-area-zh"], serviceContext: "property-management",
+  },
+  {
+    id: "management-overseas-en", canonicalKey: "managing-property-from-overseas", locale: "en", slug: "managing-fukuoka-property-from-overseas", category: "property-management",
+    title: "How can a Fukuoka property be managed while you are away?", excerpt: "An introduction to everyday support for rental property and second homes.",
+    body: [
+      { type: "paragraph", text: "Management should begin with the property's current condition, how it is used, and the work you want to delegate rather than assuming every property needs the same service." },
+      { type: "heading", id: "scope", text: "Define the management scope first" },
+      { type: "list", items: ["Tenant communication, collections, and maintenance coordination", "Periodic checks and basic care for a second home", "A clear record and contact method when an owner decision is required"] },
+      { type: "paragraph", text: "The actual scope, frequency, and fees should be confirmed for the property before management begins." },
+    ],
+    status: "draft", featured: true, featuredOrder: 3,
+    coverImage: "/images/guide-planning.webp", coverAlt: "Property documents and planning items on a wooden table", tags: ["property management", "second home", "overseas owner"],
+    author: "Fukuoka Insider Real Estate", relatedGuideIds: ["fukuoka-area-en"], serviceContext: "property-management",
+  },
+  {
+    id: "fukuoka-area-zh", canonicalKey: "choosing-a-fukuoka-area", locale: "zh-TW", slug: "choosing-fukuoka-area", category: "buying",
+    title: "如何依通勤與生活需要選擇福岡的居住區域", excerpt: "先比較日常移動、生活機能與預算，再縮小物件搜尋範圍。",
+    body: [
+      { type: "paragraph", text: "選區不只看行政區名稱。將常去地點、交通方式、生活機能與預算放在一起比較，通常更容易找出適合的範圍。" },
+      { type: "heading", id: "compare", text: "用實際生活方式比較" },
+      { type: "list", items: ["常用車站與轉乘次數", "步行、單車或駕車的需要", "附近採購與醫療選項", "物件類型與可接受預算"] },
+      { type: "paragraph", text: "購買前仍需按個別物件確認權利、費用及交易條件；地區比較只是縮小搜尋範圍的第一步。" },
+    ],
+    status: "draft", featured: false,
+    coverImage: "/images/fukuoka-hero.webp", coverAlt: "福岡住宅區與城市景觀", tags: ["買房", "地區", "交通"],
+    author: "Fukuoka Insider Real Estate", relatedGuideIds: ["renting-home-search-zh", "moving-checklist-zh"], serviceContext: "buy-sell",
+  },
+  {
+    id: "fukuoka-area-en", canonicalKey: "choosing-a-fukuoka-area", locale: "en", slug: "choosing-fukuoka-area", category: "buying",
+    title: "Choosing a Fukuoka area around commute and daily life", excerpt: "Compare everyday movement, amenities, and budget before narrowing the property search.",
+    body: [
+      { type: "paragraph", text: "An area choice is more useful when it reflects the places you use, how you travel, available amenities, and budget rather than the ward name alone." },
+      { type: "heading", id: "compare", text: "Compare areas through everyday use" },
+      { type: "list", items: ["Regular stations and the number of transfers", "Walking, cycling, or driving needs", "Nearby shopping and medical options", "Property type and acceptable budget"] },
+      { type: "paragraph", text: "Rights, costs, and transaction terms still need to be checked for each property. Area comparison is the first step in narrowing the search." },
+    ],
+    status: "draft", featured: false,
+    coverImage: "/images/fukuoka-hero.webp", coverAlt: "A Fukuoka residential district and cityscape", tags: ["buying", "area", "transport"],
+    author: "Fukuoka Insider Real Estate", relatedGuideIds: ["renting-home-search-en", "moving-checklist-en"], serviceContext: "buy-sell",
+  },
+  {
+    id: "sale-preparation-zh-draft", canonicalKey: "sale-preparation", locale: "zh-TW", slug: "preparing-a-fukuoka-property-sale", category: "selling",
+    title: "出售福岡物業前要整理哪些資料？", excerpt: "物業資料、權利文件與目前使用狀況是初步確認的重點。",
+    body: [{ type: "paragraph", text: "Editorial draft for route-safety validation. This item must not appear publicly until reviewed and explicitly published." }],
+    status: "draft", featured: false, coverImage: "/images/guide-planning.webp", coverAlt: "物業文件與規劃用品", tags: ["賣房", "文件"], serviceContext: "buy-sell",
+  },
+  {
+    id: "rental-costs-en-draft", canonicalKey: "rental-initial-costs", locale: "en", slug: "fukuoka-rental-initial-costs", category: "taxes-procedures",
+    title: "What makes up the initial cost of a Fukuoka rental?", excerpt: "A draft outline of common cost categories that must be confirmed for each property.",
+    body: [{ type: "paragraph", text: "Editorial draft for route-safety validation. This item must not appear publicly until reviewed and explicitly published." }],
+    status: "draft", featured: false, coverImage: "/images/guide-planning.webp", coverAlt: "Rental planning documents on a table", tags: ["renting", "costs", "procedures"], serviceContext: "rent",
+  },
+];

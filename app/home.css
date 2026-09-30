@@ -1,0 +1,183 @@
+/* Homepage — composed from design-system.css tokens and components. */
+
+
+/* Hero — the page's one authored moment */
+.fi-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(40rem, 100svh, 56rem);
+  overflow: hidden;
+  background: var(--fi-ink);
+  color: #fff;
+}
+.fi-hero__media { position: absolute; inset: 0; z-index: -1; }
+.fi-hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 42% center; }
+.fi-hero__media::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgb(var(--fi-night-rgb) / 0.42) 0%, rgb(var(--fi-night-rgb) / 0.18) 32%, rgb(var(--fi-night-rgb) / 0.86) 74%);
+}
+.fi-hero__inner { display: grid; gap: clamp(2.5rem, 7vh, 4.5rem); padding-top: calc(var(--fi-header-height) + 3rem); }
+.fi-hero__content { display: grid; gap: 1.5rem; max-width: 40rem; }
+.fi-hero__title span { display: block; }
+/* Chinese hero heading (zh-TW): serif, wider tracking, same scale as the English display line */
+.fi-hero__title--cjk {
+  margin: 0; color: #fff;
+  font-family: var(--fi-font-serif); font-weight: 600;
+  font-size: clamp(2.375rem, 1.5rem + 3.6vw, 4.25rem); line-height: 1.35; letter-spacing: 0.06em;
+}
+.fi-hero__intro { margin: 0; max-width: 32rem; font-size: var(--fi-size-lead); line-height: 1.9; color: rgba(255, 255, 255, 0.9); }
+.fi-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; padding-top: 0.5rem; }
+.fi-hero__actions .fi-button { flex: 1 1 100%; justify-content: space-between; }
+.fi-hero__secondary { color: #fff; }
+.fi-hero__proof {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem;
+  margin: 0; padding: 1.25rem 0 1.75rem; list-style: none;
+  position: relative;
+  font-size: var(--fi-size-meta); color: rgba(255, 255, 255, 0.86);
+}
+.fi-hero__proof::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: rgba(255, 255, 255, 0.28); transform-origin: left center; }
+
+@media (min-width: 45rem) {
+  .fi-hero__content { gap: 2rem; }
+  .fi-hero__actions .fi-button { flex: 0 0 auto; }
+  .fi-hero__proof { display: grid; grid-template-columns: repeat(3, max-content); gap: 0; padding: 0; font-size: var(--fi-size-small); }
+  .fi-hero__proof li { display: flex; align-items: center; min-height: 5.5rem; padding-right: 2rem; }
+  .fi-hero__proof li + li { padding-left: 2rem; border-left: 1px solid rgba(255, 255, 255, 0.2); }
+}
+@media (min-width: 68.75rem) {
+  .fi-hero__media img { object-position: 50% center; }
+  .fi-hero__media::after { background: linear-gradient(180deg, rgb(var(--fi-night-rgb) / 0.5) 0%, rgb(var(--fi-night-rgb) / 0) 22%), linear-gradient(90deg, rgb(var(--fi-night-rgb) / 0.84) 0%, rgb(var(--fi-night-rgb) / 0.56) 40%, rgb(var(--fi-night-rgb) / 0.04) 78%); }
+}
+
+/* Hero entrance — the one authored moment: the city comes into focus, then the words arrive. */
+.fi-motion .fi-hero__media img { animation: fi-hero-focus 2400ms var(--fi-ease-out) both; }
+.fi-motion .fi-hero__title .fi-line > span { animation-delay: 350ms; }
+.fi-motion .fi-hero__title .fi-line:nth-of-type(2) > span { animation-delay: 480ms; }
+.fi-motion .fi-hero__intro, .fi-motion .fi-hero__actions, .fi-motion .fi-hero__proof li { animation: fi-fade-rise 900ms var(--fi-ease-out) both; }
+.fi-motion .fi-hero__intro { animation-delay: 820ms; }
+.fi-motion .fi-hero__actions { animation-delay: 940ms; }
+.fi-motion .fi-hero__proof li { animation-delay: 1180ms; }
+.fi-motion .fi-hero__proof::before { animation: fi-draw 1400ms var(--fi-ease-out) 1000ms both; }
+@keyframes fi-hero-focus {
+  from { transform: scale(1.08); filter: blur(14px) saturate(0.8); }
+  55% { filter: blur(0) saturate(1); }
+  to { transform: none; filter: none; }
+}
+
+/* Services & Support */
+.fi-home-services { padding-block: var(--fi-section); }
+.fi-home-services .fi-h2 { margin-bottom: var(--fi-space-5); }
+.fi-home-services__stage { display: grid; }
+.fi-home-services__photo { position: relative; margin: 0; overflow: hidden; }
+.fi-home-services__photo img + img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+.fi-home-services__photo img { transition: opacity 700ms var(--fi-ease-out), clip-path 1200ms var(--fi-ease-out); }
+.fi-home-services__photo img.is-active { opacity: 1; }
+.fi-home-services__photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.fi-service-list {
+  position: relative;
+  margin: -3.5rem var(--fi-gutter) 0;
+  padding: 0.25rem 1.5rem;
+  list-style: none;
+  background: var(--fi-sheet);
+  box-shadow: 0 30px 60px -32px rgb(var(--fi-ink-rgb) / 0.28);
+}
+.fi-service-list li + li { border-top: 1px solid var(--fi-line); }
+.fi-service-row { display: grid; grid-template-columns: 1fr 2.75rem; align-items: center; gap: 1.25rem; padding: 1.5rem 0; }
+.fi-service-row__text { display: grid; gap: 0.25rem; }
+.fi-service-row__desc { margin: 0; font-size: 0.9375rem; line-height: 1.75; color: var(--fi-muted); }
+.fi-service-row__arrow {
+  display: grid; place-items: center;
+  width: 2.75rem; height: 2.75rem;
+  border: 1px solid var(--fi-line-strong); border-radius: 50%;
+  transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+.fi-service-row__arrow svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.fi-service-row:hover .fi-service-row__arrow { background: var(--fi-ink); border-color: var(--fi-ink); color: var(--fi-on-dark); }
+.fi-service-row:hover .fi-h3 { color: var(--fi-slate); }
+
+@media (min-width: 45rem) {
+  .fi-home-services__photo img { aspect-ratio: 16 / 9; }
+  .fi-service-list { margin-top: -6rem; padding: 0.5rem 2.5rem; }
+  .fi-service-row { padding: 1.75rem 0; }
+}
+@media (min-width: 68.75rem) {
+  .fi-home-services__stage { grid-template-columns: minmax(0, 58%) minmax(0, 1fr); align-items: center; }
+  .fi-home-services__photo img { aspect-ratio: auto; height: 37.5rem; }
+  .fi-service-list {
+    margin: 0 max(var(--fi-gutter), calc((100vw - var(--fi-max)) / 2)) 0 -8rem;
+    padding: 0.75rem 3rem;
+  }
+  .fi-service-row { padding: 1.875rem 0; }
+}
+
+/* Trust — "We are based in Fukuoka." */
+.fi-home-trust { padding-block: var(--fi-section); background: var(--fi-stone); }
+.fi-home-trust__grid { display: grid; gap: 2.5rem; }
+.fi-home-trust__photo { margin: 0; display: grid; gap: 1.75rem; }
+.fi-home-trust__photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.fi-home-trust__photo figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 1rem; }
+.fi-home-trust__copy { display: grid; gap: 1.5rem; align-content: start; }
+.fi-home-trust__copy .fi-facts { margin-top: 0.75rem; }
+@media (min-width: 68.75rem) {
+  .fi-home-trust__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 5.5rem; align-items: center; }
+}
+
+/* FAQ — the questions visitors ask before they enquire (all languages) */
+.fi-home-faqs { padding-block: var(--fi-section); border-top: 1px solid var(--fi-line); }
+.fi-home-faqs__grid { display: grid; gap: var(--fi-space-4); }
+.fi-home-faqs__head { display: grid; gap: 1rem; justify-items: start; align-content: start; }
+.fi-home-faqs__head .fi-h2, .fi-home-faqs__head .fi-body { margin: 0; }
+.fi-home-faq { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--fi-ink); }
+.fi-home-faq li { border-bottom: 1px solid var(--fi-line-strong); }
+.fi-home-faq a { display: grid; grid-template-columns: minmax(0, 1fr) 2.75rem; gap: 1.25rem; align-items: center; padding: 1.25rem 0; }
+.fi-home-faq__q { font-family: var(--fi-font-serif); font-weight: 600; font-size: 1.0625rem; line-height: 1.65; transition: color 200ms ease; }
+.fi-home-faq__arrow { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 1px solid var(--fi-line-strong); border-radius: 50%; transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease; }
+.fi-home-faq__arrow svg { width: 1.125rem; height: 1.125rem; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.fi-home-faq a:hover .fi-home-faq__q { color: var(--fi-slate); }
+.fi-home-faq a:hover .fi-home-faq__arrow { background: var(--fi-ink); border-color: var(--fi-ink); color: var(--fi-on-dark); }
+@media (min-width: 48rem) {
+  .fi-home-faq__q { font-size: 1.1875rem; }
+  .fi-home-faq a { padding: 1.5rem 0; gap: 2rem; }
+}
+@media (min-width: 68.75rem) {
+  .fi-home-faqs__grid { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 5.5rem; }
+}
+
+/* Guides — featured and latest (active once guides are published) */
+
+/* Life in Fukuoka */
+.fi-home-life { padding-top: var(--fi-section); }
+.fi-home-life__panel { display: grid; background: var(--fi-sand); }
+.fi-home-life__hakata { min-height: 7rem; }
+.fi-home-life__copy { display: grid; gap: 1.25rem; justify-items: start; align-content: center; padding: 2rem 1.5rem 2.5rem; }
+.fi-home-life__copy .fi-body { max-width: 32rem; }
+.fi-home-life__social { display: grid; gap: 0.5rem; justify-items: start; width: 100%; margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--fi-line-strong); }
+.fi-home-life__handle { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 1rem; margin: 0; }
+.fi-home-life__handle a { font-family: var(--fi-font-display); font-weight: 500; font-size: 1.75rem; line-height: 1.2; }
+.fi-home-life__handle span { font-size: var(--fi-size-small); color: var(--fi-slate); font-weight: 500; }
+@media (min-width: 45rem) {
+  .fi-home-life__panel { grid-template-columns: minmax(0, 2fr) minmax(0, 7fr); }
+  .fi-home-life__hakata { min-height: 22rem; }
+  .fi-home-life__copy { padding: 3.5rem clamp(2rem, 5vw, 4.5rem); }
+}
+
+/* About */
+.fi-home-about { padding-block: var(--fi-section); }
+.fi-home-about__grid { display: grid; gap: 2.5rem; }
+.fi-home-about__copy { display: grid; gap: 1.25rem; justify-items: start; align-content: start; }
+.fi-home-about__copy .fi-body { max-width: 30rem; }
+.fi-home-about__people { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+.fi-portrait { margin: 0; display: grid; gap: 0.75rem; }
+.fi-portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; }
+.fi-portrait figcaption { display: grid; gap: 0.125rem; }
+.fi-portrait__name { font-size: 1rem; font-weight: 500; }
+@media (min-width: 45rem) {
+  .fi-home-about__people { gap: 1.5rem; }
+}
+@media (min-width: 68.75rem) {
+  .fi-home-about__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 40rem); gap: 6rem; align-items: end; }
+  .fi-home-about__copy { padding-bottom: 3.5rem; }
+}
