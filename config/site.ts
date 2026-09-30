@@ -18,8 +18,8 @@ export const siteConfig = {
     consultation: "https://forms.gle/HPd8JW1RTgzNTWfK9",
     mainSite: "https://www.fukuokainsider.com/",
     instagramHandle: "@fukuoka_insider",
-    // Search link until a Google Business Profile URL is provided.
-    map: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("福岡県福岡市中央区大手門1-5-2 九州外語ビル"),
+    // Google Maps link to the office (Danny, 2026-09-30).
+    map: "https://maps.app.goo.gl/PfbChaCKEf8jidcW7",
   },
   company_profile: {
     established: { "zh-TW": "2024年2月", ja: "2024年2月", en: "February 2024" },
