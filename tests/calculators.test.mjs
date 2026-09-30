@@ -7,6 +7,7 @@ const purchase = { propertyPrice: 30_000_000, brokerage: 0, registration: 0, tax
 const withValues = (values, included = {}, base = {}) => ({
   rent: base.rent ?? rentalExample.rent,
   commonFee: base.commonFee ?? rentalExample.commonFee,
+  otherMonthly: base.otherMonthly ?? rentalExample.otherMonthly,
   values: { ...rentalExample.values, ...values },
   included: { ...rentalExample.included, ...included },
 });
@@ -17,14 +18,15 @@ test("rental example uses Danny's defaults and adds ticked items only", () => {
   assert.equal(byKey.prepaidRent, 200_000); // 2 months of rent
   assert.equal(byKey.prepaidFee, 10_000); // 2 months of common-area fee
   assert.equal(byKey.brokerage, 110_000); // 1.1 months of rent (rent + 10% tax)
-  assert.equal(byKey.guarantor, 105_000); // 1 month of rent + common-area fee
+  assert.equal(byKey.prepaidOther, 2_200); // 2 months of other monthly charges (24-hour support)
+  assert.equal(byKey.guarantor, 106_100); // 1 month of rent + common-area fee + other monthly charges
   assert.equal(byKey.insurance, 20_000);
   assert.equal(byKey.keyExchange, 20_000);
   assert.equal("cleaning" in byKey, false);
   assert.equal("aircon" in byKey, false);
   assert.equal("disinfection" in byKey, false);
-  assert.equal(result.total, 666_100);
-  assert.equal(result.additionalCosts, 466_100);
+  assert.equal(result.total, 668_300);
+  assert.equal(result.additionalCosts, 468_300);
 });
 
 test("unticking an item removes it from the total", () => {
@@ -36,9 +38,9 @@ test("unticking an item removes it from the total", () => {
 });
 
 test("month-based items follow rent, common-area fee and fractional months", () => {
-  const result = calculateRentalInitialCost(withValues({ guarantor: 0.5, deposit: 0, prepaidFee: 1.5 }, {}, { rent: 80_000, commonFee: 3_000 }));
+  const result = calculateRentalInitialCost(withValues({ guarantor: 0.5, deposit: 0, prepaidFee: 1.5 }, {}, { rent: 80_000, commonFee: 3_000, otherMonthly: 1_000 }));
   const byKey = Object.fromEntries(result.lines.map((line) => [line.key, line.amount]));
-  assert.equal(byKey.guarantor, 41_500);
+  assert.equal(byKey.guarantor, 42_000); // 0.5 × (80,000 + 3,000 + 1,000)
   assert.equal(byKey.deposit, 0);
   assert.equal(byKey.brokerage, 88_000);
   assert.equal(byKey.prepaidRent, 160_000);
@@ -50,12 +52,13 @@ test("usual costs are ticked and property-dependent costs are not", async () => 
   for (const spec of rentalItems) assert.equal(rentalExample.included[spec.key], spec.group === "standard", spec.key);
 });
 
-test("rent and common-area fee are always required", () => {
+test("monthly base figures are always required", () => {
   for (const value of [-1, Number.NaN, Number.POSITIVE_INFINITY, 1.25, 1_000_000_000_001]) {
     assert.equal(calculateRentalInitialCost(withValues({}, {}, { rent: value })), null);
     assert.equal(calculateRentalInitialCost(withValues({}, {}, { commonFee: value })), null);
+    assert.equal(calculateRentalInitialCost(withValues({}, {}, { otherMonthly: value })), null);
   }
-  assert.notEqual(calculateRentalInitialCost(withValues({}, {}, { commonFee: 0 })), null);
+  assert.notEqual(calculateRentalInitialCost(withValues({}, {}, { commonFee: 0, otherMonthly: 0 })), null);
 });
 
 test("rental estimate rejects invalid values of ticked items only", () => {

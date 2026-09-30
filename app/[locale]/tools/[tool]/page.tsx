@@ -25,7 +25,7 @@ const rentalExplainerSlug = "rental-initial-costs-reikin-shikikin";
 const rentalItemGuideSlugs: Partial<Record<RentalItemKey, string>> = {
   deposit: "shikibiki-deposit-deduction",
   guarantor: "guarantor-company-and-joint-guarantor",
-  support24h: "key-exchange-and-24-hour-support-fees",
+  prepaidOther: "key-exchange-and-24-hour-support-fees",
   keyExchange: "key-exchange-and-24-hour-support-fees",
 };
 

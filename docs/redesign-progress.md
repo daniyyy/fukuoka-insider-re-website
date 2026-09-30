@@ -393,3 +393,9 @@
 - Guides reachable while filling in (zh-TW only): the overview guide sits at the top of group 02; "相關文章" links under deposit (敷引), guarantor, 24-hour support and key replacement. They open in a new tab so entries are kept. The "延伸閱讀" list stays at the bottom.
 - Visual: numbered group heads (Cormorant numerals in moat green), brand-coloured tick boxes, unticked rows recede (dashed field, struck-through amount), amounts show thousands separators while typing (caret kept; full-width digits accepted), dark result card with a "monthly rent + fee" line; the purchase estimator shares the dark card.
 - Desktop result card is pinned by its bottom edge, so the total and consult button stay visible on 720–900px-tall screens.
+
+## 2026-09-30 — Rental estimator, round 4 (guarantor base)
+- Danny: the guarantee company fee is based on the monthly total (rent + common-area fee + other monthly charges such as 24-hour support), not rent + fee only.
+- Section 01 "每月費用" now has three required fields (rent, common-area fee, other monthly charges, default ¥1,100) and shows the monthly total. The one-off "24-hour support" item became "預付其他每月費用" (2 months × other monthly charges).
+- Guarantor = months × monthly total. Default example total is now ¥668,300.
+- Open for Danny: whether to add 費用估算 to the header menu (recommendation in chat: keep the header at 4 items; link the estimator from the homepage, rent/buy pages, renting guides and the mobile menu).

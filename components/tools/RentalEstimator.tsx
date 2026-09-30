@@ -14,6 +14,7 @@ import {
   rentalExample,
   rentalItemAmount,
   rentalItems,
+  rentalMonthlyTotal,
   validYen,
   type RentalBaseKey,
   type RentalInputs,
@@ -32,12 +33,20 @@ export type RentalGuideLink = { href: string; title: string };
 export type RentalGuideLinks = { explainer?: RentalGuideLink; items: Partial<Record<RentalItemKey, RentalGuideLink>> };
 
 const num = (raw: string) => (raw.replace(/,/g, "").trim() === "" ? Number.NaN : Number(raw.replace(/,/g, "")));
-const baseKeys: RentalBaseKey[] = ["rent", "commonFee"];
+const baseKeys: RentalBaseKey[] = ["rent", "commonFee", "otherMonthly"];
 const groups: RentalItemGroup[] = ["standard", "optional"];
+/** Which base fields each month-based item is calculated from (for the output's `for` attribute). */
+const baseInputs: Record<NonNullable<RentalItemSpec["base"]>, string> = {
+  rent: "cost-rent",
+  fee: "cost-commonFee",
+  other: "cost-otherMonthly",
+  monthlyTotal: "cost-rent cost-commonFee cost-otherMonthly",
+};
 
 const toInputs = ({ base, values, included }: State): RentalInputs => ({
   rent: num(base.rent),
   commonFee: num(base.commonFee),
+  otherMonthly: num(base.otherMonthly),
   values: Object.fromEntries(rentalItems.map(({ key }) => [key, num(values[key])])) as Record<RentalItemKey, number>,
   included,
 });
@@ -114,7 +123,7 @@ function GuideLink({ link, label, newTab }: { link: RentalGuideLink; label: stri
 export function RentalEstimator({ locale, guides = { items: {} } }: { locale: Locale; guides?: RentalGuideLinks }) {
   const t = toolsCopy[locale].tools["rental-initial-cost"];
   const [state, setState] = useState<State>(() => ({
-    base: { rent: String(rentalExample.rent), commonFee: String(rentalExample.commonFee) },
+    base: { rent: String(rentalExample.rent), commonFee: String(rentalExample.commonFee), otherMonthly: String(rentalExample.otherMonthly) },
     values: Object.fromEntries(rentalItems.map(({ key }) => [key, String(rentalExample.values[key])])) as Values,
     included: { ...rentalExample.included },
   }));
@@ -123,7 +132,7 @@ export function RentalEstimator({ locale, guides = { items: {} } }: { locale: Lo
   const completed = useRef(false);
   const inputs = toInputs(state);
   const result = calculateRentalInitialCost(inputs);
-  const monthly = validYen(inputs.rent) && validYen(inputs.commonFee) ? inputs.rent + inputs.commonFee : null;
+  const monthly = baseKeys.every((key) => validYen(inputs[key])) ? rentalMonthlyTotal(inputs) : null;
   const newTab = t.newTab ?? "";
 
   const update = (next: State) => {
@@ -170,7 +179,7 @@ export function RentalEstimator({ locale, guides = { items: {} } }: { locale: Lo
             onChange={(next) => update({ ...state, values: { ...values, [key]: next } })}
           />
           {unit === "months" ? (
-            <output className="fi-cost-item__amount" htmlFor={`cost-${key} ${spec.base === "fee" ? "cost-commonFee" : spec.base === "rentAndFee" ? "cost-rent cost-commonFee" : "cost-rent"}`}>
+            <output className="fi-cost-item__amount" htmlFor={`cost-${key} ${baseInputs[spec.base ?? "rent"]}`}>
               {amount === null ? "—" : `= ${formatYen(amount, locale)}`}
             </output>
           ) : null}
@@ -215,6 +224,10 @@ export function RentalEstimator({ locale, guides = { items: {} } }: { locale: Lo
                   </div>
                 );
               })}
+              <p className="fi-cost-base__total">
+                <span>{t.monthly}</span>
+                <output htmlFor="cost-rent cost-commonFee cost-otherMonthly">{monthly === null ? "—" : formatYen(monthly, locale)}</output>
+              </p>
             </div>
           </section>
 
