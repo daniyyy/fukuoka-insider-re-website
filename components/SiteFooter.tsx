@@ -24,7 +24,7 @@ const copy = {
     terms: "使用條款",
     consultation: "免費諮詢",
     copyright: "網站內容版權所有。",
-    licence: "宅地建物取引業",
+    licence: "宅地建物取引業免許",
     telephone: "電話",
   },
   ja: {

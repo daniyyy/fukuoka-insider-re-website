@@ -10,6 +10,7 @@ import { ServiceStage } from "@/components/site/ServiceStage";
 import { serviceImages } from "@/data/service-pages";
 import { HakataPanel } from "@/components/site/HakataPanel";
 import { ConsultBand } from "@/components/site/ConsultBand";
+import { Phrases } from "@/components/site/Phrases";
 import { EstimatorTeaser } from "@/components/tools/EstimatorTeaser";
 import { toolsCopy } from "@/data/tools";
 import { ArrowIcon as Arrow, ExternalIcon as External } from "@/components/site/Icons";
@@ -30,7 +31,6 @@ type TrustCopy = {
   location: string;
   companyLabel: string;
   companyProof: string;
-  association: string;
   professionalLabel: string;
   professionalProof: string;
   languagesLabel: string;
@@ -81,9 +81,8 @@ const copy: Record<Locale, HomepageCopy> = {
       heading: "我們就在福岡。",
       body: "Fukuoka Insider 在福岡設有辦公室，提供房地產服務及相關支援。",
       location: "福岡市中央區大手門",
-      companyLabel: "公司宅建業免許",
+      companyLabel: "宅地建物取引業免許",
       companyProof: "持有日本宅地建物取引業免許",
-      association: "公益社団法人 福岡県宅地建物取引業協会 会員",
       professionalLabel: "專業支援",
       professionalProof: "由宅地建物取引士提供專業協助",
       languagesLabel: "溝通語言",
@@ -105,7 +104,7 @@ const copy: Record<Locale, HomepageCopy> = {
     aboutCta: "了解公司與團隊",
     consult: "有福岡房地產需求？",
     consultBody: "想租屋、買賣房產、委託管理，或詢問入住相關支援，都可以先聯絡我們。資料尚未備齊也可以查詢。",
-    heroProof: ["福岡設有辦公室", "持有日本宅建業免許", "廣東話・普通話・日語・英語"],
+    heroProof: ["福岡設有辦公室", "持有宅地建物取引業免許", "廣東話・普通話・日語・英語"],
     servicesLink: "查看服務內容",
   },
   ja: {
@@ -125,7 +124,6 @@ const copy: Record<Locale, HomepageCopy> = {
       location: "福岡市中央区大手門",
       companyLabel: "宅地建物取引業免許",
       companyProof: "日本の宅地建物取引業免許を取得",
-      association: "公益社団法人 福岡県宅地建物取引業協会 会員",
       professionalLabel: "専門サポート",
       professionalProof: "宅地建物取引士が専門的にサポート",
       languagesLabel: "対応言語",
@@ -167,7 +165,6 @@ const copy: Record<Locale, HomepageCopy> = {
       location: "Ōtemon, Chuo-ku, Fukuoka",
       companyLabel: "Company licence",
       companyProof: "Licensed as a real-estate business in Japan",
-      association: "Member of the Fukuoka Real Estate Transaction Association",
       professionalLabel: "Professional support",
       professionalProof: "Support from a Licensed Real Estate Transaction Specialist",
       languagesLabel: "Languages",
@@ -306,7 +303,7 @@ export default async function LocaleHome({
                   <dd>
                     <span className="fi-facts__value">{t.trust.companyProof}</span>
                     <span className="fi-meta" lang="ja">{siteConfig.contact.licence}</span>
-                    <span className="fi-meta">{t.trust.association}</span>
+                    <span className="fi-meta">{siteConfig.company_profile.association[locale]}</span>
                   </dd>
                 </div>
                 <div className="fi-facts__row">
@@ -353,7 +350,7 @@ export default async function LocaleHome({
         <section className="fi-home-about" id="about" aria-labelledby="about-title">
           <div className="fi-shell fi-home-about__grid">
             <div className="fi-home-about__copy">
-              <h2 className="fi-h2" id="about-title"><Phrases text={t.about} /></h2>
+              <h2 className="fi-h2" id="about-title"><Phrases text={t.about} marks="、，," /></h2>
               <p className="fi-body">{t.aboutBody}</p>
               <Link className="fi-text-link" href={`/${locale}/about`}>{t.aboutCta}<Arrow /></Link>
             </div>
@@ -394,16 +391,6 @@ export default async function LocaleHome({
 }
 
 /** Keeps each phrase of a CJK heading together so lines break at 、 instead of mid-word. */
-function Phrases({ text }: { text: string }) {
-  const parts = text.split(/(?<=[、，,])\s*/);
-  return (
-    <>
-      {parts.map((part, index) => (
-        <span className="fi-phrase" key={index}>{part}</span>
-      ))}
-    </>
-  );
-}
 
 
 

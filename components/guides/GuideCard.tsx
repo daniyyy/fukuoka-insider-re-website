@@ -6,6 +6,7 @@ import { asset } from "@/config/site";
 import { guideCategoryCopy } from "@/data/guide-content";
 import { guidePath } from "@/lib/content/paths";
 import type { GuideLocale, GuideSummary } from "@/lib/content/types";
+import { Phrases } from "@/components/site/Phrases";
 
 /** Photo card for featured guides: photograph, category, full title, summary. */
 export function GuideCard({ guide, lead = false, headingLevel = 3, priority = false }: { guide: GuideSummary; lead?: boolean; headingLevel?: 2 | 3; priority?: boolean }) {
@@ -27,7 +28,7 @@ export function GuideCard({ guide, lead = false, headingLevel = 3, priority = fa
           </span>
         ) : null}
         <span className="fi-guide-card__category">{guideCategoryCopy[locale][guide.category].label}</span>
-        <Heading className="fi-guide-card__title">{guide.title}</Heading>
+        <Heading className="fi-guide-card__title"><Phrases text={guide.title} /></Heading>
         <p className="fi-guide-card__summary">{guide.excerpt}</p>
       </Link>
     </article>
@@ -54,7 +55,7 @@ export function GuideRow({ guide, headingLevel = 3 }: { guide: GuideSummary; hea
       <Link className="fi-guide-row__link" href={guidePath(locale, guide.category, guide.slug)}>
         <span className="fi-guide-row__category">{guideCategoryCopy[locale][guide.category].label}</span>
         <span className="fi-guide-row__text">
-          <Heading className="fi-guide-row__title">{guide.title}</Heading>
+          <Heading className="fi-guide-row__title"><Phrases text={guide.title} /></Heading>
           <span className="fi-guide-row__summary">{guide.excerpt}</span>
         </span>
         <span className="fi-guide-row__arrow" aria-hidden="true"><ArrowIcon /></span>

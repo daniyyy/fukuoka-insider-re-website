@@ -111,7 +111,7 @@ const entries: FaqEntry[] = [
       en: "Can I rent without a guarantor in Japan?",
     },
     a: {
-      "zh-TW": "可以。現在大部分物件要求使用「租賃保證公司」，而不是個人保證人。保證公司會另外審查，並收取保證費：首次多為月租（通常連管理費計）的五成至一個月左右，之後一般每年另付續約費，亦有按月收費的方案。\n部分物件亦要求提供緊急聯絡人，有時需要是住在日本的人。",
+      "zh-TW": "可以。現在大部分物件要求使用「租賃保證公司」，而不是個人保證人。保證公司會另外審查，並收取保證費：首次多為月租（通常連共益費計）的五成至一個月左右，之後一般每年另付續約費，亦有按月收費的方案。\n部分物件亦要求提供緊急聯絡人，有時需要是住在日本的人。",
       en: "Yes. Most properties now require a rent guarantee company rather than a personal guarantor. The guarantee company runs its own screening and charges a fee, typically 50–100% of one month's rent (usually including the management fee) at the start, followed by a yearly renewal fee, though some companies charge monthly instead.\nSome properties also ask for an emergency contact, sometimes someone living in Japan.",
     },
     tags: { "zh-TW": ["保證人", "保證公司", "緊急聯絡人", "租屋"], en: ["guarantor", "guarantee company", "emergency contact"] },
@@ -123,7 +123,7 @@ const entries: FaqEntry[] = [
       en: "How much are the move-in costs for a rental?",
     },
     a: {
-      "zh-TW": "一般約為月租的 4 至 6 個月，包括敷金、禮金、仲介手續費、首月租金、保證公司費用、火災保險及換鎖費等，實際金額按物件而定。\n可以先用「租屋初期費用估算」，整理手上已知的數字。",
+      "zh-TW": "一般約為月租的 4 至 6 個月，包括敷金、禮金、仲介手續費、預付房租（一般約 2 個月）、保證公司費用、火災保險及換鎖費等，實際金額按物件而定。\n可以先用「租屋初期費用估算」，整理手上已知的數字。",
       en: "As a rough guide, four to six months' rent, covering the deposit (shikikin), key money (reikin), brokerage fee, first month's rent, guarantee company fee, fire insurance and key replacement. The actual amount depends on the property.\nYou can use the rental move-in cost estimator to organise the figures you already have.",
     },
     tags: { "zh-TW": ["初期費用", "敷金", "禮金", "費用"], en: ["move-in costs", "deposit", "key money"] },
@@ -185,7 +185,7 @@ const entries: FaqEntry[] = [
       en: "Can foreigners buy property in Japan?",
     },
     a: {
-      "zh-TW": "可以。日本一般不限制外國人購買房地產，也可以用外國人名義登記。不過，貸款、稅務，以及部分地區或較大面積土地的申報要求，會因買家身分和物業用途而不同。非居住者購買後，除自住等例外情況外，須在取得後 20 日內經日本銀行向財務大臣提交外匯法報告；度假屋或第二居所不屬於自住。\n我們會在交易前說明需要處理的事項。",
+      "zh-TW": "可以。日本一般不限制外國人購買房地產，也可以用外國人名義登記。不過，貸款、稅務，以及部分地區或較大面積土地的申報要求，會因買家身分和物業用途而不同。非居住者購買後，除自住等例外情況外，須在取得後 20 日內經日本銀行向財務大臣提交外匯法報告；度假別墅或第二居所不屬於自住。\n我們會在交易前說明需要處理的事項。",
       en: "Yes. Japan generally does not restrict foreigners from buying real estate, and the property can be registered in your own name. Loans, tax, and the notification rules that apply in certain areas or to larger land plots vary with the buyer's situation and intended use. A non-resident buyer must also report the purchase to the Minister of Finance, via the Bank of Japan, within 20 days under the Foreign Exchange Act, unless an exemption applies, such as a home you will live in yourself (holiday homes and second homes do not count).\nWe explain what applies to you before the transaction.",
     },
     tags: { "zh-TW": ["買房", "外國人", "登記", "外匯法"], en: ["buying", "foreigners", "registration"] },
@@ -321,7 +321,7 @@ const entries: FaqEntry[] = [
       en: "What does living support include?",
     },
     a: {
-      "zh-TW": "與租屋、買房或物業交付直接相關的說明、聯絡和入住時間協調，由我們直接處理。搬運、生活手續等其他服務，可以按需要介紹外部合作夥伴，費用與條件由對方直接與您確認。",
+      "zh-TW": "與租屋、買房或物業交付直接相關的說明、聯絡和入住時間協調，由我們直接處理。搬家、生活手續等其他服務，可以按需要介紹外部合作夥伴，費用與條件由對方直接與您確認。",
       en: "We handle explanations, communication and move-in scheduling directly tied to your rental, purchase or handover. For other services such as moving or everyday paperwork, we can introduce external partners, who confirm their own fees and terms with you.",
     },
     tags: { "zh-TW": ["生活支援", "入住", "合作夥伴"], en: ["living support", "moving in", "partners"] },
@@ -405,11 +405,11 @@ const entries: FaqEntry[] = [
   {
     key: "licence", category: "company-contact",
     q: {
-      "zh-TW": "Fukuoka Insider 持有日本房地產業免許嗎？",
+      "zh-TW": "Fukuoka Insider 持有宅地建物取引業免許嗎？",
       en: "Is Fukuoka Insider a licensed real-estate company?",
     },
     a: {
-      "zh-TW": "有。株式会社Fukuoka Insider 持有宅地建物取引業免許（{licence}），亦是{associationName}會員，並由宅地建物取引士（日本房地產交易的國家資格）提供專業支援。",
+      "zh-TW": "有。株式会社Fukuoka Insider 持有宅地建物取引業免許（{licence}），亦是{associationName} 會員，並由宅地建物取引士（日本房地產交易的國家資格）提供專業支援。",
       en: "Yes. Fukuoka Insider Co., Ltd. holds a real-estate brokerage licence ({licence}) and is a member of the {associationName}. Support is provided by a Licensed Real Estate Transaction Specialist (takken-shi).",
     },
     tags: { "zh-TW": ["免許", "宅建士", "公司"], en: ["licence", "company", "takken-shi"] },

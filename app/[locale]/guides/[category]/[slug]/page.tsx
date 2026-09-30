@@ -19,6 +19,7 @@ import { getAllPublishedGuideRecords, getGuideBySlug, getGuideTranslation, getRe
 import { absoluteSiteUrl, formatEditorialDate, guideCategoryPath, guidePath } from "@/lib/content/paths";
 import { isGuideCategory, isGuideLocale, type Guide, type GuideLocale } from "@/lib/content/types";
 import { ogImageUrl } from "@/lib/seo/fixed-page";
+import { Phrases } from "@/components/site/Phrases";
 
 type PageProps = { params: Promise<{ locale: string; category: string; slug: string }> };
 
@@ -95,7 +96,7 @@ export default async function GuideArticlePage({ params }: PageProps) {
                   <li><Link href={guideCategoryPath(locale, guide.category)}>{categoryLabel}</Link></li>
                 </ol>
               </nav>
-              <h1 className="fi-article-hero__title"><span className="fi-line"><span>{guide.title}</span></span></h1>
+              <h1 className="fi-article-hero__title"><span className="fi-line"><span><Phrases text={guide.title} /></span></span></h1>
               <p className="fi-article-hero__excerpt">{guide.excerpt}</p>
               <p className="fi-article-meta">
                 {guide.publishedAt ? <span>{t.published} {formatEditorialDate(guide.publishedAt, locale)}</span> : <span className="fi-draft-flag">{t.draftPreview}</span>}

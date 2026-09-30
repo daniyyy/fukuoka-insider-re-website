@@ -118,7 +118,6 @@
 .fi-home-estimate__head { display: grid; gap: 1.25rem; padding-top: var(--fi-space-5); margin-bottom: var(--fi-space-4); border-top: 1px solid var(--fi-ink); }
 .fi-home-estimate__head .fi-h2 { margin: 0; }
 .fi-home-estimate__head .fi-body { max-width: 36rem; }
-.fi-phrase { display: inline-block; }
 @media (min-width: 68.75rem) {
   .fi-home-estimate__head { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 5.5rem; align-items: end; margin-bottom: var(--fi-space-5); }
 }

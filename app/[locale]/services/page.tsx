@@ -15,7 +15,7 @@ import { fixedPageMetadata } from "@/lib/seo/fixed-page";
 type PageProps = { params: Promise<{ locale: string }> };
 
 const pageCopy: Record<Locale, { metaTitle: string; ctaTitle: string; ctaBody: string }> = {
-  "zh-TW": { metaTitle: "福岡房地產服務", ctaTitle: "不確定需要哪一項服務？", ctaBody: "直接告訴我們您的情況，我們會為您整理下一步。資料未齊，也可以先查詢。" },
+  "zh-TW": { metaTitle: "福岡房地產服務", ctaTitle: "不確定需要哪一項服務？", ctaBody: "直接告訴我們您的情況，我們會為您整理下一步。資料尚未備齊，也可以先查詢。" },
   ja: { metaTitle: "福岡の不動産サービス", ctaTitle: "どのサービスが合うか迷ったら", ctaBody: "ご状況をそのままお聞かせください。次に何をすればよいかを一緒に整理します。" },
   en: { metaTitle: "Fukuoka Real Estate Services", ctaTitle: "Not sure which service fits?", ctaBody: "Tell us about your situation and we will help you work out the next step. You can enquire before everything is decided." },
 };

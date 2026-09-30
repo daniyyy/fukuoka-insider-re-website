@@ -15,7 +15,7 @@ Reply to Danny in Traditional Chinese, concise, with few technical terms. Use En
 - Do not invent facts: no made-up transactions, reviews, figures, rankings.
 - Guides stay unpublished until Danny explicitly says「發布」/ "Publish". Then add `published: "YYYY-MM-DD"` to that article in `data/guide-articles.ts`.
 - Do not edit article wording unless Danny asks for a specific change. Article sources are `content/guides/zh-TW/*.md`; after changing a source run `pnpm import:guides`.
-- Every stable-page copy change updates zh-TW, ja and en together, with the same structure. Exceptions: Guides are zh-TW only; FAQ is zh-TW and en only (`siteConfig.guideLocales`, `siteConfig.faqLocales`).
+- Copy changes: until the final version, change zh-TW only; ja and en are translated in one pass at the end, keeping the same structure (Danny, 2026-10-01). Guides are zh-TW only; FAQ is zh-TW and en only (`siteConfig.guideLocales`, `siteConfig.faqLocales`).
 - Do not publish brokerage fee amounts or legal fee caps on the site unless Danny asks.
 - Prototype only: keep noindex; do not deploy, change DNS, or touch the WordPress site www.fukuokainsider.com.
 - Ask Danny before changing page architecture, language policy, or anything in `03_DECISIONS.md`.

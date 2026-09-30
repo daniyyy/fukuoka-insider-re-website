@@ -39,7 +39,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
       "Fukuoka Insider 的辦公室位於福岡市中央區，處理租屋、房產買賣及物業管理。",
       "如果您不熟悉日本的租屋或買賣程序，我們會先說明可以協助的事項、需要先提供的資料，以及哪些部分需要另向專業人士確認。",
     ],
-    peopleTitle: "負責的人",
+    peopleTitle: "我們的團隊",
     rickyRole: "代表取締役",
     rickyBody: "來自香港，曾在多個國家生活和工作，最後選擇定居福岡。初到日本時，他親身經歷過簽證、找房和創業手續的種種難處，因此希望來到福岡的人都能得到可靠、實在的支援。現負責 Fukuoka Insider 的公司營運與品牌發展。",
     dannyRole: "宅地建物取引士",
@@ -52,7 +52,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
     },
     mapCta: "在 Google 地圖開啟",
     ctaTitle: "可以廣東話、普通話、日語或英語聯絡",
-    ctaBody: "用您習慣的語言告訴我們需要。資料未齊，也可以先查詢。",
+    ctaBody: "用您習慣的語言告訴我們需要。資料尚未備齊，也可以先查詢。",
   },
   ja: {
     title: "福岡を拠点とする\n不動産会社",
@@ -129,7 +129,7 @@ type ContactCopy = {
 export const contactCopy: Record<Locale, ContactCopy> = {
   "zh-TW": {
     title: "聯絡我們",
-    intro: "可以廣東話、普通話、日語或英語與我們聯絡。資料未齊，也可以先查詢。",
+    intro: "可以廣東話、普通話、日語或英語與我們聯絡。資料尚未備齊，也可以先查詢。",
     routesTitle: "選擇聯絡方式",
     form: { title: "房地產諮詢表", body: "適合說明物業與需求詳情。我們確認可以協助的範圍後，會再聯絡您；首次查詢不必備齊文件。", cta: "填寫諮詢表", note: "會在新視窗開啟諮詢表。", recommended: "建議" },
     line: { title: "LINE・WhatsApp", body: "適合簡單查詢，或傳送照片與資料。", cta: "在 LINE 查詢", whatsapp: "在 WhatsApp 查詢" },

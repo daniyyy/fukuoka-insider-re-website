@@ -158,7 +158,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
         "可租物件、申請條件及所需文件，會因物件而不同。",
       ],
       ctaTitle: "正在福岡找房？",
-      ctaBody: "告訴我們希望的地區、預算和入住時間。資料未齊，也可以先查詢。",
+      ctaBody: "告訴我們希望的地區、預算和入住時間。資料尚未備齊，也可以先查詢。",
     },
     ja: {
       title: "賃貸",
@@ -268,7 +268,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       ],
       processTitle: "一般流程",
       process: [
-        { title: "初步確認", body: "說明買房或賣房的需要、預算或物業資料及時間。" },
+        { title: "初步確認", body: "說明是買房還是賣房，以及預算（買房）或物業資料（賣房）和預計時間。" },
         { title: "整理資料", body: "確認物業資訊、現況及需要補充的文件。" },
         { title: "協調條件", body: "進行物業查詢、看房或出售安排，並處理相關溝通。" },
         { title: "簽約與交付", body: "條件確認後，按契約完成結算、登記及交付。" },
@@ -386,9 +386,9 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       highlights: ["出租物業管理", "第二居所管理"],
       audienceTitle: "這項服務適合",
       audiences: [
-        { title: "出租物業屋主", body: "需要有人處理招租、入住、收租、租客聯絡及物業問題。" },
+        { title: "出租物業業主", body: "需要有人處理招租、入住、收租、租客聯絡及物業問題。" },
         { title: "度假別墅業主", body: "不常在福岡，需要定期查看物業狀況。" },
-        { title: "海外屋主", body: "需要一個在日本、可以聯絡及處理日常事項的窗口。" },
+        { title: "海外業主", body: "需要一個在日本、可以聯絡及處理日常事項的窗口。" },
       ],
       helpTitle: "兩類管理服務",
       helpIntro: "出租物業與不常居住的物業，需要的工作不同，會分開確認。",
@@ -400,7 +400,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       processTitle: "管理如何進行",
       process: [
         { title: "確認物業與委託範圍", body: "了解物業狀況，以及您希望委託的工作。" },
-        { title: "建立聯絡與紀錄", body: "整理屋主、租客、管理組合及維修方的聯絡方式。" },
+        { title: "建立聯絡與紀錄", body: "整理業主、租客、管理組合（大廈業主管理組織）及維修方的聯絡方式。" },
         { title: "日常處理", body: "按委託範圍處理收款、聯絡及物業問題。" },
         { title: "定期回報", body: "按約定回報管理情況，以及需要您決定的事項。" },
       ],
@@ -516,13 +516,13 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       audiences: [
         { title: "從海外搬到福岡", body: "不熟悉日本的入住程序與日常安排。" },
         { title: "剛完成租屋或買房", body: "需要整理入住前後的實際事項。" },
-        { title: "需要其他生活服務", body: "希望取得搬運、生活手續等服務的合作夥伴資料。" },
+        { title: "需要其他生活服務", body: "希望取得搬家、生活手續等服務的合作夥伴資料。" },
       ],
       helpTitle: "我們處理的事，與合作夥伴的服務",
       helpIntro: "與物業及入住直接相關的事由我們處理；其他服務由合作夥伴提供，並由對方直接與您確認條件。",
       panels: [
         { title: "由我們直接處理", points: ["與租屋、買房或物業交付直接相關的說明與聯絡", "交付與入住時間的協調", "按已確認的情況，整理入住前後的事項", "廣東話、普通話、日語、英語溝通"] },
-        { title: "介紹合作夥伴", body: "需要其他服務時，按情況介紹可聯絡的外部合作夥伴。", points: ["搬運、生活手續等外部服務", "費用、條件及責任，由提供服務的一方確認"] },
+        { title: "介紹合作夥伴", body: "需要其他服務時，按情況介紹可聯絡的外部合作夥伴。", points: ["搬家、生活手續等外部服務", "費用、條件及責任，由提供服務的一方確認"] },
       ],
       processTitle: "支援如何安排",
       process: [

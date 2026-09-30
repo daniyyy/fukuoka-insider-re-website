@@ -327,7 +327,7 @@
 .fi-article-hero__grid { display: grid; gap: 2rem; }
 .fi-article-hero__inner { display: grid; gap: 1.25rem; align-content: start; }
 .fi-article-hero__inner > * { max-width: 50rem; }
-.fi-article-hero__title { margin: 0; font-family: var(--fi-font-serif); font-weight: 600; font-size: clamp(2rem, 1.4rem + 2.4vw, 3.25rem); line-height: 1.35; letter-spacing: 0.02em; }
+.fi-article-hero__title { margin: 0; font-family: var(--fi-font-serif); font-weight: 600; font-size: clamp(1.75rem, 1.3rem + 2.4vw, 3.25rem); line-height: 1.4; letter-spacing: 0.01em; }
 :lang(en) .fi-article-hero__title { letter-spacing: -0.005em; line-height: 1.2; }
 .fi-article-hero__excerpt { margin: 0; font-size: var(--fi-size-lead); line-height: 1.95; color: var(--fi-text); }
 @media (min-width: 68.75rem) {
