@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { ConsultBand } from "@/components/site/ConsultBand";
 import { ArrowIcon } from "@/components/site/Icons";
 import { PageHero } from "@/components/site/PageHero";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -43,6 +44,7 @@ export default async function ToolsPage({ params }: Props) {
             <p className="fi-tools-note fi-meta">{t.indexNote}</p>
           </div>
         </section>
+        <ConsultBand locale={locale} title={t.consultTitle} body={t.consultBody} source="calculator" />
       </main>
       <SiteFooter locale={locale} />
     </div>

@@ -3,12 +3,12 @@ import { ArrowIcon } from "@/components/site/Icons";
 import { siteConfig, type Locale } from "@/config/site";
 
 const labels: Record<Locale, { cta: string; line: string; whatsapp: string; call: string }> = {
-  "zh-TW": { cta: "免費諮詢", line: "LINE 查詢", whatsapp: "WhatsApp 查詢", call: "致電查詢" },
+  "zh-TW": { cta: "免費諮詢", line: "LINE 聯絡", whatsapp: "WhatsApp 聯絡", call: "致電" },
   ja: { cta: "無料相談", line: "LINEで相談", whatsapp: "WhatsAppで相談", call: "電話で相談" },
   en: { cta: "Free Consultation", line: "Chat on LINE", whatsapp: "Chat on WhatsApp", call: "Call us" },
 };
 
-type Source = "homepage-final" | "service-page" | "about-page" | "help-page";
+type Source = "homepage-final" | "service-page" | "about-page" | "help-page" | "calculator";
 
 /** The closing conversion band shared by every page: one primary action; LINE, WhatsApp and phone as secondary routes. */
 export function ConsultBand({ locale, title, body, source, id = "consultation" }: { locale: Locale; title: string; body: string; source: Source; id?: string }) {

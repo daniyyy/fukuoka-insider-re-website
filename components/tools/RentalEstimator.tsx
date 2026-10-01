@@ -5,7 +5,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import { AnalyticsLink } from "@/components/analytics/AnalyticsLink";
 import { ArrowIcon } from "@/components/site/Icons";
-import type { Locale } from "@/config/site";
+import { siteConfig, type Locale } from "@/config/site";
 import { toolsCopy } from "@/data/tools";
 import { trackEvent } from "@/lib/analytics/events";
 import {
@@ -143,6 +143,27 @@ export function RentalEstimator({ locale, guides = { items: {} } }: { locale: Lo
   const result = calculateRentalInitialCost(inputs);
   const monthly = baseKeys.every((key) => validYen(inputs[key])) ? rentalMonthlyTotal(inputs) : null;
   const newTab = t.newTab ?? "";
+
+  // Plain-text breakdown sent through LINE / WhatsApp or copied (LINE's prefilled-message link does not work in LINE for PC).
+  const [copied, setCopied] = useState(false);
+  const message = result && t.send
+    ? [
+        t.send.greeting,
+        baseKeys.map((key) => `${t.fields[key].label} ${formatYen(inputs[key], locale)}`).join(" / "),
+        ...result.lines.map((line) => `・${t.fields[line.key].label} ${formatYen(line.amount, locale)}`),
+        `${t.total} ${formatYen(result.total, locale)}（${t.reference}）`,
+        t.send.closing,
+      ].join("\n")
+    : "";
+  const copyMessage = async () => {
+    try {
+      await navigator.clipboard.writeText(message);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  };
 
   const update = (next: State) => {
     setState(next);
@@ -291,6 +312,16 @@ export function RentalEstimator({ locale, guides = { items: {} } }: { locale: Lo
             <AnalyticsLink className="fi-button fi-button--light" href={`/${locale}/contact`} event={{ name: "consultation_cta_click", locale, source: "calculator" }}>{locale === "zh-TW" ? "免費諮詢" : locale === "ja" ? "無料相談" : "Free Consultation"}<ArrowIcon /></AnalyticsLink>
             <Link className="fi-text-link" href={`/${locale}/services/rent`}>{t.related}<ArrowIcon /></Link>
           </div>
+          {result && t.send ? (
+            <div className="fi-estimator__send">
+              <p>{t.send.title}</p>
+              <div className="fi-estimator__send-buttons">
+                <AnalyticsLink className="fi-button fi-button--ghost-light" href={`https://line.me/R/oaMessage/${encodeURIComponent(siteConfig.contact.lineId)}/?${encodeURIComponent(message)}`} target="_blank" rel="noreferrer" event={{ name: "contact_channel_click", locale, source: "calculator", channel: "line" }}>{t.send.line}</AnalyticsLink>
+                <AnalyticsLink className="fi-button fi-button--ghost-light" href={`${siteConfig.contact.whatsapp}?text=${encodeURIComponent(message)}`} target="_blank" rel="noreferrer" event={{ name: "contact_channel_click", locale, source: "calculator", channel: "whatsapp" }}>{t.send.whatsapp}</AnalyticsLink>
+              </div>
+              <button type="button" className="fi-estimator__copy" onClick={copyMessage}>{copied ? t.send.copied : t.send.copy}</button>
+            </div>
+          ) : null}
         </section>
       </div>
     </section>

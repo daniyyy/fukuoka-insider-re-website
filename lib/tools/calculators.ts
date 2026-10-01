@@ -39,12 +39,12 @@ export type RentalInputs = {
   included: Record<RentalItemKey, boolean>;
 };
 
-/** Example figures shown when the page opens (Danny's defaults, 2026-09-30). */
+/** Example figures shown when the page opens (Danny's defaults, 2026-09-30; guarantor 0.5 month from 2026-10-01). */
 export const rentalExample: RentalInputs = {
   rent: 100_000,
   commonFee: 5_000,
   otherMonthly: 1_100,
-  values: { prepaidRent: 2, prepaidFee: 2, prepaidOther: 2, keyMoney: 1, deposit: 1, brokerage: 1.1, guarantor: 1, insurance: 20_000, keyExchange: 20_000, cleaning: 0, aircon: 0, disinfection: 0, other: 0 },
+  values: { prepaidRent: 2, prepaidFee: 2, prepaidOther: 2, keyMoney: 1, deposit: 1, brokerage: 1.1, guarantor: 0.5, insurance: 20_000, keyExchange: 20_000, cleaning: 0, aircon: 0, disinfection: 0, other: 0 },
   included: { prepaidRent: true, prepaidFee: true, prepaidOther: true, keyMoney: true, deposit: true, brokerage: true, guarantor: true, insurance: true, keyExchange: true, cleaning: false, aircon: false, disinfection: false, other: false },
 };
 

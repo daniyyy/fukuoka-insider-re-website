@@ -10,6 +10,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { asset, isLocale, siteConfig } from "@/config/site";
 import { aboutCopy } from "@/data/static-pages";
 import { fixedPageMetadata } from "@/lib/seo/fixed-page";
+import { jsonLd, organizationStructuredData } from "@/lib/seo/organization";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -132,6 +133,7 @@ export default async function AboutPage({ params }: PageProps) {
         <ConsultBand locale={locale} title={t.ctaTitle} body={t.ctaBody} source="about-page" />
       </main>
       <SiteFooter locale={locale} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(organizationStructuredData(locale)) }} />
     </div>
   );
 }

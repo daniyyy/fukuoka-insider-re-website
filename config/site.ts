@@ -12,6 +12,8 @@ export const siteConfig = {
     licence: "福岡県知事（1）第021270号",
     email: "danny@fukuokainsider.jp",
     line: "https://lin.ee/vyx5daI",
+    /** LINE Official Account basic ID (from the lin.ee link); used to open a chat with a prefilled message. */
+    lineId: "@089vsqyn",
     whatsapp: "https://wa.me/818020422394",
     whatsappNumber: "+81 80-2042-2394",
     instagram: "https://www.instagram.com/fukuoka_insider/",
@@ -20,6 +22,9 @@ export const siteConfig = {
     instagramHandle: "@fukuoka_insider",
     // Google Maps link to the office (Danny, 2026-09-30).
     map: "https://maps.app.goo.gl/PfbChaCKEf8jidcW7",
+    /** Structured form of the address and hours, for search engines (lib/seo/organization.ts). */
+    postalAddress: { postalCode: "810-0074", region: "福岡県", locality: "福岡市中央区", street: "大手門1-5-2 九州外語ビル1階1号", country: "JP" },
+    openingHours: { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "10:00", closes: "18:00" },
   },
   company_profile: {
     established: { "zh-TW": "2024年2月", ja: "2024年2月", en: "February 2024" },
@@ -28,6 +33,8 @@ export const siteConfig = {
     associationName: { "zh-TW": "公益社団法人 福岡県宅地建物取引業協会", ja: "公益社団法人 福岡県宅地建物取引業協会", en: "Fukuoka Real Estate Transaction Association" },
     access: { "zh-TW": "福岡市地下鐵空港線「大濠公園」站，步行約 5 分鐘", ja: "福岡市地下鉄空港線「大濠公園」駅から徒歩約5分", en: "About 5 minutes' walk from Ohorikoen Station (Fukuoka City Subway Airport Line)" },
     hours: { "zh-TW": "星期一至五 10:00–18:00（日本時間）", ja: "平日 10:00〜18:00", en: "Weekdays 10:00–18:00 (Japan time)" },
+    /** Office visits need an appointment (Danny, 2026-09-30). */
+    visits: { "zh-TW": "來訪請先預約", ja: "ご来社は事前予約制です", en: "Visits by appointment only" },
     closed: { "zh-TW": "星期六、日及日本國定假日", ja: "土・日・祝日", en: "Saturdays, Sundays, and Japanese public holidays" },
     languages: { "zh-TW": "廣東話、普通話、日語、英語", ja: "広東語・中国語（普通話）・日本語・英語", en: "Cantonese, Mandarin, Japanese, and English" },
     languagesShort: { "zh-TW": "廣東話・普通話・日語・英語", ja: "広東語・中国語・日本語・英語", en: "Cantonese, Mandarin, Japanese, English" },

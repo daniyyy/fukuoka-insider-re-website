@@ -33,14 +33,14 @@ const entries: FaqEntry[] = [
   {
     key: "start-from-overseas", category: "overseas-clients", featured: true, service: "rent",
     q: {
-      "zh-TW": "人還在香港或台灣，可以先開始查詢嗎？",
+      "zh-TW": "人還在香港或台灣，可以先開始諮詢嗎？",
       en: "Can I start while I'm still overseas?",
     },
     a: {
       "zh-TW": "可以。透過 LINE、WhatsApp、Email 或諮詢表，告訴我們希望的地區、預算、時間和目前所在地即可。我們會先說明哪些步驟可以在海外進行，哪些要到福岡後才能處理。",
       en: "Yes. Send us your preferred area, budget, timing and where you are now by LINE, WhatsApp, email or the enquiry form. We will explain which steps can be done from overseas and which have to wait until you are in Fukuoka.",
     },
-    tags: { "zh-TW": ["海外", "香港", "台灣", "查詢"], en: ["overseas", "Hong Kong", "Taiwan", "enquiry"] },
+    tags: { "zh-TW": ["海外", "香港", "台灣", "諮詢"], en: ["overseas", "Hong Kong", "Taiwan", "enquiry"] },
   },
   {
     key: "remote-viewing", category: "overseas-clients", service: "rent", showOn: ["rent"],
@@ -307,7 +307,7 @@ const entries: FaqEntry[] = [
       en: "Another company manages my property now. Can I switch?",
     },
     a: {
-      "zh-TW": "可以先查詢。轉換前，需要確認現有管理契約的解約條件和通知期，以及租客、保證公司和管理組合的聯絡安排。請提供現有契約及物業資料，我們會先確認可以接手的範圍。",
+      "zh-TW": "可以先諮詢。轉換前，需要確認現有管理契約的解約條件和通知期，以及租客、保證公司和管理組合的聯絡安排。請提供現有契約及物業資料，我們會先確認可以接手的範圍。",
       en: "You can start by asking us. Before switching, we need to check the notice period and termination terms of your current management contract, and how tenants, the guarantee company and the owners' association are contacted. Send us the current contract and property details, and we will confirm what we can take over.",
     },
     tags: { "zh-TW": ["轉換", "管理公司", "管理契約"], en: ["switching", "management contract"] },
@@ -417,7 +417,7 @@ const entries: FaqEntry[] = [
   {
     key: "how-to-start", category: "company-contact",
     q: {
-      "zh-TW": "如何開始查詢？",
+      "zh-TW": "如何開始諮詢？",
       en: "How do I start an enquiry?",
     },
     a: {

@@ -7,7 +7,7 @@ export const guideCategoryCopy: Record<GuideLocale, Record<GuideCategory, { labe
     selling: { label: "賣房", description: "出售福岡物業前可先整理的資料、條件與一般安排。" },
     "property-management": { label: "物業管理", description: "出租物業及度假別墅等不常使用的住處：了解管理內容與委託範圍。" },
     "taxes-procedures": { label: "稅務與手續", description: "房地產相關費用、文件及需要向專業人士確認的事項。" },
-    "living-in-fukuoka": { label: "福岡生活", description: "從交通、地區與生活機能理解在福岡居住的實際環境。" },
+    "living-in-fukuoka": { label: "福岡生活", description: "入住後的日常生活：水電瓦斯、垃圾分類等實際安排。" },
   },
   en: {
     renting: { label: "Renting", description: "Practical preparation, application conditions, and move-in points for renting in Fukuoka." },

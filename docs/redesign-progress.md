@@ -414,3 +414,10 @@
 - New rule (Danny): copy changes zh-TW only until the final version; ja/en translated at the end. Recorded in 03_DECISIONS.md and CLAUDE.md.
 - Fixed now (zh-TW): guide titles break at punctuation (shared `components/site/Phrases.tsx`; article title slightly smaller on phones); licence wording unified to 宅地建物取引業免許 (hero, trust, footer, FAQ); homepage association line now from config (會員); FAQ prepaid rent (約 2 個月), 共益費 in guarantor answer, 度假別墅, 搬家; privacy 隱私／安全／社群媒體, 金融機構; property-management 業主 wording and 管理組合 gloss; buy/sell step 1 rewritten; About 「我們的團隊」; 資料尚未備齊 everywhere.
 - Waiting for Danny: see the review report in chat (regional wording 查詢/視乎, guarantor 0.5–1.5 vs 0.5–1 months, 換鎖費 vs 換鑰匙費, estimator example vs "4–6 months", appointment note on Contact, CTA gaps on /tools and Contact, guides intro wording) and the feature ideas.
+
+## 2026-10-01 — Review follow-up (Danny's decisions) and new features
+- Wording (zh-TW): 查詢 replaced site-wide (buttons LINE 聯絡／WhatsApp 聯絡／致電; body 諮詢／聯絡; property search 物色); 視乎 → 依…而定; 換鎖費; guarantor 50%–100% (0.5–1 month), example default 0.5 month (example total now ¥615,250); Contact shows 來訪請先預約 (config `visits`) and the form button reads 免費諮詢（填寫諮詢表）; /tools has a consult band; guides intro 「福岡租屋與生活的實用資訊。」 and Living category description match the published articles. Homepage hero keeps three services (Danny).
+- Estimator: "或把估算直接傳給我們" — LINE (prefilled message to @089vsqyn; does not work in LINE for PC), WhatsApp (prefilled), and 複製明細.
+- Google: RealEstateAgent structured data on home and About (`lib/seo/organization.ts`, from config).
+- Click statistics: built, off until a D1 database and STATS_KEY are set at launch (steps in docs/analytics-and-deployment.md). Privacy text must be updated before switching on.
+- For Danny: add "你從哪裡知道我們？" to the Google Form (he edits the form himself); optional property-management guides (管理組合, 納稅管理人) when he has time.

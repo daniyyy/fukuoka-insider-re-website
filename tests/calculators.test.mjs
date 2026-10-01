@@ -19,14 +19,14 @@ test("rental example uses Danny's defaults and adds ticked items only", () => {
   assert.equal(byKey.prepaidFee, 10_000); // 2 months of common-area fee
   assert.equal(byKey.brokerage, 110_000); // 1.1 months of rent (rent + 10% tax)
   assert.equal(byKey.prepaidOther, 2_200); // 2 months of other monthly charges (24-hour support)
-  assert.equal(byKey.guarantor, 106_100); // 1 month of rent + common-area fee + other monthly charges
+  assert.equal(byKey.guarantor, 53_050); // 0.5 month of rent + common-area fee + other monthly charges
   assert.equal(byKey.insurance, 20_000);
   assert.equal(byKey.keyExchange, 20_000);
   assert.equal("cleaning" in byKey, false);
   assert.equal("aircon" in byKey, false);
   assert.equal("disinfection" in byKey, false);
-  assert.equal(result.total, 668_300);
-  assert.equal(result.additionalCosts, 468_300);
+  assert.equal(result.total, 615_250);
+  assert.equal(result.additionalCosts, 415_250);
 });
 
 test("unticking an item removes it from the total", () => {

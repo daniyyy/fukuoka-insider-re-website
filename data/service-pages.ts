@@ -54,8 +54,8 @@ export const serviceOverviewCopy: Record<Locale, {
     jumpLabel: "服務一覽",
     action: "查看",
     items: [
-      { key: "rent", title: "租屋服務", audience: "找住處、準備搬到福岡", description: "住宅、辦公室及商業空間租賃。人在海外也可以先開始查詢。", route: "/services/rent" },
-      { key: "buy-sell", title: "房產買賣", audience: "準備在福岡買房，或出售福岡物業", description: "買房可查詢物業；賣房可先討論物業現況與出售安排。", route: "/services/buy-sell" },
+      { key: "rent", title: "租屋服務", audience: "找住處、準備搬到福岡", description: "住宅、辦公室及商業空間租賃。人在海外也可以先開始諮詢。", route: "/services/rent" },
+      { key: "buy-sell", title: "房產買賣", audience: "準備在福岡買房，或出售福岡物業", description: "買房可協助物色及確認物件；賣房可先討論物業現況與出售安排。", route: "/services/buy-sell" },
       { key: "property-management", title: "物業管理", audience: "持有出租物業或度假別墅", description: "出租物業管理，以及度假別墅等不常居住物業的定期查看。", route: "/services/property-management" },
       { key: "living-support", title: "生活支援", audience: "需要安排入住與日常生活", description: "協助與入住直接相關的事項，並按需要介紹外部合作夥伴。", route: "/services/living-support" },
     ],
@@ -120,7 +120,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
     "zh-TW": {
       title: "租屋服務",
       metaTitle: "福岡租屋服務",
-      description: "在福岡找住宅、辦公室或店舖，可以廣東話、普通話、日語或英語與我們溝通。人在海外，也可以先開始查詢。",
+      description: "在福岡找住宅、辦公室或店舖，可以廣東話、普通話、日語或英語與我們溝通。人在海外，也可以先開始諮詢。",
       highlights: ["住宅", "辦公室", "商業空間"],
       imageNote: "圖片為示意圖，並非實際出租物件。",
       audienceTitle: "這項服務適合",
@@ -132,19 +132,19 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       helpTitle: "我們可以協助的事",
       helpIntro: "我們會說明程序與申請條件，並與出租方或管理公司聯絡。",
       panels: [
-        { title: "住宅", body: "公寓、獨立住宅及其他居住物件。", points: ["按地區、通勤與預算查詢", "說明申請條件與所需文件"] },
-        { title: "辦公室", body: "按地點、面積、人數與用途查詢。", points: ["整理辦公用途與條件", "聯絡出租方或管理公司"] },
+        { title: "住宅", body: "公寓、獨立住宅及其他居住物件。", points: ["按地區、通勤與預算物色", "說明申請條件與所需文件"] },
+        { title: "辦公室", body: "按地點、面積、人數與用途物色。", points: ["整理辦公用途與條件", "聯絡出租方或管理公司"] },
         { title: "商業空間", body: "店舖及其他商業空間。", points: ["逐一確認用途限制", "說明申請及契約文件"] },
       ],
       processTitle: "租屋流程",
       process: [
         { title: "確認條件", body: "整理地區、預算、用途、入住時間及申請人情況。" },
-        { title: "搜尋物件", body: "查詢合適物件，並確認各物件的申請條件。" },
+        { title: "搜尋物件", body: "物色合適物件，並確認各物件的申請條件。" },
         { title: "提交申請", body: "準備所需文件並提交申請。" },
         { title: "簽約與入住", body: "審查通過後，確認契約、費用及入住日期。" },
       ],
       prepareTitle: "找房前可以先準備",
-      prepareIntro: "首次查詢時，提供目前已確定的資料即可，其餘可以之後補上。",
+      prepareIntro: "首次諮詢時，提供目前已確定的資料即可，其餘可以之後補上。",
       preparation: [
         { title: "希望條件", body: "地區、預算、入住日期與用途" },
         { title: "申請人資料", body: "入住人數、工作及在留情況" },
@@ -158,7 +158,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
         "可租物件、申請條件及所需文件，會因物件而不同。",
       ],
       ctaTitle: "正在福岡找房？",
-      ctaBody: "告訴我們希望的地區、預算和入住時間。資料尚未備齊，也可以先查詢。",
+      ctaBody: "告訴我們希望的地區、預算和入住時間。資料尚未備齊，也可以先聯絡我們。",
     },
     ja: {
       title: "賃貸",
@@ -256,24 +256,24 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       imageNote: "圖片為福岡住宅區情境，並非指定出售物業。",
       audienceTitle: "這項服務適合",
       audiences: [
-        { title: "準備在福岡買房", body: "希望按用途、預算、地區與時間開始查詢物業。" },
+        { title: "準備在福岡買房", body: "希望按用途、預算、地區與時間開始物色物件。" },
         { title: "考慮出售福岡物業", body: "需要先整理物業現況、權利資料與希望出售的時間。" },
         { title: "人在海外", body: "想了解文件、日文溝通及現地安排可以怎樣處理。" },
       ],
       helpTitle: "買房與賣房，兩條路徑",
       helpIntro: "買房和賣房的準備不同，我們會按您的情況分開整理。",
       panels: [
-        { title: "買房", body: "確認用途、預算、希望地區及時間，再整理物業查詢與交易準備。", points: ["整理購買條件", "查詢及確認物業資料", "安排看房與交易相關溝通"] },
+        { title: "買房", body: "確認用途、預算、希望地區及時間，再整理物件搜尋與交易準備。", points: ["整理購買條件", "物色及確認物件資料", "安排看房與交易相關溝通"] },
         { title: "賣房", body: "確認物業現況、現有文件及希望條件，再討論可行的出售安排。", points: ["整理物業資料與現況", "討論出售條件與時間", "協助交易相關溝通"] },
       ],
       processTitle: "一般流程",
       process: [
         { title: "初步確認", body: "說明是買房還是賣房，以及預算（買房）或物業資料（賣房）和預計時間。" },
         { title: "整理資料", body: "確認物業資訊、現況及需要補充的文件。" },
-        { title: "協調條件", body: "進行物業查詢、看房或出售安排，並處理相關溝通。" },
+        { title: "協調條件", body: "進行物件搜尋、看房或出售安排，並處理相關溝通。" },
         { title: "簽約與交付", body: "條件確認後，按契約完成結算、登記及交付。" },
       ],
-      prepareTitle: "查詢前可準備的資料",
+      prepareTitle: "諮詢前可準備的資料",
       prepareIntro: "不必一次備齊，先提供手上已有的內容即可。",
       preparation: [
         { title: "買房需要", body: "用途、整體預算、希望地區與預計時間" },
@@ -644,7 +644,7 @@ export const serviceUiCopy: Record<Locale, {
   guidesTitle: string;
   allGuides: string;
 }> = {
-  "zh-TW": { services: "服務", consultation: "免費諮詢", line: "LINE 查詢", call: "致電查詢", checklist: "查詢前準備清單", otherServices: "其他服務", view: "查看", guidesTitle: "查詢前可以先了解", allGuides: "查看所有指南" },
+  "zh-TW": { services: "服務", consultation: "免費諮詢", line: "LINE 聯絡", call: "致電", checklist: "諮詢前準備清單", otherServices: "其他服務", view: "查看", guidesTitle: "諮詢前可以先了解", allGuides: "查看所有指南" },
   ja: { services: "サービス", consultation: "無料相談", line: "LINEで相談", call: "電話で相談", checklist: "ご相談前チェックリスト", otherServices: "その他のサービス", view: "詳しく見る", guidesTitle: "関連ガイド", allGuides: "ガイド一覧" },
   en: { services: "Services", consultation: "Free Consultation", line: "Chat on LINE", call: "Call us", checklist: "Pre-enquiry checklist", otherServices: "Other services", view: "View", guidesTitle: "Helpful guides", allGuides: "All guides" },
 };

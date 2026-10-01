@@ -2,7 +2,12 @@
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
 
+import { recordEvent, statsPage, type D1Database } from "./stats";
+
 interface Env {
+  /** Click statistics (optional, see worker/stats.ts). */
+  EVENTS_DB?: D1Database;
+  STATS_KEY?: string;
   ASSETS: { fetch(request: Request): Promise<Response> };
   IMAGES: {
     input(stream: ReadableStream): {
@@ -33,6 +38,9 @@ const worker = {
     if (url.pathname === "/") {
       return Response.redirect(new URL("/re/zh-TW/", url).toString(), 302);
     }
+
+    if (url.pathname === "/re/api/event") return recordEvent(request, env);
+    if (url.pathname === "/re/stats") return statsPage(request, env);
 
     if (url.pathname === "/_vinext/image") {
       const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];

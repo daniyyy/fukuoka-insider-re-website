@@ -52,7 +52,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
     },
     mapCta: "在 Google 地圖開啟",
     ctaTitle: "可以廣東話、普通話、日語或英語聯絡",
-    ctaBody: "用您習慣的語言告訴我們需要。資料尚未備齊，也可以先查詢。",
+    ctaBody: "用您習慣的語言告訴我們需要。資料尚未備齊，也可以先聯絡我們。",
   },
   ja: {
     title: "福岡を拠点とする\n不動産会社",
@@ -122,17 +122,17 @@ type ContactCopy = {
   prepareIntro: string;
   prepare: Array<{ title: string; body: string }>;
   officeTitle: string;
-  office: { address: string; access: string; hours: string; closed: string; fax: string };
+  office: { address: string; access: string; hours: string; closed: string; visits: string; fax: string };
   mapCta: string;
 };
 
 export const contactCopy: Record<Locale, ContactCopy> = {
   "zh-TW": {
     title: "聯絡我們",
-    intro: "可以廣東話、普通話、日語或英語與我們聯絡。資料尚未備齊，也可以先查詢。",
+    intro: "可以廣東話、普通話、日語或英語與我們聯絡。資料尚未備齊，也可以先聯絡我們。",
     routesTitle: "選擇聯絡方式",
-    form: { title: "房地產諮詢表", body: "適合說明物業與需求詳情。我們確認可以協助的範圍後，會再聯絡您；首次查詢不必備齊文件。", cta: "填寫諮詢表", note: "會在新視窗開啟諮詢表。", recommended: "建議" },
-    line: { title: "LINE・WhatsApp", body: "適合簡單查詢，或傳送照片與資料。", cta: "在 LINE 查詢", whatsapp: "在 WhatsApp 查詢" },
+    form: { title: "房地產諮詢表", body: "適合說明物業與需求詳情。我們確認可以協助的範圍後，會再聯絡您；首次諮詢不必備齊文件。", cta: "免費諮詢（填寫諮詢表）", note: "會在新視窗開啟諮詢表。", recommended: "建議" },
+    line: { title: "LINE・WhatsApp", body: "適合簡單提問，或傳送照片與資料。", cta: "在 LINE 聯絡", whatsapp: "在 WhatsApp 聯絡" },
     direct: { title: "電話・Email", body: "直接與我們聯絡。", phone: "電話", email: "Email" },
     scan: "用手機掃描",
     prepareTitle: "聯絡時可以先告訴我們",
@@ -144,7 +144,7 @@ export const contactCopy: Record<Locale, ContactCopy> = {
       { title: "已有的資料", body: "手上已有的文件；尚未備齊也可以先聯絡" },
     ],
     officeTitle: "辦公室",
-    office: { address: "地址", access: "交通", hours: "營業時間", closed: "休息日", fax: "傳真" },
+    office: { address: "地址", access: "交通", hours: "營業時間", closed: "休息日", visits: "來訪", fax: "傳真" },
     mapCta: "在 Google 地圖開啟",
   },
   ja: {
@@ -164,7 +164,7 @@ export const contactCopy: Record<Locale, ContactCopy> = {
       { title: "お手元の資料", body: "すべて揃っていなくてもご相談いただけます" },
     ],
     officeTitle: "事務所",
-    office: { address: "所在地", access: "アクセス", hours: "営業時間", closed: "定休日", fax: "FAX" },
+    office: { address: "所在地", access: "アクセス", hours: "営業時間", closed: "定休日", visits: "ご来社", fax: "FAX" },
     mapCta: "Google マップで開く",
   },
   en: {
@@ -184,7 +184,7 @@ export const contactCopy: Record<Locale, ContactCopy> = {
       { title: "Documents on hand", body: "Anything you already have; you can enquire before gathering everything" },
     ],
     officeTitle: "Office",
-    office: { address: "Address", access: "Access", hours: "Office hours", closed: "Closed", fax: "Fax" },
+    office: { address: "Address", access: "Access", hours: "Office hours", closed: "Closed", visits: "Visits", fax: "Fax" },
     mapCta: "Open in Google Maps",
   },
 };

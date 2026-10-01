@@ -23,3 +23,15 @@ Configuration to confirm before deployment:
 - Canonical/hreflang URLs, sitemap, redirects, robots policy, and visual/function QA on the approved public host.
 
 The purchase and rental calculators use only user-editable figures and disclose that estimates are not quotations. Their example prices are interface samples, not property offers, official rates, tax advice, or a financing assessment.
+
+## Click statistics (built 2026-10-01, off until switched on)
+
+What it counts: clicks on 免費諮詢, LINE / WhatsApp / phone / form, estimator start and finish, service and guide links (`lib/analytics/events.ts`). No cookies, IP addresses or personal data; one row per click with day, event, language, page area and page path.
+
+How it works: `components/analytics/EventBeacon.tsx` sends each event to `/re/api/event`; `worker/stats.ts` stores it in a Cloudflare D1 database when one is bound as `EVENTS_DB`. The summary page is `/re/stats?key=<STATS_KEY>` (noindex). Without the database and key, events are discarded and `/re/stats` returns 404.
+
+To switch on (at launch, with Danny's confirmation):
+1. Cloudflare dashboard → Storage & Databases → D1 → Create database, name `fukuoka-insider-events`. Note its Database ID.
+2. In `vite.config.ts`, add to `localBindingConfig`: `d1_databases: [{ binding: "EVENTS_DB", database_name: "fukuoka-insider-events", database_id: "<ID>" }]`. Push (auto-deploy).
+3. Workers & Pages → fukuoka-insider-re-website → Settings → Variables and Secrets → add secret `STATS_KEY` (a long random word). Danny bookmarks `/re/stats?key=<that word>`.
+4. Update the privacy policy (data/legal-content.ts, "本網站目前沒有使用分析工具…") to say anonymous click counts are kept, before switching on. The table is created automatically on the first click.

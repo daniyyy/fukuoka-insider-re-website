@@ -19,6 +19,7 @@ import { getFeaturedGuides } from "@/lib/content/adapter";
 import { getFeaturedFaqViews } from "@/lib/content/faq";
 import type { GuideLocale, GuideSummary } from "@/lib/content/types";
 import { fixedPageMetadata } from "@/lib/seo/fixed-page";
+import { jsonLd, organizationStructuredData } from "@/lib/seo/organization";
 
 type ServiceOverview = {
   title: string;
@@ -91,7 +92,7 @@ const copy: Record<Locale, HomepageCopy> = {
     featured: "精選指南",
     guideIntro: "福岡租屋、房產與生活相關的實用資訊。",
     faqHeading: "常見問題",
-    faqBody: "查詢之前，您可能想先知道的事。",
+    faqBody: "聯絡我們之前，您可能想先知道的事。",
     faqCta: "查看全部常見問題",
     allGuides: "查看全部指南",
     life: "福岡生活資訊",
@@ -103,7 +104,7 @@ const copy: Record<Locale, HomepageCopy> = {
     aboutBody: "Ricky 為代表取締役；Danny 定居福岡，並持有宅地建物取引士資格。",
     aboutCta: "了解公司與團隊",
     consult: "有福岡房地產需求？",
-    consultBody: "想租屋、買賣房產、委託管理，或詢問入住相關支援，都可以先聯絡我們。資料尚未備齊也可以查詢。",
+    consultBody: "想租屋、買賣房產、委託管理，或詢問入住相關支援，都可以先聯絡我們。資料尚未備齊也可以先聯絡我們。",
     heroProof: ["福岡設有辦公室", "持有宅地建物取引業免許", "廣東話・普通話・日語・英語"],
     servicesLink: "查看服務內容",
   },
@@ -386,6 +387,7 @@ export default async function LocaleHome({
         <ConsultBand locale={locale} title={t.consult} body={t.consultBody} source="homepage-final" />
       </main>
       <SiteFooter locale={locale} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(organizationStructuredData(locale)) }} />
     </div>
   );
 }

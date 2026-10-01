@@ -129,6 +129,7 @@ export default async function ContactPage({ params }: PageProps) {
                 <div><dt>{t.office.access}</dt><dd>{profile.access[locale]}</dd></div>
                 <div><dt>{t.office.hours}</dt><dd>{profile.hours[locale]}</dd></div>
                 <div><dt>{t.office.closed}</dt><dd>{profile.closed[locale]}</dd></div>
+                <div><dt>{t.office.visits}</dt><dd>{profile.visits[locale]}</dd></div>
                 <div><dt>{t.office.fax}</dt><dd>{siteConfig.contact.fax}</dd></div>
               </dl>
               <a className="fi-button fi-button--outline" href={siteConfig.contact.map} target="_blank" rel="noreferrer">
