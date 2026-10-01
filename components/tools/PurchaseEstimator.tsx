@@ -48,7 +48,7 @@ const initialState = (): State => ({
     floorArea: String(purchaseExample.floorArea),
     loanAmount: "20000000",
     brokerage: String(brokerageCap(purchaseExample.price)),
-    scrivener: "80000",
+    scrivener: "120000",
     insurance: String(purchaseExample.insurance),
     monthlyFees: String(purchaseExample.monthlyFees),
   },
@@ -115,7 +115,7 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
       text: {
         ...next.text,
         brokerage: next.autoBrokerage && Number.isFinite(price) && price > 0 ? String(brokerageCap(price)) : next.text.brokerage,
-        scrivener: next.autoScrivener ? (next.loan ? "130000" : "80000") : next.text.scrivener,
+        scrivener: next.autoScrivener ? (next.loan ? "170000" : "120000") : next.text.scrivener,
       },
     };
     setState(withAuto);

@@ -148,7 +148,7 @@ export function calculatePurchase(input: PurchaseInputs): PurchaseResult | null 
   atPurchase.push({ key: "stampSale", amount: stampTaxSale(price) });
   atPurchase.push({ key: "regLand", amount: registrationTax(land, 0.015) });
   atPurchase.push({ key: "regBuilding", amount: registrationTax(building, isNew ? (housing ? 0.0015 : 0.004) : housing ? 0.003 : 0.02) });
-  atPurchase.push({ key: "scrivener", amount: input.scrivener ?? (loan > 0 ? 130_000 : 80_000) });
+  atPurchase.push({ key: "scrivener", amount: input.scrivener ?? (loan > 0 ? 170_000 : 120_000) });
 
   // Annual fixed asset tax (1.4%) + city planning tax (0.3%); residential land ≤200㎡ per unit: 1/6 and 1/3 of the land value.
   const newBuildingFactor = isNew && area >= 40 ? (area <= 120 ? 0.5 : 1 - (0.5 * 120) / area) : 1;

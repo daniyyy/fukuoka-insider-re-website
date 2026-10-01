@@ -29,14 +29,14 @@ test("investor buying a used condo in cash (example)", () => {
   assert.equal(now.stampSale, 10_000);
   assert.equal(now.regLand, 45_000); // land 1.5%
   assert.equal(now.regBuilding, 140_000); // building 2% (no housing reduction)
-  assert.equal(now.scrivener, 80_000);
+  assert.equal(now.scrivener, 120_000);
   assert.equal(now.taxSettlement, 37_816); // ¥129,000 a year × 107/365
   assert.equal("loanFee" in now, false);
   const later = byKey(result.later);
   assert.equal(later.acqBuilding, 210_000); // 3%, no deduction
   assert.equal(later.acqLand, 45_000); // 1/2 base × 3%
-  assert.equal(result.costsTotal, 1_653_816);
-  assert.equal(result.grandTotal, 31_653_816);
+  assert.equal(result.costsTotal, 1_693_816);
+  assert.equal(result.grandTotal, 31_693_816);
   assert.deepEqual(byKey(result.yearly), { annualTax: 129_000, annualFees: 300_000 });
   assert.equal(result.housingReductions, false);
 });
@@ -59,7 +59,7 @@ test("loan adds fee, loan stamp tax and mortgage registration", () => {
   assert.equal(now.loanFee, 440_000); // 2.2%
   assert.equal(now.stampLoan, 20_000);
   assert.equal(now.regMortgage, 80_000); // 0.4%
-  assert.equal(now.scrivener, 130_000);
+  assert.equal(now.scrivener, 170_000);
 });
 
 test("new condo: no brokerage by default handled by the page, new-home deduction for rentals too", () => {
