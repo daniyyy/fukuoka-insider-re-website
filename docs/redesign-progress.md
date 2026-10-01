@@ -454,3 +454,4 @@
 - New condos (only) show 「修繕積立基金（新建公寓，一次性）」, default ¥400,000 (typical ¥200,000–800,000, editable), added to contract-to-handover costs. Example as a new condo: ¥745,856 (was ¥345,856). The large gap to second-hand comes mainly from no brokerage by default, then new-home tax relief.
 - Section 04 renamed 「仲介費及其他費用」 (ja 仲介手数料・その他の費用, en Brokerage and other costs); note now says amounts are typical and the contract and quotes decide — Danny did not want brokerage to look easy to adjust.
 - Checks: lint, typecheck, 26 tests, build; click test zh-TW/ja/en; crawl zh-TW 29, ja 15, en 16 pages, no errors or overflow.
+- Repair fund hint now says it is separate from the monthly 修繕積立金 (zh/ja/en), after Danny noted the two names are easy to confuse.
