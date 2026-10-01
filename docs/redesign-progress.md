@@ -421,3 +421,9 @@
 - Google: RealEstateAgent structured data on home and About (`lib/seo/organization.ts`, from config).
 - Click statistics: built, off until a D1 database and STATS_KEY are set at launch (steps in docs/analytics-and-deployment.md). Privacy text must be updated before switching on.
 - For Danny: add "你從哪裡知道我們？" to the Google Form (he edits the form himself); optional property-management guides (管理組合, 納稅管理人) when he has time.
+
+## 2026-10-01 — Purchase cost estimator rebuilt
+- New `lib/tools/purchase.ts` (rules with sources and expiry dates; tests in `tests/purchase.test.mjs`), `components/tools/PurchaseEstimator.tsx`, copy in `data/purchase-estimator.ts` (zh-TW source; ja/en provisional).
+- Inputs: price, type (used condo / new condo / house), buyer (investor-overseas default / owner-occupier), floor area, year built, land and building assessed values, cash or loan, handover month, brokerage (legal cap by default, editable), scrivener, insurance, monthly condo fees.
+- Results: contract-to-handover costs, acquisition tax 6–12 months later, total vs typical %, total incl. price, yearly holding costs; overseas-buyer notes (外為法 report, tax agent, nationality declaration from 2026-10-05, remittance); calculation method; LINE/WhatsApp send.
+- To review before 2027-03-31: stamp tax reduction, housing registration rates, acquisition tax 3% and 1/2 land base (令和9 tax reform). Example assessed values (land ¥3M, building ¥7M for a ¥30M used condo) are placeholders for Danny to confirm.

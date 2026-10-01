@@ -80,43 +80,8 @@ export function calculateRentalInitialCost(input: RentalInputs): CostResult | nu
   return { lines, total, additionalCosts: total - (lines.find((line) => line.key === "prepaidRent")?.amount ?? 0) };
 }
 
-export type PurchaseInputs = {
-  propertyPrice: number;
-  brokerage: number;
-  registration: number;
-  taxes: number;
-  financing: number;
-  insurance: number;
-  other: number;
-};
-
 export type CostLine = { key: string; amount: number };
 export type CostResult = { lines: CostLine[]; additionalCosts: number; total: number };
-
-const amountKeys = (value: Record<string, number>) => Object.entries(value).every(([key, number]) =>
-  Number.isFinite(number) && number >= 0 && number <= 1_000_000_000_000 &&
-  (key.endsWith("Months") || Number.isInteger(number)),
-);
-
-function totalOf(lines: CostLine[], baseKey: string): CostResult | null {
-  const total = lines.reduce((sum, line) => sum + line.amount, 0);
-  if (!Number.isSafeInteger(total)) return null;
-  return { lines, total, additionalCosts: total - (lines.find((line) => line.key === baseKey)?.amount ?? 0) };
-}
-
-export function calculatePurchaseCost(input: PurchaseInputs): CostResult | null {
-  if (!amountKeys(input)) return null;
-  const lines: CostLine[] = [
-    { key: "propertyPrice", amount: input.propertyPrice },
-    { key: "brokerage", amount: input.brokerage },
-    { key: "registration", amount: input.registration },
-    { key: "taxes", amount: input.taxes },
-    { key: "financing", amount: input.financing },
-    { key: "insurance", amount: input.insurance },
-    { key: "other", amount: input.other },
-  ];
-  return totalOf(lines, "propertyPrice");
-}
 
 export function formatYen(amount: number, locale: "zh-TW" | "ja" | "en") {
   const intlLocale = locale === "ja" ? "ja-JP" : locale === "en" ? "en-US" : "zh-TW";

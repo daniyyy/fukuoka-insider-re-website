@@ -73,7 +73,7 @@ export const toolsCopy: Record<Locale, {
         },
       },
       "purchase-cost": {
-        title: "買房費用估算", intro: "將物件價格與已知的交易費用分開整理，初步估算總金額。", sample: "表單已填入示例物件價格，其他費用預設為 0；請依實際資料修改。", inputTitle: "輸入金額", resultTitle: "費用明細", total: "估算合計（非報價）", additional: "物件價格以外費用", note: "未輸入的費用以 0 計，結果可能低於實際金額。稅金、登記、融資、保險與仲介費依案件而異，請以相關機構及專業人士確認的金額為準。本工具不是報價、稅務或法律意見，亦不代表貸款獲批。", invalid: "請輸入 0 或以上的有效日圓金額。", action: "詢問房產買賣", related: "房產買賣", fields: {
+        title: "買房費用估算", intro: "按物件類型、買家身份及評價額，估算買房時及之後每年要準備的費用。", sample: "表單已填入示例物件價格，其他費用預設為 0；請依實際資料修改。", inputTitle: "輸入金額", resultTitle: "費用明細", total: "估算合計（非報價）", additional: "物件價格以外費用", note: "未輸入的費用以 0 計，結果可能低於實際金額。稅金、登記、融資、保險與仲介費依案件而異，請以相關機構及專業人士確認的金額為準。本工具不是報價、稅務或法律意見，亦不代表貸款獲批。", invalid: "請輸入 0 或以上的有效日圓金額。", action: "詢問房產買賣", related: "房產買賣", fields: {
           propertyPrice: { label: "物件價格", hint: "日圓；示例為 ¥30,000,000" }, brokerage: { label: "仲介費" }, registration: { label: "登記及相關專業費用" }, taxes: { label: "已確認稅金" }, financing: { label: "融資相關費用" }, insurance: { label: "保險" }, other: { label: "其他已知費用" },
         },
       },

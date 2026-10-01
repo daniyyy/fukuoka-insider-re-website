@@ -1,8 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { calculatePurchaseCost, calculateRentalInitialCost, formatYen, rentalExample } from "../lib/tools/calculators.ts";
+import { calculateRentalInitialCost, formatYen, rentalExample } from "../lib/tools/calculators.ts";
 
-const purchase = { propertyPrice: 30_000_000, brokerage: 0, registration: 0, taxes: 0, financing: 0, insurance: 0, other: 0 };
 
 const withValues = (values, included = {}, base = {}) => ({
   rent: base.rent ?? rentalExample.rent,
@@ -65,15 +64,6 @@ test("rental estimate rejects invalid values of ticked items only", () => {
   assert.equal(calculateRentalInitialCost(withValues({ deposit: 25 })), null);
   assert.equal(calculateRentalInitialCost(withValues({ other: -1 }, { other: true })), null);
   assert.notEqual(calculateRentalInitialCost(withValues({ other: -1 }, { other: false })), null);
-});
-
-test("purchase estimate separates property price and additional costs", () => {
-  const result = calculatePurchaseCost({ ...purchase, brokerage: 500_000, registration: 200_000, taxes: 120_000 });
-  assert.equal(result.additionalCosts, 820_000);
-  assert.equal(result.total, 30_820_000);
-  assert.equal(calculatePurchaseCost({ ...purchase, propertyPrice: 0 }).total, 0);
-  assert.equal(calculatePurchaseCost({ ...purchase, propertyPrice: -1 }), null);
-  assert.equal(calculatePurchaseCost({ ...purchase, taxes: 0.5 }), null);
 });
 
 test("currency is formatted as yen without fractional digits", () => {
