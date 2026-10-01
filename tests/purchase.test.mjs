@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { brokerageCap, calculatePurchase, purchaseExample, settlementShare, stampTaxSale } from "../lib/tools/purchase.ts";
+import { brokerageCap, calculatePurchase, estimateAssessedValues, purchaseExample, settlementShare, stampTaxSale } from "../lib/tools/purchase.ts";
 
 const byKey = (lines) => Object.fromEntries(lines.map((line) => [line.key, line.amount]));
 
@@ -91,4 +91,10 @@ test("new house: preservation registration, new-home deduction, no condo fees", 
   assert.deepEqual(result.typicalPercent, [6, 9]);
   // A used house keeps the 2% transfer rate.
   assert.equal(byKey(calculatePurchase({ ...purchaseExample, type: "usedHouse" }).atPurchase).regBuilding, 140_000);
+});
+
+test("assessed values can be estimated from the price", () => {
+  assert.deepEqual(estimateAssessedValues(30_000_000, "usedCondo"), { landValue: 6_300_000, buildingValue: 12_600_000, percent: 63 });
+  assert.deepEqual(estimateAssessedValues(62_000_000, "newHouse"), { landValue: 26_040_000, buildingValue: 14_880_000, percent: 66 });
+  assert.equal(Number.isNaN(estimateAssessedValues(0, "usedCondo").landValue), true);
 });

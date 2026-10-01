@@ -531,6 +531,10 @@
 .fi-purchase-pair--plain .fi-amount { background: var(--fi-sheet); }
 @media (min-width: 40rem) { .fi-purchase-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; align-items: start; } }
 .fi-purchase-hint { margin: 0; font-size: 0.8125rem; line-height: 1.7; color: var(--fi-muted); }
+.fi-value-estimate { display: grid; margin: 0; border-top: 1px solid var(--fi-line); }
+.fi-value-estimate > div { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--fi-line); }
+.fi-value-estimate dt { font-size: var(--fi-size-small); color: var(--fi-muted); }
+.fi-value-estimate dd { margin: 0; font-size: 1.0625rem; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--fi-ink); white-space: nowrap; }
 .fi-segment { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); border: 1px solid var(--fi-ink); background: var(--fi-sheet); }
 .fi-segment button {
   min-width: 0; min-height: 2.875rem; padding: 0.375rem 0.5rem; border: 0; line-height: 1.4; text-wrap: balance; border-left: 1px solid var(--fi-line-strong); background: transparent;

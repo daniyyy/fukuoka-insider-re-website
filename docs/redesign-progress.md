@@ -434,3 +434,10 @@
 - UI: option buttons split width evenly; Japanese labels keep words whole (keep-all + invisible break point); LINE/WhatsApp messages use language-appropriate brackets.
 - All three languages crawled: zh-TW 29, ja 15, en 16 pages, no errors or overflow.
 - Purchase estimator follow-up (Danny's ¥62M new-house case): property type is now two choices (condo / house × second-hand / new). New houses use preservation registration rates and the new-home deduction; typical cost range 6–9% except new condos (3–6%). Hints explain where assessed values come from (評価証明書 / seller's tax statement; new buildings use the Legal Affairs Bureau value) and that condos enter the land share (whole site × 敷地権割合). House area label reads 延床面積.
+
+## 2026-10-01 — Purchase estimator: assessed values estimated from the price
+- Danny has no assessment certificate for his cases and expects overseas buyers to be confused by sale price vs 評価額. Section 02 now opens with a plain explanation (評價額＝政府計稅用的價值，通常低於買賣價格) and two choices: 「按價格估算」 (default) and 「輸入實際評價額」.
+- Estimate (`estimateAssessedValues` in `lib/tools/purchase.ts`): price split into land / building by type (condo 3:7, new house 6:4 from Danny's ¥62M contract, used house 7:3); land value ≈ 70% of the land part (assessed land ≈ 70% of 公示価格, LIFULL HOME'S), building value ≈ 60% of the building part. Explained under 計算方法 in all three languages.
+- Switching to actual values pre-fills the current estimate so the result does not jump. Example now totals ¥2,103,949 (7.0%, inside the 6–9% typical range; the old ¥3M/¥7M placeholder gave 5.6%).
+- Checks: lint, 25 tests, build; click test in zh-TW/ja/en at 1440/390/360; crawl zh-TW 29, ja 15, en 16 pages, no errors or overflow.
+- For Danny: confirm the split ratios fit Fukuoka (especially condo 3:7 and used house 7:3) — they can be changed in one place.

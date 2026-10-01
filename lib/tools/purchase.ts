@@ -73,6 +73,26 @@ export type PurchaseResult = {
   housingReductions: boolean;
 };
 
+/**
+ * Rough assessed values from the sale price, for visitors who do not have the assessment certificate
+ * (Danny, 2026-10-01: overseas buyers rarely know 評価額).
+ * - Split of the price into land and building by property type: new house 60/40 (Danny's ¥62M case: ¥37.2M land,
+ *   ¥24.8M building), second-hand house 70/30, condos 30/70.
+ * - Land assessed value is set at about 70% of the official land price (公示価格) → 70% of the land part.
+ * - Building assessed value is about 70% of construction cost; the sale price of a building includes margin and tax,
+ *   so 60% of the building part is used. Source for both: LIFULL HOME'S https://www.homes.co.jp/satei/media/entry/202303/2401
+ */
+export const estimateRatios = { land: 0.7, building: 0.6 } as const;
+export const landShareByType: Record<PropertyType, number> = { usedCondo: 0.3, newCondo: 0.3, usedHouse: 0.7, newHouse: 0.6 };
+
+export function estimateAssessedValues(price: number, type: PropertyType) {
+  if (!Number.isFinite(price) || price <= 0) return { landValue: Number.NaN, buildingValue: Number.NaN, percent: 0 };
+  const landShare = landShareByType[type];
+  const landValue = floorTo(price * landShare * estimateRatios.land, 1_000);
+  const buildingValue = floorTo(price * (1 - landShare) * estimateRatios.building, 1_000);
+  return { landValue, buildingValue, percent: Math.round(((landValue + buildingValue) / price) * 100) };
+}
+
 export const purchaseExample: PurchaseInputs = {
   price: 30_000_000,
   type: "usedCondo",

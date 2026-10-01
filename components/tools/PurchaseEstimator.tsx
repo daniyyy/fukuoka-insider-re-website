@@ -14,6 +14,7 @@ import { formatYen } from "@/lib/tools/calculators";
 import {
   brokerageCap,
   calculatePurchase,
+  estimateAssessedValues,
   isCondoProperty,
   isNewProperty,
   purchaseExample,
@@ -24,10 +25,13 @@ import {
   type PurchaseLine,
 } from "@/lib/tools/purchase";
 
+type ValueMode = "estimate" | "exact";
+const valueModes: ValueMode[] = ["estimate", "exact"];
 type Text = { price: string; landValue: string; buildingValue: string; floorArea: string; loanAmount: string; brokerage: string; scrivener: string; insurance: string; monthlyFees: string };
 type State = {
   text: Text;
   type: PropertyType;
+  valueMode: ValueMode;
   buyer: BuyerType;
   built: BuiltPeriod;
   handoverMonth: number;
@@ -49,8 +53,8 @@ const builtPeriods: BuiltPeriod[] = ["1997", "1989", "1985", "1982", "older"];
 const initialState = (): State => ({
   text: {
     price: String(purchaseExample.price),
-    landValue: String(purchaseExample.landValue),
-    buildingValue: String(purchaseExample.buildingValue),
+    landValue: "",
+    buildingValue: "",
     floorArea: String(purchaseExample.floorArea),
     loanAmount: "20000000",
     brokerage: String(brokerageCap(purchaseExample.price)),
@@ -59,6 +63,7 @@ const initialState = (): State => ({
     monthlyFees: String(purchaseExample.monthlyFees),
   },
   type: purchaseExample.type,
+  valueMode: "estimate",
   buyer: purchaseExample.buyer,
   built: purchaseExample.built,
   handoverMonth: purchaseExample.handoverMonth,
@@ -70,12 +75,14 @@ const initialState = (): State => ({
 
 const toInputs = (s: State): PurchaseInputs => {
   const price = num(s.text.price);
+  // Most overseas buyers do not have the assessment certificate, so by default the assessed values are estimated from the price.
+  const values = s.valueMode === "estimate" ? estimateAssessedValues(price, s.type) : { landValue: num(s.text.landValue), buildingValue: num(s.text.buildingValue) };
   return {
     price,
     type: s.type,
     buyer: s.buyer,
-    landValue: num(s.text.landValue),
-    buildingValue: num(s.text.buildingValue),
+    landValue: values.landValue,
+    buildingValue: values.buildingValue,
     floorArea: num(s.text.floorArea),
     built: s.built,
     handoverMonth: s.handoverMonth,
@@ -163,6 +170,13 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
   const age: Age = isNew ? "new" : "used";
   // A new condo bought straight from the developer usually has no brokerage fee; other types usually do.
   const setType = (type: PropertyType) => update({ ...state, type, includeBrokerage: type !== "newCondo" });
+  const estimate = estimateAssessedValues(num(text.price), state.type);
+  // Switching to actual values starts from the current estimate, so the result does not jump.
+  const setValueMode = (valueMode: ValueMode) => update({
+    ...state,
+    valueMode,
+    text: valueMode === "exact" && Number.isFinite(estimate.landValue) ? { ...text, landValue: String(estimate.landValue), buildingValue: String(estimate.buildingValue) } : text,
+  });
 
   return (
     <section className="fi-estimator fi-estimator--purchase" aria-label={toolsCopy[locale].tools["purchase-cost"].title}>
@@ -212,12 +226,25 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
               <h2 id="buy-group-values">{t.sections.values}</h2>
               <p>{t.sections.valuesNote}</p>
             </header>
-            <div className="fi-purchase-pair fi-purchase-pair--plain">
-              {amountField("landValue", t.fields.landValue)}
-              {amountField("buildingValue", t.fields.buildingValue)}
-            </div>
-            <p className="fi-purchase-hint">{isNew ? t.fields.newValueHint : t.fields.valueHint}</p>
-            {isCondo ? <p className="fi-purchase-hint">{t.fields.condoLandHint}</p> : null}
+            <Segment label={t.fields.valueMode} value={state.valueMode} options={valueModes} labels={t.valueModes} onChange={setValueMode} />
+            {state.valueMode === "estimate" ? (
+              <>
+                <dl className="fi-value-estimate" aria-live="polite">
+                  <div><dt>{t.fields.landValue}{t.fields.estimated}</dt><dd>{Number.isFinite(estimate.landValue) ? formatYen(estimate.landValue, locale) : "—"}</dd></div>
+                  <div><dt>{t.fields.buildingValue}{t.fields.estimated}</dt><dd>{Number.isFinite(estimate.buildingValue) ? formatYen(estimate.buildingValue, locale) : "—"}</dd></div>
+                </dl>
+                {Number.isFinite(estimate.landValue) ? <p className="fi-purchase-hint">{t.fields.estimateNote(estimate.percent)}</p> : null}
+              </>
+            ) : (
+              <>
+                <div className="fi-purchase-pair fi-purchase-pair--plain">
+                  {amountField("landValue", t.fields.landValue)}
+                  {amountField("buildingValue", t.fields.buildingValue)}
+                </div>
+                <p className="fi-purchase-hint">{isNew ? t.fields.newValueHint : t.fields.valueHint}</p>
+                {isCondo ? <p className="fi-purchase-hint">{t.fields.condoLandHint}</p> : null}
+              </>
+            )}
           </section>
 
           <section className="fi-cost-group" aria-labelledby="buy-group-payment">
