@@ -12,6 +12,7 @@ export type PurchaseCopy = {
     payment: string; loanAmount: string; handover: string; handoverHint: string;
     brokerage: string; brokerageHint: string; brokerageReset: string; includeBrokerage: string; newCondoBrokerage: string;
     scrivener: string; scrivenerHint: string; insurance: string; insuranceHint: string; monthlyFees: string; monthlyFeesHint: string;
+    repairFund: string; repairFundHint: string;
   };
   /** Full type names (used in the LINE / WhatsApp message). */
   types: Record<PropertyType, string>;
@@ -45,8 +46,8 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       values: "評價額（計稅用的價值）",
       valuesNote: "評價額是日本政府用來計稅的價值，跟買賣價格不同，通常低於買賣價格。登記費、不動產取得稅及每年的固定資產稅都以它計算。手上沒有評價資料的話，選「自動估算」即可。",
       payment: "付款與交屋",
-      adjust: "可調整的費用",
-      adjustNote: "以下為一般金額，可按實際報價修改。",
+      adjust: "仲介費及其他費用",
+      adjustNote: "已按一般情況預先填入，實際金額以契約及各項報價為準。",
     },
     fields: {
       price: "物件價格",
@@ -81,6 +82,8 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       insuranceHint: "示例金額（5 年）；地震保險另計",
       monthlyFees: "每月管理費＋修繕積立金",
       monthlyFeesHint: "全國平均每月約 2.5 萬日圓，依物件種類可以有很大差異",
+      repairFund: "修繕積立基金（新建公寓，一次性）",
+      repairFundHint: "交屋時一次性付給管理組合，用作日後大型維修；一般約 20–80 萬日圓，依面積及物件等級而定",
     },
     types: { usedCondo: "二手公寓", newCondo: "新建公寓", usedHouse: "二手獨立屋", newHouse: "新建獨立屋" },
     kinds: { condo: "公寓", house: "獨立屋" },
@@ -102,6 +105,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       scrivener: "司法書士費用",
       taxSettlement: "固定資產稅精算",
       insurance: "火災保險",
+      repairFund: "修繕積立基金",
       loanFee: "貸款手續費（2.2%）",
       stampLoan: "印花稅（貸款契約）",
       regMortgage: "登錄免許稅（抵押權）",
@@ -161,8 +165,8 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       values: "評価額（税金の計算用）",
       valuesNote: "評価額は、税金の計算のために行政が定める価格で、売買価格とは別のものです。通常は売買価格より低くなります。登録免許税、不動産取得税、毎年の固定資産税はこの評価額をもとに計算します。手元に資料がない場合は「自動で概算」をお選びください。",
       payment: "支払方法と引渡し",
-      adjust: "調整できる費用",
-      adjustNote: "一般的な金額を入れています。実際の見積額に合わせて変更してください。",
+      adjust: "仲介手数料・その他の費用",
+      adjustNote: "一般的な金額をあらかじめ入力しています。実際の金額は契約内容や各見積もりによります。",
     },
     fields: {
       price: "物件価格",
@@ -197,6 +201,8 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       insuranceHint: "入力例の金額（5年分）。地震保険は別途",
       monthlyFees: "管理費＋修繕積立金（月額）",
       monthlyFeesHint: "全国平均は月約2.5万円ですが、物件の種類によって大きく異なります",
+      repairFund: "修繕積立基金（新築マンション・一時金）",
+      repairFundHint: "引渡し時に管理組合へ一度だけ支払う、将来の大規模修繕のための費用です。一般に約20〜80万円で、面積や物件のグレードによって異なります",
     },
     types: { usedCondo: "中古マンション", newCondo: "新築マンション", usedHouse: "中古戸建て", newHouse: "新築戸建て" },
     kinds: { condo: "マンション", house: "戸建て" },
@@ -218,6 +224,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       scrivener: "司法書士報酬",
       taxSettlement: "固定資産税の精算金",
       insurance: "火災保険",
+      repairFund: "修繕積立基金",
       loanFee: "融資事務手数料（2.2%）",
       stampLoan: "印紙税（金銭消費貸借契約書）",
       regMortgage: "登録免許税（抵当権設定）",
@@ -277,8 +284,8 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       values: "Assessed value (used for tax)",
       valuesNote: "The assessed value (固定資産税評価額) is the value the Japanese authorities use to calculate tax. It is not the sale price and is usually lower. Registration tax, real estate acquisition tax and the yearly fixed asset tax are all based on it. If you do not have the figures, choose \"Estimate for me\".",
       payment: "Payment and handover",
-      adjust: "Adjustable costs",
-      adjustNote: "These are typical amounts; change them to match actual quotes.",
+      adjust: "Brokerage and other costs",
+      adjustNote: "Typical amounts are filled in; actual amounts depend on the contract and each quote.",
     },
     fields: {
       price: "Property price",
@@ -313,6 +320,8 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       insuranceHint: "Example amount (5 years); earthquake insurance is extra",
       monthlyFees: "Monthly management fee + repair reserve fund",
       monthlyFeesHint: "The national average is about ¥25,000 a month; this varies a lot by property type",
+      repairFund: "Initial repair fund (new condos, one-off)",
+      repairFundHint: "Paid once at handover to the owners' association for future major repairs; usually about ¥200,000–800,000, depending on the floor area and the property",
     },
     types: { usedCondo: "Second-hand condo", newCondo: "New condo", usedHouse: "Second-hand house", newHouse: "New house" },
     kinds: { condo: "Condo", house: "Detached house" },
@@ -334,6 +343,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       scrivener: "Judicial scrivener fee",
       taxSettlement: "Fixed asset tax settlement",
       insurance: "Fire insurance",
+      repairFund: "Initial repair fund",
       loanFee: "Loan arrangement fee (2.2%)",
       stampLoan: "Stamp tax (loan contract)",
       regMortgage: "Registration tax (mortgage)",

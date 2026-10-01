@@ -45,10 +45,12 @@ export type PurchaseInputs = {
   insurance: number;
   /** 管理費 + 修繕積立金 per month (condos). */
   monthlyFees: number;
+  /** 修繕積立基金: one-off payment at handover, new condos only (usually ¥200,000–800,000). */
+  repairFund: number;
 };
 
 export type PurchaseLineKey =
-  | "brokerage" | "stampSale" | "regLand" | "regBuilding" | "scrivener" | "taxSettlement" | "insurance"
+  | "brokerage" | "stampSale" | "regLand" | "regBuilding" | "scrivener" | "taxSettlement" | "insurance" | "repairFund"
   | "loanFee" | "stampLoan" | "regMortgage"
   | "acqLand" | "acqBuilding"
   | "annualTax" | "annualFees";
@@ -143,6 +145,7 @@ export const purchaseExample: PurchaseInputs = {
   scrivener: null,
   includeBrokerage: true,
   insurance: 30_000,
+  repairFund: 400_000,
   monthlyFees: 25_000,
 };
 
@@ -185,7 +188,7 @@ export function settlementShare(month: number) {
 }
 
 export function validPurchase(input: PurchaseInputs) {
-  const yen = [input.price, input.landValue, input.buildingValue, input.loanAmount, input.insurance, input.monthlyFees];
+  const yen = [input.price, input.landValue, input.buildingValue, input.loanAmount, input.insurance, input.monthlyFees, input.repairFund];
   if (!yen.every(validYen) || input.price <= 0) return false;
   if (input.brokerage !== null && !validYen(input.brokerage)) return false;
   if (input.scrivener !== null && !validYen(input.scrivener)) return false;
@@ -217,6 +220,7 @@ export function calculatePurchase(input: PurchaseInputs): PurchaseResult | null 
   // A new building is not yet assessed at handover, so only the land share is settled.
   atPurchase.push({ key: "taxSettlement", amount: Math.round((isNew ? landTax : landTax + buildingTax) * settlementShare(input.handoverMonth)) });
   atPurchase.push({ key: "insurance", amount: input.insurance });
+  if (input.type === "newCondo" && input.repairFund > 0) atPurchase.push({ key: "repairFund", amount: input.repairFund });
   if (loan > 0) {
     atPurchase.push({ key: "loanFee", amount: Math.floor(loan * 0.022) });
     atPurchase.push({ key: "stampLoan", amount: stampTaxLoan(loan) });

@@ -105,3 +105,9 @@ test("assessed values are estimated from price, floor area and age (Fukuoka Lega
   assert.equal(ageRate(12.5, false).toFixed(4), "0.6811");
   assert.deepEqual([2006, 1996, 1986, 1983, 1981].map(builtPeriodFromYear), ["1997", "1989", "1985", "1982", "older"]);
 });
+
+test("new condos add the one-off repair fund; other types ignore it", () => {
+  const newCondo = byKey(calculatePurchase({ ...purchaseExample, type: "newCondo", includeBrokerage: false }).atPurchase);
+  assert.equal(newCondo.repairFund, 400_000);
+  assert.equal("repairFund" in byKey(calculatePurchase(purchaseExample).atPurchase), false);
+});

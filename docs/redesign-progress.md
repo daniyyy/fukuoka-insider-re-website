@@ -449,3 +449,8 @@
 - How to check real figures (told to Danny): the judicial scrivener's statement lists the 課税価格 (or back-calculate: land registration tax ÷ 1.5%); land via 全国地価マップ 固定資産税路線価 × land area. Danny may send 3–5 past statements to calibrate the land shares.
 - To review by 2027-03-31: bureau unit price table (new table from FY2027) together with the tax rules; `RULES_YEAR` in `lib/tools/purchase.ts` (ages are counted from 2026).
 - Checks: lint, typecheck, 25 tests, build; click test zh-TW/ja/en; crawl zh-TW 29, ja 15, en 16 pages, no errors or overflow.
+
+## 2026-10-01 — Purchase estimator: new-condo repair fund, section 04 wording
+- New condos (only) show 「修繕積立基金（新建公寓，一次性）」, default ¥400,000 (typical ¥200,000–800,000, editable), added to contract-to-handover costs. Example as a new condo: ¥745,856 (was ¥345,856). The large gap to second-hand comes mainly from no brokerage by default, then new-home tax relief.
+- Section 04 renamed 「仲介費及其他費用」 (ja 仲介手数料・その他の費用, en Brokerage and other costs); note now says amounts are typical and the contract and quotes decide — Danny did not want brokerage to look easy to adjust.
+- Checks: lint, typecheck, 26 tests, build; click test zh-TW/ja/en; crawl zh-TW 29, ja 15, en 16 pages, no errors or overflow.

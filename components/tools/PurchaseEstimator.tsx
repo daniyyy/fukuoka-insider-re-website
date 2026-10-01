@@ -28,7 +28,7 @@ import {
 
 type ValueMode = "estimate" | "exact";
 const valueModes: ValueMode[] = ["estimate", "exact"];
-type Text = { price: string; builtYear: string; landValue: string; buildingValue: string; floorArea: string; loanAmount: string; brokerage: string; scrivener: string; insurance: string; monthlyFees: string };
+type Text = { price: string; builtYear: string; landValue: string; buildingValue: string; floorArea: string; loanAmount: string; brokerage: string; scrivener: string; insurance: string; monthlyFees: string; repairFund: string };
 type State = {
   text: Text;
   type: PropertyType;
@@ -61,6 +61,7 @@ const initialState = (): State => ({
     scrivener: "120000",
     insurance: String(purchaseExample.insurance),
     monthlyFees: String(purchaseExample.monthlyFees),
+    repairFund: String(purchaseExample.repairFund),
   },
   type: purchaseExample.type,
   valueMode: "estimate",
@@ -94,6 +95,7 @@ const toInputs = (s: State): PurchaseInputs => {
     includeBrokerage: s.includeBrokerage,
     insurance: num(s.text.insurance),
     monthlyFees: isCondoProperty(s.type) ? num(s.text.monthlyFees) : 0,
+    repairFund: s.type === "newCondo" ? num(s.text.repairFund) : 0,
   };
 };
 
@@ -293,6 +295,7 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
               {([
                 ["scrivener", t.fields.scrivener, t.fields.scrivenerHint, { autoScrivener: false }],
                 ["insurance", t.fields.insurance, t.fields.insuranceHint, {}],
+                ...(state.type === "newCondo" ? [["repairFund", t.fields.repairFund, t.fields.repairFundHint, {}]] : []),
                 ...(isCondo ? [["monthlyFees", t.fields.monthlyFees, t.fields.monthlyFeesHint, {}]] : []),
               ] as [keyof Text, string, string, Partial<State>][]).map(([key, label, hint, extra]) => (
                 <li className="fi-cost-item fi-cost-item--plain" key={key}>
