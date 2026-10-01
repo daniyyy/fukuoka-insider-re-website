@@ -15,7 +15,9 @@
  * - Total costs rule of thumb (LIFULL HOME'S): new condo 3–6%, others 6–9% of price.
  */
 
-export type PropertyType = "usedCondo" | "newCondo" | "house";
+export type PropertyType = "usedCondo" | "newCondo" | "usedHouse" | "newHouse";
+export const isNewProperty = (type: PropertyType) => type === "newCondo" || type === "newHouse";
+export const isCondoProperty = (type: PropertyType) => type === "usedCondo" || type === "newCondo";
 export type BuyerType = "investor" | "owner";
 /** Construction period of a used home (decides owner-occupier reductions). */
 export type BuiltPeriod = "1997" | "1989" | "1985" | "1982" | "older";
@@ -138,8 +140,8 @@ export function validPurchase(input: PurchaseInputs) {
 export function calculatePurchase(input: PurchaseInputs): PurchaseResult | null {
   if (!validPurchase(input)) return null;
   const { price, type, landValue: land, buildingValue: building, floorArea: area, loanAmount: loan } = input;
-  const isNew = type === "newCondo";
-  const isCondo = type !== "house";
+  const isNew = isNewProperty(type);
+  const isCondo = isCondoProperty(type);
   // Owner-occupier housing reductions: lives there (住民票), 50㎡+, used homes built 1982 or later (or with a certificate).
   const housing = input.buyer === "owner" && area >= 50 && (isNew || input.built !== "older");
 
@@ -151,6 +153,7 @@ export function calculatePurchase(input: PurchaseInputs): PurchaseResult | null 
   atPurchase.push({ key: "scrivener", amount: input.scrivener ?? (loan > 0 ? 170_000 : 120_000) });
 
   // Annual fixed asset tax (1.4%) + city planning tax (0.3%); residential land ≤200㎡ per unit: 1/6 and 1/3 of the land value.
+  // New homes: building fixed asset tax halved on up to 120㎡ (condos 5 years, houses 3 years); shown as the first years' cost.
   const newBuildingFactor = isNew && area >= 40 ? (area <= 120 ? 0.5 : 1 - (0.5 * 120) / area) : 1;
   const landTax = land * (1 / 6) * 0.014 + land * (1 / 3) * 0.003;
   const buildingTax = building * 0.014 * newBuildingFactor + building * 0.003;
@@ -184,7 +187,7 @@ export function calculatePurchase(input: PurchaseInputs): PurchaseResult | null 
     grandTotal: price + costsTotal,
     yearlyTotal: sum(yearly),
     costsPercent: Math.round((costsTotal / price) * 1000) / 10,
-    typicalPercent: isNew ? [3, 6] : [6, 9],
+    typicalPercent: type === "newCondo" ? [3, 6] : [6, 9],
     housingReductions: housing,
   };
 }

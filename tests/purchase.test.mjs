@@ -77,3 +77,18 @@ test("invalid inputs return null; brokerage override is used", () => {
   assert.equal(calculatePurchase({ ...purchaseExample, landValue: -1 }), null);
   assert.equal(byKey(calculatePurchase({ ...purchaseExample, brokerage: 500_000 }).atPurchase).brokerage, 500_000);
 });
+
+test("new house: preservation registration, new-home deduction, no condo fees", () => {
+  const result = calculatePurchase({ ...purchaseExample, type: "newHouse", floorArea: 100, landValue: 20_000_000, buildingValue: 12_000_000 });
+  const now = byKey(result.atPurchase);
+  assert.equal(now.brokerage, 1_056_000);
+  assert.equal(now.regBuilding, 48_000); // 保存登記 0.4% (investor)
+  assert.equal(now.regLand, 300_000); // land 1.5%
+  const later = byKey(result.later);
+  assert.equal(later.acqBuilding, 0); // ¥12M new-home deduction
+  assert.equal(later.acqLand, 300_000 - 45_000); // 1/2 base × 3%, minus the reduction
+  assert.equal("annualFees" in byKey(result.yearly), false);
+  assert.deepEqual(result.typicalPercent, [6, 9]);
+  // A used house keeps the 2% transfer rate.
+  assert.equal(byKey(calculatePurchase({ ...purchaseExample, type: "usedHouse" }).atPurchase).regBuilding, 140_000);
+});

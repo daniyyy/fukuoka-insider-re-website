@@ -14,6 +14,8 @@ import { formatYen } from "@/lib/tools/calculators";
 import {
   brokerageCap,
   calculatePurchase,
+  isCondoProperty,
+  isNewProperty,
   purchaseExample,
   type BuiltPeriod,
   type BuyerType,
@@ -36,7 +38,11 @@ type State = {
 };
 
 const num = (raw: string) => (raw.replace(/,/g, "").trim() === "" ? Number.NaN : Number(raw.replace(/,/g, "")));
-const types: PropertyType[] = ["usedCondo", "newCondo", "house"];
+type Kind = "condo" | "house";
+type Age = "used" | "new";
+const kinds: Kind[] = ["condo", "house"];
+const ages: Age[] = ["used", "new"];
+const toType = (kind: Kind, age: Age): PropertyType => (kind === "condo" ? (age === "new" ? "newCondo" : "usedCondo") : age === "new" ? "newHouse" : "usedHouse");
 const buyers: BuyerType[] = ["investor", "owner"];
 const builtPeriods: BuiltPeriod[] = ["1997", "1989", "1985", "1982", "older"];
 
@@ -78,7 +84,7 @@ const toInputs = (s: State): PurchaseInputs => {
     scrivener: s.autoScrivener ? null : num(s.text.scrivener),
     includeBrokerage: s.includeBrokerage,
     insurance: num(s.text.insurance),
-    monthlyFees: s.type === "house" ? 0 : num(s.text.monthlyFees),
+    monthlyFees: isCondoProperty(s.type) ? num(s.text.monthlyFees) : 0,
   };
 };
 
@@ -141,7 +147,7 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
   const message = result && send
     ? [
         t.sendGreeting,
-        `${t.fields.price} ${formatYen(inputs.price, locale)}${open}${t.types[state.type].replace(/\u200b/g, "")}${dot}${t.buyers[state.buyer]}${state.loan ? `${dot}${t.payments.loan} ${formatYen(inputs.loanAmount, locale)}` : ""}${close}`,
+        `${t.fields.price} ${formatYen(inputs.price, locale)}${open}${t.types[state.type]}${dot}${t.buyers[state.buyer]}${state.loan ? `${dot}${t.payments.loan} ${formatYen(inputs.loanAmount, locale)}` : ""}${close}`,
         `${t.result.costsTotal} ${formatYen(result.costsTotal, locale)}${open}${result.costsPercent}%${close}`,
         `${t.result.yearly} ${formatYen(result.yearlyTotal, locale)}`,
         send.closing,
@@ -151,8 +157,12 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
     try { await navigator.clipboard.writeText(message); setCopied(true); window.setTimeout(() => setCopied(false), 2000); } catch { setCopied(false); }
   };
 
-  const isNew = state.type === "newCondo";
-  const isCondo = state.type !== "house";
+  const isNew = isNewProperty(state.type);
+  const isCondo = isCondoProperty(state.type);
+  const kind: Kind = isCondo ? "condo" : "house";
+  const age: Age = isNew ? "new" : "used";
+  // A new condo bought straight from the developer usually has no brokerage fee; other types usually do.
+  const setType = (type: PropertyType) => update({ ...state, type, includeBrokerage: type !== "newCondo" });
 
   return (
     <section className="fi-estimator fi-estimator--purchase" aria-label={toolsCopy[locale].tools["purchase-cost"].title}>
@@ -170,8 +180,11 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
               {amountField("price", t.fields.price)}
               <div className="fi-cost-base__field">
                 <span className="fi-cost-base__label">{t.fields.type}</span>
-                <Segment label={t.fields.type} value={state.type} options={types} labels={t.types} onChange={(type) => update({ ...state, type, includeBrokerage: type !== "newCondo" })} />
-                {isNew ? <small>{t.fields.newCondoBrokerage}</small> : null}
+                <div className="fi-segment-pair">
+                  <Segment label={t.fields.type} value={kind} options={kinds} labels={t.kinds} onChange={(next) => setType(toType(next, age))} />
+                  <Segment label={t.fields.age} value={age} options={ages} labels={t.ages} onChange={(next) => setType(toType(kind, next))} />
+                </div>
+                {state.type === "newCondo" ? <small>{t.fields.newCondoBrokerage}</small> : null}
               </div>
               <div className="fi-cost-base__field">
                 <span className="fi-cost-base__label">{t.fields.buyer}</span>
@@ -179,7 +192,7 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
                 <small>{t.buyerHint[state.buyer]}</small>
               </div>
               <div className="fi-purchase-pair">
-                {amountField("floorArea", t.fields.area, t.fields.areaHint, t.units.sqm)}
+                {amountField("floorArea", isCondo ? t.fields.area : t.fields.houseArea, t.fields.areaHint, t.units.sqm)}
                 {!isNew ? (
                   <div className="fi-cost-base__field">
                     <label htmlFor="buy-built">{t.fields.built}</label>
@@ -204,6 +217,7 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
               {amountField("buildingValue", t.fields.buildingValue)}
             </div>
             <p className="fi-purchase-hint">{isNew ? t.fields.newValueHint : t.fields.valueHint}</p>
+            {isCondo ? <p className="fi-purchase-hint">{t.fields.condoLandHint}</p> : null}
           </section>
 
           <section className="fi-cost-group" aria-labelledby="buy-group-payment">
