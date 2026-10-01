@@ -6,7 +6,7 @@ import { hasFaq, hasGuides, siteConfig } from "@/config/site";
 
 const copy = {
   "zh-TW": {
-    tagline: "福岡房地產服務｜廣東話・普通話・日語・英語",
+    tagline: "福岡房地產服務｜中文・廣東話・日語・英語",
     navigation: "網站導覽",
     contact: "聯絡方式",
     legal: "法律資訊",
@@ -28,7 +28,7 @@ const copy = {
     telephone: "電話",
   },
   ja: {
-    tagline: "福岡の不動産サービス｜広東語・中国語・日本語・英語",
+    tagline: "福岡の不動産サービス｜中国語・広東語・日本語・英語",
     navigation: "サイト案内",
     contact: "お問い合わせ",
     legal: "法的情報",
@@ -50,7 +50,7 @@ const copy = {
     telephone: "電話",
   },
   en: {
-    tagline: "Fukuoka real-estate services in Cantonese, Mandarin, Japanese, and English",
+    tagline: "Fukuoka real-estate services in Mandarin, Cantonese, Japanese, and English",
     navigation: "Explore",
     contact: "Contact",
     legal: "Legal",

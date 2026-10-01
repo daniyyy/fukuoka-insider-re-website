@@ -393,14 +393,14 @@ const entries: FaqEntry[] = [
   {
     key: "languages", category: "company-contact", featured: true,
     q: {
-      "zh-TW": "可以用廣東話或普通話溝通嗎？",
+      "zh-TW": "可以用中文或廣東話溝通嗎？",
       en: "Which languages can I use?",
     },
     a: {
       "zh-TW": "可以。我們可以用{languages}溝通，文字資料可以使用中文、日文或英文。",
       en: "We work in {languages}. Written material can be in Chinese, Japanese or English.",
     },
-    tags: { "zh-TW": ["廣東話", "普通話", "中文", "語言"], en: ["language", "Cantonese", "Mandarin", "English"] },
+    tags: { "zh-TW": ["中文", "廣東話", "國語", "普通話", "語言"], en: ["language", "Cantonese", "Mandarin", "English"] },
   },
   {
     key: "licence", category: "company-contact",

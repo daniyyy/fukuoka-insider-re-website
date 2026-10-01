@@ -120,7 +120,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
     "zh-TW": {
       title: "租屋服務",
       metaTitle: "福岡租屋服務",
-      description: "在福岡找住宅、辦公室或店舖，可以廣東話、普通話、日語或英語與我們溝通。人在海外，也可以先開始諮詢。",
+      description: "在福岡找住宅、辦公室或店舖，可以中文、廣東話、日語或英語與我們溝通。人在海外，也可以先開始諮詢。",
       highlights: ["住宅", "辦公室", "商業空間"],
       imageNote: "圖片為示意圖，並非實際出租物件。",
       audienceTitle: "這項服務適合",
@@ -163,7 +163,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
     ja: {
       title: "賃貸",
       metaTitle: "福岡の賃貸サポート",
-      description: "福岡で住まい・オフィス・店舗を探す方を、広東語・中国語（普通話）・日本語・英語でサポートします。海外からでもご相談いただけます。",
+      description: "福岡で住まい・オフィス・店舗を探す方を、中国語・広東語・日本語・英語でサポートします。海外からでもご相談いただけます。",
       highlights: ["住居", "オフィス", "店舗・事業用"],
       imageNote: "画像はイメージです。実際の募集物件ではありません。",
       audienceTitle: "このような方に",
@@ -206,7 +206,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
     en: {
       title: "Rental",
       metaTitle: "Renting in Fukuoka",
-      description: "Find a home, office, or shop in Fukuoka with support in Cantonese, Mandarin, Japanese, or English. You can start from overseas.",
+      description: "Find a home, office, or shop in Fukuoka with support in Mandarin, Cantonese, Japanese, or English. You can start from overseas.",
       highlights: ["Homes", "Offices", "Commercial space"],
       imageNote: "Illustrative image, not an actual listing.",
       audienceTitle: "Who this is for",
@@ -521,7 +521,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       helpTitle: "我們處理的事，與合作夥伴的服務",
       helpIntro: "與物業及入住直接相關的事由我們處理；其他服務由合作夥伴提供，並由對方直接與您確認條件。",
       panels: [
-        { title: "由我們直接處理", points: ["與租屋、買房或物業交付直接相關的說明與聯絡", "交付與入住時間的協調", "按已確認的情況，整理入住前後的事項", "廣東話、普通話、日語、英語溝通"] },
+        { title: "由我們直接處理", points: ["與租屋、買房或物業交付直接相關的說明與聯絡", "交付與入住時間的協調", "按已確認的情況，整理入住前後的事項", "中文、廣東話、日語、英語溝通"] },
         { title: "介紹合作夥伴", body: "需要其他服務時，按情況介紹可聯絡的外部合作夥伴。", points: ["搬家、生活手續等外部服務", "費用、條件及責任，由提供服務的一方確認"] },
       ],
       processTitle: "支援如何安排",
@@ -562,7 +562,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       helpTitle: "当社の対応と、パートナーのサービス",
       helpIntro: "物件と入居に直接関わることは当社が対応し、その他のサービスは外部パートナーが提供します。条件は各パートナーと直接ご確認いただきます。",
       panels: [
-        { title: "当社が対応すること", points: ["賃貸・購入・引渡しに直接関わるご説明と連絡", "引渡しと入居日の調整", "状況に応じた、入居前後の事項の整理", "広東語・中国語・日本語・英語での連絡"] },
+        { title: "当社が対応すること", points: ["賃貸・購入・引渡しに直接関わるご説明と連絡", "引渡しと入居日の調整", "状況に応じた、入居前後の事項の整理", "中国語・広東語・日本語・英語での連絡"] },
         { title: "パートナーのご紹介", body: "他のサービスが必要な場合、状況に応じて外部の事業者をご紹介します。", points: ["引越し、生活手続きなどの外部サービス", "費用・条件・責任は各事業者がご案内"] },
       ],
       processTitle: "サポートの進め方",
@@ -603,7 +603,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       helpTitle: "What we handle, and what partners provide",
       helpIntro: "We handle matters directly tied to the property and your move-in. Other services are provided by external partners, who confirm their terms with you directly.",
       panels: [
-        { title: "Handled by us", points: ["Explanations and communication about your rental, purchase, or handover", "Coordinating handover and move-in dates", "Organising pre- and post-move-in items for your situation", "Communication in Cantonese, Mandarin, Japanese, and English"] },
+        { title: "Handled by us", points: ["Explanations and communication about your rental, purchase, or handover", "Coordinating handover and move-in dates", "Organising pre- and post-move-in items for your situation", "Communication in Mandarin, Cantonese, Japanese, and English"] },
         { title: "Partner referrals", body: "When you need another service, we can introduce external providers where suitable.", points: ["External services such as moving and daily-life paperwork", "Fees, terms, and responsibility are set by each provider"] },
       ],
       processTitle: "How support is arranged",

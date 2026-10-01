@@ -36,8 +36,8 @@ export const siteConfig = {
     /** Office visits need an appointment (Danny, 2026-09-30). */
     visits: { "zh-TW": "請先預約", ja: "事前にご予約ください", en: "By appointment only" },
     closed: { "zh-TW": "星期六、日及日本國定假日", ja: "土・日・祝日", en: "Saturdays, Sundays, and Japanese public holidays" },
-    languages: { "zh-TW": "廣東話、普通話、日語、英語", ja: "広東語・中国語（普通話）・日本語・英語", en: "Cantonese, Mandarin, Japanese, and English" },
-    languagesShort: { "zh-TW": "廣東話・普通話・日語・英語", ja: "広東語・中国語・日本語・英語", en: "Cantonese, Mandarin, Japanese, English" },
+    languages: { "zh-TW": "中文、廣東話、日語、英語", ja: "中国語・広東語・日本語・英語", en: "Mandarin, Cantonese, Japanese, and English" },
+    languagesShort: { "zh-TW": "中文・廣東話・日語・英語", ja: "中国語・広東語・日本語・英語", en: "Mandarin, Cantonese, Japanese, English" },
     instagramFollowers: { "zh-TW": "約 8 萬人追蹤", ja: "フォロワー約8万人", en: "About 80,000 followers" },
   },
   locales: ["zh-TW", "ja", "en"] as const,

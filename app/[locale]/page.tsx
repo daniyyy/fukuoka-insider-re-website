@@ -69,7 +69,7 @@ type HomepageCopy = {
 const copy: Record<Locale, HomepageCopy> = {
   "zh-TW": {
     heroLines: ["福岡生活，", "由在地人帶路。"],
-    intro: "我們在福岡為日本及海外客戶提供租屋、房產買賣與物業管理服務，可以廣東話、普通話、日語或英語與我們溝通。",
+    intro: "我們在福岡為日本及海外客戶提供租屋、房產買賣與物業管理服務，可以中文、廣東話、日語或英語與我們溝通。",
     cta: "免費諮詢",
     servicesHeading: "服務與支援",
     services: [
@@ -87,7 +87,7 @@ const copy: Record<Locale, HomepageCopy> = {
       professionalLabel: "專業支援",
       professionalProof: "由宅地建物取引士提供專業協助",
       languagesLabel: "溝通語言",
-      languages: "廣東話・普通話・日語・英語",
+      languages: "中文・廣東話・日語・英語",
     },
     featured: "精選指南",
     guideIntro: "福岡租屋、房產與生活相關的實用資訊。",
@@ -105,12 +105,12 @@ const copy: Record<Locale, HomepageCopy> = {
     aboutCta: "了解公司與團隊",
     consult: "有福岡房地產需求？",
     consultBody: "想租屋、買賣房產、委託管理，或詢問入住相關支援，都可以先聯絡我們。資料尚未備齊也可以先聯絡我們。",
-    heroProof: ["福岡設有辦公室", "持有宅地建物取引業免許", "廣東話・普通話・日語・英語"],
+    heroProof: ["福岡設有辦公室", "持有宅地建物取引業免許", "中文・廣東話・日語・英語"],
     servicesLink: "查看服務內容",
   },
   ja: {
     heroLines: ["Build Your Life", "in Fukuoka."],
-    intro: "福岡で、国内外のお客様の賃貸・不動産売買・物件管理に対応しています。広東語・中国語（普通話）・日本語・英語でご相談いただけます。",
+    intro: "福岡で、国内外のお客様の賃貸・不動産売買・物件管理に対応しています。中国語・広東語・日本語・英語でご相談いただけます。",
     cta: "無料相談",
     servicesHeading: "サービスとサポート",
     services: [
@@ -128,7 +128,7 @@ const copy: Record<Locale, HomepageCopy> = {
       professionalLabel: "専門サポート",
       professionalProof: "宅地建物取引士が専門的にサポート",
       languagesLabel: "対応言語",
-      languages: "広東語・中国語（普通話）・日本語・英語",
+      languages: "中国語・広東語・日本語・英語",
     },
     featured: "注目のガイド",
     guideIntro: "福岡の賃貸、不動産、暮らしに役立つ情報です。",
@@ -146,12 +146,12 @@ const copy: Record<Locale, HomepageCopy> = {
     aboutCta: "会社とチームについて",
     consult: "福岡の不動産について相談する",
     consultBody: "賃貸、不動産の購入・売却、物件管理のご依頼、入居に関するサポートなど、まずはお気軽にご連絡ください。資料がすべて揃っていなくても構いません。",
-    heroProof: ["福岡に事務所", "宅地建物取引業免許を取得", "広東語・中国語・日本語・英語"],
+    heroProof: ["福岡に事務所", "宅地建物取引業免許を取得", "中国語・広東語・日本語・英語"],
     servicesLink: "サービスを見る",
   },
   en: {
     heroLines: ["Build Your Life", "in Fukuoka."],
-    intro: "We help clients in Japan and overseas with rentals, property transactions, and management in Fukuoka. Talk to us in Cantonese, Mandarin, Japanese, or English.",
+    intro: "We help clients in Japan and overseas with rentals, property transactions, and management in Fukuoka. Talk to us in Mandarin, Cantonese, Japanese, or English.",
     cta: "Free Consultation",
     servicesHeading: "Services & Support",
     services: [
@@ -169,7 +169,7 @@ const copy: Record<Locale, HomepageCopy> = {
       professionalLabel: "Professional support",
       professionalProof: "Support from a Licensed Real Estate Transaction Specialist",
       languagesLabel: "Languages",
-      languages: "Cantonese, Mandarin, Japanese, and English",
+      languages: "Mandarin, Cantonese, Japanese, and English",
     },
     featured: "Featured Guides",
     guideIntro: "Useful information about homes, property, and daily life in Fukuoka.",
@@ -187,7 +187,7 @@ const copy: Record<Locale, HomepageCopy> = {
     aboutCta: "About the company and team",
     consult: "Need help with property in Fukuoka?",
     consultBody: "Whether you want to rent, buy or sell, arrange property management or ask about move-in support, get in touch. You can contact us before you have all the details ready.",
-    heroProof: ["Office in Fukuoka", "Real estate brokerage licence", "Cantonese, Mandarin, Japanese, English"],
+    heroProof: ["Office in Fukuoka", "Real estate brokerage licence", "Mandarin, Cantonese, Japanese, English"],
     servicesLink: "View services",
   },
 };

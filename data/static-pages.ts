@@ -43,7 +43,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
     rickyRole: "代表取締役",
     rickyBody: "來自香港，曾在多個國家生活和工作，最後選擇定居福岡。初到日本時，他親身經歷過簽證、找房和創業手續的種種難處，因此希望來到福岡的人都能得到可靠、實在的支援。現負責 Fukuoka Insider 的公司營運與品牌發展。",
     dannyRole: "宅地建物取引士",
-    dannyBody: "香港出身、定居福岡，持有宅地建物取引士資格。負責租屋、買賣及物業管理的實務，從找房、申請到簽約和入住，都可以用廣東話、普通話、日語或英語直接溝通。",
+    dannyBody: "香港出身、定居福岡，持有宅地建物取引士資格。負責租屋、買賣及物業管理的實務，從找房、申請到簽約和入住，都可以用中文、廣東話、日語或英語直接溝通。",
     profileTitle: "公司概要",
     profile: {
       company: "公司名稱", established: "設立", representative: "代表", address: "地址", access: "交通",
@@ -51,7 +51,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
       languages: "溝通語言", hours: "營業時間", closed: "休息日", contact: "聯絡", instagram: "Instagram",
     },
     mapCta: "在 Google 地圖開啟",
-    ctaTitle: "可以廣東話、普通話、日語或英語聯絡",
+    ctaTitle: "可以中文、廣東話、日語或英語聯絡",
     ctaBody: "用您習慣的語言告訴我們需要。資料尚未備齊，也可以先聯絡我們。",
   },
   ja: {
@@ -70,7 +70,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
     rickyRole: "代表取締役",
     rickyBody: "香港出身。複数の国で暮らし、働いたのち、福岡に定住しました。来日当初、ビザ、住まい探し、起業手続きなど、外国人が直面する難しさを自ら経験したことから、福岡に来る方が信頼できる支援を受けられるようにしたいと考えています。現在は会社の運営とブランドづくりを担当しています。",
     dannyRole: "宅地建物取引士",
-    dannyBody: "香港出身、福岡在住の宅地建物取引士。賃貸・売買・物件管理の実務を担当し、物件探しから申込、契約、入居まで、広東語・中国語（普通話）・日本語・英語で直接ご対応します。",
+    dannyBody: "香港出身、福岡在住の宅地建物取引士。賃貸・売買・物件管理の実務を担当し、物件探しから申込、契約、入居まで、中国語・広東語・日本語・英語で直接ご対応します。",
     profileTitle: "会社概要",
     profile: {
       company: "商号", established: "設立", representative: "代表", address: "所在地", access: "アクセス",
@@ -78,7 +78,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
       languages: "対応言語", hours: "営業時間", closed: "定休日", contact: "連絡先", instagram: "Instagram",
     },
     mapCta: "Google マップで開く",
-    ctaTitle: "広東語・中国語・日本語・英語でご相談いただけます",
+    ctaTitle: "中国語・広東語・日本語・英語でご相談いただけます",
     ctaBody: "使い慣れた言語で、ご希望をお聞かせください。資料がすべて揃っていなくても、まずはご相談ください。",
   },
   en: {
@@ -97,7 +97,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
     rickyRole: "Representative Director",
     rickyBody: "Originally from Hong Kong, Ricky lived and worked in several countries before settling in Fukuoka. Having faced the visa, housing and business-setup hurdles that newcomers to Japan meet, he wants everyone arriving in Fukuoka to have support they can rely on. He leads the company's operations and brand development.",
     dannyRole: "Licensed Real Estate Transaction Specialist",
-    dannyBody: "Born in Hong Kong and based in Fukuoka, Danny is a Licensed Real Estate Transaction Specialist. He handles rentals, sales and property management day to day, from the search and application through to signing and moving in, working directly in Cantonese, Mandarin, Japanese or English.",
+    dannyBody: "Born in Hong Kong and based in Fukuoka, Danny is a Licensed Real Estate Transaction Specialist. He handles rentals, sales and property management day to day, from the search and application through to signing and moving in, working directly in Mandarin, Cantonese, Japanese or English.",
     profileTitle: "Company profile",
     profile: {
       company: "Company", established: "Established", representative: "Representative", address: "Address", access: "Access",
@@ -105,7 +105,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
       languages: "Languages", hours: "Office hours", closed: "Closed", contact: "Contact", instagram: "Instagram",
     },
     mapCta: "Open in Google Maps",
-    ctaTitle: "Talk to us in Cantonese, Mandarin, Japanese, or English",
+    ctaTitle: "Talk to us in Mandarin, Cantonese, Japanese, or English",
     ctaBody: "Tell us what you need in the language you prefer. You can contact us before you have all the details ready.",
   },
 };
@@ -129,7 +129,7 @@ type ContactCopy = {
 export const contactCopy: Record<Locale, ContactCopy> = {
   "zh-TW": {
     title: "聯絡我們",
-    intro: "可以廣東話、普通話、日語或英語與我們聯絡。資料尚未備齊，也可以先聯絡我們。",
+    intro: "可以中文、廣東話、日語或英語與我們聯絡。資料尚未備齊，也可以先聯絡我們。",
     routesTitle: "選擇聯絡方式",
     form: { title: "房地產諮詢表", body: "適合說明物業與需求詳情。我們確認可以協助的範圍後，會再聯絡您；首次諮詢不必備齊文件。", cta: "免費諮詢（填寫諮詢表）", note: "會在新視窗開啟諮詢表。", recommended: "建議" },
     line: { title: "LINE・WhatsApp", body: "適合簡單提問，或傳送照片與資料。", cta: "在 LINE 聯絡", whatsapp: "在 WhatsApp 聯絡" },
@@ -149,7 +149,7 @@ export const contactCopy: Record<Locale, ContactCopy> = {
   },
   ja: {
     title: "お問い合わせ",
-    intro: "広東語・中国語（普通話）・日本語・英語でご相談いただけます。資料がすべて揃っていなくても、まずはご相談ください。",
+    intro: "中国語・広東語・日本語・英語でご相談いただけます。資料がすべて揃っていなくても、まずはご相談ください。",
     routesTitle: "ご連絡方法",
     form: { title: "不動産の相談フォーム", body: "物件やご希望の詳細をお伝えいただく場合に最適です。対応できる範囲を確認のうえ、改めてご連絡します。初回から書類を揃える必要はありません。", cta: "無料相談（相談フォームに入力）", note: "相談フォームは新しい画面で開きます。", recommended: "おすすめ" },
     line: { title: "LINE・WhatsApp", body: "簡単なご質問や、写真・資料の送付に便利です。", cta: "LINEで相談", whatsapp: "WhatsAppで相談" },
@@ -169,7 +169,7 @@ export const contactCopy: Record<Locale, ContactCopy> = {
   },
   en: {
     title: "Contact us",
-    intro: "Talk to us in Cantonese, Mandarin, Japanese, or English. You can contact us before you have all the details ready.",
+    intro: "Talk to us in Mandarin, Cantonese, Japanese, or English. You can contact us before you have all the details ready.",
     routesTitle: "Choose how to reach us",
     form: { title: "Property enquiry form", body: "Best for sharing property and requirement details. We check what we can help with, then contact you. You do not need every document ready for a first consultation.", cta: "Free Consultation (enquiry form)", note: "The form opens in a new tab.", recommended: "Recommended" },
     line: { title: "LINE or WhatsApp", body: "Good for quick questions or sending photos and documents.", cta: "Chat on LINE", whatsapp: "Chat on WhatsApp" },

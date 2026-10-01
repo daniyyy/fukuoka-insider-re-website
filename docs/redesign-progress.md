@@ -455,3 +455,7 @@
 - Section 04 renamed 「仲介費及其他費用」 (ja 仲介手数料・その他の費用, en Brokerage and other costs); note now says amounts are typical and the contract and quotes decide — Danny did not want brokerage to look easy to adjust.
 - Checks: lint, typecheck, 26 tests, build; click test zh-TW/ja/en; crawl zh-TW 29, ja 15, en 16 pages, no errors or overflow.
 - Repair fund hint now says it is separate from the monthly 修繕積立金 (zh/ja/en), after Danny noted the two names are easy to confuse.
+
+## 2026-10-01 — Language wording
+- Danny: zh-TW now says 「中文、廣東話、日語或英語」 (short 「中文・廣東話・日語・英語」) everywhere — homepage, footer, company facts, about, contact, rental service, property management, FAQ (question now 「可以用中文或廣東話溝通嗎？」). ja/en reordered to match (中国語・広東語・日本語・英語 / Mandarin, Cantonese, Japanese, and English). Recorded in 03_DECISIONS.md.
+- Checks: lint, 26 tests, build; crawl zh-TW 29, ja 15, en 16 pages, no errors or overflow.
