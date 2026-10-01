@@ -441,3 +441,11 @@
 - Switching to actual values pre-fills the current estimate so the result does not jump. Example now totals ¥2,103,949 (7.0%, inside the 6–9% typical range; the old ¥3M/¥7M placeholder gave 5.6%).
 - Checks: lint, 25 tests, build; click test in zh-TW/ja/en at 1440/390/360; crawl zh-TW 29, ja 15, en 16 pages, no errors or overflow.
 - For Danny: confirm the split ratios fit Fukuoka (especially condo 3:7 and used house 7:3) — they can be changed in one place.
+
+## 2026-10-01 — Purchase estimator: building value from Fukuoka bureau unit prices
+- Research: land assessed value ≈ 70% of 公示価格 and Fukuoka City sale prices are only about 2% above it, so land = price × land share × 70% stays. The building estimate was too high (condo example ¥12.6M vs about ¥4.5M), so it now uses floor area × Fukuoka Legal Affairs Bureau unit price (FY2024 table: wooden house ¥105,000/㎡, RC ¥119,000/㎡; condos +25% for common areas) × the bureau's age rate.
+- 「建築年份」 is now a year input (西曆, example 2006) used for both the age rate and the owner-occupier deduction period. Mode label renamed 「自動估算」. Danny: keep the tool simple — it should attract clicks and make clear the figures are rough.
+- Example now: land ¥6.3M, building ¥4.51M, costs ¥1,659,132. Danny's ¥62M new house (100㎡): building ¥10.5M.
+- How to check real figures (told to Danny): the judicial scrivener's statement lists the 課税価格 (or back-calculate: land registration tax ÷ 1.5%); land via 全国地価マップ 固定資産税路線価 × land area. Danny may send 3–5 past statements to calibrate the land shares.
+- To review by 2027-03-31: bureau unit price table (new table from FY2027) together with the tax rules; `RULES_YEAR` in `lib/tools/purchase.ts` (ages are counted from 2026).
+- Checks: lint, typecheck, 25 tests, build; click test zh-TW/ja/en; crawl zh-TW 29, ja 15, en 16 pages, no errors or overflow.

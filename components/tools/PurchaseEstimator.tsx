@@ -13,12 +13,13 @@ import { trackEvent } from "@/lib/analytics/events";
 import { formatYen } from "@/lib/tools/calculators";
 import {
   brokerageCap,
+  builtPeriodFromYear,
   calculatePurchase,
   estimateAssessedValues,
   isCondoProperty,
   isNewProperty,
   purchaseExample,
-  type BuiltPeriod,
+  validBuiltYear,
   type BuyerType,
   type PropertyType,
   type PurchaseInputs,
@@ -27,13 +28,12 @@ import {
 
 type ValueMode = "estimate" | "exact";
 const valueModes: ValueMode[] = ["estimate", "exact"];
-type Text = { price: string; landValue: string; buildingValue: string; floorArea: string; loanAmount: string; brokerage: string; scrivener: string; insurance: string; monthlyFees: string };
+type Text = { price: string; builtYear: string; landValue: string; buildingValue: string; floorArea: string; loanAmount: string; brokerage: string; scrivener: string; insurance: string; monthlyFees: string };
 type State = {
   text: Text;
   type: PropertyType;
   valueMode: ValueMode;
   buyer: BuyerType;
-  built: BuiltPeriod;
   handoverMonth: number;
   loan: boolean;
   includeBrokerage: boolean;
@@ -48,11 +48,11 @@ const kinds: Kind[] = ["condo", "house"];
 const ages: Age[] = ["used", "new"];
 const toType = (kind: Kind, age: Age): PropertyType => (kind === "condo" ? (age === "new" ? "newCondo" : "usedCondo") : age === "new" ? "newHouse" : "usedHouse");
 const buyers: BuyerType[] = ["investor", "owner"];
-const builtPeriods: BuiltPeriod[] = ["1997", "1989", "1985", "1982", "older"];
 
 const initialState = (): State => ({
   text: {
     price: String(purchaseExample.price),
+    builtYear: "2006",
     landValue: "",
     buildingValue: "",
     floorArea: String(purchaseExample.floorArea),
@@ -65,7 +65,6 @@ const initialState = (): State => ({
   type: purchaseExample.type,
   valueMode: "estimate",
   buyer: purchaseExample.buyer,
-  built: purchaseExample.built,
   handoverMonth: purchaseExample.handoverMonth,
   loan: false,
   includeBrokerage: true,
@@ -75,16 +74,19 @@ const initialState = (): State => ({
 
 const toInputs = (s: State): PurchaseInputs => {
   const price = num(s.text.price);
-  // Most overseas buyers do not have the assessment certificate, so by default the assessed values are estimated from the price.
-  const values = s.valueMode === "estimate" ? estimateAssessedValues(price, s.type) : { landValue: num(s.text.landValue), buildingValue: num(s.text.buildingValue) };
+  const floorArea = num(s.text.floorArea);
+  const builtYear = num(s.text.builtYear);
+  // Most overseas buyers do not have the assessment certificate, so by default the assessed values are estimated.
+  const values = s.valueMode === "estimate" ? estimateAssessedValues({ price, type: s.type, floorArea, builtYear }) : { landValue: num(s.text.landValue), buildingValue: num(s.text.buildingValue) };
+  const usedYearInvalid = !isNewProperty(s.type) && !validBuiltYear(builtYear);
   return {
-    price,
+    price: usedYearInvalid ? Number.NaN : price,
     type: s.type,
     buyer: s.buyer,
     landValue: values.landValue,
     buildingValue: values.buildingValue,
-    floorArea: num(s.text.floorArea),
-    built: s.built,
+    floorArea,
+    built: builtPeriodFromYear(builtYear),
     handoverMonth: s.handoverMonth,
     loanAmount: s.loan ? num(s.text.loanAmount) : 0,
     brokerage: s.autoBrokerage ? null : num(s.text.brokerage),
@@ -170,7 +172,7 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
   const age: Age = isNew ? "new" : "used";
   // A new condo bought straight from the developer usually has no brokerage fee; other types usually do.
   const setType = (type: PropertyType) => update({ ...state, type, includeBrokerage: type !== "newCondo" });
-  const estimate = estimateAssessedValues(num(text.price), state.type);
+  const estimate = estimateAssessedValues({ price: num(text.price), type: state.type, floorArea: num(text.floorArea), builtYear: num(text.builtYear) });
   // Switching to actual values starts from the current estimate, so the result does not jump.
   const setValueMode = (valueMode: ValueMode) => update({
     ...state,
@@ -209,11 +211,13 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
                 {amountField("floorArea", isCondo ? t.fields.area : t.fields.houseArea, t.fields.areaHint, t.units.sqm)}
                 {!isNew ? (
                   <div className="fi-cost-base__field">
-                    <label htmlFor="buy-built">{t.fields.built}</label>
-                    <select id="buy-built" className="fi-select" value={state.built} onChange={(event) => update({ ...state, built: event.target.value as BuiltPeriod })}>
-                      {builtPeriods.map((period) => <option key={period} value={period}>{t.built[period]}</option>)}
-                    </select>
-                    <small>{t.fields.builtHint}</small>
+                    <label htmlFor="buy-builtYear">{t.fields.built}</label>
+                    <input
+                      id="buy-builtYear" className="fi-year" type="text" inputMode="numeric" autoComplete="off" maxLength={4} placeholder="2006"
+                      value={text.builtYear} aria-invalid={!validBuiltYear(num(text.builtYear))} aria-describedby="buy-builtYear-hint"
+                      onChange={(event) => setText("builtYear", event.target.value.replace(/[０-９]/g, (d) => String.fromCharCode(d.charCodeAt(0) - 0xfee0)).replace(/\D/g, ""))}
+                    />
+                    <small id="buy-builtYear-hint">{t.fields.builtHint}</small>
                   </div>
                 ) : null}
               </div>

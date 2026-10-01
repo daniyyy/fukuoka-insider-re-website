@@ -74,22 +74,58 @@ export type PurchaseResult = {
 };
 
 /**
- * Rough assessed values from the sale price, for visitors who do not have the assessment certificate
- * (Danny, 2026-10-01: overseas buyers rarely know 評価額).
- * - Split of the price into land and building by property type: new house 60/40 (Danny's ¥62M case: ¥37.2M land,
- *   ¥24.8M building), second-hand house 70/30, condos 30/70.
- * - Land assessed value is set at about 70% of the official land price (公示価格) → 70% of the land part.
- * - Building assessed value is about 70% of construction cost; the sale price of a building includes margin and tax,
- *   so 60% of the building part is used. Source for both: LIFULL HOME'S https://www.homes.co.jp/satei/media/entry/202303/2401
+ * Rough assessed values for visitors who do not have the assessment certificate
+ * (Danny, 2026-10-01: overseas buyers rarely know 評価額; keep it simple and clearly approximate).
+ * - Land: the price is split into land and building by type (condo 30%, new house 60% from Danny's ¥62M case,
+ *   second-hand house 70%). Land assessed values are about 70% of the official land price, and Fukuoka City
+ *   market prices are close to the official price (about +2% in 2025), so land value ≈ land part × 70%.
+ * - Building: floor area × Fukuoka Legal Affairs Bureau unit price for new buildings (FY2024 table, valid to
+ *   2027-03-31: wooden house ¥105,000/㎡, reinforced concrete ¥119,000/㎡) × the age rate in the same table.
+ *   Houses are assumed wooden; condos add about 25% for the unit's share of common areas.
+ *   https://houmukyoku.moj.go.jp/fukuoka/page000001_00278.pdf
  */
-export const estimateRatios = { land: 0.7, building: 0.6 } as const;
+export const RULES_YEAR = 2026;
 export const landShareByType: Record<PropertyType, number> = { usedCondo: 0.3, newCondo: 0.3, usedHouse: 0.7, newHouse: 0.6 };
+const LAND_RATE = 0.7;
+const unitPrice = { house: 105_000, condo: 119_000 * 1.25 };
+// Age rates (years since built → rate), linear between the table rows.
+const ageRates = {
+  wood: [[1, 0.8], [5, 0.64], [10, 0.5], [15, 0.37], [20, 0.25], [25, 0.21], [27, 0.2]],
+  concrete: [[1, 0.9579], [5, 0.8569], [10, 0.7397], [15, 0.6225], [20, 0.5054], [25, 0.3992], [30, 0.3059], [35, 0.2345], [40, 0.2089], [45, 0.2]],
+} as const;
 
-export function estimateAssessedValues(price: number, type: PropertyType) {
-  if (!Number.isFinite(price) || price <= 0) return { landValue: Number.NaN, buildingValue: Number.NaN, percent: 0 };
+export function ageRate(age: number, wood: boolean) {
+  const rows = wood ? ageRates.wood : ageRates.concrete;
+  if (age <= rows[0][0]) return rows[0][1];
+  for (let i = 1; i < rows.length; i += 1) {
+    const [a1, r1] = rows[i];
+    const [a0, r0] = rows[i - 1];
+    if (age <= a1) return r0 + ((r1 - r0) * (age - a0)) / (a1 - a0);
+  }
+  return rows[rows.length - 1][1];
+}
+
+/** Built year → period used for the owner-occupier deductions (by calendar year; the exact cut-off months are approximated). */
+export function builtPeriodFromYear(year: number): BuiltPeriod {
+  if (year >= 1997) return "1997";
+  if (year >= 1989) return "1989";
+  if (year >= 1985) return "1985";
+  if (year >= 1982) return "1982";
+  return "older";
+}
+
+export const validBuiltYear = (year: number) => Number.isInteger(year) && year >= 1900 && year <= RULES_YEAR;
+
+export function estimateAssessedValues({ price, type, floorArea, builtYear }: { price: number; type: PropertyType; floorArea: number; builtYear: number }) {
+  const isNew = isNewProperty(type);
+  if (!(price > 0) || !(floorArea > 0) || (!isNew && !validBuiltYear(builtYear))) return { landValue: Number.NaN, buildingValue: Number.NaN, percent: 0 };
+  const condo = isCondoProperty(type);
   const landShare = landShareByType[type];
-  const landValue = floorTo(price * landShare * estimateRatios.land, 1_000);
-  const buildingValue = floorTo(price * (1 - landShare) * estimateRatios.building, 1_000);
+  const landValue = floorTo(price * landShare * LAND_RATE, 1_000);
+  const rate = isNew ? 1 : ageRate(RULES_YEAR - builtYear, !condo);
+  const building = floorArea * (condo ? unitPrice.condo : unitPrice.house) * rate;
+  // Never more than the building part of the price.
+  const buildingValue = floorTo(Math.min(building, price * (1 - landShare)), 1_000);
   return { landValue, buildingValue, percent: Math.round(((landValue + buildingValue) / price) * 100) };
 }
 

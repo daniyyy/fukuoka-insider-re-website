@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { brokerageCap, calculatePurchase, estimateAssessedValues, purchaseExample, settlementShare, stampTaxSale } from "../lib/tools/purchase.ts";
+import { ageRate, brokerageCap, builtPeriodFromYear, calculatePurchase, estimateAssessedValues, purchaseExample, settlementShare, stampTaxSale } from "../lib/tools/purchase.ts";
 
 const byKey = (lines) => Object.fromEntries(lines.map((line) => [line.key, line.amount]));
 
@@ -93,8 +93,15 @@ test("new house: preservation registration, new-home deduction, no condo fees", 
   assert.equal(byKey(calculatePurchase({ ...purchaseExample, type: "usedHouse" }).atPurchase).regBuilding, 140_000);
 });
 
-test("assessed values can be estimated from the price", () => {
-  assert.deepEqual(estimateAssessedValues(30_000_000, "usedCondo"), { landValue: 6_300_000, buildingValue: 12_600_000, percent: 63 });
-  assert.deepEqual(estimateAssessedValues(62_000_000, "newHouse"), { landValue: 26_040_000, buildingValue: 14_880_000, percent: 66 });
-  assert.equal(Number.isNaN(estimateAssessedValues(0, "usedCondo").landValue), true);
+test("assessed values are estimated from price, floor area and age (Fukuoka Legal Affairs Bureau unit prices)", () => {
+  // Danny's case: ¥62M new house, 100㎡ → land 37.2M × 70%, building 100㎡ × ¥105,000.
+  assert.deepEqual(estimateAssessedValues({ price: 62_000_000, type: "newHouse", floorArea: 100, builtYear: Number.NaN }), { landValue: 26_040_000, buildingValue: 10_500_000, percent: 59 });
+  // ¥30M condo, 60㎡, built 2006 (20 years): 60 × 119,000 × 1.25 × 0.5054.
+  assert.deepEqual(estimateAssessedValues({ price: 30_000_000, type: "usedCondo", floorArea: 60, builtYear: 2006 }), { landValue: 6_300_000, buildingValue: 4_510_000, percent: 36 });
+  // An old wooden house bottoms out at 20%.
+  assert.equal(estimateAssessedValues({ price: 20_000_000, type: "usedHouse", floorArea: 100, builtYear: 1980 }).buildingValue, 2_100_000);
+  assert.equal(Number.isNaN(estimateAssessedValues({ price: 0, type: "usedCondo", floorArea: 60, builtYear: 2006 }).landValue), true);
+  assert.equal(Number.isNaN(estimateAssessedValues({ price: 30_000_000, type: "usedCondo", floorArea: 60, builtYear: 2030 }).landValue), true);
+  assert.equal(ageRate(12.5, false).toFixed(4), "0.6811");
+  assert.deepEqual([2006, 1996, 1986, 1983, 1981].map(builtPeriodFromYear), ["1997", "1989", "1985", "1982", "older"]);
 });

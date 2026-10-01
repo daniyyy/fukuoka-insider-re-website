@@ -553,6 +553,9 @@
   font: inherit; font-size: 1rem; color: var(--fi-ink); appearance: none; -webkit-appearance: none; cursor: pointer;
 }
 .fi-cost-base .fi-select { background-color: #fff; }
+.fi-year { width: 100%; min-height: 2.875rem; padding: 0 0.875rem; border: 1px solid var(--fi-line-strong); border-radius: 0; background: #fff; font: inherit; font-size: 1rem; font-variant-numeric: tabular-nums; color: var(--fi-ink); }
+.fi-year[aria-invalid="true"] { border-color: #9a3b2e; box-shadow: 0 0 0 1px #9a3b2e; }
+.fi-year:focus-visible { outline: 2px solid var(--fi-slate); outline-offset: 1px; border-color: var(--fi-slate); }
 .fi-select:focus-visible { outline: 2px solid var(--fi-slate); outline-offset: 1px; border-color: var(--fi-slate); }
 .fi-cost-item--plain { grid-template-columns: minmax(0, 1fr); }
 .fi-cost-item--plain .fi-cost-item__value { grid-column: 1; }

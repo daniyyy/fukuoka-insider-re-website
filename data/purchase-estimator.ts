@@ -1,5 +1,5 @@
 import type { Locale } from "@/config/site";
-import type { BuiltPeriod, BuyerType, PropertyType, PurchaseLineKey } from "@/lib/tools/purchase";
+import type { BuyerType, PropertyType, PurchaseLineKey } from "@/lib/tools/purchase";
 
 /** Copy for the purchase cost estimator (Danny, 2026-10-01). zh-TW is the source; ja/en follow it (translation pass 2026-10-01). */
 export type PurchaseCopy = {
@@ -19,7 +19,6 @@ export type PurchaseCopy = {
   ages: { used: string; new: string };
   buyers: Record<BuyerType, string>;
   buyerHint: Record<BuyerType, string>;
-  built: Record<BuiltPeriod, string>;
   payments: { cash: string; loan: string };
   valueModes: { estimate: string; exact: string };
   month: (month: number) => string;
@@ -44,7 +43,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       property: "物件資料",
       propertyNote: "物件類型與買家類型會影響適用的稅率及減免。",
       values: "評價額（計稅用的價值）",
-      valuesNote: "評價額是日本政府用來計稅的價值，跟買賣價格不同，通常低於買賣價格。登記費、不動產取得稅及每年的固定資產稅都以它計算。手上沒有評價資料的話，按價格估算即可。",
+      valuesNote: "評價額是日本政府用來計稅的價值，跟買賣價格不同，通常低於買賣價格。登記費、不動產取得稅及每年的固定資產稅都以它計算。手上沒有評價資料的話，選「自動估算」即可。",
       payment: "付款與交屋",
       adjust: "可調整的費用",
       adjustNote: "以下為一般金額，可按實際報價修改。",
@@ -57,8 +56,8 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       area: "專有面積",
       houseArea: "樓面面積（延床面積）",
       areaHint: "登記面積；50㎡ 以上才適用部分住宅減免",
-      built: "建築年份",
-      builtHint: "自住買家的減免按建築年份而定",
+      built: "建築年份（西曆）",
+      builtHint: "用於估算建物評價額及自住減免",
       landValue: "土地評價額",
       buildingValue: "建物評價額",
       valueHint: "見「固定資產評價證明書」或賣方的固定資產稅課稅明細，可透過仲介向賣方索取。已先填入估算數字，請改為實際金額",
@@ -66,7 +65,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       condoLandHint: "公寓也要填土地評價額：按整幅土地的評價額 × 該單位的土地持分（敷地權割合）計算",
       valueMode: "評價額的計算方式",
       estimated: "（估算）",
-      estimateNote: (percent) => `按物件價格粗略估算，合計約為價格的 ${percent}%。實際評價額因地點及建物而有很大差異，正式金額可透過仲介向賣方索取。`,
+      estimateNote: (percent) => `按價格、面積及屋齡粗略估算，合計約為價格的 ${percent}%。實際評價額因地點及建物而有很大差異，正式金額可透過仲介向賣方索取。`,
       payment: "付款方式",
       loanAmount: "貸款金額",
       handover: "交屋月份",
@@ -91,9 +90,8 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       investor: "出租、度假屋或人在海外，一般不適用住宅減免",
       owner: "本人入住並遷入住民票，面積 50㎡ 以上，二手屋須 1982 年以後建成",
     },
-    built: { "1997": "1997 年 4 月以後", "1989": "1989 年 7 月–1997 年 3 月", "1985": "1985 年 7 月–1989 年 6 月", "1982": "1982 年 1 月–1985 年 6 月", older: "1981 年或以前" },
     payments: { cash: "現金", loan: "貸款" },
-    valueModes: { estimate: "按價格估算", exact: "輸入實際評價額" },
+    valueModes: { estimate: "自動估算", exact: "輸入實際評價額" },
     month: (month) => `${month} 月`,
     units: { yen: "日圓", sqm: "㎡" },
     lines: {
@@ -127,7 +125,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       housingOff: "未套用住宅減免",
       reference: "只供參考，並非報價",
       note: "稅額按 2026 年 10 月的稅制及評價額（估算或您輸入的金額）計算。印花稅、部分登記及取得稅的減免期限至 2027 年 3 月 31 日。實際金額以司法書士、稅務機關及各契約為準。",
-      invalid: "請輸入有效數字：價格須大於 0，面積須大於 0。",
+      invalid: "請輸入有效數字：價格及面積須大於 0，二手物件須填建築年份。",
     },
     overseas: {
       title: "海外買家須知",
@@ -147,7 +145,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
         "不動產取得稅：土地評價額 × 1/2 × 3%；建物評價額 × 3%，新建住宅可扣除 1,200 萬日圓，自住二手屋按建築年份扣除。",
         "固定資產稅＋都市計畫稅（福岡市）：土地評價額 × 1/6 × 1.4% ＋ 土地評價額 × 1/3 × 0.3%，建物評價額 × 1.7%；新建物件的建物固定資產稅減半（120㎡ 以內部分；公寓首 5 年、獨立屋首 3 年）。",
         "固定資產稅精算：由交屋日至翌年 3 月 31 日，按日數分擔（福岡習慣以 4 月 1 日起算）。",
-        "評價額估算（選「按價格估算」時）：先按物件類型把價格分為土地與建物（公寓 3:7、新建獨立屋 6:4、二手獨立屋 7:3），土地評價額約為土地部分的 70%（土地評價額一般約為公示地價的 70%），建物評價額約為建物部分的 60%。",
+        "評價額估算（選「自動估算」時）：土地＝價格 × 土地比例（公寓 30%、新建獨立屋 60%、二手獨立屋 70%）× 70%（土地評價額一般約為公示地價的 70%，福岡市成交價與公示地價相近）；建物＝面積 × 福岡法務局新建建物單價（獨立屋按木造每㎡ 105,000 日圓；公寓按鋼筋混凝土每㎡ 119,000 日圓，另加約 25% 公共部分）× 按屋齡的折舊率。",
       ],
       sources: "依據：國稅廳、法務局、國土交通省、福岡縣及福岡市公開資料（2026 年 10 月確認）。",
     },
@@ -161,7 +159,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       property: "物件情報",
       propertyNote: "物件の種類と購入者の区分によって、適用される税率や軽減措置が変わります。",
       values: "評価額（税金の計算用）",
-      valuesNote: "評価額は、税金の計算のために行政が定める価格で、売買価格とは別のものです。通常は売買価格より低くなります。登録免許税、不動産取得税、毎年の固定資産税はこの評価額をもとに計算します。手元に資料がない場合は、価格からの概算で構いません。",
+      valuesNote: "評価額は、税金の計算のために行政が定める価格で、売買価格とは別のものです。通常は売買価格より低くなります。登録免許税、不動産取得税、毎年の固定資産税はこの評価額をもとに計算します。手元に資料がない場合は「自動で概算」をお選びください。",
       payment: "支払方法と引渡し",
       adjust: "調整できる費用",
       adjustNote: "一般的な金額を入れています。実際の見積額に合わせて変更してください。",
@@ -174,8 +172,8 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       area: "専有面積",
       houseArea: "延床面積",
       areaHint: "登記上の面積。一部の住宅用軽減措置は50㎡以上が条件です",
-      built: "建築時期",
-      builtHint: "自己居住用の軽減措置は、建築時期によって異なります",
+      built: "建築年（西暦）",
+      builtHint: "建物の評価額の概算と、自己居住用の軽減措置に使います",
       landValue: "土地の評価額",
       buildingValue: "建物の評価額",
       valueHint: "固定資産評価証明書または売主の課税明細書に記載されています（仲介会社を通じて売主から取り寄せられます）。概算の数字が入っているため、実際の金額に変更してください",
@@ -183,7 +181,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       condoLandHint: "マンションも土地の評価額を入力します：敷地全体の評価額×その住戸の敷地権割合で計算します",
       valueMode: "評価額の入力方法",
       estimated: "（概算）",
-      estimateNote: (percent) => `物件価格から大まかに概算しています（合計で価格の約${percent}%）。実際の評価額は立地や建物によって大きく異なります。正確な金額は仲介会社を通じて売主から取り寄せられます。`,
+      estimateNote: (percent) => `価格・面積・築年数から大まかに概算しています（合計で価格の約${percent}%）。実際の評価額は立地や建物によって大きく異なります。正確な金額は仲介会社を通じて売主から取り寄せられます。`,
       payment: "支払方法",
       loanAmount: "借入額",
       handover: "引渡し月",
@@ -208,9 +206,8 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       investor: "賃貸用、別荘、海外在住の場合、住宅用の軽減措置は通常適用されません",
       owner: "ご本人が住民票を移して居住、床面積50㎡以上、中古は1982年以降の建築",
     },
-    built: { "1997": "1997年4月以降", "1989": "1989年7月〜1997年3月", "1985": "1985年7月〜1989年6月", "1982": "1982年1月〜1985年6月", older: "1981年以前" },
     payments: { cash: "現金", loan: "ローン" },
-    valueModes: { estimate: "価格から概算", exact: "実際の評価額を入力" },
+    valueModes: { estimate: "自動で概算", exact: "実際の評価額を入力" },
     month: (month) => `${month}月`,
     units: { yen: "円", sqm: "㎡" },
     lines: {
@@ -244,7 +241,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       housingOff: "住宅軽減は適用なし",
       reference: "参考値です（見積りではありません）",
       note: "税額は2026年10月時点の税制と、評価額（概算または入力された金額）をもとに計算しています。印紙税、一部の登録免許税・不動産取得税の軽減措置は2027年3月31日までです。実際の金額は、司法書士、税務当局、各契約でご確認ください。",
-      invalid: "有効な数値を入力してください。価格と面積は0より大きい値が必要です。",
+      invalid: "有効な数値を入力してください。価格と面積は0より大きい値、中古物件は建築年が必要です。",
     },
     overseas: {
       title: "海外在住の購入者の方へ",
@@ -264,7 +261,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
         "不動産取得税：土地評価額×1/2×3%、建物評価額×3%。新築住宅は1,200万円を控除、自己居住の中古住宅は建築時期に応じて控除。",
         "固定資産税＋都市計画税（福岡市）：土地評価額×1/6×1.4%＋土地評価額×1/3×0.3%、建物評価額×1.7%。新築住宅は建物の固定資産税を2分の1に減額（120㎡までの部分。マンションは当初5年間、戸建ては当初3年間）。",
         "固定資産税の精算：引渡し日から翌年3月31日までを日割りで負担（福岡では4月1日起算が一般的）。",
-        "評価額の概算（「価格から概算」を選んだ場合）：物件の種類に応じて価格を土地と建物に分け（マンション3:7、新築戸建て6:4、中古戸建て7:3）、土地の評価額は土地部分の約70%（土地の評価額は一般に公示価格の約70%）、建物の評価額は建物部分の約60%としています。",
+        "評価額の概算（「自動で概算」を選んだ場合）：土地＝価格×土地の割合（マンション30%、新築戸建て60%、中古戸建て70%）×70%（土地の評価額は一般に公示価格の約70%で、福岡市の取引価格は公示価格に近い水準）。建物＝面積×福岡法務局の新築建物の単価（戸建ては木造1㎡あたり105,000円、マンションは鉄筋コンクリート造1㎡あたり119,000円に共用部分として約25%を加算）×築年数に応じた減価率。",
       ],
       sources: "根拠：国税庁、法務局、国土交通省、福岡県、福岡市の公開資料（2026年10月確認）。",
     },
@@ -278,7 +275,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       property: "Property details",
       propertyNote: "The property type and buyer type affect which tax rates and reductions apply.",
       values: "Assessed value (used for tax)",
-      valuesNote: "The assessed value (固定資産税評価額) is the value the Japanese authorities use to calculate tax. It is not the sale price and is usually lower. Registration tax, real estate acquisition tax and the yearly fixed asset tax are all based on it. If you do not have the figures, an estimate from the price is fine.",
+      valuesNote: "The assessed value (固定資産税評価額) is the value the Japanese authorities use to calculate tax. It is not the sale price and is usually lower. Registration tax, real estate acquisition tax and the yearly fixed asset tax are all based on it. If you do not have the figures, choose \"Estimate for me\".",
       payment: "Payment and handover",
       adjust: "Adjustable costs",
       adjustNote: "These are typical amounts; change them to match actual quotes.",
@@ -292,7 +289,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       houseArea: "Total floor area",
       areaHint: "Registered floor area; some housing reductions apply only from 50㎡",
       built: "Year built",
-      builtHint: "Reductions for owner-occupiers depend on when the building was built",
+      builtHint: "Used to estimate the building value and the owner-occupier reductions",
       landValue: "Land assessed value",
       buildingValue: "Building assessed value",
       valueHint: "Shown on the assessment certificate (固定資産評価証明書) or the seller's tax statement, which the agent can request from the seller. Estimated figures are filled in; replace them with the actual amounts",
@@ -300,7 +297,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       condoLandHint: "Condos have a land value too: the whole site's assessed value × the unit's land share (敷地権割合)",
       valueMode: "How to set the assessed value",
       estimated: " (estimate)",
-      estimateNote: (percent) => `A rough estimate from the property price (about ${percent}% of the price in total). Actual assessed values vary widely with the location and the building; the exact figures can be requested from the seller through the agent.`,
+      estimateNote: (percent) => `A rough estimate from the price, floor area and age (about ${percent}% of the price in total). Actual assessed values vary widely with the location and the building; the exact figures can be requested from the seller through the agent.`,
       payment: "Payment method",
       loanAmount: "Loan amount",
       handover: "Handover month",
@@ -325,9 +322,8 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       investor: "Rentals, holiday homes and owners living overseas usually do not qualify for housing reductions",
       owner: "You live there and move your resident registration to it, 50㎡ or more, and second-hand homes must be built in 1982 or later",
     },
-    built: { "1997": "Apr 1997 or later", "1989": "Jul 1989 – Mar 1997", "1985": "Jul 1985 – Jun 1989", "1982": "Jan 1982 – Jun 1985", older: "1981 or earlier" },
     payments: { cash: "Cash", loan: "Loan" },
-    valueModes: { estimate: "Estimate from price", exact: "Enter actual values" },
+    valueModes: { estimate: "Estimate for me", exact: "Enter actual values" },
     month: (month) => ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][month - 1] ?? String(month),
     units: { yen: "JPY", sqm: "㎡" },
     lines: {
@@ -361,7 +357,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
       housingOff: "No housing reductions applied",
       reference: "For reference only, not a quote",
       note: "Taxes are calculated using the rules as of October 2026 and the assessed values (estimated or entered by you). The stamp tax reduction and some registration and acquisition tax reductions run until 31 March 2027. Actual amounts are set by the judicial scrivener, the tax authorities and each contract.",
-      invalid: "Enter valid numbers: the price and floor area must both be above zero.",
+      invalid: "Enter valid numbers: the price and floor area must be above zero, and second-hand properties need the year built.",
     },
     overseas: {
       title: "For buyers living overseas",
@@ -381,7 +377,7 @@ export const purchaseCopy: Record<Locale, PurchaseCopy> = {
         "Real estate acquisition tax: land assessed value × 1/2 × 3%; building assessed value × 3%, with ¥12 million deducted for new homes and a deduction based on the construction date for owner-occupied second-hand homes.",
         "Fixed asset tax + city planning tax (Fukuoka City): land assessed value × 1/6 × 1.4% + land assessed value × 1/3 × 0.3%; building assessed value × 1.7%. For new homes, the building's fixed asset tax is halved (up to 120㎡; 5 years for condos, 3 years for houses).",
         "Fixed asset tax settlement: shared by the number of days from the handover date to the following 31 March (in Fukuoka the year usually counts from 1 April).",
-        "Assessed value estimate (when \"Estimate from price\" is selected): the price is split into land and building by property type (condos 3:7, new houses 6:4, second-hand houses 7:3); the land value is taken as about 70% of the land part (land assessed values are generally about 70% of the official land price), and the building value as about 60% of the building part.",
+        "Assessed value estimate (when \"Estimate for me\" is selected): land = price × land share (condos 30%, new houses 60%, second-hand houses 70%) × 70% (land assessed values are generally about 70% of the official land price, and Fukuoka City sale prices are close to the official price); building = floor area × the Fukuoka Legal Affairs Bureau unit price for new buildings (houses: wooden, ¥105,000 per ㎡; condos: reinforced concrete, ¥119,000 per ㎡ plus about 25% for common areas) × an age-based rate.",
       ],
       sources: "Based on public information from the National Tax Agency, the Legal Affairs Bureau, the Ministry of Land, Infrastructure, Transport and Tourism, Fukuoka Prefecture and Fukuoka City (checked October 2026).",
     },
