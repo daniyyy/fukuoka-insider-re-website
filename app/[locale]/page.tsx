@@ -131,11 +131,11 @@ const copy: Record<Locale, HomepageCopy> = {
       languages: "広東語・中国語（普通話）・日本語・英語",
     },
     featured: "注目のガイド",
-    guideIntro: "ガイド記事は繁体字中国語と英語でご覧いただけます。",
+    guideIntro: "福岡の賃貸、不動産、暮らしに役立つ情報です。",
     faqHeading: "よくあるご質問",
     faqBody: "ご相談の前に、確認しておきたいことをまとめました。",
     faqCta: "よくある質問をすべて見る",
-    allGuides: "すべてのガイド（英語）",
+    allGuides: "すべてのガイドを見る",
     life: "福岡の暮らしと街の情報",
     lifeBody: "福岡の街、交通、日々の暮らしに関する情報は Fukuoka Insider でご覧いただけます。",
     lifeCta: "Fukuoka Insider へ",
@@ -145,8 +145,8 @@ const copy: Record<Locale, HomepageCopy> = {
     aboutBody: "Ricky は代表取締役。Danny は福岡在住の宅地建物取引士です。",
     aboutCta: "会社とチームについて",
     consult: "福岡の不動産について相談する",
-    consultBody: "賃貸、売買、物件管理、入居に関するご相談は、資料がすべて揃う前でもお問い合わせいただけます。",
-    heroProof: ["福岡に事務所", "宅地建物取引業免許", "広東語・中国語・日本語・英語"],
+    consultBody: "賃貸、不動産の購入・売却、物件管理のご依頼、入居に関するサポートなど、まずはお気軽にご連絡ください。資料がすべて揃っていなくても構いません。",
+    heroProof: ["福岡に事務所", "宅地建物取引業免許を取得", "広東語・中国語・日本語・英語"],
     servicesLink: "サービスを見る",
   },
   en: {
@@ -164,8 +164,8 @@ const copy: Record<Locale, HomepageCopy> = {
       heading: "We are based in Fukuoka.",
       body: "Fukuoka Insider has an office in Fukuoka and provides real-estate services and related support.",
       location: "Ōtemon, Chuo-ku, Fukuoka",
-      companyLabel: "Company licence",
-      companyProof: "Licensed as a real-estate business in Japan",
+      companyLabel: "Real estate brokerage licence",
+      companyProof: "Holds a Japanese real estate brokerage licence",
       professionalLabel: "Professional support",
       professionalProof: "Support from a Licensed Real Estate Transaction Specialist",
       languagesLabel: "Languages",
@@ -186,8 +186,8 @@ const copy: Record<Locale, HomepageCopy> = {
     aboutBody: "Ricky is the Representative Director. Danny lives in Fukuoka and is a Licensed Real Estate Transaction Specialist.",
     aboutCta: "About the company and team",
     consult: "Need help with property in Fukuoka?",
-    consultBody: "Enquire about renting, buying, selling, management, or move-in support. You can contact us before gathering every document.",
-    heroProof: ["Office in Fukuoka", "Licensed in Japan", "Cantonese, Mandarin, Japanese, English"],
+    consultBody: "Whether you want to rent, buy or sell, arrange property management or ask about move-in support, get in touch. You can contact us before you have all the details ready.",
+    heroProof: ["Office in Fukuoka", "Real estate brokerage licence", "Cantonese, Mandarin, Japanese, English"],
     servicesLink: "View services",
   },
 };
@@ -286,7 +286,7 @@ export default async function LocaleHome({
               <div className="fi-frame">
               <Image
                 src={asset("/images/office/fukuoka-insider-office.webp")}
-                alt={alt("株式会社Fukuoka Insider 福岡辦公室的公司標誌與宅地建物取引業免許", "株式会社Fukuoka Insider 福岡事務所のロゴと宅地建物取引業免許", "Fukuoka Insider office, company logo, and real-estate business licence in Fukuoka")}
+                alt={alt("株式会社Fukuoka Insider 福岡辦公室的公司標誌與宅地建物取引業免許", "株式会社Fukuoka Insider 福岡事務所のロゴと宅地建物取引業免許", "Fukuoka Insider office, company logo, and real estate brokerage licence in Fukuoka")}
                 width={900}
                 height={676}
                 loading="lazy"

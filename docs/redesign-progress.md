@@ -427,3 +427,9 @@
 - Inputs: price, type (used condo / new condo / house), buyer (investor-overseas default / owner-occupier), floor area, year built, land and building assessed values, cash or loan, handover month, brokerage (legal cap by default, editable), scrivener, insurance, monthly condo fees.
 - Results: contract-to-handover costs, acquisition tax 6–12 months later, total vs typical %, total incl. price, yearly holding costs; overseas-buyer notes (外為法 report, tax agent, nationality declaration from 2026-10-05, remittance); calculation method; LINE/WhatsApp send.
 - To review before 2027-03-31: stamp tax reduction, housing registration rates, acquisition tax 3% and 1/2 land base (令和9 tax reform). Example assessed values (land ¥3M, building ¥7M for a ¥30M used condo) are placeholders for Danny to confirm.
+
+## 2026-10-01 — Japanese and English brought in line with zh-TW
+- zh-TW final check: 29 pages, no errors or overflow; fixed 金融機關 (disclaimer), 「可向賣方了解」, tools index note (purchase estimator now calculates taxes), new-condo tax wording (fixed asset tax halved up to 120㎡), contact row 來訪：請先預約.
+- ja/en updated for every zh change since the freeze (contact, about, buy/sell, property management, tools, estimators, guides UI en, FAQ en, legal en terminology) and purchase estimator ja/en rewritten. Consistent terms recorded in 03_DECISIONS.md. Copy rule in CLAUDE.md back to "three languages together".
+- UI: option buttons split width evenly; Japanese labels keep words whole (keep-all + invisible break point); LINE/WhatsApp messages use language-appropriate brackets.
+- All three languages crawled: zh-TW 29, ja 15, en 16 pages, no errors or overflow.

@@ -16,8 +16,8 @@ type PageProps = { params: Promise<{ locale: string }> };
 
 const pageCopy: Record<Locale, { metaTitle: string; ctaTitle: string; ctaBody: string }> = {
   "zh-TW": { metaTitle: "福岡房地產服務", ctaTitle: "不確定需要哪一項服務？", ctaBody: "直接告訴我們您的情況，我們會為您整理下一步。資料尚未備齊，也可以先聯絡我們。" },
-  ja: { metaTitle: "福岡の不動産サービス", ctaTitle: "どのサービスが合うか迷ったら", ctaBody: "ご状況をそのままお聞かせください。次に何をすればよいかを一緒に整理します。" },
-  en: { metaTitle: "Fukuoka Real Estate Services", ctaTitle: "Not sure which service fits?", ctaBody: "Tell us about your situation and we will help you work out the next step. You can enquire before everything is decided." },
+  ja: { metaTitle: "福岡の不動産サービス", ctaTitle: "どのサービスが合うか迷ったら", ctaBody: "ご状況をそのままお聞かせください。次に何をすればよいかを一緒に整理します。資料がすべて揃っていなくても、まずはご相談ください。" },
+  en: { metaTitle: "Fukuoka Real Estate Services", ctaTitle: "Not sure which service fits?", ctaBody: "Tell us about your situation and we will help you work out the next step. You can contact us before you have all the details ready." },
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

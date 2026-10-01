@@ -106,7 +106,7 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
       intro: `${company} ("we") takes the protection of your personal information seriously. This policy explains how we collect, use, and keep personal information in line with Japan's Act on the Protection of Personal Information and related laws.`,
       updated: "Established: 29 September 2026",
       sections: [
-        { title: "Who we are", body: [`${company} | Representative: ${rep.en}`, `Address: ${address}`, `Real-estate brokerage licence: ${licence}`, `Privacy enquiries: ${email}`] },
+        { title: "Who we are", body: [`${company} | Representative: ${rep.en}`, `Address: ${address}`, `Real estate brokerage licence: ${licence}`, `Privacy enquiries: ${email}`] },
         { title: "Information we collect", body: [
           "Your name, telephone number, email address, and messaging accounts such as LINE or WhatsApp.",
           "Your enquiry, preferred conditions, property details, and records of our communication.",
@@ -120,14 +120,14 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
           "1. To reply to your enquiries and contact you.",
           "2. To introduce properties and provide rental and sales brokerage, property management, and living support.",
           "3. To carry out transaction procedures such as the explanation of important matters and contracts.",
-          "4. To communicate with landlords, management companies, guarantor companies, financial institutions, and other parties to a transaction.",
+          "4. To communicate with landlords, management companies, guarantee companies, financial institutions, and other parties to a transaction.",
           "5. To meet our legal obligations.",
           "6. With your consent, to send you information about our services.",
           "We will ask for your consent before using your information for any other purpose.",
         ] },
         { title: "Sharing with third parties", body: [
           "Except where the law requires or permits it, we do not provide personal information to third parties without your consent.",
-          "Real-estate transactions often require sharing information, to the extent necessary, with landlords, management companies, rent guarantor companies, sellers or buyers, other real-estate agents, financial institutions, and judicial scriveners. We ask for your consent before doing so.",
+          "Real-estate transactions often require sharing information, to the extent necessary, with landlords, management companies, rent guarantee companies, sellers or buyers, other real-estate agents, financial institutions, and judicial scriveners. We ask for your consent before doing so.",
         ] },
         { title: "External services", body: [
           "We use external services such as Google Forms, email, LINE, and WhatsApp to communicate with you. Each provider handles information under its own privacy policy, and data may be stored outside Japan (for example, in the United States).",
@@ -151,7 +151,7 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
       updated: "制定日期：2026年9月29日",
       sections: [
         { title: "資訊的性質", body: ["網站內容（包括指南文章）是按撰寫時可取得的資料整理的一般資訊。法令、稅制、市場及各公司的規定可能改變，請以辦理手續時的最新資料為準。"] },
-        { title: "物業及交易條件", body: ["物業是否仍可租售、租金、價格、費用、設備及面積等可能變動。申請及契約前，請以正式文件確認。", "租屋審查、保證公司審查、貸款及交易條件，由業主、賣方、管理公司、保證公司、金融機關等判斷。本公司不保證審查結果或交易一定成立。"] },
+        { title: "物業及交易條件", body: ["物業是否仍可租售、租金、價格、費用、設備及面積等可能變動。申請及契約前，請以正式文件確認。", "租屋審查、保證公司審查、貸款及交易條件，由業主、賣方、管理公司、保證公司、金融機構等判斷。本公司不保證審查結果或交易一定成立。"] },
         { title: "不構成專業意見", body: ["網站內容不構成稅務、法律、登記、在留資格或融資等專業意見。個別情況請向稅理士、律師、司法書士、行政書士等專業人士確認。"] },
         { title: "費用估算工具", body: ["費用估算工具只按您輸入的數字計算，結果只供參考，並非報價。實際費用以個別物件的正式報價及契約為準。"] },
         { title: "多語言內容", body: ["本網站以繁體中文、日文及英文提供。各語言內容如有差異，以日文版為準。重要事項說明書及契約書以日文書面為正式文件。"] },
@@ -179,7 +179,7 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
       updated: "Established: 29 September 2026",
       sections: [
         { title: "Nature of the information", body: ["Site content, including guide articles, is general information based on what was available when it was written. Laws, taxes, market conditions, and company rules can change, so please confirm the latest information when you proceed."] },
-        { title: "Properties and transaction terms", body: ["Availability, rent, prices, fees, equipment, and floor areas may change. Please confirm them in the official documents before applying or signing.", "Tenant screening, guarantor screening, financing, and transaction terms are decided by landlords, sellers, management companies, guarantor companies, and financial institutions. We cannot guarantee any screening result or that a transaction will be completed."] },
+        { title: "Properties and transaction terms", body: ["Availability, rent, prices, fees, equipment, and floor areas may change. Please confirm them in the official documents before applying or signing.", "Tenant screening, guarantee company screening, financing, and transaction terms are decided by landlords, sellers, management companies, guarantee companies, and financial institutions. We cannot guarantee any screening result or that a transaction will be completed."] },
         { title: "Not professional advice", body: ["Nothing on this site is tax, legal, registration, residence-status, or financing advice. For your own situation, please consult a qualified professional such as a tax accountant, lawyer, judicial scrivener, or administrative scrivener."] },
         { title: "Cost estimators", body: ["The cost estimators calculate only from the figures you enter. Results are for reference and are not quotations. Actual costs follow the official quotation and contract for each property."] },
         { title: "Languages", body: ["This site is available in Traditional Chinese, Japanese, and English. If the versions differ, the Japanese version prevails. Explanations of important matters and contracts are official only in their Japanese written form."] },
@@ -221,7 +221,7 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
       updated: "Established: 29 September 2026",
       sections: [
         { title: "Copyright", body: ["Copyright and related rights in the text, photographs, images, charts, logos, and other content on this website belong to us or to their rightful owners.", "Reproduction, republication, adaptation, redistribution, or commercial use without our written permission is prohibited.", "You may quote site content to the extent the law allows, provided the requirements for quotation, such as citing the source, are met."] },
-        { title: "Prohibited conduct", body: ["Providing false information or impersonating another person.", "Unauthorized access, placing excessive load on the server, or collecting site content in bulk with automated programs.", "Interfering with our business, infringing the rights of others, or any other conduct contrary to law or public order."] },
+        { title: "Prohibited conduct", body: ["Providing false information or impersonating another person.", "Unauthorised access, placing excessive load on the server, or collecting site content in bulk with automated programs.", "Interfering with our business, infringing the rights of others, or any other conduct contrary to law or public order."] },
         { title: "Linking to this site", body: ["You may generally link to this website. Please do not link in a way that suggests a partnership with us, or display this site inside a frame on another website."] },
         { title: "Enquiries and contracts", body: ["Sending an enquiry through this website does not create a contract. Brokerage, management, and other agreements are signed separately in writing after we explain their terms and fees."] },
         { title: "Changes", body: ["We may revise these terms. Revised terms take effect when published on this page."] },

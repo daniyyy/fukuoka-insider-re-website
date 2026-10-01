@@ -43,7 +43,7 @@ export default async function AboutPage({ params }: PageProps) {
               <div className="fi-frame fi-frame--hero">
                 <Image
                   src={asset("/images/office/fukuoka-insider-office.webp")}
-                  alt={locale === "zh-TW" ? "株式会社Fukuoka Insider 辦公室的公司標誌與宅地建物取引業免許" : locale === "ja" ? "株式会社Fukuoka Insider 事務所のロゴと宅地建物取引業免許" : "The Fukuoka Insider office with the company sign and real-estate licence"}
+                  alt={locale === "zh-TW" ? "株式会社Fukuoka Insider 辦公室的公司標誌與宅地建物取引業免許" : locale === "ja" ? "株式会社Fukuoka Insider 事務所のロゴと宅地建物取引業免許" : "The Fukuoka Insider office with the company sign and real estate brokerage licence"}
                   width={900}
                   height={676}
                   fetchPriority="high"

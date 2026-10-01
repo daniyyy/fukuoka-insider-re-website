@@ -68,7 +68,7 @@ export const serviceOverviewCopy: Record<Locale, {
     action: "詳しく見る",
     items: [
       { key: "rent", title: "賃貸", audience: "住まい探し・福岡への転居", description: "住居、オフィス、店舗の賃貸。海外からでもご相談いただけます。", route: "/services/rent" },
-      { key: "buy-sell", title: "不動産売買", audience: "福岡での購入・売却をご検討の方", description: "購入は物件探しから、売却は物件の現況と進め方からご相談いただけます。", route: "/services/buy-sell" },
+      { key: "buy-sell", title: "不動産売買", audience: "福岡での購入・売却をご検討の方", description: "購入は物件探しと物件の確認をお手伝いし、売却は物件の現況と進め方からご相談いただけます。", route: "/services/buy-sell" },
       { key: "property-management", title: "物件管理", audience: "賃貸物件・別荘のオーナー様", description: "賃貸管理と、別荘など普段お住まいでない物件の定期確認。", route: "/services/property-management" },
       { key: "living-support", title: "生活サポート", audience: "入居と生活の準備が必要な方", description: "入居に直接関わる事項をサポートし、必要に応じて外部パートナーをご紹介します。", route: "/services/living-support" },
     ],
@@ -81,7 +81,7 @@ export const serviceOverviewCopy: Record<Locale, {
     action: "Learn more",
     items: [
       { key: "rent", title: "Rental", audience: "Finding a home or moving to Fukuoka", description: "Homes, offices, and commercial space. You can start from overseas.", route: "/services/rent" },
-      { key: "buy-sell", title: "Buy & Sell", audience: "Buying in Fukuoka or selling a Fukuoka property", description: "Start a property search, or discuss your property's condition and a possible sale.", route: "/services/buy-sell" },
+      { key: "buy-sell", title: "Buy & Sell", audience: "Buying in Fukuoka or selling a Fukuoka property", description: "For buyers, we help find and check properties; for sellers, we start by discussing the property's condition and how to sell.", route: "/services/buy-sell" },
       { key: "property-management", title: "Property Management", audience: "Owners of rental property or a holiday home", description: "Rental management, plus periodic checks for holiday homes and other second homes.", route: "/services/property-management" },
       { key: "living-support", title: "Living Support", audience: "Arranging a move and daily life", description: "Help with matters tied to moving in, and referrals to external partners where needed.", route: "/services/living-support" },
     ],
@@ -201,7 +201,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
         "募集状況、申込条件、必要書類は物件ごとに異なります。",
       ],
       ctaTitle: "福岡で賃貸物件をお探しですか？",
-      ctaBody: "希望エリア、予算、入居時期をお知らせください。条件がまとまっていなくてもご相談いただけます。",
+      ctaBody: "希望エリア、予算、入居時期をお知らせください。資料がすべて揃っていなくても、まずはご相談ください。",
     },
     en: {
       title: "Rental",
@@ -230,7 +230,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
         { title: "Sign and move in", body: "After screening, confirm the contract, costs, and move-in date." },
       ],
       prepareTitle: "Before you start",
-      prepareIntro: "For a first enquiry, share whatever is already decided. The rest can follow.",
+      prepareIntro: "For a first consultation, share whatever is already decided. The rest can follow.",
       preparation: [
         { title: "Preferences", body: "Area, budget, move-in date, and use" },
         { title: "Applicant details", body: "Occupants, employment, and residence status" },
@@ -240,11 +240,11 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       tool: { href: "/tools/rental-initial-cost", label: "Estimate initial rental costs" },
       limitsTitle: "Good to know",
       limits: [
-        "The landlord or management company screens each application, and a guarantor company may also need to approve it. We cannot guarantee the outcome.",
+        "The landlord or management company screens each application, and a guarantee company may also need to approve it. We cannot guarantee the outcome.",
         "Availability, conditions, and required documents vary by property.",
       ],
       ctaTitle: "Looking for a place in Fukuoka?",
-      ctaBody: "Tell us your preferred area, budget, and move-in timing. You can enquire before everything is decided.",
+      ctaBody: "Tell us your preferred area, budget, and move-in timing. You can contact us before you have all the details ready.",
     },
   },
   "buy-sell": {
@@ -306,12 +306,12 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       helpTitle: "購入と売却、それぞれの進め方",
       helpIntro: "購入と売却では準備が異なるため、状況に合わせて分けて整理します。",
       panels: [
-        { title: "購入", body: "目的、予算、希望エリア、時期を確認し、物件探しと取引の準備を進めます。", points: ["購入条件の整理", "物件情報の調査・確認", "内見と取引に関する連絡・調整"] },
+        { title: "購入", body: "目的、予算、希望エリア、時期を確認し、物件探しと取引の準備を進めます。", points: ["購入条件の整理", "物件探しと物件情報の確認", "内見と取引に関する連絡・調整"] },
         { title: "売却", body: "物件の状況、お手元の資料、希望条件を確認し、売却の進め方をご相談します。", points: ["物件資料と現況の整理", "売却条件・時期のご相談", "取引に関する連絡・調整"] },
       ],
       processTitle: "一般的な流れ",
       process: [
-        { title: "初回確認", body: "購入・売却のご希望、予算または物件情報、時期を伺います。" },
+        { title: "初回確認", body: "購入か売却か、予算（購入の場合）または物件情報（売却の場合）、ご希望の時期を伺います。" },
         { title: "資料の整理", body: "物件情報、現況、追加で必要な書類を確認します。" },
         { title: "条件の調整", body: "物件探し、内見、売却準備と、関係者との連絡を進めます。" },
         { title: "契約・引渡し", body: "条件確定後、契約に沿って決済、登記、引渡しを行います。" },
@@ -349,12 +349,12 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       helpTitle: "Two paths: buying and selling",
       helpIntro: "Buying and selling need different preparation, so we organise each separately around your situation.",
       panels: [
-        { title: "Buying", body: "We confirm your purpose, budget, area, and timing, then organise the search and transaction preparation.", points: ["Clarify buying criteria", "Research and verify property information", "Coordinate viewings and transaction communication"] },
+        { title: "Buying", body: "We confirm your purpose, budget, area, and timing, then organise the search and transaction preparation.", points: ["Clarify buying criteria", "Find properties and verify their details", "Coordinate viewings and transaction communication"] },
         { title: "Selling", body: "We review the property's condition, existing documents, and your preferred terms, then discuss how to approach the sale.", points: ["Organise property records and condition", "Discuss sale terms and timing", "Coordinate transaction communication"] },
       ],
       processTitle: "The usual process",
       process: [
-        { title: "Initial review", body: "Share whether you are buying or selling, your budget or property details, and timing." },
+        { title: "Initial review", body: "Tell us whether you are buying or selling, your budget (buying) or property details (selling), and your timing." },
         { title: "Organise information", body: "Confirm property records, current condition, and any missing documents." },
         { title: "Coordinate terms", body: "Searches, viewings, or sale preparation, plus communication with other parties." },
         { title: "Contract and handover", body: "Once terms are agreed, complete settlement, registration, and handover under the contract." },
@@ -484,7 +484,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       processTitle: "How management works",
       process: [
         { title: "Confirm property and scope", body: "We review the property and the tasks you want to delegate." },
-        { title: "Set up contacts and records", body: "Owner, tenant, building management, and repair contacts." },
+        { title: "Set up contacts and records", body: "Contacts for you, the tenant, the owners' association (the building's management body) and repair contractors." },
         { title: "Day-to-day handling", body: "Rent, communication, and property issues within the agreed scope." },
         { title: "Regular reports", body: "Status updates and any decisions we need from you." },
       ],
@@ -493,7 +493,7 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
       preparation: [
         { title: "Property details", body: "Address, type, unit number, and current use" },
         { title: "Rental details", body: "Lease, tenant, and rent status" },
-        { title: "Existing contacts", body: "Building management, insurance, and repair contacts" },
+        { title: "Existing contacts", body: "Owners' association, insurance, and repair contacts" },
         { title: "Scope you want", body: "Tasks, frequency, and reporting" },
       ],
       limitsTitle: "Good to know",
@@ -646,5 +646,5 @@ export const serviceUiCopy: Record<Locale, {
 }> = {
   "zh-TW": { services: "服務", consultation: "免費諮詢", line: "LINE 聯絡", call: "致電", checklist: "諮詢前準備清單", otherServices: "其他服務", view: "查看", guidesTitle: "諮詢前可以先了解", allGuides: "查看所有指南" },
   ja: { services: "サービス", consultation: "無料相談", line: "LINEで相談", call: "電話で相談", checklist: "ご相談前チェックリスト", otherServices: "その他のサービス", view: "詳しく見る", guidesTitle: "関連ガイド", allGuides: "ガイド一覧" },
-  en: { services: "Services", consultation: "Free Consultation", line: "Chat on LINE", call: "Call us", checklist: "Pre-enquiry checklist", otherServices: "Other services", view: "View", guidesTitle: "Helpful guides", allGuides: "All guides" },
+  en: { services: "Services", consultation: "Free Consultation", line: "Chat on LINE", call: "Call us", checklist: "Pre-consultation checklist", otherServices: "Other services", view: "View", guidesTitle: "Helpful guides", allGuides: "All guides" },
 };

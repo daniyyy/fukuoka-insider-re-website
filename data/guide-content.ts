@@ -15,7 +15,7 @@ export const guideCategoryCopy: Record<GuideLocale, Record<GuideCategory, { labe
     selling: { label: "Selling", description: "Property information, proposed terms, and general preparation before a sale." },
     "property-management": { label: "Property Management", description: "Everyday support for rental property, holiday homes, and other second homes." },
     "taxes-procedures": { label: "Taxes & Procedures", description: "Costs, documents, and matters that require confirmation with the relevant professionals." },
-    "living-in-fukuoka": { label: "Living in Fukuoka", description: "Neighbourhood, transport, and daily-life context for living in Fukuoka." },
+    "living-in-fukuoka": { label: "Living in Fukuoka", description: "Everyday life after moving in: utilities, rubbish sorting and other practical arrangements." },
   },
 };
 

@@ -34,7 +34,7 @@ export const siteConfig = {
     access: { "zh-TW": "福岡市地下鐵空港線「大濠公園」站，步行約 5 分鐘", ja: "福岡市地下鉄空港線「大濠公園」駅から徒歩約5分", en: "About 5 minutes' walk from Ohorikoen Station (Fukuoka City Subway Airport Line)" },
     hours: { "zh-TW": "星期一至五 10:00–18:00（日本時間）", ja: "平日 10:00〜18:00", en: "Weekdays 10:00–18:00 (Japan time)" },
     /** Office visits need an appointment (Danny, 2026-09-30). */
-    visits: { "zh-TW": "來訪請先預約", ja: "ご来社は事前予約制です", en: "Visits by appointment only" },
+    visits: { "zh-TW": "請先預約", ja: "事前にご予約ください", en: "By appointment only" },
     closed: { "zh-TW": "星期六、日及日本國定假日", ja: "土・日・祝日", en: "Saturdays, Sundays, and Japanese public holidays" },
     languages: { "zh-TW": "廣東話、普通話、日語、英語", ja: "広東語・中国語（普通話）・日本語・英語", en: "Cantonese, Mandarin, Japanese, and English" },
     languagesShort: { "zh-TW": "廣東話・普通話・日語・英語", ja: "広東語・中国語・日本語・英語", en: "Cantonese, Mandarin, Japanese, English" },

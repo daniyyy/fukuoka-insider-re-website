@@ -46,7 +46,7 @@ const copy = {
     terms: "利用規約",
     consultation: "無料相談",
     copyright: "無断転載・複製を禁じます。",
-    licence: "宅地建物取引業",
+    licence: "宅地建物取引業免許",
     telephone: "電話",
   },
   en: {
@@ -67,7 +67,7 @@ const copy = {
     disclaimer: "Disclaimer",
     terms: "Terms",
     consultation: "Free Consultation",
-    copyright: "All rights reserved. Unauthorized reproduction is prohibited.",
+    copyright: "All rights reserved. Unauthorised reproduction is prohibited.",
     licence: "Real estate brokerage licence",
     telephone: "Telephone",
   },

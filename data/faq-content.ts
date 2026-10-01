@@ -88,7 +88,7 @@ const entries: FaqEntry[] = [
     },
     a: {
       "zh-TW": "常見的資料包括：\n- 護照；已在日本居住的話，還有在留卡\n- 工作或收入證明（例如在職證明、薪資單）；學生則為入學或在學證明\n- 入住人資料及緊急聯絡人\n實際需要的文件由物件、管理公司及保證公司決定，我們會按物件逐項說明。",
-      en: "Commonly requested documents include:\n- Your passport, plus your residence card if you already live in Japan\n- Proof of employment or income (such as an employment certificate or payslips); students provide proof of admission or enrolment\n- Details of everyone moving in, and an emergency contact\nThe exact list is set by the property, the management company and the guarantor company, and we go through it for each property.",
+      en: "Commonly requested documents include:\n- Your passport, plus your residence card if you already live in Japan\n- Proof of employment or income (such as an employment certificate or payslips); students provide proof of admission or enrolment\n- Details of everyone moving in, and an emergency contact\nThe exact list is set by the property, the management company and the guarantee company, and we go through it for each property.",
     },
     tags: { "zh-TW": ["文件", "租屋", "在留卡", "申請"], en: ["documents", "renting", "residence card", "application"] },
   },
@@ -112,7 +112,7 @@ const entries: FaqEntry[] = [
     },
     a: {
       "zh-TW": "可以。現在大部分物件要求使用「租賃保證公司」，而不是個人保證人。保證公司會另外審查，並收取保證費：首次多為月租（通常連共益費計）的五成至一個月左右，之後一般每年另付續約費，亦有按月收費的方案。\n部分物件亦要求提供緊急聯絡人，有時需要是住在日本的人。",
-      en: "Yes. Most properties now require a rent guarantee company rather than a personal guarantor. The guarantee company runs its own screening and charges a fee, typically 50–100% of one month's rent (usually including the management fee) at the start, followed by a yearly renewal fee, though some companies charge monthly instead.\nSome properties also ask for an emergency contact, sometimes someone living in Japan.",
+      en: "Yes. Most properties now require a rent guarantee company rather than a personal guarantor. The guarantee company runs its own screening and charges a fee, typically 50–100% of one month's rent (usually including the common-area fee) at the start, followed by a yearly renewal fee, though some companies charge monthly instead.\nSome properties also ask for an emergency contact, sometimes someone living in Japan.",
     },
     tags: { "zh-TW": ["保證人", "保證公司", "緊急聯絡人", "租屋"], en: ["guarantor", "guarantee company", "emergency contact"] },
   },
@@ -124,7 +124,7 @@ const entries: FaqEntry[] = [
     },
     a: {
       "zh-TW": "一般約為月租的 4 至 6 個月，包括敷金、禮金、仲介手續費、預付房租（一般約 2 個月）、保證公司費用、火災保險及換鎖費等，實際金額按物件而定。\n可以先用「租屋初期費用估算」，整理手上已知的數字。",
-      en: "As a rough guide, four to six months' rent, covering the deposit (shikikin), key money (reikin), brokerage fee, first month's rent, guarantee company fee, fire insurance and key replacement. The actual amount depends on the property.\nYou can use the rental move-in cost estimator to organise the figures you already have.",
+      en: "As a rough guide, four to six months' rent, covering the deposit (shikikin), key money (reikin), brokerage fee, rent paid in advance (usually about 2 months), guarantee company fee, fire insurance and lock replacement. The actual amount depends on the property.\nYou can use the rental move-in cost estimator to organise the figures you already have.",
     },
     tags: { "zh-TW": ["初期費用", "敷金", "禮金", "費用"], en: ["move-in costs", "deposit", "key money"] },
   },
@@ -210,7 +210,7 @@ const entries: FaqEntry[] = [
     },
     a: {
       "zh-TW": "常見的費用包括：\n- 仲介手續費\n- 登記費用（登錄免許稅、司法書士報酬）\n- 契約書的印花稅\n- 不動產取得稅（福岡縣一般在登記後約半年至一年寄出繳稅通知書）\n- 固定資產稅、管理費等按日數分攤的清算金\n- 火災保險，以及貸款相關費用\n可以先用「買房費用估算」整理已知的金額。",
-      en: "Typical costs include:\n- Brokerage fee\n- Registration costs (registration and licence tax, judicial scrivener's fee)\n- Stamp duty on the contract\n- Real estate acquisition tax (in Fukuoka Prefecture the tax notice usually arrives six months to a year after registration)\n- Pro-rated settlement of property tax and management fees\n- Fire insurance and any loan-related fees\nYou can use the purchase cost estimator to organise the amounts you already know.",
+      en: "Typical costs include:\n- Brokerage fee\n- Registration costs (registration tax, judicial scrivener's fee)\n- Stamp tax on the contract\n- Real estate acquisition tax (in Fukuoka Prefecture the tax notice usually arrives six months to a year after registration)\n- Pro-rated settlement of fixed asset tax, management fees and similar charges\n- Fire insurance and any loan-related fees\nYou can use the purchase cost estimator to organise the amounts you already know.",
     },
     tags: { "zh-TW": ["買房", "費用", "登記", "稅"], en: ["buying", "costs", "tax", "registration"] },
   },
@@ -406,11 +406,11 @@ const entries: FaqEntry[] = [
     key: "licence", category: "company-contact",
     q: {
       "zh-TW": "Fukuoka Insider 持有宅地建物取引業免許嗎？",
-      en: "Is Fukuoka Insider a licensed real-estate company?",
+      en: "Does Fukuoka Insider hold a real estate brokerage licence?",
     },
     a: {
       "zh-TW": "有。株式会社Fukuoka Insider 持有宅地建物取引業免許（{licence}），亦是{associationName} 會員，並由宅地建物取引士（日本房地產交易的國家資格）提供專業支援。",
-      en: "Yes. Fukuoka Insider Co., Ltd. holds a real-estate brokerage licence ({licence}) and is a member of the {associationName}. Support is provided by a Licensed Real Estate Transaction Specialist (takken-shi).",
+      en: "Yes. Fukuoka Insider Co., Ltd. holds a real estate brokerage licence ({licence}) and is a member of the {associationName}. Support is provided by a Licensed Real Estate Transaction Specialist (takken-shi, Japan's national qualification for real estate transactions).",
     },
     tags: { "zh-TW": ["免許", "宅建士", "公司"], en: ["licence", "company", "takken-shi"] },
   },
@@ -418,11 +418,11 @@ const entries: FaqEntry[] = [
     key: "how-to-start", category: "company-contact",
     q: {
       "zh-TW": "如何開始諮詢？",
-      en: "How do I start an enquiry?",
+      en: "How do I start a consultation?",
     },
     a: {
       "zh-TW": "可以使用房地產諮詢表、LINE、WhatsApp、Email 或電話聯絡。首次聯絡只需提供目前已確定的需要與條件；想詳細說明物業或需求的話，建議使用諮詢表。",
-      en: "Use the enquiry form, LINE, WhatsApp, email or phone. For a first contact, just share the needs and conditions you have already decided; the enquiry form works best if you want to describe the property or your needs in detail.",
+      en: "Use the property enquiry form, LINE, WhatsApp, email or phone. For a first contact, just share the needs and conditions you have already decided; the enquiry form works best if you want to describe the property or your needs in detail.",
     },
     tags: { "zh-TW": ["聯絡", "諮詢表", "LINE", "WhatsApp"], en: ["contact", "enquiry form", "LINE", "WhatsApp"] },
   },

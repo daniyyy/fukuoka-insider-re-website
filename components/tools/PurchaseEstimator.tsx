@@ -136,11 +136,13 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
     <div key={line.key}><dt>{t.lines[line.key]}</dt><dd>{formatYen(line.amount, locale)}</dd></div>
   ));
 
+  // Brackets and separators follow the language (full-width for Chinese and Japanese).
+  const [open, close, dot] = locale === "en" ? [" (", ")", ", "] : ["（", "）", "・"];
   const message = result && send
     ? [
         t.sendGreeting,
-        `${t.fields.price} ${formatYen(inputs.price, locale)}（${t.types[state.type]}・${t.buyers[state.buyer]}${state.loan ? `・${t.payments.loan} ${formatYen(inputs.loanAmount, locale)}` : ""}）`,
-        `${t.result.costsTotal} ${formatYen(result.costsTotal, locale)}（${result.costsPercent}%）`,
+        `${t.fields.price} ${formatYen(inputs.price, locale)}${open}${t.types[state.type].replace(/\u200b/g, "")}${dot}${t.buyers[state.buyer]}${state.loan ? `${dot}${t.payments.loan} ${formatYen(inputs.loanAmount, locale)}` : ""}${close}`,
+        `${t.result.costsTotal} ${formatYen(result.costsTotal, locale)}${open}${result.costsPercent}%${close}`,
         `${t.result.yearly} ${formatYen(result.yearlyTotal, locale)}`,
         send.closing,
       ].join("\n")

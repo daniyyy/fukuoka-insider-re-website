@@ -151,7 +151,7 @@ export function RentalEstimator({ locale, guides = { items: {} } }: { locale: Lo
         t.send.greeting,
         baseKeys.map((key) => `${t.fields[key].label} ${formatYen(inputs[key], locale)}`).join(" / "),
         ...result.lines.map((line) => `・${t.fields[line.key].label} ${formatYen(line.amount, locale)}`),
-        `${t.total} ${formatYen(result.total, locale)}（${t.reference}）`,
+        locale === "en" ? `${t.total} ${formatYen(result.total, locale)} (${t.reference})` : `${t.total} ${formatYen(result.total, locale)}（${t.reference}）`,
         t.send.closing,
       ].join("\n")
     : "";
