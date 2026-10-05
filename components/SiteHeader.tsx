@@ -51,7 +51,7 @@ const labels = {
     menuClose: "Close menu",
     navigation: "Main navigation",
     language: "Language",
-    estimator: "Rental cost estimator",
+    estimator: "Rental Initial Cost Estimator",
   },
 } as const;
 

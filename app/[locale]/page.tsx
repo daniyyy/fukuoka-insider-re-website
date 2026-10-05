@@ -69,7 +69,7 @@ type HomepageCopy = {
 const copy: Record<Locale, HomepageCopy> = {
   "zh-TW": {
     heroLines: ["福岡生活，", "由在地人帶路。"],
-    intro: "我們在福岡為日本及海外客戶提供租屋、房產買賣與物業管理服務，可以中文、廣東話、日語或英語與我們溝通。",
+    intro: "我們在福岡為日本及海外客戶提供租屋、房產買賣與物業管理服務，可用中文、廣東話、日語或英語與我們溝通。",
     cta: "免費諮詢",
     servicesHeading: "服務與支援",
     services: [
@@ -104,7 +104,7 @@ const copy: Record<Locale, HomepageCopy> = {
     aboutBody: "Ricky 為代表取締役；Danny 定居福岡，並持有宅地建物取引士資格。",
     aboutCta: "了解公司與團隊",
     consult: "有福岡房地產需求？",
-    consultBody: "想租屋、買賣房產、委託管理，或詢問入住相關支援，都可以先聯絡我們。資料尚未備齊也可以先聯絡我們。",
+    consultBody: "想租屋、買賣房產、委託管理，或需要入住手續的支援，都可以先聯絡我們；資料尚未備齊也沒關係。",
     heroProof: ["福岡設有辦公室", "持有宅地建物取引業免許", "中文・廣東話・日語・英語"],
     servicesLink: "查看服務內容",
   },
@@ -120,7 +120,7 @@ const copy: Record<Locale, HomepageCopy> = {
       { title: "生活サポート", description: "入居手続きにスタッフが同行" },
     ],
     trust: {
-      heading: "私たちは福岡にいます。",
+      heading: "福岡に拠点を置いています。",
       body: "Fukuoka Insider は福岡に事務所を構え、不動産サービスと関連サポートを提供しています。",
       location: "福岡市中央区大手門",
       companyLabel: "宅地建物取引業免許",
@@ -144,7 +144,7 @@ const copy: Record<Locale, HomepageCopy> = {
     about: "福岡を拠点に、海外のお客様をサポートする不動産会社です。",
     aboutBody: "Ricky は代表取締役。Danny は福岡在住の宅地建物取引士です。",
     aboutCta: "会社とチームについて",
-    consult: "福岡の不動産について相談する",
+    consult: "福岡の不動産のことで、お困りですか？",
     consultBody: "賃貸、不動産の購入・売却、物件管理のご依頼、入居に関するサポートなど、まずはお気軽にご連絡ください。資料がすべて揃っていなくても構いません。",
     heroProof: ["福岡に事務所", "宅地建物取引業免許を取得", "中国語・広東語・日本語・英語"],
     servicesLink: "サービスを見る",
@@ -173,7 +173,7 @@ const copy: Record<Locale, HomepageCopy> = {
     },
     featured: "Featured Guides",
     guideIntro: "Useful information about homes, property, and daily life in Fukuoka.",
-    faqHeading: "Common questions",
+    faqHeading: "Frequently Asked Questions",
     faqBody: "A few things you may want to know before getting in touch.",
     faqCta: "See all questions",
     allGuides: "View all guides",

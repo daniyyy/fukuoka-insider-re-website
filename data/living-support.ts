@@ -38,12 +38,12 @@ export const livingSupportCopy: Record<Locale, LivingSupportCopy> = {
       { title: "想省時省力", body: "工作忙碌，希望交給熟悉流程的人代為處理。" },
     ],
     servicesTitle: "服務項目",
-    servicesIntro: "以下 6 項由我們的員工直接陪同或處理，按入住前後的先後次序排列，可以按需要選擇。",
+    servicesIntro: "以下 6 項由我們的員工直接陪同或處理，按入住前後的次序排列，可以按需要選擇。",
     phases: [
       {
         label: "入住前",
         items: [
-          { icon: "utilities", title: "水、電、瓦斯開通", body: "代為聯絡電力、自來水和瓦斯公司，預約瓦斯開栓，並說明帳單的付款方式。" },
+          { icon: "utilities", title: "水、電、瓦斯開通", body: "代為聯絡電力、自來水和瓦斯公司，預約瓦斯公司上門開通，並說明帳單的付款方式。" },
           { icon: "furniture", title: "租借家具、家電", body: "按入住日期安排租借家具和家電，搬進去當天就可以開始生活。" },
         ],
       },
@@ -123,7 +123,7 @@ export const livingSupportCopy: Record<Locale, LivingSupportCopy> = {
       },
     ],
     othersTitle: "そのほかのご要望も、個別にご相談ください",
-    othersIntro: "以下は、提携パートナーをご紹介します。そのほかのご要望も、まずはお気軽にご相談ください。",
+    othersIntro: "以下については、提携パートナーをご紹介します。そのほかのご要望も、まずはお気軽にご相談ください。",
     othersLink: "個別に相談する",
     partnerLabel: "パートナーのご紹介",
     partners: [
@@ -141,7 +141,7 @@ export const livingSupportCopy: Record<Locale, LivingSupportCopy> = {
     ],
   },
   en: {
-    audienceTitle: "Who it is for",
+    audienceTitle: "Who this is for",
     audiences: [
       { title: "New to Fukuoka", body: "You don't know Japanese procedures yet, or where to start." },
       { title: "Not comfortable in Japanese", body: "Japanese forms, phone calls or conversations at the counter are hard for you." },

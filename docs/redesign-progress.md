@@ -474,3 +474,18 @@
 - Checks: lint, typecheck, 26 tests, build; screenshots 1440/834/390 (zh-TW), 390 ja, 1440 en, no overflow; crawl zh-TW 34, ja 15, en 16 pages, no errors.
 - Waiting for Danny: review of the new layout and wording.
 - Fee wording (Danny: too repetitive): 「按項目報價」 now stated only in the FAQ 「生活支援怎樣收費？」; hero tag → 「任何人都可以申請」, step 2 → 「先提供報價／您同意後才安排」, CTA → 「我們會先提供報價」; fee box removed; fee half-sentences removed from the other living FAQs (zh-TW/ja/en).
+
+## 2026-10-05 — Full-site review before showing Ricky
+- Crawled zh-TW 34 / ja 15 / en 16 pages: no errors, no broken images, every page has one h1, title and description, noindex on all; no overflow at 360/390/834/1440.
+- Visual polish: phone/tablet hero now shows the trees, towers and willows instead of open sky; header no longer wraps or overlaps on 360px phones (sub-label hidden under 380px, CTA never wraps); process step titles line up across columns; homepage 「福岡生活資訊」 band puts Instagram beside the main message on desktop; tools index uses the same two estimate cards as the homepage; contact page main button shortened (「填寫免費諮詢表」).
+- Share previews: `.env.production` sets NEXT_PUBLIC_SITE_URL to the workers.dev test origin so LINE/WhatsApp previews show the image when Danny sends the test link. **At launch: delete `.env.production`** (canonical, og:image and sitemap then point to www.fukuokainsider.com).
+- Copy (independent review, 3 languages): duplicate phrase in the homepage closing band; 「您」 instead of 「你」; LINE/WhatsApp button wording on Contact; guarantee fee written as 50%–100% (0.5–1 month); fire insurance 2–3 萬 everywhere; About story lists all four services; purchase teaser note and Disclaimer reflect that the purchase estimator calculates taxes; 外為法（外匯法）, 交屋, 仲介費, 獨棟住宅, 開通 unified; 「可用中文…」; ja trust heading and closing heading made natural; ja partner sentence fixed; en Title Case page titles ("Frequently Asked Questions", "Contact Us", "Cost Estimators", "Rental/Purchase Cost Estimator"), "Who this is for", initial costs (not move-in costs); English address on en pages; language lists in footer and company facts now read from config/site.ts; fiscal-year wording for the tax settlement.
+- Mobile menu keeps short LINE / WhatsApp / 電話 labels (three equal buttons; longer labels wrapped).
+- Open for Danny: FAQ 「可以介紹搬家公司嗎？」 says we introduce moving companies, which is not in the Living Support partner list — confirm or remove.
+
+### Launch checklist (when Danny confirms)
+1. Delete `.env.production`; remove noindex; check canonical/og point to www.fukuokainsider.com/re.
+2. Cloudflare route www.fukuokainsider.com/re* to the Worker (Danny's final confirmation before any DNS/route change; WordPress stays as is).
+3. Submit sitemap in Google Search Console; turn on Cloudflare Web Analytics.
+4. Optional: click stats (D1 + STATS_KEY), after updating the privacy text.
+5. Before 2027-03-31: review tax rules and the Legal Affairs Bureau unit price table in the purchase estimator.

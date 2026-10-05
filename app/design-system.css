@@ -269,7 +269,11 @@ body {
 .fi-header.is-open .fi-header__cta-short { background: var(--fi-paper); border-color: var(--fi-paper); color: var(--fi-ink); }
 
 .fi-header__compact { display: flex; align-items: center; gap: 0.5rem; }
-.fi-header__cta-short { min-height: 2.75rem; padding: 0 1rem; font-size: 0.875rem; letter-spacing: 0.04em; }
+.fi-header__cta-short { min-height: 2.75rem; padding: 0 1rem; font-size: 0.875rem; letter-spacing: 0.04em; white-space: nowrap; }
+/* Narrow phones (under 380px): keep the logo and buttons clear of each other. */
+@media (max-width: 23.74rem) {
+  .fi-header .fi-lockup--horizontal .fi-lockup__rule, .fi-header .fi-lockup--horizontal .fi-lockup__sub { display: none; }
+}
 .fi-header__toggle {
   display: grid; place-items: center;
   width: 2.75rem; height: 2.75rem; padding: 0;

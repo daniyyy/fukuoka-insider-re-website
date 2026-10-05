@@ -125,7 +125,7 @@ export const serviceDetailCopy: { [K in ServiceKey]: Record<Locale, K extends "l
     "zh-TW": {
       title: "租屋服務",
       metaTitle: "福岡租屋服務",
-      description: "在福岡找住宅、辦公室或店舖，可以中文、廣東話、日語或英語與我們溝通。人在海外，也可以先開始諮詢。",
+      description: "在福岡找住宅、辦公室或店舖，可用中文、廣東話、日語或英語與我們溝通。人在海外，也可以先開始諮詢。",
       highlights: ["住宅", "辦公室", "商業空間"],
       imageNote: "圖片為示意圖，並非實際出租物件。",
       audienceTitle: "這項服務適合",
@@ -137,7 +137,7 @@ export const serviceDetailCopy: { [K in ServiceKey]: Record<Locale, K extends "l
       helpTitle: "我們可以協助的事",
       helpIntro: "我們會說明程序與申請條件，並與出租方或管理公司聯絡。",
       panels: [
-        { title: "住宅", body: "公寓、獨立住宅及其他居住物件。", points: ["按地區、通勤與預算物色", "說明申請條件與所需文件"] },
+        { title: "住宅", body: "公寓、獨棟住宅及其他居住物件。", points: ["按地區、通勤與預算物色", "說明申請條件與所需文件"] },
         { title: "辦公室", body: "按地點、面積、人數與用途物色。", points: ["整理辦公用途與條件", "聯絡出租方或管理公司"] },
         { title: "商業空間", body: "店舖及其他商業空間。", points: ["逐一確認用途限制", "說明申請及契約文件"] },
       ],
@@ -517,7 +517,7 @@ export const serviceDetailCopy: { [K in ServiceKey]: Record<Locale, K extends "l
       metaTitle: "福岡生活支援｜入住手續陪同辦理",
       description: "剛到福岡、日語不方便？水電瓦斯、區役所、手機和銀行開戶等入住手續，由我們的員工陪同辦理。",
       highlights: ["員工陪同辦理", "中文・廣東話溝通", "任何人都可以申請"],
-      ctaTitle: "需要有人陪你辦手續？",
+      ctaTitle: "需要有人陪您辦手續？",
       ctaBody: "告訴我們需要的項目、日期和地點，我們會先提供報價。",
     },
     ja: {

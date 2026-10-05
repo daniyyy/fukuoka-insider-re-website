@@ -36,7 +36,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
     castleCaption: "辦公室所在的大手門一帶，鄰近福岡城跡（舞鶴公園）。",
     storyTitle: "在福岡，替您處理房地產事務",
     story: [
-      "Fukuoka Insider 的辦公室位於福岡市中央區，處理租屋、房產買賣及物業管理。",
+      "Fukuoka Insider 的辦公室位於福岡市中央區，處理租屋、房產買賣、物業管理及生活支援。",
       "如果您不熟悉日本的租屋或買賣程序，我們會先說明可以協助的事項、需要先提供的資料，以及哪些部分需要另向專業人士確認。",
     ],
     peopleTitle: "我們的團隊",
@@ -51,7 +51,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
       languages: "溝通語言", hours: "營業時間", closed: "休息日", contact: "聯絡", instagram: "Instagram",
     },
     mapCta: "在 Google 地圖開啟",
-    ctaTitle: "可以中文、廣東話、日語或英語聯絡",
+    ctaTitle: "可用中文、廣東話、日語或英語聯絡",
     ctaBody: "用您習慣的語言告訴我們需要。資料尚未備齊，也可以先聯絡我們。",
   },
   ja: {
@@ -63,7 +63,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
     castleCaption: "事務所のある大手門は、福岡城跡（舞鶴公園）の近くです。",
     storyTitle: "福岡で、不動産のご相談に対応しています",
     story: [
-      "Fukuoka Insider の事務所は福岡市中央区にあり、賃貸、不動産売買、物件管理を扱っています。",
+      "Fukuoka Insider の事務所は福岡市中央区にあり、賃貸、不動産売買、物件管理、生活サポートを扱っています。",
       "日本の賃貸・売買手続きに不慣れな方には、当社で対応できること、最初にご用意いただく情報、別の専門家への確認が必要な事項をご説明します。",
     ],
     peopleTitle: "私たちのチーム",
@@ -90,7 +90,7 @@ export const aboutCopy: Record<Locale, AboutCopy> = {
     castleCaption: "Our office in Ōtemon is close to the Fukuoka Castle ruins (Maizuru Park).",
     storyTitle: "Handling property matters in Fukuoka for you",
     story: [
-      "Fukuoka Insider has an office in Chuo-ku, Fukuoka, and handles rentals, property transactions, and property management.",
+      "Fukuoka Insider has an office in Chuo-ku, Fukuoka, and handles rentals, property transactions, property management, and living support.",
       "If Japanese rental or purchase procedures are new to you, we first explain what we can handle, what information to share, and what needs to be confirmed with another professional.",
     ],
     peopleTitle: "Our team",
@@ -129,10 +129,10 @@ type ContactCopy = {
 export const contactCopy: Record<Locale, ContactCopy> = {
   "zh-TW": {
     title: "聯絡我們",
-    intro: "可以中文、廣東話、日語或英語與我們聯絡。資料尚未備齊，也可以先聯絡我們。",
+    intro: "可用中文、廣東話、日語或英語與我們聯絡。資料尚未備齊，也可以先聯絡我們。",
     routesTitle: "選擇聯絡方式",
-    form: { title: "房地產諮詢表", body: "適合說明物業與需求詳情。我們確認可以協助的範圍後，會再聯絡您；首次諮詢不必備齊文件。", cta: "免費諮詢（填寫諮詢表）", note: "會在新視窗開啟諮詢表。", recommended: "建議" },
-    line: { title: "LINE・WhatsApp", body: "適合簡單提問，或傳送照片與資料。", cta: "在 LINE 聯絡", whatsapp: "在 WhatsApp 聯絡" },
+    form: { title: "房地產諮詢表", body: "適合說明物業與需求詳情。我們確認可以協助的範圍後，會再聯絡您；首次諮詢不必備齊文件。", cta: "填寫免費諮詢表", note: "會在新視窗開啟諮詢表。", recommended: "建議" },
+    line: { title: "LINE・WhatsApp", body: "適合簡單提問，或傳送照片與資料。", cta: "LINE 聯絡", whatsapp: "WhatsApp 聯絡" },
     direct: { title: "電話・Email", body: "直接與我們聯絡。", phone: "電話", email: "Email" },
     scan: "用手機掃描",
     prepareTitle: "聯絡時可以先告訴我們",
@@ -151,7 +151,7 @@ export const contactCopy: Record<Locale, ContactCopy> = {
     title: "お問い合わせ",
     intro: "中国語・広東語・日本語・英語でご相談いただけます。資料がすべて揃っていなくても、まずはご相談ください。",
     routesTitle: "ご連絡方法",
-    form: { title: "不動産の相談フォーム", body: "物件やご希望の詳細をお伝えいただく場合に最適です。対応できる範囲を確認のうえ、改めてご連絡します。初回から書類を揃える必要はありません。", cta: "無料相談（相談フォームに入力）", note: "相談フォームは新しい画面で開きます。", recommended: "おすすめ" },
+    form: { title: "不動産の相談フォーム", body: "物件やご希望の詳細をお伝えいただく場合に最適です。対応できる範囲を確認のうえ、改めてご連絡します。初回から書類を揃える必要はありません。", cta: "無料相談フォームへ", note: "相談フォームは新しい画面で開きます。", recommended: "おすすめ" },
     line: { title: "LINE・WhatsApp", body: "簡単なご質問や、写真・資料の送付に便利です。", cta: "LINEで相談", whatsapp: "WhatsAppで相談" },
     direct: { title: "電話・メール", body: "直接お問い合わせいただけます。", phone: "電話", email: "メール" },
     scan: "スマートフォンで読み取る",
@@ -168,10 +168,10 @@ export const contactCopy: Record<Locale, ContactCopy> = {
     mapCta: "Google マップで開く",
   },
   en: {
-    title: "Contact us",
+    title: "Contact Us",
     intro: "Talk to us in Mandarin, Cantonese, Japanese, or English. You can contact us before you have all the details ready.",
     routesTitle: "Choose how to reach us",
-    form: { title: "Property enquiry form", body: "Best for sharing property and requirement details. We check what we can help with, then contact you. You do not need every document ready for a first consultation.", cta: "Free Consultation (enquiry form)", note: "The form opens in a new tab.", recommended: "Recommended" },
+    form: { title: "Property enquiry form", body: "Best for sharing property and requirement details. We check what we can help with, then contact you. You do not need every document ready for a first consultation.", cta: "Free consultation form", note: "The form opens in a new tab.", recommended: "Recommended" },
     line: { title: "LINE or WhatsApp", body: "Good for quick questions or sending photos and documents.", cta: "Chat on LINE", whatsapp: "Chat on WhatsApp" },
     direct: { title: "Phone and email", body: "Reach us directly.", phone: "Phone", email: "Email" },
     scan: "Scan with your phone",

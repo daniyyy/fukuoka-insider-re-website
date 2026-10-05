@@ -104,6 +104,7 @@ export default async function AboutPage({ params }: PageProps) {
               <div>
                 <dt>{p.address}</dt>
                 <dd>
+                  {locale === "en" ? <span>{siteConfig.contact.addressEn}</span> : null}
                   <span lang="ja">{siteConfig.contact.address}</span>
                   <a className="fi-text-link" href={siteConfig.contact.map} target="_blank" rel="noreferrer">{t.mapCta}<ExternalIcon /></a>
                 </dd>

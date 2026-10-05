@@ -147,8 +147,8 @@ const entries: FaqEntry[] = [
       en: "Can I rent without a guarantor in Japan?",
     },
     a: {
-      "zh-TW": "可以，但選擇會比較少。現在幾乎所有物件都要求使用「租賃保證公司」，部分物件會同時要求提供保證人；沒有日本的保證人，就只能選擇不需要保證人的物件。\n保證公司會另外審查，並收取保證費：首次多為月租（通常連共益費計）的五成至一個月左右，之後一般每年另付續約費，亦有按月收費的方案。\n另外，緊急聯絡人是必須的。",
-      en: "Yes, but you will have fewer options. Almost all properties now require a rent guarantee company, and some also ask for a personal guarantor. Without a guarantor in Japan, you can only choose properties that do not require one.\nThe guarantee company runs its own screening and charges a fee, typically 50–100% of one month's rent (usually including the common-area fee) at the start, followed by a yearly renewal fee, though some companies charge monthly instead.\nAn emergency contact is also required.",
+      "zh-TW": "可以，但選擇會比較少。現在幾乎所有物件都要求使用「租賃保證公司」，部分物件會同時要求提供保證人；沒有日本的保證人，就只能選擇不需要保證人的物件。\n保證公司會另外審查，並收取保證費：首次多為月租（連共益費等每月費用）的 50%–100%（即 0.5–1 個月），之後一般每年另付續約費，亦有按月收費的方案。\n另外，緊急聯絡人是必須的。",
+      en: "Yes, but you will have fewer options. Almost all properties now require a rent guarantee company, and some also ask for a personal guarantor. Without a guarantor in Japan, you can only choose properties that do not require one.\nThe guarantee company runs its own screening and charges a fee, usually 50%–100% (0.5–1 month) of the monthly rent, including the common-area fee and other monthly charges, at the start, followed by a yearly renewal fee, though some companies charge monthly instead.\nAn emergency contact is also required.",
     },
     tags: { "zh-TW": ["保證人", "保證公司", "緊急聯絡人", "租屋"], en: ["guarantor", "guarantee company", "emergency contact"] },
   },
@@ -168,13 +168,13 @@ const entries: FaqEntry[] = [
     key: "rental-initial-costs", category: "renting", service: "rent", showOn: ["rent"], guide: "rental-initial-costs-reikin-shikikin", tool: "rental-initial-cost",
     q: {
       "zh-TW": "租屋的初期費用大約要多少？",
-      en: "How much are the move-in costs for a rental?",
+      en: "How much are the initial costs for a rental?",
     },
     a: {
-      "zh-TW": "一般約為月租的 4 至 6 個月，包括敷金、禮金、仲介手續費、預付房租（一般約 2 個月）、保證公司費用、火災保險及換鎖費等，實際金額按物件而定。\n可以先用「租屋初期費用估算」，整理手上已知的數字。",
-      en: "As a rough guide, four to six months' rent, covering the deposit (shikikin), key money (reikin), brokerage fee, rent paid in advance (usually about 2 months), guarantee company fee, fire insurance and lock replacement. The actual amount depends on the property.\nYou can use the rental move-in cost estimator to organise the figures you already have.",
+      "zh-TW": "一般約為月租的 4 至 6 個月，包括敷金、禮金、仲介費、預付房租（一般約 2 個月）、保證公司費用、火災保險及換鎖費等，實際金額按物件而定。\n可以先用「租屋初期費用估算」，整理手上已知的數字。",
+      en: "As a rough guide, four to six months' rent, covering the deposit (shikikin), key money (reikin), brokerage fee, rent paid in advance (usually about 2 months), guarantee company fee, fire insurance and lock replacement. The actual amount depends on the property.\nYou can use the Rental Initial Cost Estimator to organise the figures you already have.",
     },
-    tags: { "zh-TW": ["初期費用", "敷金", "禮金", "費用"], en: ["move-in costs", "deposit", "key money"] },
+    tags: { "zh-TW": ["初期費用", "敷金", "禮金", "費用"], en: ["initial costs", "deposit", "key money"] },
   },
   {
     key: "rental-timeline", category: "renting", service: "rent",
@@ -293,10 +293,10 @@ const entries: FaqEntry[] = [
       en: "Can foreigners buy property in Japan?",
     },
     a: {
-      "zh-TW": "可以。日本一般不限制外國人購買房地產，也可以用外國人名義登記。不過，貸款、稅務，以及部分地區或較大面積土地的申報要求，會因買家身分和物業用途而不同。非居住者購買後，除自住等例外情況外，須在取得後 20 日內經日本銀行向財務大臣提交外匯法報告；度假別墅或第二居所不屬於自住。\n我們會在交易前說明需要處理的事項。",
+      "zh-TW": "可以。日本一般不限制外國人購買房地產，也可以用外國人名義登記。不過，貸款、稅務，以及部分地區或較大面積土地的申報要求，會因買家身分和物業用途而不同。非居住者購買後，除自住等例外情況外，須在取得後 20 日內經日本銀行向財務大臣提交外為法（外匯法）報告；度假別墅或第二居所不屬於自住。\n我們會在交易前說明需要處理的事項。",
       en: "Yes. Japan generally does not restrict foreigners from buying real estate, and the property can be registered in your own name. Loans, tax, and the notification rules that apply in certain areas or to larger land plots vary with the buyer's situation and intended use. A non-resident buyer must also report the purchase to the Minister of Finance, via the Bank of Japan, within 20 days under the Foreign Exchange Act, unless an exemption applies, such as a home you will live in yourself (holiday homes and second homes do not count).\nWe explain what applies to you before the transaction.",
     },
-    tags: { "zh-TW": ["買房", "外國人", "登記", "外匯法"], en: ["buying", "foreigners", "registration"] },
+    tags: { "zh-TW": ["買房", "外國人", "登記", "外為法"], en: ["buying", "foreigners", "registration"] },
   },
   {
     key: "overseas-mortgage", category: "buying-selling", service: "buy-sell", showOn: ["buy-sell"],
@@ -317,7 +317,7 @@ const entries: FaqEntry[] = [
       en: "Besides the price, what costs come with buying?",
     },
     a: {
-      "zh-TW": "常見的費用包括：\n- 仲介手續費\n- 登記費用（登錄免許稅、司法書士報酬）\n- 契約書的印花稅\n- 不動產取得稅（福岡縣一般在登記後約半年至一年寄出繳稅通知書）\n- 固定資產稅、管理費等按日數分攤的清算金\n- 火災保險，以及貸款相關費用\n可以先用「買房費用估算」整理已知的金額。",
+      "zh-TW": "常見的費用包括：\n- 仲介費\n- 登記費用（登錄免許稅、司法書士報酬）\n- 契約書的印花稅\n- 不動產取得稅（福岡縣一般在登記後約半年至一年寄出繳稅通知書）\n- 固定資產稅、管理費等按日數分攤的清算金\n- 火災保險，以及貸款相關費用\n可以先用「買房費用估算」整理已知的金額。",
       en: "Typical costs include:\n- Brokerage fee\n- Registration costs (registration tax, judicial scrivener's fee)\n- Stamp tax on the contract\n- Real estate acquisition tax (in Fukuoka Prefecture the tax notice usually arrives six months to a year after registration)\n- Pro-rated settlement of fixed asset tax, management fees and similar charges\n- Fire insurance and any loan-related fees\nYou can use the purchase cost estimator to organise the amounts you already know.",
     },
     tags: { "zh-TW": ["買房", "費用", "登記", "稅"], en: ["buying", "costs", "tax", "registration"] },
@@ -365,7 +365,7 @@ const entries: FaqEntry[] = [
       en: "What are the steps to buying property in Japan?",
     },
     a: {
-      "zh-TW": "一般流程如下：\n- 確定預算、地區和條件，開始看房\n- 遞交購買申請（買付證明書），與賣方商談價格和條件\n- 聽取重要事項說明後簽訂買賣契約，支付訂金（手付金）\n- 交付餘款，由司法書士辦理所有權登記，然後交樓\n由簽約到交樓的時間按物件和付款方式而定，交易前我們會說明每一步的時間和費用。",
+      "zh-TW": "一般流程如下：\n- 確定預算、地區和條件，開始看房\n- 遞交購買申請（買付證明書），與賣方商談價格和條件\n- 聽取重要事項說明後簽訂買賣契約，支付訂金（手付金）\n- 交付餘款，由司法書士辦理所有權登記，然後交屋\n由簽約到交屋的時間按物件和付款方式而定，交易前我們會說明每一步的時間和費用。",
       en: "The usual steps are:\n- Settle your budget, area and requirements, and start viewing\n- Submit a purchase application (kaitsuke shomeisho) and negotiate the price and terms with the seller\n- Receive the Explanation of Important Matters, sign the sale contract and pay a deposit (tetsukekin)\n- Pay the balance; a judicial scrivener registers the ownership, and the property is handed over\nThe time from contract to handover depends on the property and how you pay; we explain the timing and costs of each step before the transaction.",
     },
     tags: { "zh-TW": ["買房", "流程", "手付金", "登記"], en: ["buying", "process", "deposit", "registration"] },
@@ -389,7 +389,7 @@ const entries: FaqEntry[] = [
       en: "What are an apartment's management fee and repair reserve fund?",
     },
     a: {
-      "zh-TW": "兩者都是每月付給大樓管理組合的費用：管理費用於日常管理、清潔和公共部分的水電；修繕積立金則儲起來，用作將來外牆、屋頂、電梯等大型維修。全國平均兩者合計每月約 2.5 萬日圓，按大樓而有很大差異。\n購買新建公寓時，一般另需在交樓時一次性支付「修繕積立基金」。",
+      "zh-TW": "兩者都是每月付給大樓管理組合的費用：管理費用於日常管理、清潔和公共部分的水電；修繕積立金則累積起來，用作將來外牆、屋頂、電梯等大型維修。全國平均兩者合計每月約 2.5 萬日圓，按大樓而有很大差異。\n購買新建公寓時，一般另需在交屋時一次性支付「修繕積立基金」。",
       en: "Both are paid monthly to the building's owners' association: the management fee covers day-to-day management, cleaning and utilities for the common areas, while the repair reserve fund is saved for future major work such as the exterior walls, roof and lifts. The national average for the two together is about ¥25,000 a month, and it varies widely between buildings.\nWhen you buy a new apartment, you usually also pay a one-off initial repair fund at handover.",
     },
     tags: { "zh-TW": ["管理費", "修繕積立金", "公寓", "買房"], en: ["management fee", "repair reserve fund", "apartment"] },
@@ -525,7 +525,7 @@ const entries: FaqEntry[] = [
       en: "Can you help with resident registration, a bank account or a phone?",
     },
     a: {
-      "zh-TW": "可以。住民登錄須在搬入後 14 天內到區役所辦理，我們的員工可以陪同並即場翻譯；手機合約和銀行開戶，也可以陪同辦理。這些手續需要本人到場申請。",
+      "zh-TW": "可以。住民登錄須在入住後 14 日內到區役所辦理，我們的員工可以陪同並即場翻譯；手機合約和銀行開戶，也可以陪同辦理。這些手續需要本人到場申請。",
       en: "Yes. Resident registration must be done at the ward office within 14 days of moving in, and our staff can go with you and interpret on the spot. We can also go with you to sign a phone contract and open a bank account. You need to be there in person for these procedures.",
     },
     tags: { "zh-TW": ["住民登錄", "區役所", "銀行", "手機"], en: ["resident registration", "ward office", "bank", "phone"] },
@@ -537,10 +537,10 @@ const entries: FaqEntry[] = [
       en: "How do I set up electricity, water and gas when I move in?",
     },
     a: {
-      "zh-TW": "一般由入住人聯絡各公司申請：電力和自來水可以在線上或以電話申請；瓦斯則需要預約人員上門開栓，開栓時須由本人或代理人在場。建議在入住日前一至兩星期安排。\n日語不方便的話，也可以委託我們代為聯絡和預約。",
+      "zh-TW": "一般由入住人聯絡各公司申請：電力和自來水可以在線上或以電話申請；瓦斯則需要預約瓦斯公司人員上門開通，開通時須由本人或代理人在場。建議在入住日前一至兩星期安排。\n日語不方便的話，也可以委託我們代為聯絡和預約。",
       en: "You usually apply to each company yourself: electricity and water can be arranged online or by phone, while gas needs an appointment for a technician to turn it on, with you or someone acting for you present. It is best to arrange this one to two weeks before moving in.\nIf Japanese is difficult for you, we can also contact the companies and book the appointments for you.",
     },
-    tags: { "zh-TW": ["水電", "瓦斯", "開栓", "入住"], en: ["utilities", "gas", "electricity", "water"] },
+    tags: { "zh-TW": ["水電", "瓦斯", "開通", "入住"], en: ["utilities", "gas", "electricity", "water"] },
   },
   {
     key: "movers", category: "living-support", service: "living-support",
@@ -611,7 +611,7 @@ const entries: FaqEntry[] = [
       en: "Is there a charge for a consultation?",
     },
     a: {
-      "zh-TW": "諮詢免費。正式委託前，我們會先說明需要的費用，例如仲介手續費或管理費用，經您確認後才開始。",
+      "zh-TW": "諮詢免費。正式委託前，我們會先說明需要的費用，例如仲介費或管理費用，經您確認後才開始。",
       en: "Consultations are free. Before you formally engage us, we explain any fees involved, such as brokerage or management fees, and only proceed once you have agreed.",
     },
     tags: { "zh-TW": ["免費", "諮詢", "費用"], en: ["free", "consultation", "fees"] },
@@ -650,7 +650,7 @@ const entries: FaqEntry[] = [
       "zh-TW": "換鎖費幾乎無法免除：為了確保只有新租客持有鑰匙，日本租屋一般都會更換門鎖。福岡的一般門鎖約 1.5 至 2.5 萬日圓，高級公寓的電子鎖或感應鑰匙可達 5 至 10 萬日圓。\n24 小時支援費多為每月 800 至 1,500 日圓，現在大多數管理公司都列為必須加入，提供深夜或假日的漏水、鑰匙遺失等緊急支援。",
       en: "The lock replacement fee is almost never waived: locks are changed so that only the new tenant holds the keys. In Fukuoka a standard lock costs about ¥15,000–25,000, while electronic or card-key locks in upmarket buildings can cost ¥50,000–100,000.\nThe 24-hour support fee is usually ¥800–1,500 a month, and most management companies now make it compulsory. It covers emergencies at night or on holidays, such as leaks or lost keys.",
     },
-    tags: { "zh-TW": ["換鎖費", "24小時支援", "初期費用"], en: ["lock replacement", "24-hour support", "move-in costs"] },
+    tags: { "zh-TW": ["換鎖費", "24小時支援", "初期費用"], en: ["lock replacement", "24-hour support", "initial costs"] },
   },
   {
     key: "fire-insurance", category: "fees", service: "rent", guide: "rental-initial-costs-reikin-shikikin",
@@ -659,22 +659,22 @@ const entries: FaqEntry[] = [
       en: "Do I have to buy fire insurance to rent?",
     },
     a: {
-      "zh-TW": "一般是租約的條件之一。費用按房型大小而定，兩年約 2 萬日圓左右，合約期內需要保持投保。",
-      en: "It is usually a condition of the lease. The cost depends on the size of the home, at around ¥20,000 for two years, and the cover must be kept up for the whole lease.",
+      "zh-TW": "一般是租約的條件之一。費用按房型大小而定，兩年多為 2–3 萬日圓，合約期內需要保持投保。",
+      en: "It is usually a condition of the lease. The cost depends on the size of the home, usually ¥20,000–30,000 for two years, and the cover must be kept up for the whole lease.",
     },
-    tags: { "zh-TW": ["火災保險", "初期費用", "租屋"], en: ["fire insurance", "move-in costs", "renting"] },
+    tags: { "zh-TW": ["火災保險", "初期費用", "租屋"], en: ["fire insurance", "initial costs", "renting"] },
   },
   {
     key: "negotiable-items", category: "fees", service: "rent", guide: "rental-initial-costs-reikin-shikikin", tool: "rental-initial-cost",
     q: {
       "zh-TW": "初期費用裡，有哪些項目可以商量？",
-      en: "Which move-in costs can be negotiated?",
+      en: "Which initial costs can be negotiated?",
     },
     a: {
-      "zh-TW": "管理公司預設加入的自選服務，多數可以商量，例如室內消毒費（約 1.5 至 2 萬日圓）、空調清洗費、淨水器（每月約 1,000 日圓），以及防盜鎖、滅火器等。\n預付房租、仲介手續費、保證公司費用、火災保險和換鎖費等，則幾乎無法避免。",
+      "zh-TW": "管理公司預設加入的自選服務，多數可以商量，例如室內消毒費（約 1.5 至 2 萬日圓）、空調清洗費、淨水器（每月約 1,000 日圓），以及防盜鎖、滅火器等。\n預付房租、仲介費、保證公司費用、火災保險和換鎖費等，則幾乎無法避免。",
       en: "Optional services the management company adds by default can often be negotiated, such as interior disinfection (about ¥15,000–20,000), air-conditioner cleaning, a water filter (about ¥1,000 a month), and extra locks or fire extinguishers.\nRent paid in advance, the brokerage fee, the guarantee company fee, fire insurance and lock replacement are almost always required.",
     },
-    tags: { "zh-TW": ["初期費用", "商量", "消毒費"], en: ["move-in costs", "negotiation", "disinfection"] },
+    tags: { "zh-TW": ["初期費用", "商量", "消毒費"], en: ["initial costs", "negotiation", "disinfection"] },
   },
 
   // ── Company & contact ──────────────────────────────────────────
@@ -685,7 +685,7 @@ const entries: FaqEntry[] = [
       en: "Which languages can I use?",
     },
     a: {
-      "zh-TW": "可以。我們可以用{languages}溝通，文字資料可以使用中文、日文或英文。",
+      "zh-TW": "可以。我們可以用{languages}溝通，文字資料可以使用繁體中文、日文或英文。",
       en: "We work in {languages}. Written material can be in Chinese, Japanese or English.",
     },
     tags: { "zh-TW": ["中文", "廣東話", "國語", "普通話", "語言"], en: ["language", "Cantonese", "Mandarin", "English"] },

@@ -125,7 +125,7 @@ export default async function ContactPage({ params }: PageProps) {
             <div className="fi-contact-office__copy">
               <h2 className="fi-h2" id="office-title">{t.officeTitle}</h2>
               <dl className="fi-profile fi-profile--compact">
-                <div><dt>{t.office.address}</dt><dd><span lang="ja">{siteConfig.company}<br />{siteConfig.contact.address}</span></dd></div>
+                <div><dt>{t.office.address}</dt><dd>{locale === "en" ? <>{siteConfig.contact.addressEn}<br /></> : null}<span lang="ja">{siteConfig.company}<br />{siteConfig.contact.address}</span></dd></div>
                 <div><dt>{t.office.access}</dt><dd>{profile.access[locale]}</dd></div>
                 <div><dt>{t.office.hours}</dt><dd>{profile.hours[locale]}</dd></div>
                 <div><dt>{t.office.closed}</dt><dd>{profile.closed[locale]}</dd></div>

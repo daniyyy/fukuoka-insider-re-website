@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { ConsultBand } from "@/components/site/ConsultBand";
-import { ArrowIcon } from "@/components/site/Icons";
 import { PageHero } from "@/components/site/PageHero";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { EstimatorTeaser } from "@/components/tools/EstimatorTeaser";
 import { isLocale } from "@/config/site";
-import { toolsCopy, type ToolKey } from "@/data/tools";
+import { toolsCopy } from "@/data/tools";
 import { fixedPageMetadata } from "@/lib/seo/fixed-page";
 
 type Props = { params: Promise<{ locale: string }> };
-const toolKeys: ToolKey[] = ["rental-initial-cost", "purchase-cost"];
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -31,16 +29,8 @@ export default async function ToolsPage({ params }: Props) {
         <PageHero title={t.indexTitle} lead={t.indexIntro} id="tools-title" />
         <section className="fi-tools-list" aria-labelledby="tools-title">
           <div className="fi-shell">
-            <ul className="fi-tool-rows">
-              {toolKeys.map((key) => (
-                <li key={key}>
-                  <Link className="fi-tool-row" href={`/${locale}/tools/${key}`}>
-                    <span><strong>{t.labels[key]}</strong><span>{t.tools[key].intro}</span></span>
-                    <span className="fi-related-card__arrow" aria-hidden="true"><ArrowIcon /></span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {/* Same two cards as the homepage: a live rental estimate and the purchase cost items. */}
+            <EstimatorTeaser locale={locale} />
             <p className="fi-tools-note fi-meta">{t.indexNote}</p>
           </div>
         </section>

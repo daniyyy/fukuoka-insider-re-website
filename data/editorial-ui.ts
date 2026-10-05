@@ -20,7 +20,7 @@ export const faqUi: Record<FaqLocale, {
   sectionTitle: string; allFaq: string; guideLink: string; serviceLink: (name: string) => string; homeIntro: string;
 }> = {
   "zh-TW": { sectionTitle: "常見問題", allFaq: "查看全部常見問題", guideLink: "閱讀相關指南", serviceLink: (name) => `查看${name}`, homeIntro: "香港、台灣客戶最常問的問題。" },
-  en: { sectionTitle: "Common questions", allFaq: "See all questions", guideLink: "Read the related guide", serviceLink: (name) => `View ${name}`, homeIntro: "What clients most often ask before getting in touch." },
+  en: { sectionTitle: "Frequently Asked Questions", allFaq: "See all questions", guideLink: "Read the related guide", serviceLink: (name) => `View ${name}`, homeIntro: "What clients most often ask before getting in touch." },
 };
 
 export const helpUi: Record<FaqLocale, {
@@ -29,5 +29,5 @@ export const helpUi: Record<FaqLocale, {
   contactTitle: string; contactBody: string; contactCta: string; languageNote?: string;
 }> = {
   "zh-TW": { title: "常見問題", intro: "租屋、買賣、物業管理，以及人在海外時最常遇到的問題。找不到答案的話，可以直接問我們。", searchLabel: "搜尋常見問題", searchPlaceholder: "例如：保證人、初期費用、納稅管理人", categoriesLabel: "分類", resultCount: "找到 {n} 個相關問題", noResults: "找不到相符的問題", noResultsHelp: "可以換一個較短的關鍵字，或直接聯絡我們說明情況。", clear: "清除", contactTitle: "找不到您的問題？", contactBody: "直接告訴我們您的情況，我們會回覆可以怎樣協助。資料尚未備齊，也可以先聯絡我們。", contactCta: "免費諮詢" },
-  en: { title: "Frequently asked questions", intro: "Renting, buying and selling, property management, and what to expect when you start from overseas. If your question is not here, just ask us.", searchLabel: "Search the questions", searchPlaceholder: "e.g. guarantor, move-in costs, tax agent", categoriesLabel: "Topics", resultCount: "Matching questions: {n}", noResults: "No matching questions", noResultsHelp: "Try a shorter keyword, or contact us and describe your situation.", clear: "Clear", contactTitle: "Can't find your question?", contactBody: "Tell us about your situation and we will explain how we can help. You can contact us before you have all the details ready.", contactCta: "Free Consultation" },
+  en: { title: "Frequently Asked Questions", intro: "Renting, buying and selling, property management, and what to expect when you start from overseas. If your question is not here, just ask us.", searchLabel: "Search the questions", searchPlaceholder: "e.g. guarantor, move-in costs, tax agent", categoriesLabel: "Topics", resultCount: "Matching questions: {n}", noResults: "No matching questions", noResultsHelp: "Try a shorter keyword, or contact us and describe your situation.", clear: "Clear", contactTitle: "Can't find your question?", contactBody: "Tell us about your situation and we will explain how we can help. You can contact us before you have all the details ready.", contactCta: "Free Consultation" },
 };

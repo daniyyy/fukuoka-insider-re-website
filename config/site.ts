@@ -5,6 +5,8 @@ export const siteConfig = {
   basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? "/re",
   contact: {
     address: "〒810-0074 福岡県福岡市中央区大手門1-5-2 九州外語ビル1階1号",
+    /** English form of the same address, for English pages. */
+    addressEn: "Kyushu Gaigo Bldg. 1F-1, 1-5-2 Otemon, Chuo-ku, Fukuoka 810-0074, Japan",
     telephone: "092-753-5662",
     telephoneInternational: "+81 92-753-5662",
     telephoneHref: "tel:+81927535662",

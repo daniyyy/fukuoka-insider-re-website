@@ -13,7 +13,7 @@
   color: #fff;
 }
 .fi-hero__media { position: absolute; inset: 0; z-index: -1; }
-.fi-hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 42% center; }
+.fi-hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 86% center; }
 .fi-hero__media::after {
   content: "";
   position: absolute; inset: 0;
@@ -46,6 +46,7 @@
   .fi-hero__proof { display: grid; grid-template-columns: repeat(3, max-content); gap: 0; padding: 0; font-size: var(--fi-size-small); }
   .fi-hero__proof li { display: flex; align-items: center; min-height: 5.5rem; padding-right: 2rem; }
   .fi-hero__proof li + li { padding-left: 2rem; border-left: 1px solid rgba(255, 255, 255, 0.2); }
+  .fi-hero__media img { object-position: 72% center; }
 }
 @media (min-width: 68.75rem) {
   .fi-hero__media img { object-position: 50% center; }
@@ -234,6 +235,16 @@
   .fi-home-life__panel { grid-template-columns: minmax(0, 2fr) minmax(0, 7fr); }
   .fi-home-life__hakata { min-height: 22rem; }
   .fi-home-life__copy { padding: 3.5rem clamp(2rem, 5vw, 4.5rem); }
+}
+/* Desktop: Instagram sits beside the main message instead of under it, so the panel reads as one balanced band. */
+@media (min-width: 68.75rem) {
+  .fi-home-life__copy { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); column-gap: clamp(2.5rem, 4vw, 4.5rem); }
+  .fi-home-life__copy > :not(.fi-home-life__social) { grid-column: 1; }
+  .fi-home-life__social {
+    grid-column: 2; grid-row: 1 / span 3; align-self: center;
+    margin-top: 0; padding: 0.5rem 0 0.5rem clamp(2rem, 3vw, 3rem);
+    border-top: 0; border-left: 1px solid var(--fi-line-strong);
+  }
 }
 
 /* About */

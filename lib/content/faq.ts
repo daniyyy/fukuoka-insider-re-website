@@ -18,7 +18,7 @@ const tokenValues = (locale: FaqLocale): Record<string, string> => {
     associationName: profile.associationName[locale],
     hours: profile.hours[locale],
     closed: profile.closed[locale],
-    address: siteConfig.contact.address,
+    address: locale === "en" ? siteConfig.contact.addressEn : siteConfig.contact.address,
     access: profile.access[locale],
   };
 };

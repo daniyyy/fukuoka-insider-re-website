@@ -60,7 +60,7 @@ const articles: ArticleMeta[] = [
   { slug: "balcony-rules-in-japanese-apartments", published: "2026-09-30", category: "renting", serviceContext: "rent", tags: ["租屋", "陽台", "大樓規約"],
     excerpt: "日本公寓的陽台屬於共用部分。可以自己裝鐵窗、放洗衣機或擺桌椅嗎？" },
   { slug: "delivery-boxes-in-fukuoka", published: "2026-10-05", category: "living-in-fukuoka", serviceContext: "living-support", tags: ["福岡生活", "宅配", "選房"],
-    excerpt: "經常網購的話，大樓有沒有宅配盒子差很遠。沒有的話，還有什麼辦法。" },
+    excerpt: "經常網購的話，大樓有沒有宅配盒子差很多。沒有的話，還有什麼辦法。" },
 ];
 
 export const importedGuides: Guide[] = articles.map((meta) => {

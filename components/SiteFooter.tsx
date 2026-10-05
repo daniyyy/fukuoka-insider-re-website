@@ -6,7 +6,7 @@ import { hasFaq, hasGuides, siteConfig } from "@/config/site";
 
 const copy = {
   "zh-TW": {
-    tagline: "福岡房地產服務｜中文・廣東話・日語・英語",
+    tagline: "福岡房地產服務｜",
     navigation: "網站導覽",
     contact: "聯絡方式",
     legal: "法律資訊",
@@ -28,7 +28,7 @@ const copy = {
     telephone: "電話",
   },
   ja: {
-    tagline: "福岡の不動産サービス｜中国語・広東語・日本語・英語",
+    tagline: "福岡の不動産サービス｜",
     navigation: "サイト案内",
     contact: "お問い合わせ",
     legal: "法的情報",
@@ -41,7 +41,7 @@ const copy = {
     help: "よくある質問",
     tools: "費用の概算",
     about: "会社概要",
-    privacy: "プライバシー",
+    privacy: "プライバシーポリシー",
     disclaimer: "免責事項",
     terms: "利用規約",
     consultation: "無料相談",
@@ -50,7 +50,7 @@ const copy = {
     telephone: "電話",
   },
   en: {
-    tagline: "Fukuoka real-estate services in Mandarin, Cantonese, Japanese, and English",
+    tagline: "Fukuoka real estate services in ",
     navigation: "Explore",
     contact: "Contact",
     legal: "Legal",
@@ -61,7 +61,7 @@ const copy = {
     living: "Living Support",
     guides: "Guides",
     help: "FAQ",
-    tools: "Cost estimators",
+    tools: "Cost Estimators",
     about: "About",
     privacy: "Privacy",
     disclaimer: "Disclaimer",
@@ -83,7 +83,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         <div className="fi-footer__grid">
           <div className="fi-footer__brand">
             <BrandLockup layout="stacked" tone="light" />
-            <p>{t.tagline}</p>
+            <p>{t.tagline}{locale === "en" ? siteConfig.company_profile.languages.en : siteConfig.company_profile.languagesShort[locale]}</p>
           </div>
           <nav className="fi-footer__links" aria-label={t.navigation}>
             <div>
@@ -131,7 +131,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           <p>
             <span>{siteConfig.company}</span>
             <span>{t.licence} {siteConfig.contact.licence}</span>
-            <span>{siteConfig.contact.address}</span>
+            <span>{locale === "en" ? siteConfig.contact.addressEn : siteConfig.contact.address}</span>
           </p>
           <p className="fi-footer__copyright"><span>© {new Date().getFullYear()} {siteConfig.company}</span> <span>{t.copyright}</span></p>
         </div>
