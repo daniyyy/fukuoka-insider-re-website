@@ -459,3 +459,8 @@
 ## 2026-10-01 — Language wording
 - Danny: zh-TW now says 「中文、廣東話、日語或英語」 (short 「中文・廣東話・日語・英語」) everywhere — homepage, footer, company facts, about, contact, rental service, property management, FAQ (question now 「可以用中文或廣東話溝通嗎？」). ja/en reordered to match (中国語・広東語・日本語・英語 / Mandarin, Cantonese, Japanese, and English). Recorded in 03_DECISIONS.md.
 - Checks: lint, 26 tests, build; crawl zh-TW 29, ja 15, en 16 pages, no errors or overflow.
+
+## 2026-10-05 — Guide dates and 21 new FAQs
+- Guide display dates (Danny): 8/3 ×3 (guarantor, garbage, initial costs), 8/5 ×2 (gas, floor plans), then 8/12 unfurnished, 8/20 lock & 24h support, 8/26 shikibiki, 9/1 screening call, 9/4 pets. Shown as 「發布 2026/9/4」 on each article and in the structured data. Five articles remain unpublished (south-facing, restoration, parking, balcony, delivery boxes).
+- FAQ 34 → 55 (zh-TW + en), spread across categories: overseas +3 (when to start, no Japanese, working holiday / students), renting +5 (shikikin vs reikin, shikibiki, restoration, floor plans, furniture), buying +3 (process, buying ≠ visa, management fee & repair reserve), property management +3 (rental income tax for non-residents, minpaku, tenant move-out), living +4 (city vs LP gas, garbage, parcels, parking), fees +3 (lock & 24h support, fire insurance, negotiable items). Company & contact unchanged (no new facts to add). Answers follow Danny's articles; links to unpublished guides appear only after they are published. No service pages changed (showOn untouched).
+- Checks: lint, typecheck, 26 tests, build; FAQ page shows 55 questions at 1440/390 (zh-TW, en), no overflow; crawl zh-TW 29, en 16 pages, no errors.

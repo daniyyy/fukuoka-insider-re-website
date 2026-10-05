@@ -78,6 +78,42 @@ const entries: FaqEntry[] = [
     },
     tags: { "zh-TW": ["匯款", "付款", "海外", "匯率"], en: ["payment", "transfer", "exchange rate"] },
   },
+  {
+    key: "when-to-start-search", category: "overseas-clients", service: "rent",
+    q: {
+      "zh-TW": "人在海外，應該提前多久開始找房？",
+      en: "How far ahead should I start looking from overseas?",
+    },
+    a: {
+      "zh-TW": "日本的出租物件，一般在申請後短時間內就要開始計租，很少可以為租客保留太久。建議先諮詢，了解地區、預算和所需文件；確定來日本的日期後，再正式看房和申請。",
+      en: "Rental properties in Japan usually start charging rent soon after you apply and are rarely held for long. Start by asking us about areas, budget and the documents you will need, then view and apply once your arrival date is fixed.",
+    },
+    tags: { "zh-TW": ["海外", "時間", "找房", "申請"], en: ["overseas", "timing", "searching"] },
+  },
+  {
+    key: "no-japanese", category: "overseas-clients", service: "rent", guide: "guarantor-company-screening-call",
+    q: {
+      "zh-TW": "不會日語，可以在福岡租屋嗎？",
+      en: "Can I rent in Fukuoka without speaking Japanese?",
+    },
+    a: {
+      "zh-TW": "可以，但保證公司的審查電話多以日語進行，審查員也會留意申請人能否溝通。回答時針對問題直接回答即可；沒聽懂的話，請禮貌地請對方說慢一點，不要隨便回答「はい」。\n申請前，我們會說明電話可能問的內容。入住後，部分物件的 24 小時支援服務亦提供外語對應。",
+      en: "Yes, but the guarantee company's screening call is usually in Japanese, and the screener will note whether you can communicate. Answer each question directly; if you don't understand, politely ask them to speak more slowly rather than just saying \"hai\".\nBefore you apply, we explain what the call may cover. After you move in, the 24-hour support service at some properties also offers help in other languages.",
+    },
+    tags: { "zh-TW": ["日語", "語言", "審查電話"], en: ["Japanese", "language", "screening call"] },
+  },
+  {
+    key: "visa-types", category: "overseas-clients", service: "rent", guide: "guarantor-company-and-joint-guarantor",
+    q: {
+      "zh-TW": "工作假期簽證或留學生，可以租屋嗎？",
+      en: "Can I rent on a working holiday visa or as a student?",
+    },
+    a: {
+      "zh-TW": "可以申請。保證公司主要看兩點：在留資格和期限是否穩定，以及能否穩定支付租金。在留期間較短，或者在日本還沒有收入時，審查會較嚴格，部分物件可能要求補充資料，或不接受申請。\n留學生一般需要提供學校的入學或在學證明。",
+      en: "You can apply. Guarantee companies look mainly at two things: whether your residence status and period of stay are stable, and whether you can pay the rent reliably. With a short period of stay or no income in Japan yet, screening is stricter, and some properties may ask for more documents or not accept the application.\nStudents usually need a certificate of admission or enrolment from their school.",
+    },
+    tags: { "zh-TW": ["工作假期", "留學生", "簽證", "審查"], en: ["working holiday", "student", "visa", "screening"] },
+  },
 
   // ── Renting ────────────────────────────────────────────────────
   {
@@ -176,6 +212,66 @@ const entries: FaqEntry[] = [
     },
     tags: { "zh-TW": ["審查", "電話", "保證公司"], en: ["screening", "phone call", "guarantee company"] },
   },
+  {
+    key: "reikin-shikikin", category: "renting", service: "rent", guide: "rental-initial-costs-reikin-shikikin", tool: "rental-initial-cost",
+    q: {
+      "zh-TW": "敷金和禮金有什麼分別？",
+      en: "What is the difference between shikikin and reikin?",
+    },
+    a: {
+      "zh-TW": "敷金即押金，福岡較常見為 1 個月租金；退租時扣除原狀回復等費用後，餘額會退還。禮金是給房東的謝禮，不會退還。\n現在零禮金的物件越來越多，但家庭型的大房型、新建或剛翻新的物件，以及熱門地段的高級公寓，仍常見 1 至 2 個月禮金。",
+      en: "Shikikin is a deposit, commonly one month's rent in Fukuoka; when you move out, restoration and similar costs are deducted and the rest is returned. Reikin (key money) is a thank-you payment to the landlord and is not returned.\nMore and more properties now ask for no key money, but one to two months is still common for larger family homes, new or newly renovated buildings, and upmarket apartments in popular areas.",
+    },
+    tags: { "zh-TW": ["敷金", "禮金", "押金", "初期費用"], en: ["deposit", "key money", "shikikin", "reikin"] },
+  },
+  {
+    key: "shikibiki", category: "renting", service: "rent", guide: "shikibiki-deposit-deduction",
+    q: {
+      "zh-TW": "報價單上的「敷引」是什麼？",
+      en: "What is shikibiki on a quote?",
+    },
+    a: {
+      "zh-TW": "敷引是簽約時已約定、退租時不會退還的押金部分。例如押金 3 個月、敷引 2 個月，即使退租時屋況良好，那 2 個月也會直接扣除。\n敷引一般已包括基本清潔及自然損耗的翻新；但如果人為損壞的維修費超過敷引金額，仍可能另外收費。簽約前，建議確認敷引是否已包括退租時的基本清掃費。",
+      en: "Shikibiki is the part of the deposit agreed at signing as non-refundable. For example, with a three-month deposit and two months' shikibiki, those two months are kept when you leave, however well you have looked after the home.\nShikibiki usually covers basic cleaning and normal wear, but if damage you caused costs more than the shikibiki to repair, you can still be charged. Before signing, ask whether the shikibiki already includes the basic cleaning when you move out.",
+    },
+    tags: { "zh-TW": ["敷引", "押金", "退租"], en: ["shikibiki", "deposit", "moving out"] },
+  },
+  {
+    key: "move-out-restoration", category: "renting", service: "rent", guide: "restoration-costs-when-moving-out",
+    q: {
+      "zh-TW": "退租時的「原狀回復」要付多少？",
+      en: "What will I pay for restoration when I move out?",
+    },
+    a: {
+      "zh-TW": "按國土交通省的指引，租客只需負責因自己故意或過失造成的損傷。日曬褪色、冰箱背後牆壁變黑、輕微磨損等「通常損耗」，原則上由房東負責。\n抽菸、寵物造成的氣味或損傷、大型釘孔或螺絲孔，一般由租客負責；費用超過敷金時，管理公司可以另外請款。\n建議拿到鑰匙當天，把每面牆、地板、廚房、浴室和已有的損傷拍照，並存到雲端。",
+      en: "Under the Ministry of Land, Infrastructure, Transport and Tourism guidelines, tenants are responsible only for damage caused deliberately or through their own negligence. Normal wear, such as sun fading, the wall darkening behind the fridge and light scuffs, is in principle the landlord's cost.\nSmoking, smells or damage from pets, and large nail or screw holes are usually the tenant's responsibility, and if the cost exceeds your deposit, the management company can bill you for the rest.\nOn the day you receive the keys, photograph every wall, the floors, kitchen, bathroom and any existing damage, and save the photos to the cloud.",
+    },
+    tags: { "zh-TW": ["退租", "原狀回復", "敷金"], en: ["moving out", "restoration", "deposit"] },
+  },
+  {
+    key: "floor-plans", category: "renting", service: "rent", guide: "floor-plan-abbreviations-1k-1ldk",
+    q: {
+      "zh-TW": "1K、1LDK 這些房型代號是什麼意思？",
+      en: "What do floor plan codes like 1K and 1LDK mean?",
+    },
+    a: {
+      "zh-TW": "數字是房間數目，L 是客廳、D 是餐廳、K 是廚房。1R 的廚房和睡覺的空間沒有間隔；1K 則有牆和門分開。S 是採光或通風未達居室標準的房間，多用作儲物或書房。\n經常在家煮中菜的話，建議至少選 1K，減少油煙和氣味飄到睡房。",
+      en: "The number is the count of rooms; L is a living room, D a dining area and K a kitchen. In a 1R the kitchen and sleeping area are one open space, while a 1K has a wall and door between them. S is a room that does not meet the light or ventilation standard for a habitable room, often used for storage or as a study.\nIf you often cook Chinese food at home, choose at least a 1K so less smoke and smell reaches where you sleep.",
+    },
+    tags: { "zh-TW": ["房型", "1K", "1LDK", "格局"], en: ["floor plan", "1K", "1LDK", "layout"] },
+  },
+  {
+    key: "furniture", category: "renting", service: "rent", guide: "unfurnished-rentals-and-appliances",
+    q: {
+      "zh-TW": "日本租屋會附家具和家電嗎？",
+      en: "Do Japanese rentals come furnished?",
+    },
+    a: {
+      "zh-TW": "大多數不附，只有少數標明「家具付」的物件例外。冷氣、廚房、熱水器等在合約列為「設備」的項目，正常使用下故障由房東負責維修。\n前租客留下、沒有列為設備的家電（サービス設置），房東一般不負責維修。看房時，可以確認屋內的家電屬於哪一類。",
+      en: "Most are unfurnished, apart from a few listed as furnished (kagu-tsuki). Items listed as equipment in the contract, such as the air conditioner, kitchen and water heater, are repaired by the landlord if they break through normal use.\nAppliances left by a previous tenant and not listed as equipment (service-setchi) are usually not repaired by the landlord. When viewing, check which category any appliances in the home fall into.",
+    },
+    tags: { "zh-TW": ["家具", "家電", "設備"], en: ["furniture", "appliances", "equipment"] },
+  },
 
   // ── Buying & selling ───────────────────────────────────────────
   {
@@ -250,6 +346,42 @@ const entries: FaqEntry[] = [
     },
     tags: { "zh-TW": ["賣房", "海外", "簽名證明", "源泉徵收"], en: ["selling", "overseas", "withholding tax"] },
   },
+  {
+    key: "buying-process", category: "buying-selling", service: "buy-sell", tool: "purchase-cost",
+    q: {
+      "zh-TW": "在日本買房的流程是怎樣？",
+      en: "What are the steps to buying property in Japan?",
+    },
+    a: {
+      "zh-TW": "一般流程如下：\n- 確定預算、地區和條件，開始看房\n- 遞交購買申請（買付證明書），與賣方商談價格和條件\n- 聽取重要事項說明後簽訂買賣契約，支付訂金（手付金）\n- 交付餘款，由司法書士辦理所有權登記，然後交樓\n由簽約到交樓的時間按物件和付款方式而定，交易前我們會說明每一步的時間和費用。",
+      en: "The usual steps are:\n- Settle your budget, area and requirements, and start viewing\n- Submit a purchase application (kaitsuke shomeisho) and negotiate the price and terms with the seller\n- Receive the Explanation of Important Matters, sign the sale contract and pay a deposit (tetsukekin)\n- Pay the balance; a judicial scrivener registers the ownership, and the property is handed over\nThe time from contract to handover depends on the property and how you pay; we explain the timing and costs of each step before the transaction.",
+    },
+    tags: { "zh-TW": ["買房", "流程", "手付金", "登記"], en: ["buying", "process", "deposit", "registration"] },
+  },
+  {
+    key: "buying-and-visa", category: "buying-selling", service: "buy-sell",
+    q: {
+      "zh-TW": "在日本買了房子，就可以住在日本嗎？",
+      en: "If I buy a home in Japan, can I live there?",
+    },
+    a: {
+      "zh-TW": "買房不會因此獲得簽證或在留資格。沒有在留資格的話，只可以按入境規定短期停留，例如持香港或台灣護照免簽入境，每次最長 90 日。\n想長期在日本居住，需要另外申請合適的簽證。",
+      en: "Buying property does not give you a visa or residence status. Without residence status you can only stay short-term under the entry rules; for example, Hong Kong and Taiwan passport holders can enter visa-free for up to 90 days at a time.\nTo live in Japan long-term, you need to apply for a suitable visa separately.",
+    },
+    tags: { "zh-TW": ["簽證", "在留資格", "買房", "移居"], en: ["visa", "residence status", "buying"] },
+  },
+  {
+    key: "management-repair-fees", category: "buying-selling", service: "buy-sell", tool: "purchase-cost",
+    q: {
+      "zh-TW": "公寓的管理費和修繕積立金是什麼？",
+      en: "What are an apartment's management fee and repair reserve fund?",
+    },
+    a: {
+      "zh-TW": "兩者都是每月付給大樓管理組合的費用：管理費用於日常管理、清潔和公共部分的水電；修繕積立金則儲起來，用作將來外牆、屋頂、電梯等大型維修。全國平均兩者合計每月約 2.5 萬日圓，按大樓而有很大差異。\n購買新建公寓時，一般另需在交樓時一次性支付「修繕積立基金」。",
+      en: "Both are paid monthly to the building's owners' association: the management fee covers day-to-day management, cleaning and utilities for the common areas, while the repair reserve fund is saved for future major work such as the exterior walls, roof and lifts. The national average for the two together is about ¥25,000 a month, and it varies widely between buildings.\nWhen you buy a new apartment, you usually also pay a one-off initial repair fund at handover.",
+    },
+    tags: { "zh-TW": ["管理費", "修繕積立金", "公寓", "買房"], en: ["management fee", "repair reserve fund", "apartment"] },
+  },
 
   // ── Property management ────────────────────────────────────────
   {
@@ -312,6 +444,42 @@ const entries: FaqEntry[] = [
     },
     tags: { "zh-TW": ["轉換", "管理公司", "管理契約"], en: ["switching", "management contract"] },
   },
+  {
+    key: "rental-income-tax", category: "property-management", service: "property-management",
+    q: {
+      "zh-TW": "住在海外，收到的日本租金需要報稅嗎？",
+      en: "Do I pay tax in Japan on rent if I live overseas?",
+    },
+    a: {
+      "zh-TW": "需要。非居住者在日本出租物業的租金收入，一般需要在日本申報所得稅。如果租客是公司等情況，租金可能先被預扣 20.42% 稅款，之後在報稅時結算。\n報稅請向稅理士確認；我們的納稅管理人服務只包括固定資產稅・都市計畫稅。",
+      en: "Yes. A non-resident's rental income from property in Japan generally has to be declared on a Japanese income tax return. Where the tenant is a company, for example, 20.42% of the rent may be withheld first and settled when you file.\nPlease confirm tax returns with a tax accountant; our tax agent service covers fixed asset tax and city planning tax only.",
+    },
+    tags: { "zh-TW": ["租金收入", "報稅", "海外業主", "預扣"], en: ["rental income", "tax return", "overseas owner", "withholding"] },
+  },
+  {
+    key: "minpaku", category: "property-management", service: "property-management",
+    q: {
+      "zh-TW": "買來的公寓可以做民宿（例如 Airbnb）嗎？",
+      en: "Can I run my apartment as a short-term rental, such as Airbnb?",
+    },
+    a: {
+      "zh-TW": "要先確認兩點：一是大樓的管理規約有沒有禁止民宿，很多公寓都禁止；二是要按《住宅宿泊事業法》申報，或取得旅館業許可。按住宅宿泊事業法經營的話，每年最多只可營業 180 日，地區亦可能另有限制。\n購買前，建議先確認這些條件，再決定用途。",
+      en: "Check two things first: whether the building's rules ban short-term rentals, as many apartment buildings do, and whether you can register under the Private Lodging Business Act or obtain an inn licence. Under the Private Lodging Business Act you can operate for at most 180 days a year, and local rules may add further limits.\nIt is best to check these conditions before you buy, then decide how to use the property.",
+    },
+    tags: { "zh-TW": ["民宿", "Airbnb", "管理規約", "出租"], en: ["short-term rental", "Airbnb", "building rules"] },
+  },
+  {
+    key: "tenant-move-out", category: "property-management", service: "property-management", guide: "restoration-costs-when-moving-out",
+    q: {
+      "zh-TW": "租客退租時，清潔和維修費用由誰負責？",
+      en: "When a tenant leaves, who pays for cleaning and repairs?",
+    },
+    a: {
+      "zh-TW": "按國土交通省的原狀回復指引區分：租客故意或過失造成的損傷，由租客負責；日曬褪色、輕微磨損等通常損耗，以及設備的自然老化，一般由業主負責。\n委託我們管理時，退租檢查、維修報價和重新招租會按約定處理，費用事前向您說明。",
+      en: "It follows the Ministry of Land, Infrastructure, Transport and Tourism guidelines on restoration: damage the tenant caused deliberately or through negligence is the tenant's cost, while normal wear, such as sun fading and light scuffs, and the natural ageing of equipment are usually the owner's.\nIf we manage the property, the move-out inspection, repair quotes and re-letting are handled as agreed, and we explain the costs to you in advance.",
+    },
+    tags: { "zh-TW": ["退租", "原狀回復", "維修", "業主"], en: ["move-out", "restoration", "repairs", "owner"] },
+  },
 
   // ── Living support ─────────────────────────────────────────────
   {
@@ -362,6 +530,54 @@ const entries: FaqEntry[] = [
     },
     tags: { "zh-TW": ["搬家", "搬運", "合作夥伴"], en: ["movers", "moving", "partners"] },
   },
+  {
+    key: "city-vs-lp-gas", category: "living-support", service: "living-support", guide: "city-gas-vs-lp-gas",
+    q: {
+      "zh-TW": "都市瓦斯和 LP 瓦斯有什麼分別？",
+      en: "What is the difference between city gas and LP gas?",
+    },
+    a: {
+      "zh-TW": "都市瓦斯經地下管道供應，價格較穩定；LP 瓦斯由瓦斯公司運送瓦斯桶到大樓，費率由各公司自訂，同樣用量一般貴五成以上。瓦斯桶集中放在大樓外面，不會放在屋內。\n福岡的租屋物件大多使用 LP 瓦斯。經常在家煮食或家庭人數較多的話，可以優先考慮使用都市瓦斯的物件。",
+      en: "City gas is piped underground and its price is fairly stable. LP gas is delivered to the building in cylinders, and each gas company sets its own rates; for the same use it is usually at least 50% more expensive. The cylinders are kept together outside the building, not in your home.\nMost rentals in Fukuoka use LP gas. If you cook at home a lot or have a larger household, consider prioritising properties with city gas.",
+    },
+    tags: { "zh-TW": ["瓦斯", "LP瓦斯", "都市瓦斯", "生活費"], en: ["gas", "LP gas", "city gas"] },
+  },
+  {
+    key: "garbage", category: "living-support", service: "living-support", guide: "fukuoka-late-night-garbage-collection",
+    q: {
+      "zh-TW": "福岡倒垃圾有什麼要注意？",
+      en: "What should I know about rubbish in Fukuoka?",
+    },
+    a: {
+      "zh-TW": "福岡市在深夜收垃圾。大樓設有專屬垃圾房的話，丟棄時間通常比較有彈性；沒有的話，要拿到街上的指定收集點，並在收集日當天日落後至凌晨 12 點前拿出。\n垃圾須按規定分類。實際規定請在入住後查看大樓公告，或向管理公司確認。",
+      en: "Fukuoka City collects rubbish at night. If the building has its own bin room, you can usually put rubbish out more flexibly; if not, you take it to a designated collection point on the street between sunset and midnight on collection day.\nRubbish has to be sorted according to the rules. After you move in, check the building notices or ask the management company for the exact rules.",
+    },
+    tags: { "zh-TW": ["垃圾", "分類", "福岡生活"], en: ["rubbish", "sorting", "living in Fukuoka"] },
+  },
+  {
+    key: "parcels", category: "living-support", service: "living-support", guide: "delivery-boxes-in-fukuoka",
+    q: {
+      "zh-TW": "不在家時，網購包裹怎樣收？",
+      en: "How do I receive parcels when I'm not at home?",
+    },
+    a: {
+      "zh-TW": "日本的快遞一般不會交給鄰居代收，也不會放在門口；不在家時會留下「不在票」，需要掃描 QR code 或致電預約重新派送，期限一般約一星期。\n設有宅配盒子的公寓最方便，新建公寓大多設有，舊式木造公寓多半沒有。也可以指定在便利店或配送公司的取件站取貨。",
+      en: "Couriers in Japan usually won't leave parcels with neighbours or at the door. If you are out, they leave a missed-delivery slip, and you rebook delivery by QR code or phone, usually within about a week.\nA building with delivery lockers (takuhai box) is the most convenient; most new buildings have them, while older wooden apartment buildings mostly do not. You can also choose collection at a convenience store or a courier pickup point.",
+    },
+    tags: { "zh-TW": ["宅配", "網購", "宅配盒子"], en: ["parcels", "delivery lockers", "online shopping"] },
+  },
+  {
+    key: "parking", category: "living-support", service: "living-support", guide: "parking-and-garage-certificates",
+    q: {
+      "zh-TW": "在福岡開車，租屋時停車位要注意什麼？",
+      en: "I plan to drive in Fukuoka. What should I check about parking?",
+    },
+    a: {
+      "zh-TW": "在日本買車登記前，需要申請「車庫證明」，停車位須在住所 2 公里以內；公寓附設的車位，也要確認可以用來申請。\n福岡市內的中高層公寓多為機械式停車場，對車輛的長、闊、高有限制，SUV 或 MPV 要先確認尺寸。月租方面，中央區、博多區一帶約 1.5 至 2 萬日圓，郊區約 5,000 至 12,000 日圓。",
+      en: "Before registering a car in Japan you need a parking certificate (shako shomeisho), and the space must be within 2 km of your home; if the home comes with a space, check that it can be used for the certificate.\nMid- and high-rise buildings in Fukuoka City mostly have mechanical parking with limits on length, width and height, so check the size if you drive an SUV or MPV. Monthly rents are about ¥15,000–20,000 around Chuo and Hakata wards, and about ¥5,000–12,000 in the suburbs.",
+    },
+    tags: { "zh-TW": ["停車場", "車庫證明", "開車"], en: ["parking", "garage certificate", "car"] },
+  },
 
   // ── Fees ───────────────────────────────────────────────────────
   {
@@ -387,6 +603,42 @@ const entries: FaqEntry[] = [
       en: "We quote based on the type of property, the scope of work, how often we check it and how you want to receive reports. Send us the property details and what you would like us to handle, and we will confirm the scope before quoting.",
     },
     tags: { "zh-TW": ["管理費", "報價", "物業管理"], en: ["management fee", "quote"] },
+  },
+  {
+    key: "lock-and-support-fees", category: "fees", service: "rent", guide: "key-exchange-and-24-hour-support-fees", tool: "rental-initial-cost",
+    q: {
+      "zh-TW": "換鎖費和 24 小時支援費可以不付嗎？",
+      en: "Can I skip the lock replacement and 24-hour support fees?",
+    },
+    a: {
+      "zh-TW": "換鎖費幾乎無法免除：為了確保只有新租客持有鑰匙，日本租屋一般都會更換門鎖。福岡的一般門鎖約 1.5 至 2.5 萬日圓，高級公寓的電子鎖或感應鑰匙可達 5 至 10 萬日圓。\n24 小時支援費多為每月 800 至 1,500 日圓，現在大多數管理公司都列為必須加入，提供深夜或假日的漏水、鑰匙遺失等緊急支援。",
+      en: "The lock replacement fee is almost never waived: locks are changed so that only the new tenant holds the keys. In Fukuoka a standard lock costs about ¥15,000–25,000, while electronic or card-key locks in upmarket buildings can cost ¥50,000–100,000.\nThe 24-hour support fee is usually ¥800–1,500 a month, and most management companies now make it compulsory. It covers emergencies at night or on holidays, such as leaks or lost keys.",
+    },
+    tags: { "zh-TW": ["換鎖費", "24小時支援", "初期費用"], en: ["lock replacement", "24-hour support", "move-in costs"] },
+  },
+  {
+    key: "fire-insurance", category: "fees", service: "rent", guide: "rental-initial-costs-reikin-shikikin",
+    q: {
+      "zh-TW": "租屋一定要買火災保險嗎？",
+      en: "Do I have to buy fire insurance to rent?",
+    },
+    a: {
+      "zh-TW": "一般是租約的條件之一。費用按房型大小而定，兩年約 2 萬日圓左右，合約期內需要保持投保。",
+      en: "It is usually a condition of the lease. The cost depends on the size of the home, at around ¥20,000 for two years, and the cover must be kept up for the whole lease.",
+    },
+    tags: { "zh-TW": ["火災保險", "初期費用", "租屋"], en: ["fire insurance", "move-in costs", "renting"] },
+  },
+  {
+    key: "negotiable-items", category: "fees", service: "rent", guide: "rental-initial-costs-reikin-shikikin", tool: "rental-initial-cost",
+    q: {
+      "zh-TW": "初期費用裡，有哪些項目可以商量？",
+      en: "Which move-in costs can be negotiated?",
+    },
+    a: {
+      "zh-TW": "管理公司預設加入的自選服務，多數可以商量，例如室內消毒費（約 1.5 至 2 萬日圓）、空調清洗費、淨水器（每月約 1,000 日圓），以及防盜鎖、滅火器等。\n預付房租、仲介手續費、保證公司費用、火災保險和換鎖費等，則幾乎無法避免。",
+      en: "Optional services the management company adds by default can often be negotiated, such as interior disinfection (about ¥15,000–20,000), air-conditioner cleaning, a water filter (about ¥1,000 a month), and extra locks or fire extinguishers.\nRent paid in advance, the brokerage fee, the guarantee company fee, fire insurance and lock replacement are almost always required.",
+    },
+    tags: { "zh-TW": ["初期費用", "商量", "消毒費"], en: ["move-in costs", "negotiation", "disinfection"] },
   },
 
   // ── Company & contact ──────────────────────────────────────────
