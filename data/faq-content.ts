@@ -147,10 +147,22 @@ const entries: FaqEntry[] = [
       en: "Can I rent without a guarantor in Japan?",
     },
     a: {
-      "zh-TW": "可以。現在大部分物件要求使用「租賃保證公司」，而不是個人保證人。保證公司會另外審查，並收取保證費：首次多為月租（通常連共益費計）的五成至一個月左右，之後一般每年另付續約費，亦有按月收費的方案。\n部分物件亦要求提供緊急聯絡人，有時需要是住在日本的人。",
-      en: "Yes. Most properties now require a rent guarantee company rather than a personal guarantor. The guarantee company runs its own screening and charges a fee, typically 50–100% of one month's rent (usually including the common-area fee) at the start, followed by a yearly renewal fee, though some companies charge monthly instead.\nSome properties also ask for an emergency contact, sometimes someone living in Japan.",
+      "zh-TW": "可以，但選擇會比較少。現在幾乎所有物件都要求使用「租賃保證公司」，部分物件會同時要求提供保證人；沒有日本的保證人，就只能選擇不需要保證人的物件。\n保證公司會另外審查，並收取保證費：首次多為月租（通常連共益費計）的五成至一個月左右，之後一般每年另付續約費，亦有按月收費的方案。\n另外，緊急聯絡人是必須的。",
+      en: "Yes, but you will have fewer options. Almost all properties now require a rent guarantee company, and some also ask for a personal guarantor. Without a guarantor in Japan, you can only choose properties that do not require one.\nThe guarantee company runs its own screening and charges a fee, typically 50–100% of one month's rent (usually including the common-area fee) at the start, followed by a yearly renewal fee, though some companies charge monthly instead.\nAn emergency contact is also required.",
     },
     tags: { "zh-TW": ["保證人", "保證公司", "緊急聯絡人", "租屋"], en: ["guarantor", "guarantee company", "emergency contact"] },
+  },
+  {
+    key: "emergency-contact", category: "renting", service: "rent", guide: "guarantor-company-screening-call",
+    q: {
+      "zh-TW": "緊急聯絡人是什麼？需要負責什麼？",
+      en: "What is an emergency contact, and what are they responsible for?",
+    },
+    a: {
+      "zh-TW": "緊急聯絡人是管理公司或保證公司聯絡不上租客時會聯絡的人，例如發生緊急事故，或長時間聯絡不到租客的時候。與保證人不同，緊急聯絡人不需要代付租金或賠償。\n申請租屋時必須填寫緊急聯絡人。不少物件要求是住在日本、能以日語溝通的親友或同事，條件按物件和保證公司而定。審查期間，保證公司可能會致電確認，請事先通知對方，以免被當成詐騙電話掛斷。",
+      en: "An emergency contact is the person the management company or guarantee company calls when they cannot reach the tenant, for example in an emergency or when the tenant cannot be reached for a long time. Unlike a guarantor, an emergency contact does not have to pay rent or damages on your behalf.\nA rental application must include an emergency contact. Many properties ask for a relative, friend or colleague who lives in Japan and can communicate in Japanese, though the conditions depend on the property and the guarantee company. The guarantee company may call them during screening, so let them know in advance so they do not hang up thinking it is a scam call.",
+    },
+    tags: { "zh-TW": ["緊急聯絡人", "保證人", "申請", "租屋"], en: ["emergency contact", "guarantor", "application"] },
   },
   {
     key: "rental-initial-costs", category: "renting", service: "rent", showOn: ["rent"], guide: "rental-initial-costs-reikin-shikikin", tool: "rental-initial-cost",

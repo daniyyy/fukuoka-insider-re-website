@@ -8,6 +8,7 @@ import type { Guide, GuideCategory } from "@/lib/content/types";
  * then add `published: "YYYY-MM-DD"` to its entry below.
  * First batch (10 articles) published on Danny's instruction, 2026-09-29. Display dates set by Danny (2026-10-05):
  * five in early August, then about one a week (at most two).
+ * Remaining five published on Danny's instruction, 2026-10-05 (dates continue the weekly pattern).
  */
 const photos = {
   planning: { src: "/images/guide-planning.webp", alt: "桌上的平面圖、鑰匙與筆記本" },
@@ -42,7 +43,7 @@ const articles: ArticleMeta[] = [
     excerpt: "1K、1R、1LDK、2DK 代表什麼？經常煮中菜的話，選房型要注意哪些地方。" },
   { slug: "unfurnished-rentals-and-appliances", published: "2026-08-12", category: "renting", serviceContext: "rent", tags: ["租屋", "家具家電"],
     excerpt: "日本租屋多數不附家具。了解「設備」與「贈與設備」的分別，以及剛到福岡去哪買家電。" },
-  { slug: "why-south-facing-homes-matter", category: "living-in-fukuoka", serviceContext: "rent", tags: ["福岡生活", "選房", "朝向"],
+  { slug: "why-south-facing-homes-matter", published: "2026-09-10", category: "living-in-fukuoka", serviceContext: "rent", tags: ["福岡生活", "選房", "朝向"],
     excerpt: "日本人選房為什麼那麼重視「南向」？從晾衣、濕氣到資產價值，看看背後的實際原因。" },
   { slug: "key-exchange-and-24-hour-support-fees", published: "2026-08-20", category: "renting", serviceContext: "rent", tags: ["租屋", "初期費用"],
     excerpt: "報價單上的換鎖費和 24 小時安心支援費，哪一項可以商量、哪一項幾乎無法避免。" },
@@ -52,13 +53,13 @@ const articles: ArticleMeta[] = [
     excerpt: "遞交申請後，保證公司通常會打電話確認。外國人常被問的問題，以及事前可以準備什麼。" },
   { slug: "pet-friendly-rentals-hidden-costs", published: "2026-09-04", category: "renting", serviceContext: "rent", tags: ["租屋", "寵物"],
     excerpt: "標明「可養寵物」不等於什麼都能養。帶毛孩在福岡租屋，要預留的費用與時間。" },
-  { slug: "restoration-costs-when-moving-out", category: "renting", serviceContext: "rent", tags: ["租屋", "退租", "原狀回復"],
+  { slug: "restoration-costs-when-moving-out", published: "2026-09-16", category: "renting", serviceContext: "rent", tags: ["租屋", "退租", "原狀回復"],
     excerpt: "退租時的「原狀回復」怎樣計算？哪些費用本來不用付，哪些幾乎一定要負責。" },
-  { slug: "parking-and-garage-certificates", category: "living-in-fukuoka", serviceContext: "living-support", tags: ["福岡生活", "停車場", "選房"],
+  { slug: "parking-and-garage-certificates", published: "2026-09-24", category: "living-in-fukuoka", serviceContext: "living-support", tags: ["福岡生活", "停車場", "選房"],
     excerpt: "平面、機械式與自走式停車場的分別、車庫證明的規定，以及福岡各區的車位月租參考。" },
-  { slug: "balcony-rules-in-japanese-apartments", category: "renting", serviceContext: "rent", tags: ["租屋", "陽台", "大樓規約"],
+  { slug: "balcony-rules-in-japanese-apartments", published: "2026-09-30", category: "renting", serviceContext: "rent", tags: ["租屋", "陽台", "大樓規約"],
     excerpt: "日本公寓的陽台屬於共用部分。可以自己裝鐵窗、放洗衣機或擺桌椅嗎？" },
-  { slug: "delivery-boxes-in-fukuoka", category: "living-in-fukuoka", serviceContext: "living-support", tags: ["福岡生活", "宅配", "選房"],
+  { slug: "delivery-boxes-in-fukuoka", published: "2026-10-05", category: "living-in-fukuoka", serviceContext: "living-support", tags: ["福岡生活", "宅配", "選房"],
     excerpt: "經常網購的話，大樓有沒有宅配盒子差很遠。沒有的話，還有什麼辦法。" },
 ];
 
