@@ -350,14 +350,4 @@
 @media (min-width: 68.75rem) {
   .fi-steps--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3.5rem; }
 }
-.fi-living-fee {
-  display: grid; gap: 0.375rem;
-  margin: var(--fi-space-5) 0 0; padding: 1.5rem 1.5rem;
-  background: var(--fi-sheet);
-  border-left: 3px solid var(--fi-slate);
-}
-.fi-living-fee dt { font-family: var(--fi-font-serif); font-weight: 600; font-size: 1.0625rem; }
-.fi-living-fee dd { margin: 0; color: var(--fi-text); }
-@media (min-width: 45rem) {
-  .fi-living-fee { grid-template-columns: 6rem minmax(0, 1fr); align-items: baseline; padding: 1.5rem 2rem; }
-}
+

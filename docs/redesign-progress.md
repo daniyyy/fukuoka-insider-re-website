@@ -473,3 +473,4 @@
 - FAQ: scope, resident registration and utilities answers now say our staff accompany; new 「沒有透過你們租屋或買房，也可以申請生活支援嗎？」 and 「生活支援怎樣收費？」 (FAQ 58). The page shows those four; movers question kept on the Help page only.
 - Checks: lint, typecheck, 26 tests, build; screenshots 1440/834/390 (zh-TW), 390 ja, 1440 en, no overflow; crawl zh-TW 34, ja 15, en 16 pages, no errors.
 - Waiting for Danny: review of the new layout and wording.
+- Fee wording (Danny: too repetitive): 「按項目報價」 now stated only in the FAQ 「生活支援怎樣收費？」; hero tag → 「任何人都可以申請」, step 2 → 「先提供報價／您同意後才安排」, CTA → 「我們會先提供報價」; fee box removed; fee half-sentences removed from the other living FAQs (zh-TW/ja/en).

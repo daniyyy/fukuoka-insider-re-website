@@ -116,10 +116,6 @@ export function LivingSupportSections({ locale }: { locale: Locale }) {
               </li>
             ))}
           </ol>
-          <dl className="fi-living-fee">
-            <dt>{copy.feeLabel}</dt>
-            <dd>{copy.feeNote}</dd>
-          </dl>
         </div>
       </section>
     </>

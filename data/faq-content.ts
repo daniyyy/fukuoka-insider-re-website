@@ -513,8 +513,8 @@ const entries: FaqEntry[] = [
       en: "Can I use Living Support if I didn't rent or buy through you?",
     },
     a: {
-      "zh-TW": "可以。生活支援任何人都可以申請。請告訴我們需要的項目、日期和地點，我們會按項目報價。",
-      en: "Yes. Anyone can apply for Living Support. Tell us what you need, when and where, and we will quote for each item.",
+      "zh-TW": "可以，任何人都可以申請。告訴我們需要的項目、日期和地點即可。",
+      en: "Yes, anyone can apply. Just tell us what you need, when and where.",
     },
     tags: { "zh-TW": ["生活支援", "申請", "陪同"], en: ["living support", "eligibility"] },
   },
@@ -525,8 +525,8 @@ const entries: FaqEntry[] = [
       en: "Can you help with resident registration, a bank account or a phone?",
     },
     a: {
-      "zh-TW": "可以。住民登錄須在搬入後 14 天內到區役所辦理，我們的員工可以陪同並即場翻譯；手機合約和銀行開戶，也可以陪同辦理。這些手續需要本人到場申請，費用按項目報價。",
-      en: "Yes. Resident registration must be done at the ward office within 14 days of moving in, and our staff can go with you and interpret on the spot. We can also go with you to sign a phone contract and open a bank account. You need to be there in person for these procedures, and fees are quoted per item.",
+      "zh-TW": "可以。住民登錄須在搬入後 14 天內到區役所辦理，我們的員工可以陪同並即場翻譯；手機合約和銀行開戶，也可以陪同辦理。這些手續需要本人到場申請。",
+      en: "Yes. Resident registration must be done at the ward office within 14 days of moving in, and our staff can go with you and interpret on the spot. We can also go with you to sign a phone contract and open a bank account. You need to be there in person for these procedures.",
     },
     tags: { "zh-TW": ["住民登錄", "區役所", "銀行", "手機"], en: ["resident registration", "ward office", "bank", "phone"] },
   },
@@ -537,8 +537,8 @@ const entries: FaqEntry[] = [
       en: "How do I set up electricity, water and gas when I move in?",
     },
     a: {
-      "zh-TW": "一般由入住人聯絡各公司申請：電力和自來水可以在線上或以電話申請；瓦斯則需要預約人員上門開栓，開栓時須由本人或代理人在場。建議在入住日前一至兩星期安排。\n日語不方便的話，可以委託我們代為聯絡和預約，費用按項目報價。",
-      en: "You usually apply to each company yourself: electricity and water can be arranged online or by phone, while gas needs an appointment for a technician to turn it on, with you or someone acting for you present. It is best to arrange this one to two weeks before moving in.\nIf Japanese is difficult for you, we can contact the companies and book the appointments for you; fees are quoted per item.",
+      "zh-TW": "一般由入住人聯絡各公司申請：電力和自來水可以在線上或以電話申請；瓦斯則需要預約人員上門開栓，開栓時須由本人或代理人在場。建議在入住日前一至兩星期安排。\n日語不方便的話，也可以委託我們代為聯絡和預約。",
+      en: "You usually apply to each company yourself: electricity and water can be arranged online or by phone, while gas needs an appointment for a technician to turn it on, with you or someone acting for you present. It is best to arrange this one to two weeks before moving in.\nIf Japanese is difficult for you, we can also contact the companies and book the appointments for you.",
     },
     tags: { "zh-TW": ["水電", "瓦斯", "開栓", "入住"], en: ["utilities", "gas", "electricity", "water"] },
   },

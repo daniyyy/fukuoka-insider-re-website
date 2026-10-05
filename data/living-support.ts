@@ -4,7 +4,8 @@ import type { Locale } from "@/config/site";
  * Living Support page sections (Danny, 2026-10-05).
  * Six items are handled directly by our own staff; schools, clinics, visa (gyoseishoshi) and job search are
  * partner introductions and must stay labelled as such (03_DECISIONS: never present referrals as direct service).
- * Fees: quoted per item, no amounts on the site. Anyone can apply, not only rental or purchase clients.
+ * Fees: quoted per item, no amounts on the site; state it plainly only in the FAQ「生活支援怎樣收費？」and hint elsewhere
+ * ("we send a quote first") so the page does not repeat it (Danny, 2026-10-05). Anyone can apply.
  * zh-TW is the source; ja/en keep the same structure.
  */
 export type LivingIcon = "utilities" | "furniture" | "ward-office" | "phone" | "bank" | "shopping";
@@ -26,8 +27,6 @@ export type LivingSupportCopy = {
   partnerNote: string;
   processTitle: string;
   process: Item[];
-  feeLabel: string;
-  feeNote: string;
 };
 
 export const livingSupportCopy: Record<Locale, LivingSupportCopy> = {
@@ -82,11 +81,9 @@ export const livingSupportCopy: Record<Locale, LivingSupportCopy> = {
     processTitle: "如何申請",
     process: [
       { title: "告訴我們需要的項目", body: "列出需要協助的事項、日期和地點。" },
-      { title: "按項目報價", body: "我們確認內容後，提供報價。" },
-      { title: "安排日期，員工陪同", body: "確認報價後安排日期，由我們的員工陪同辦理。" },
+      { title: "先提供報價", body: "確認內容後提供報價，您同意後才安排。" },
+      { title: "安排日期，員工陪同", body: "安排日期後，由我們的員工陪同辦理。" },
     ],
-    feeLabel: "費用",
-    feeNote: "按項目報價。不論是否透過我們租屋或買房，都可以申請。",
   },
   ja: {
     audienceTitle: "このような方に",
@@ -139,11 +136,9 @@ export const livingSupportCopy: Record<Locale, LivingSupportCopy> = {
     processTitle: "お申し込みの流れ",
     process: [
       { title: "必要な項目をお知らせください", body: "サポートが必要な事項、日程、場所をお知らせください。" },
-      { title: "項目ごとにお見積もり", body: "内容を確認し、お見積もりをお出しします。" },
-      { title: "日程を決めて、スタッフが同行", body: "お見積もりにご同意いただいた後、日程を調整し、当社スタッフが同行します。" },
+      { title: "まずお見積もり", body: "内容を確認してお見積もりをお出しし、ご同意いただいてから手配します。" },
+      { title: "日程を決めて、スタッフが同行", body: "日程を調整し、当社スタッフが同行します。" },
     ],
-    feeLabel: "料金",
-    feeNote: "項目ごとにお見積もりします。当社で賃貸・購入をされていない方もお申し込みいただけます。",
   },
   en: {
     audienceTitle: "Who it is for",
@@ -196,10 +191,8 @@ export const livingSupportCopy: Record<Locale, LivingSupportCopy> = {
     processTitle: "How to arrange support",
     process: [
       { title: "Tell us what you need", body: "List the tasks you need help with, the dates and the places." },
-      { title: "We quote per item", body: "We check the details and send you a quote." },
-      { title: "We set a date and go with you", body: "Once you accept the quote, we schedule the date and our staff go with you." },
+      { title: "We send a quote first", body: "We check the details and send a quote, and only arrange anything once you agree." },
+      { title: "We set a date and go with you", body: "We schedule the date, and our staff go with you." },
     ],
-    feeLabel: "Fees",
-    feeNote: "Quoted per item. Anyone can apply, whether or not you rented or bought through us.",
   },
 };
