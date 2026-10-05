@@ -76,7 +76,7 @@ const copy: Record<Locale, HomepageCopy> = {
       { title: "租屋服務", description: "住宅、辦公室及商業空間租賃" },
       { title: "房產買賣", description: "福岡房產購買與出售諮詢" },
       { title: "物業管理", description: "出租物業與度假別墅等不常居住的物業管理" },
-      { title: "生活支援", description: "入住相關生活支援及合作夥伴轉介" },
+      { title: "生活支援", description: "入住手續陪同辦理，日語不方便也安心" },
     ],
     trust: {
       heading: "我們就在福岡。",
@@ -117,7 +117,7 @@ const copy: Record<Locale, HomepageCopy> = {
       { title: "賃貸", description: "住居・オフィス・店舗の賃貸" },
       { title: "不動産売買", description: "福岡の不動産購入・売却に関するご相談" },
       { title: "物件管理", description: "賃貸物件・別荘やセカンドハウスの管理" },
-      { title: "生活サポート", description: "入居に伴う生活サポート・提携先のご紹介" },
+      { title: "生活サポート", description: "入居手続きにスタッフが同行" },
     ],
     trust: {
       heading: "私たちは福岡にいます。",
@@ -158,7 +158,7 @@ const copy: Record<Locale, HomepageCopy> = {
       { title: "Rental", description: "Homes, offices, and commercial spaces" },
       { title: "Buy & Sell", description: "Consultation for buying and selling property in Fukuoka" },
       { title: "Property Management", description: "Management for rental properties, holiday homes, and other second homes" },
-      { title: "Living Support", description: "Move-in support and referrals to external partners" },
+      { title: "Living Support", description: "Our staff go with you through move-in procedures" },
     ],
     trust: {
       heading: "We are based in Fukuoka.",

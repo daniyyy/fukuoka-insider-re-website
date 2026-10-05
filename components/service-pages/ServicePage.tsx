@@ -8,6 +8,7 @@ import { ArrowIcon, CheckIcon } from "@/components/site/Icons";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { GuideIndex } from "@/components/guides/GuideCard";
+import { LivingSupportSections } from "@/components/service-pages/LivingSupportSections";
 import { FaqAnswer } from "@/components/help/FaqAnswer";
 import { asset, hasFaq, hasGuides, siteConfig, type Locale } from "@/config/site";
 import { faqUi } from "@/data/editorial-ui";
@@ -21,15 +22,18 @@ import {
   serviceKeys,
   serviceOverviewCopy,
   serviceUiCopy,
+  type ServiceDetailCopy,
   type ServiceKey,
 } from "@/data/service-pages";
 
 /**
- * One template for all four service pages (Washi Editorial design system).
+ * One template for the service pages (Washi Editorial design system).
  * Content lives in data/service-pages.ts; layout and styling live here and in app/services.css.
+ * Living Support keeps the shared hero, FAQ, guides and closing sections but has its own body (LivingSupportSections).
  */
 export async function ServicePage({ locale, service }: { locale: Locale; service: ServiceKey }) {
   const copy = serviceDetailCopy[service][locale];
+  const sections = service === "living-support" ? null : (copy as ServiceDetailCopy);
   const ui = serviceUiCopy[locale];
   const image = serviceImages[service];
   const others = serviceOverviewCopy[locale].items.filter((item) => item.key !== service);
@@ -81,98 +85,102 @@ export async function ServicePage({ locale, service }: { locale: Locale; service
           </div>
         </section>
 
-        <section className="fi-service-audience" aria-labelledby="audience-title">
-          <div className="fi-shell fi-service-audience__grid">
-            <h2 className="fi-h2" id="audience-title">{copy.audienceTitle}</h2>
-            <ul className="fi-service-audience__list">
-              {copy.audiences.map((item) => (
-                <li key={item.title}>
-                  <h3 className="fi-h3">{item.title}</h3>
-                  <p>{item.body}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="fi-service-help" aria-labelledby="help-title">
-          <div className="fi-shell">
-            <header className="fi-section-head">
-              <h2 className="fi-h2" id="help-title">{copy.helpTitle}</h2>
-              <p className="fi-body">{copy.helpIntro}</p>
-            </header>
-            <div className={`fi-service-panels fi-service-panels--${copy.panels.length}`}>
-              {copy.panels.map((panel) => (
-                <article className="fi-service-panel" key={panel.title}>
-                  <h3 className="fi-service-panel__title">{panel.title}</h3>
-                  {panel.body ? <p className="fi-service-panel__body">{panel.body}</p> : null}
-                  <ul className="fi-checklist">
-                    {panel.points.map((point) => (
-                      <li key={point}><CheckIcon />{point}</li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
-            </div>
-            {copy.helpNote ? <p className="fi-service-help__note fi-meta">{copy.helpNote}</p> : null}
-          </div>
-        </section>
-
-        <section className="fi-service-process" aria-labelledby="process-title">
-          <div className="fi-shell">
-            <h2 className="fi-h2" id="process-title">{copy.processTitle}</h2>
-            <ol className="fi-steps">
-              {copy.process.map((step, index) => (
-                <li className="fi-step" key={step.title}>
-                  <span className="fi-step__number" aria-hidden="true">{index + 1}</span>
-                  <h3 className="fi-step__title">{step.title}</h3>
-                  <p className="fi-step__body">{step.body}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-
-        <section className="fi-service-prepare" aria-labelledby="prepare-title">
-          <div className="fi-shell fi-service-prepare__grid">
-            <div className="fi-service-prepare__copy">
-              <h2 className="fi-h2" id="prepare-title">{copy.prepareTitle}</h2>
-              <p className="fi-body">{copy.prepareIntro}</p>
-              {copy.tool ? (
-                <Link className="fi-text-link" href={`/${locale}${copy.tool.href}`}>
-                  {copy.tool.label}
-                  <ArrowIcon />
-                </Link>
-              ) : null}
-            </div>
-            <div className="fi-sheet">
-              <div className="fi-sheet__head">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={asset("/images/brand/symbol-dark.svg")} alt="" width={20} height={20} />
-                <span>{ui.checklist}</span>
-                <span className="fi-sheet__service">{copy.title}</span>
-              </div>
-              <dl className="fi-sheet__list">
-                {copy.preparation.map((item) => (
-                  <div className="fi-sheet__row" key={item.title}>
-                    <span className="fi-sheet__box" aria-hidden="true" />
-                    <dt>{item.title}</dt>
-                    <dd>{item.body}</dd>
-                  </div>
+        {sections ? (
+          <>
+          <section className="fi-service-audience" aria-labelledby="audience-title">
+            <div className="fi-shell fi-service-audience__grid">
+              <h2 className="fi-h2" id="audience-title">{sections.audienceTitle}</h2>
+              <ul className="fi-service-audience__list">
+                {sections.audiences.map((item) => (
+                  <li key={item.title}>
+                    <h3 className="fi-h3">{item.title}</h3>
+                    <p>{item.body}</p>
+                  </li>
                 ))}
-              </dl>
+              </ul>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="fi-service-limits" aria-labelledby="limits-title">
-          <div className="fi-shell fi-service-limits__grid">
-            <h2 className="fi-service-limits__title" id="limits-title">{copy.limitsTitle}</h2>
-            <ul className="fi-service-limits__list">
-              {copy.limits.map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </div>
-        </section>
+          <section className="fi-service-help" aria-labelledby="help-title">
+            <div className="fi-shell">
+              <header className="fi-section-head">
+                <h2 className="fi-h2" id="help-title">{sections.helpTitle}</h2>
+                <p className="fi-body">{sections.helpIntro}</p>
+              </header>
+              <div className={`fi-service-panels fi-service-panels--${sections.panels.length}`}>
+                {sections.panels.map((panel) => (
+                  <article className="fi-service-panel" key={panel.title}>
+                    <h3 className="fi-service-panel__title">{panel.title}</h3>
+                    {panel.body ? <p className="fi-service-panel__body">{panel.body}</p> : null}
+                    <ul className="fi-checklist">
+                      {panel.points.map((point) => (
+                        <li key={point}><CheckIcon />{point}</li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+              {sections.helpNote ? <p className="fi-service-help__note fi-meta">{sections.helpNote}</p> : null}
+            </div>
+          </section>
+
+          <section className="fi-service-process" aria-labelledby="process-title">
+            <div className="fi-shell">
+              <h2 className="fi-h2" id="process-title">{sections.processTitle}</h2>
+              <ol className="fi-steps">
+                {sections.process.map((step, index) => (
+                  <li className="fi-step" key={step.title}>
+                    <span className="fi-step__number" aria-hidden="true">{index + 1}</span>
+                    <h3 className="fi-step__title">{step.title}</h3>
+                    <p className="fi-step__body">{step.body}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </section>
+
+          <section className="fi-service-prepare" aria-labelledby="prepare-title">
+            <div className="fi-shell fi-service-prepare__grid">
+              <div className="fi-service-prepare__copy">
+                <h2 className="fi-h2" id="prepare-title">{sections.prepareTitle}</h2>
+                <p className="fi-body">{sections.prepareIntro}</p>
+                {sections.tool ? (
+                  <Link className="fi-text-link" href={`/${locale}${sections.tool.href}`}>
+                    {sections.tool.label}
+                    <ArrowIcon />
+                  </Link>
+                ) : null}
+              </div>
+              <div className="fi-sheet">
+                <div className="fi-sheet__head">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={asset("/images/brand/symbol-dark.svg")} alt="" width={20} height={20} />
+                  <span>{ui.checklist}</span>
+                  <span className="fi-sheet__service">{copy.title}</span>
+                </div>
+                <dl className="fi-sheet__list">
+                  {sections.preparation.map((item) => (
+                    <div className="fi-sheet__row" key={item.title}>
+                      <span className="fi-sheet__box" aria-hidden="true" />
+                      <dt>{item.title}</dt>
+                      <dd>{item.body}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+          </section>
+
+          <section className="fi-service-limits" aria-labelledby="limits-title">
+            <div className="fi-shell fi-service-limits__grid">
+              <h2 className="fi-service-limits__title" id="limits-title">{sections.limitsTitle}</h2>
+              <ul className="fi-service-limits__list">
+                {sections.limits.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+          </section>
+          </>
+        ) : <LivingSupportSections locale={locale} />}
 
         {faq.length && faqCopy ? (
           <section className="fi-service-faq" aria-labelledby="service-faq-title">

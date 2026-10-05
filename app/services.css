@@ -287,3 +287,77 @@
 @media (min-width: 45rem) {
   .fi-service-guides__head { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
 }
+
+/* ---------- Living Support (Danny, 2026-10-05) ---------- */
+/* Six direct services along the order of a move: a vertical timeline on phones and tablets,
+   one horizontal line across six columns on desktop (each phase spans its own items). */
+.fi-living-services { padding-block: var(--fi-section); background: var(--fi-stone); }
+.fi-living-timeline { display: grid; margin: 0; padding: 0; list-style: none; }
+.fi-living-phase {
+  position: relative;
+  display: grid; gap: 1.5rem;
+  padding: 0 0 2.5rem 1.75rem;
+  border-left: 1px solid var(--fi-line-strong);
+}
+.fi-living-phase:last-child { padding-bottom: 0; border-left-color: transparent; }
+.fi-living-phase::before {
+  content: ""; position: absolute; top: 0.45em; left: -5px;
+  width: 9px; height: 9px; border-radius: 50%; background: var(--fi-ink);
+}
+.fi-living-phase__label { margin: 0; font-size: var(--fi-size-small); font-weight: 600; line-height: 1.5; letter-spacing: 0.04em; color: var(--fi-slate); }
+.fi-living-phase__items { display: grid; gap: 1.75rem; margin: 0; padding: 0; list-style: none; }
+.fi-living-item { display: grid; gap: 0.625rem; align-content: start; }
+.fi-living-item__head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--fi-line-strong); }
+.fi-living-item__icon { width: 2rem; height: 2rem; fill: none; stroke: var(--fi-ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.fi-living-item__no { font-family: var(--fi-font-display); font-weight: 500; font-size: 1.5rem; line-height: 1; color: var(--fi-slate); font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+.fi-living-item__title { margin: 0.25rem 0 0; font-family: var(--fi-font-serif); font-weight: 600; font-size: 1.1875rem; line-height: 1.5; }
+.fi-living-item__body { margin: 0; font-size: 0.9375rem; line-height: 1.8; color: var(--fi-text); }
+@media (min-width: 45rem) {
+  .fi-living-phase { padding-left: 2.5rem; }
+  .fi-living-phase__items { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.5rem; }
+}
+@media (min-width: 68.75rem) {
+  .fi-living-timeline { grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 2rem; }
+  .fi-living-phase {
+    grid-column: span var(--span, 1);
+    grid-template-rows: auto 1fr; gap: 1.75rem;
+    padding: 1.5rem 0 0;
+    border-left: 0; border-top: 1px solid var(--fi-ink);
+  }
+  .fi-living-phase:last-child { border-top-color: var(--fi-ink); }
+  .fi-living-phase::before { top: -5px; left: 0; }
+  .fi-living-phase__items { grid-template-columns: repeat(var(--span, 1), minmax(0, 1fr)); column-gap: 2rem; }
+}
+
+.fi-living-others { padding-block: var(--fi-section); }
+.fi-living-others__grid { display: grid; gap: 2.5rem; }
+.fi-living-others__copy { display: grid; gap: 1.25rem; justify-items: start; align-content: start; }
+.fi-living-others__copy .fi-h2 { margin: 0; }
+.fi-living-others__copy .fi-body { max-width: 28rem; margin: 0; }
+.fi-living-partners__label { margin: 0 0 1rem; font-size: var(--fi-size-small); font-weight: 600; letter-spacing: 0.04em; color: var(--fi-slate); }
+.fi-living-partners__list { margin: 0; border-top: 1px solid var(--fi-ink); }
+.fi-living-partners__row { display: grid; gap: 0.25rem; padding: 1.25rem 0; border-bottom: 1px solid var(--fi-line-strong); }
+.fi-living-partners__row dt { font-family: var(--fi-font-serif); font-weight: 600; font-size: 1.0625rem; line-height: 1.6; }
+.fi-living-partners__row dd { margin: 0; font-size: 0.9375rem; line-height: 1.75; color: var(--fi-text); }
+.fi-living-partners__note { margin: 1rem 0 0; }
+@media (min-width: 45rem) {
+  .fi-living-partners__row { grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); column-gap: 1.5rem; align-items: baseline; }
+}
+@media (min-width: 68.75rem) {
+  .fi-living-others__grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 5.5rem; }
+}
+
+@media (min-width: 68.75rem) {
+  .fi-steps--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3.5rem; }
+}
+.fi-living-fee {
+  display: grid; gap: 0.375rem;
+  margin: var(--fi-space-5) 0 0; padding: 1.5rem 1.5rem;
+  background: var(--fi-sheet);
+  border-left: 3px solid var(--fi-slate);
+}
+.fi-living-fee dt { font-family: var(--fi-font-serif); font-weight: 600; font-size: 1.0625rem; }
+.fi-living-fee dd { margin: 0; color: var(--fi-text); }
+@media (min-width: 45rem) {
+  .fi-living-fee { grid-template-columns: 6rem minmax(0, 1fr); align-items: baseline; padding: 1.5rem 2rem; }
+}

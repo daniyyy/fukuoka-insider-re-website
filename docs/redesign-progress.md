@@ -466,3 +466,10 @@
 - Checks: lint, typecheck, 26 tests, build; FAQ page shows 55 questions at 1440/390 (zh-TW, en), no overflow; crawl zh-TW 29, en 16 pages, no errors.
 - Same day (Danny「5篇都發布」): remaining guides published — south-facing 9/10, restoration 9/16, parking 9/24, balcony 9/30, delivery boxes 10/5. All 15 guides now live (zh-TW crawl 34 pages, no errors).
 - FAQ: guarantor answer rewritten per Danny (guarantee company almost always required; some properties also want a guarantor, so without one the choice is smaller; emergency contact required). New question 「緊急聯絡人是什麼？需要負責什麼？」 (zh-TW + en). FAQ total 56.
+
+## 2026-10-05 — Living Support page rebuilt
+- New body (`components/service-pages/LivingSupportSections.tsx`, copy in `data/living-support.ts`, zh-TW/ja/en): who it is for (new to Fukuoka / not comfortable in Japanese / short on time) → six direct services on a move timeline (before move-in: utilities, rental furniture & appliances; within 14 days: ward office with interpreting; after resident registration: phone, bank; any time: shopping) with line icons → partner introductions (schools, English-speaking clinics, visa via gyoseishoshi, recruitment agencies) + "ask about anything else" → how to apply (3 steps) + fee note (quoted per item, anyone can apply). Hero, FAQ, guides, company facts, other services and CTA stay shared with the other service pages.
+- `ServiceHeroCopy` split from `ServiceDetailCopy` in `data/service-pages.ts`; living-support keeps only hero/CTA copy there. Homepage service card and services overview descriptions updated (3 languages).
+- FAQ: scope, resident registration and utilities answers now say our staff accompany; new 「沒有透過你們租屋或買房，也可以申請生活支援嗎？」 and 「生活支援怎樣收費？」 (FAQ 58). The page shows those four; movers question kept on the Help page only.
+- Checks: lint, typecheck, 26 tests, build; screenshots 1440/834/390 (zh-TW), 390 ja, 1440 en, no overflow; crawl zh-TW 34, ja 15, en 16 pages, no errors.
+- Waiting for Danny: review of the new layout and wording.

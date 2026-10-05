@@ -57,7 +57,7 @@ export const serviceOverviewCopy: Record<Locale, {
       { key: "rent", title: "租屋服務", audience: "找住處、準備搬到福岡", description: "住宅、辦公室及商業空間租賃。人在海外也可以先開始諮詢。", route: "/services/rent" },
       { key: "buy-sell", title: "房產買賣", audience: "準備在福岡買房，或出售福岡物業", description: "買房可協助物色及確認物件；賣房可先討論物業現況與出售安排。", route: "/services/buy-sell" },
       { key: "property-management", title: "物業管理", audience: "持有出租物業或度假別墅", description: "出租物業管理，以及度假別墅等不常居住物業的定期查看。", route: "/services/property-management" },
-      { key: "living-support", title: "生活支援", audience: "需要安排入住與日常生活", description: "協助與入住直接相關的事項，並按需要介紹外部合作夥伴。", route: "/services/living-support" },
+      { key: "living-support", title: "生活支援", audience: "初次來福岡、日語不方便", description: "水電瓦斯、區役所、手機和銀行開戶等入住手續，由員工陪同辦理。", route: "/services/living-support" },
     ],
   },
   ja: {
@@ -70,7 +70,7 @@ export const serviceOverviewCopy: Record<Locale, {
       { key: "rent", title: "賃貸", audience: "住まい探し・福岡への転居", description: "住居、オフィス、店舗の賃貸。海外からでもご相談いただけます。", route: "/services/rent" },
       { key: "buy-sell", title: "不動産売買", audience: "福岡での購入・売却をご検討の方", description: "購入は物件探しと物件の確認をお手伝いし、売却は物件の現況と進め方からご相談いただけます。", route: "/services/buy-sell" },
       { key: "property-management", title: "物件管理", audience: "賃貸物件・別荘のオーナー様", description: "賃貸管理と、別荘など普段お住まいでない物件の定期確認。", route: "/services/property-management" },
-      { key: "living-support", title: "生活サポート", audience: "入居と生活の準備が必要な方", description: "入居に直接関わる事項をサポートし、必要に応じて外部パートナーをご紹介します。", route: "/services/living-support" },
+      { key: "living-support", title: "生活サポート", audience: "福岡が初めての方、日本語に不安がある方", description: "電気・ガス・水道、区役所、携帯電話、銀行口座などの手続きに、スタッフが同行します。", route: "/services/living-support" },
     ],
   },
   en: {
@@ -83,7 +83,7 @@ export const serviceOverviewCopy: Record<Locale, {
       { key: "rent", title: "Rental", audience: "Finding a home or moving to Fukuoka", description: "Homes, offices, and commercial space. You can start from overseas.", route: "/services/rent" },
       { key: "buy-sell", title: "Buy & Sell", audience: "Buying in Fukuoka or selling a Fukuoka property", description: "For buyers, we help find and check properties; for sellers, we start by discussing the property's condition and how to sell.", route: "/services/buy-sell" },
       { key: "property-management", title: "Property Management", audience: "Owners of rental property or a holiday home", description: "Rental management, plus periodic checks for holiday homes and other second homes.", route: "/services/property-management" },
-      { key: "living-support", title: "Living Support", audience: "Arranging a move and daily life", description: "Help with matters tied to moving in, and referrals to external partners where needed.", route: "/services/living-support" },
+      { key: "living-support", title: "Living Support", audience: "New to Fukuoka or not comfortable in Japanese", description: "Our staff go with you to set up utilities, ward office registration, a phone and a bank account.", route: "/services/living-support" },
     ],
   },
 };
@@ -91,12 +91,19 @@ export const serviceOverviewCopy: Record<Locale, {
 type Item = { title: string; body: string };
 type Panel = { title: string; body?: string; points: string[] };
 
-export type ServiceDetailCopy = {
+/** Hero and closing copy, shared by every service page. */
+export type ServiceHeroCopy = {
   title: string;
   metaTitle: string;
   description: string;
   highlights: string[];
   imageNote?: string;
+  ctaTitle: string;
+  ctaBody: string;
+};
+
+/** Body sections of the standard service template (Living Support has its own body: data/living-support.ts). */
+export type ServiceDetailCopy = ServiceHeroCopy & {
   audienceTitle: string;
   audiences: Item[];
   helpTitle: string;
@@ -111,11 +118,9 @@ export type ServiceDetailCopy = {
   tool?: { href: string; label: string };
   limitsTitle: string;
   limits: string[];
-  ctaTitle: string;
-  ctaBody: string;
 };
 
-export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailCopy>> = {
+export const serviceDetailCopy: { [K in ServiceKey]: Record<Locale, K extends "living-support" ? ServiceHeroCopy : ServiceDetailCopy> } = {
   rent: {
     "zh-TW": {
       title: "租屋服務",
@@ -509,126 +514,27 @@ export const serviceDetailCopy: Record<ServiceKey, Record<Locale, ServiceDetailC
   "living-support": {
     "zh-TW": {
       title: "生活支援",
-      metaTitle: "福岡生活支援",
-      description: "協助與入住直接相關的事項；其他生活服務，按需要介紹可配合的外部合作夥伴。",
-      highlights: ["入住協調", "合作夥伴轉介"],
-      audienceTitle: "這項服務適合",
-      audiences: [
-        { title: "從海外搬到福岡", body: "不熟悉日本的入住程序與日常安排。" },
-        { title: "剛完成租屋或買房", body: "需要整理入住前後的實際事項。" },
-        { title: "需要其他生活服務", body: "希望取得搬家、生活手續等服務的合作夥伴資料。" },
-      ],
-      helpTitle: "我們處理的事，與合作夥伴的服務",
-      helpIntro: "與物業及入住直接相關的事由我們處理；其他服務由合作夥伴提供，並由對方直接與您確認條件。",
-      panels: [
-        { title: "由我們直接處理", points: ["與租屋、買房或物業交付直接相關的說明與聯絡", "交付與入住時間的協調", "按已確認的情況，整理入住前後的事項", "中文、廣東話、日語、英語溝通"] },
-        { title: "介紹合作夥伴", body: "需要其他服務時，按情況介紹可聯絡的外部合作夥伴。", points: ["搬家、生活手續等外部服務", "費用、條件及責任，由提供服務的一方確認"] },
-      ],
-      processTitle: "支援如何安排",
-      process: [
-        { title: "說明目前情況", body: "提供入住時間、家庭人數及已完成的安排。" },
-        { title: "確認我們可直接協助的事", body: "整理與物業交易或入住直接相關的內容。" },
-        { title: "確認是否需要外部服務", body: "如需其他服務，說明轉介與聯絡方式。" },
-        { title: "與各方直接確認", body: "外部服務的費用、條件及責任，由提供服務的一方與您確認。" },
-      ],
-      prepareTitle: "首次聯絡時請提供",
-      prepareIntro: "最重要的是時間、地點和實際需要。",
-      preparation: [
-        { title: "入住日期", body: "預計抵達及可辦理手續的時間" },
-        { title: "入住地址", body: "已確定，或仍在找房" },
-        { title: "家庭情況", body: "人數、兒童、寵物等" },
-        { title: "需要協助的事項", body: "列出尚未完成的安排" },
-      ],
-      limitsTitle: "事先說明",
-      limits: [
-        "外部合作夥伴的服務由其自行提供，條件由對方與您直接確認。",
-        "我們無法保證外部合作夥伴一定可以接受委託。",
-        "房地產以外的法律、稅務或行政專業意見，不屬本公司的服務範圍。",
-      ],
-      ctaTitle: "準備搬到福岡？",
-      ctaBody: "告訴我們入住時間、地點，以及仍需處理的事項。",
+      metaTitle: "福岡生活支援｜入住手續陪同辦理",
+      description: "剛到福岡、日語不方便？水電瓦斯、區役所、手機和銀行開戶等入住手續，由我們的員工陪同辦理。",
+      highlights: ["員工陪同辦理", "中文・廣東話溝通", "按項目報價"],
+      ctaTitle: "需要有人陪你辦手續？",
+      ctaBody: "告訴我們需要的項目、日期和地點，我們會按項目報價。",
     },
     ja: {
       title: "生活サポート",
-      metaTitle: "福岡の生活サポート",
-      description: "ご入居に直接関わる事項をサポートし、その他の生活サービスは必要に応じて外部パートナーをご紹介します。",
-      highlights: ["入居の調整", "パートナーのご紹介"],
-      audienceTitle: "このような方に",
-      audiences: [
-        { title: "海外から福岡へ転居する方", body: "日本の入居手続きや生活の準備に慣れていない方。" },
-        { title: "賃貸・購入が決まった方", body: "入居前後の実務を整理したい方。" },
-        { title: "他の生活サービスが必要な方", body: "引越しや生活手続きなどの事業者を探している方。" },
-      ],
-      helpTitle: "当社の対応と、パートナーのサービス",
-      helpIntro: "物件と入居に直接関わることは当社が対応し、その他のサービスは外部パートナーが提供します。条件は各パートナーと直接ご確認いただきます。",
-      panels: [
-        { title: "当社が対応すること", points: ["賃貸・購入・引渡しに直接関わるご説明と連絡", "引渡しと入居日の調整", "状況に応じた、入居前後の事項の整理", "中国語・広東語・日本語・英語での連絡"] },
-        { title: "パートナーのご紹介", body: "他のサービスが必要な場合、状況に応じて外部の事業者をご紹介します。", points: ["引越し、生活手続きなどの外部サービス", "費用・条件・責任は各事業者がご案内"] },
-      ],
-      processTitle: "サポートの進め方",
-      process: [
-        { title: "状況の共有", body: "入居時期、人数、済んでいる手続きをお知らせください。" },
-        { title: "当社の対応範囲の確認", body: "物件と入居に直接関わる内容を整理します。" },
-        { title: "外部サービスの確認", body: "必要なサービスと、ご紹介・連絡の方法をご説明します。" },
-        { title: "各事業者との確認", body: "外部サービスの費用、条件、責任は各事業者と直接ご確認ください。" },
-      ],
-      prepareTitle: "初回のご連絡時に",
-      prepareIntro: "時期、場所、実際に必要なことが分かると、スムーズに進みます。",
-      preparation: [
-        { title: "入居日", body: "到着予定日と、手続きが可能な時期" },
-        { title: "入居先", body: "決まっているか、物件探し中か" },
-        { title: "ご家族の状況", body: "人数、お子様、ペットなど" },
-        { title: "必要なサポート", body: "まだ済んでいない手続き" },
-      ],
-      limitsTitle: "事前にご確認ください",
-      limits: [
-        "外部パートナーのサービスは各事業者が提供し、条件は事業者とお客様の間で確認します。",
-        "外部事業者がご依頼を必ずお受けできるとは限りません。",
-        "不動産以外の法律、税務、行政に関する専門的な助言は、当社のサービス外です。",
-      ],
-      ctaTitle: "福岡への転居をご準備中ですか？",
-      ctaBody: "入居時期、場所、まだ済んでいない手続きをお知らせください。",
+      metaTitle: "福岡の生活サポート｜入居手続きの同行",
+      description: "福岡が初めての方、日本語に不安がある方へ。電気・ガス・水道、区役所、携帯電話、銀行口座などの手続きに、当社スタッフが同行します。",
+      highlights: ["スタッフが同行", "中国語・広東語に対応", "項目ごとにお見積もり"],
+      ctaTitle: "手続きの同行が必要ですか？",
+      ctaBody: "必要な項目、日程、場所をお知らせください。項目ごとにお見積もりします。",
     },
     en: {
       title: "Living Support",
-      metaTitle: "Living Support in Fukuoka",
-      description: "We help with matters directly related to moving in, and introduce external partners for other services where needed.",
-      highlights: ["Move-in coordination", "Partner referrals"],
-      audienceTitle: "Who this is for",
-      audiences: [
-        { title: "Moving from overseas", body: "New to Japanese move-in procedures and setting up daily life." },
-        { title: "Just rented or bought", body: "Need to organise the practical steps before and after moving in." },
-        { title: "Need other services", body: "Looking for providers for moving or daily-life paperwork." },
-      ],
-      helpTitle: "What we handle, and what partners provide",
-      helpIntro: "We handle matters directly tied to the property and your move-in. Other services are provided by external partners, who confirm their terms with you directly.",
-      panels: [
-        { title: "Handled by us", points: ["Explanations and communication about your rental, purchase, or handover", "Coordinating handover and move-in dates", "Organising pre- and post-move-in items for your situation", "Communication in Mandarin, Cantonese, Japanese, and English"] },
-        { title: "Partner referrals", body: "When you need another service, we can introduce external providers where suitable.", points: ["External services such as moving and daily-life paperwork", "Fees, terms, and responsibility are set by each provider"] },
-      ],
-      processTitle: "How support is arranged",
-      process: [
-        { title: "Share your situation", body: "Move-in date, household size, and what is already arranged." },
-        { title: "Confirm what we handle", body: "Items directly related to the property and your move-in." },
-        { title: "Identify outside needs", body: "Which services you need and how referrals work." },
-        { title: "Confirm with each provider", body: "Fees, terms, and responsibility are agreed directly with the provider." },
-      ],
-      prepareTitle: "What to share first",
-      prepareIntro: "Timing, location, and what you actually need help with.",
-      preparation: [
-        { title: "Move-in date", body: "Arrival date and when you can handle paperwork" },
-        { title: "Address", body: "Confirmed, or still searching" },
-        { title: "Household", body: "Number of people, children, and pets" },
-        { title: "Help needed", body: "Arrangements not yet made" },
-      ],
-      limitsTitle: "Good to know",
-      limits: [
-        "External partners provide their own services; terms are agreed between you and the partner.",
-        "We cannot guarantee that an external provider will accept a request.",
-        "Legal, tax, and administrative advice outside real estate is not part of our service.",
-      ],
-      ctaTitle: "Preparing to move to Fukuoka?",
-      ctaBody: "Tell us your timing, location, and what still needs arranging.",
+      metaTitle: "Living Support in Fukuoka | Help with Move-in Procedures",
+      description: "New to Fukuoka, or not comfortable in Japanese? Our staff go with you to set up utilities, ward office registration, a phone and a bank account.",
+      highlights: ["Our staff go with you", "Mandarin and Cantonese spoken", "Quoted per item"],
+      ctaTitle: "Need someone to go with you?",
+      ctaBody: "Tell us what you need help with, when and where, and we will quote for each item.",
     },
   },
 };

@@ -501,10 +501,22 @@ const entries: FaqEntry[] = [
       en: "What does living support include?",
     },
     a: {
-      "zh-TW": "與租屋、買房或物業交付直接相關的說明、聯絡和入住時間協調，由我們直接處理。搬家、生活手續等其他服務，可以按需要介紹外部合作夥伴，費用與條件由對方直接與您確認。",
-      en: "We handle explanations, communication and move-in scheduling directly tied to your rental, purchase or handover. For other services such as moving or everyday paperwork, we can introduce external partners, who confirm their own fees and terms with you.",
+      "zh-TW": "以下 6 項由我們的員工直接陪同或處理：水、電、瓦斯開通，租借家具家電，區役所手續同行及翻譯，手機合約，銀行開戶，以及生活用品購物同行。\n學校、可以用英語看診的診所、簽證申請及續期（行政書士），以及找工作（人才中介），可以介紹合作夥伴；其他需要也可以個別諮詢。",
+      en: "Our own staff handle six items directly: setting up electricity, gas and water, rental furniture and appliances, ward office procedures with interpreting, a mobile phone contract, opening a bank account, and shopping for everyday items.\nFor schools, clinics where you can see a doctor in English, visa applications and renewals (an administrative scrivener) and finding work (recruitment agencies), we can introduce partners. For anything else, just ask.",
     },
-    tags: { "zh-TW": ["生活支援", "入住", "合作夥伴"], en: ["living support", "moving in", "partners"] },
+    tags: { "zh-TW": ["生活支援", "入住", "陪同", "合作夥伴"], en: ["living support", "moving in", "partners"] },
+  },
+  {
+    key: "living-support-anyone", category: "living-support", service: "living-support", showOn: ["living-support"],
+    q: {
+      "zh-TW": "沒有透過你們租屋或買房，也可以申請生活支援嗎？",
+      en: "Can I use Living Support if I didn't rent or buy through you?",
+    },
+    a: {
+      "zh-TW": "可以。生活支援任何人都可以申請。請告訴我們需要的項目、日期和地點，我們會按項目報價。",
+      en: "Yes. Anyone can apply for Living Support. Tell us what you need, when and where, and we will quote for each item.",
+    },
+    tags: { "zh-TW": ["生活支援", "申請", "陪同"], en: ["living support", "eligibility"] },
   },
   {
     key: "resident-registration", category: "living-support", service: "living-support", showOn: ["living-support"],
@@ -513,8 +525,8 @@ const entries: FaqEntry[] = [
       en: "Can you help with resident registration, a bank account or a phone?",
     },
     a: {
-      "zh-TW": "住民登錄須在搬入後 14 天內，由本人或受委託人到區役所辦理；銀行開戶和手機合約亦需要本人申請。這些手續不屬於我們的直接服務，但我們會說明入住前後的先後次序，並可按需要介紹外部合作夥伴。",
-      en: "Resident registration must be done at the ward office within 14 days of moving in, by you or someone you authorise, and bank accounts and phone contracts also need your own application. These are not services we provide directly, but we explain the order of steps around your move and can introduce external partners where needed.",
+      "zh-TW": "可以。住民登錄須在搬入後 14 天內到區役所辦理，我們的員工可以陪同並即場翻譯；手機合約和銀行開戶，也可以陪同辦理。這些手續需要本人到場申請，費用按項目報價。",
+      en: "Yes. Resident registration must be done at the ward office within 14 days of moving in, and our staff can go with you and interpret on the spot. We can also go with you to sign a phone contract and open a bank account. You need to be there in person for these procedures, and fees are quoted per item.",
     },
     tags: { "zh-TW": ["住民登錄", "區役所", "銀行", "手機"], en: ["resident registration", "ward office", "bank", "phone"] },
   },
@@ -525,13 +537,13 @@ const entries: FaqEntry[] = [
       en: "How do I set up electricity, water and gas when I move in?",
     },
     a: {
-      "zh-TW": "一般由入住人自行聯絡各公司申請：電力和自來水可以在線上或以電話申請；瓦斯則需要預約人員上門開栓，開栓時須由本人或代理人在場。建議在入住日前一至兩星期安排，對應的公司可以在簽約時確認。",
-      en: "You usually apply to each company yourself: electricity and water can be arranged online or by phone, while gas needs an appointment for a technician to turn it on, with you or someone acting for you present. It is best to arrange this one to two weeks before moving in; the providers for the property can be confirmed when you sign.",
+      "zh-TW": "一般由入住人聯絡各公司申請：電力和自來水可以在線上或以電話申請；瓦斯則需要預約人員上門開栓，開栓時須由本人或代理人在場。建議在入住日前一至兩星期安排。\n日語不方便的話，可以委託我們代為聯絡和預約，費用按項目報價。",
+      en: "You usually apply to each company yourself: electricity and water can be arranged online or by phone, while gas needs an appointment for a technician to turn it on, with you or someone acting for you present. It is best to arrange this one to two weeks before moving in.\nIf Japanese is difficult for you, we can contact the companies and book the appointments for you; fees are quoted per item.",
     },
     tags: { "zh-TW": ["水電", "瓦斯", "開栓", "入住"], en: ["utilities", "gas", "electricity", "water"] },
   },
   {
-    key: "movers", category: "living-support", service: "living-support", showOn: ["living-support"],
+    key: "movers", category: "living-support", service: "living-support",
     q: {
       "zh-TW": "可以介紹搬家公司嗎？",
       en: "Can you recommend a moving company?",
@@ -615,6 +627,18 @@ const entries: FaqEntry[] = [
       en: "We quote based on the type of property, the scope of work, how often we check it and how you want to receive reports. Send us the property details and what you would like us to handle, and we will confirm the scope before quoting.",
     },
     tags: { "zh-TW": ["管理費", "報價", "物業管理"], en: ["management fee", "quote"] },
+  },
+  {
+    key: "living-support-fees", category: "fees", service: "living-support", showOn: ["living-support"],
+    q: {
+      "zh-TW": "生活支援怎樣收費？",
+      en: "How much does Living Support cost?",
+    },
+    a: {
+      "zh-TW": "按項目報價。請告訴我們需要協助的項目、日期和地點，確認內容後提供報價，經您同意才安排。",
+      en: "Fees are quoted per item. Tell us the tasks, dates and places, and we will confirm the details and send a quote; we only arrange anything once you agree.",
+    },
+    tags: { "zh-TW": ["生活支援", "費用", "報價"], en: ["living support", "fees", "quote"] },
   },
   {
     key: "lock-and-support-fees", category: "fees", service: "rent", guide: "key-exchange-and-24-hour-support-fees", tool: "rental-initial-cost",
