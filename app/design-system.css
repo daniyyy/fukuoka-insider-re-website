@@ -309,12 +309,22 @@ body {
   border-bottom: 1px solid rgb(var(--fi-on-dark-rgb) / 0.14);
   font-family: var(--fi-font-serif); font-weight: 600; font-size: 1.375rem;
 }
-/* Secondary entry under the four main links: the rental estimator (Danny, 2026-09-30) */
+/* Estimator entries in the mobile menu (rental + purchase, Danny 2026-10-05) */
 .fi-menu__tool {
   display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.5rem; margin-top: 0.75rem; padding: 0 1rem;
   background: rgb(var(--fi-on-dark-rgb) / 0.07); font-size: 0.9375rem; font-weight: 500;
 }
 .fi-menu__tool svg { width: 1.125rem; height: 1.125rem; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.fi-menu__group { border-bottom: 1px solid rgb(var(--fi-on-dark-rgb) / 0.14); }
+.fi-menu__group .fi-menu__link { border-bottom: 0; }
+.fi-menu__sub { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.25rem; margin: -0.5rem 0 0; padding: 0 0 0.75rem; list-style: none; }
+.fi-menu__sub a { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; min-height: 2.75rem; font-size: 0.9375rem; line-height: 1.35; color: var(--fi-on-dark-muted); }
+.fi-menu__sub a:hover { color: var(--fi-on-dark); }
+.fi-menu__sub svg, .fi-menu__aside svg { width: 0.875rem; height: 0.875rem; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; opacity: 0.7; }
+.fi-menu__tools { display: grid; gap: 0.5rem; margin-top: 1.25rem; }
+.fi-menu__tools .fi-menu__tool { margin-top: 0; }
+.fi-menu__label { margin: 0 0 0.125rem; font-size: var(--fi-size-meta); letter-spacing: 0.06em; color: var(--fi-on-dark-muted); }
+.fi-menu__aside { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 2.75rem; margin-top: 0.5rem; padding: 0 1rem; border: 1px solid rgb(var(--fi-on-dark-rgb) / 0.18); font-size: 0.875rem; color: var(--fi-on-dark-muted); }
 .fi-menu .fi-locale { padding: 1rem 0 0.5rem; border: 0; font-size: 0.9375rem; }
 .fi-menu .fi-locale a:first-child { justify-content: flex-start; }
 .fi-menu__cta { margin-top: 1rem; }
@@ -427,3 +437,5 @@ html { scrollbar-color: var(--fi-line-strong) var(--fi-paper); accent-color: var
 .fi-lang-suggest :focus-visible { outline: 2px solid var(--fi-on-dark); outline-offset: 2px; }
 @media (min-width: 45rem) { .fi-lang-suggest { left: auto; right: var(--fi-gutter); max-width: 30rem; } }
 @media (prefers-reduced-motion: reduce) { .fi-lang-suggest { animation: none; } }
+/* The menu already lists the languages: hide the suggestion while it is open. */
+body:has(.fi-header.is-open) .fi-lang-suggest { display: none; }

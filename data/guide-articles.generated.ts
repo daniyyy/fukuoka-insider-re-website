@@ -1732,5 +1732,1725 @@ export const importedArticles: Record<string, ImportedArticle> = {
         "text": "如果你正在福岡找房，或對各種設備和生活細節有疑問，歡迎隨時找我聊聊。希望我的在地第一手資訊，能讓你在搬進去之前，就少一點措手不及。"
       }
     ]
+  },
+  "en/guarantor-company-and-joint-guarantor": {
+    "number": 1,
+    "sourceStatus": "已發佈",
+    "title": "Guarantee companies and joint guarantors: do foreigners really have to apply?",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "If you're from Hong Kong or Taiwan and getting ready to move to Fukuoka, or have only just arrived, the Japanese rental market usually brings your first culture shock: \"I clearly have enough money, and I'm even willing to pay one to two years' rent up front in one go, so why won't the landlord rent to me unless I find a guarantor?\""
+      },
+      {
+        "type": "paragraph",
+        "text": "As someone who has been through it myself here in Fukuoka, and who helps clients from Hong Kong and Taiwan find homes on the front line every day, I completely understand the frustration. In this column, I'll break down the biggest unwritten rule of the Japanese rental market: what exactly are a \"joint guarantor\" and a \"guarantee company\"? And do foreigners really have to use one?"
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "What is a joint guarantor?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "In the traditional Japanese approach to renting, landlords protect their interests by asking the tenant to provide a joint guarantor (rentai hoshōnin, 連帯保証人). This is not a guarantee in name only; it is a heavy legal responsibility."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Who can be a guarantor?** They must be a Japanese national with a stable income in Japan, or a long-term resident who meets the requirements.",
+          "**Scope of responsibility:** If the tenant falls behind on rent, damages the property, or even disappears and leaves belongings that cost money to dispose of, the guarantor must pay on the tenant's behalf."
+        ]
+      },
+      {
+        "type": "quote",
+        "text": "**※ Did you know?** In the past, guarantors were liable without limit, but since recent legal reforms in Japan the contract must set a maximum liability amount (kyokudogaku, 極度額), usually around one to three years' rent."
+      },
+      {
+        "type": "paragraph",
+        "text": "Even with this legal cap, it is still extremely hard to ask a friend or relative to take on that kind of risk. For a foreigner who has just arrived in Fukuoka and doesn't know anyone yet, finding a joint guarantor is almost mission impossible."
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "What is a guarantee company?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "To solve the problem of finding a guarantor, the guarantee company (hoshō kaisha, 保証会社) system has become widespread in Japan. Put simply, it is a service where you pay for a guarantee."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Initial fee:** In Fukuoka, the norm is 50–100% of the total rent.",
+          "**Ongoing fees:** Most commonly ¥20,000 a year. Some companies charge monthly instead (1–2% of the total rent).",
+          "**How it works:** If the tenant falls behind on rent, the guarantee company pays the landlord first and then recovers the money from the tenant."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "**Note:** A guarantee company protects the landlord, not the tenant."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you fall behind on rent, the guarantee company pays the landlord first and then turns round and collects the debt from you. This is not insurance but a \"credit guarantee fee\". A record of unpaid debt goes into the credit system and will affect every contract you sign in Japan in future."
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "The key question: do foreigners have to use a guarantee company?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "**The answer: in the vast majority of cases, yes, and it is usually compulsory.**"
+      },
+      {
+        "type": "paragraph",
+        "text": "Many people overseas think: \"I have relatives in Japan who are willing to be my guarantor, so can I save the cost of a guarantee company?\" The reality is:"
+      },
+      {
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "**Standardised management:** To cut down the hassle of chasing late payments, management companies usually make it **compulsory** to join a designated guarantee company.",
+          "**Double protection:** Some properties even require both a guarantee company and a joint guarantor.",
+          "**Paying in advance doesn't count:** Japanese tenancy law is extremely protective of tenants, and landlords worry not only about rent but also about risks such as restoration on moving out (genjō kaifuku, 原状回復) and tenants refusing to leave when the contract ends. That is why **paying rent in advance cannot replace a guarantee company's credit screening.**"
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "Honest advice from a local agent",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "The guarantee company system is not aimed at foreigners; it is the standard procedure for almost everyone who rents in their own name in Japan, Japanese people included."
+      },
+      {
+        "type": "paragraph",
+        "text": "Guarantee company screening focuses on two things:"
+      },
+      {
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "**Can you stay in Japan reliably?** (type of visa, period of stay)",
+          "**Can you pay the rent reliably?** (proof of income, job stability)"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Basic **Japanese communication skills** also matter a great deal, because screeners often phone you directly to confirm your identity and what your job involves."
+      },
+      {
+        "type": "paragraph",
+        "text": "Whether you're coming to Fukuoka from Hong Kong or Taiwan to start a new life, the paperwork really is more involved than you might expect. We have handled many cases on the front line. Besides helping you choose a property, more importantly, we check these application details for you, such as how to handle the screening call, to improve your chances of approval. If you're getting ready to move and still have questions about any of these procedures, feel free to get in touch with me any time. I hope my local experience can help you get off to a smooth, worry-free start in Fukuoka."
+      }
+    ]
+  },
+  "en/fukuoka-late-night-garbage-collection": {
+    "number": 2,
+    "sourceStatus": "已發佈",
+    "title": "Fukuoka's late-night rubbish collection? Remember to check this before you rent!",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "If you're used to popping downstairs to throw out your rubbish whenever you like in Hong Kong, or to \"chasing the rubbish truck\" at a set time every day in Taiwan, you may feel a strange sense of emptiness when you arrive in Fukuoka: why is there no rubbish truck to be seen on the streets?"
+      },
+      {
+        "type": "paragraph",
+        "text": "In fact, Fukuoka City has a feature that is extremely rare in Japan, one that even people in Tokyo and Osaka envy: **late-night rubbish collection**."
+      },
+      {
+        "type": "paragraph",
+        "text": "As someone who lives here too, I'd like to share this custom that is unique to Fukuoka. When you're renting, this seemingly minor \"rubbish issue\" directly affects how stressful your home life is and the quality of your daily life."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "Why does Fukuoka collect rubbish in the middle of the night?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Most cities in Japan collect rubbish early in the morning, but Fukuoka City (along with a few neighbouring cities) does the opposite. There are several very considerate reasons behind this:"
+      },
+      {
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "**Fighting crows:** Japanese crows are very clever and aggressive, and rubbish put out in the early morning often gets torn open and scattered everywhere. Collecting late at night greatly narrows the window in which crows can \"help themselves to a meal\", keeping the city clean.",
+          "**Easing daytime traffic:** Rubbish trucks are large and stop frequently. Working late at night avoids the busy daytime traffic completely, makes collection more efficient and doesn't cause congestion.",
+          "**Keeping mornings tidy:** Residents put their rubbish out before bed and the collectors take it away before dawn, so the streets are always clean in the morning, giving everyone a fresh start to the day."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "A key check before renting: what kind of rubbish area does your building have?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Although Fukuoka's collection times are convenient, when you rent, the way your building handles rubbish storage determines how much freedom you have in daily life."
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "1. Dedicated on-site rubbish room (shikichinai gomi okiba, 敷地内ゴミ置き場)",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "This is the type we recommend most. The building has its own dedicated rubbish storage room, which usually allows more flexible disposal times."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Very convenient:** Some buildings even let you put rubbish out **at any time on collection day** (although you usually only find out the exact rules after moving in, by checking the building's notices or asking the caretaker). For people who often work late, travel for work or keep irregular hours, this is a huge bonus.",
+          "**Premium version (tower blocks):** In some high-end apartment buildings and tower blocks (tawā manshon, タワーマンション), there is even a dedicated rubbish room **on every floor**. You don't even need to take the lift; you can deal with your rubbish just outside your front door. Top marks for quality of life."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "2. Designated neighbourhood collection point (chiiki shitei no gomi okiba, 地域指定のゴミ置き場)",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "If the building is smaller or older, it may not have its own rubbish room, and residents have to take their rubbish to a designated public collection point on the street corner."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Stricter rules:** In this case you must strictly follow the rule that rubbish can only go out \"between sunset and midnight on collection day\". If you put it out at the wrong time or don't sort it properly, neighbours can easily report you or a warning sticker may be put on it, so living there is relatively more stressful."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-5",
+        "text": "Why make a point of checking the rubbish area?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "When I take clients to view properties, besides checking the interior finish and natural light, I always take them to inspect **the building's rubbish area**."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Management quality:** If the rubbish area is neatly sorted and the floor is clean, it shows that the building's management company (kanri kaisha, 管理会社) is more conscientious, which usually also means the common areas are better maintained.",
+          "**What the neighbours are like:** A messy, smelly rubbish area, or one with illegally dumped items, often suggests that the building may have disputes between residents, or that the neighbours have rather careless habits."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-6",
+        "text": "Advice for people moving here",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "If you're planning to rent in Fukuoka, don't forget to ask the agent to show you the building's rubbish storage area when you view a property. Those few minutes of checking can save you years of the stress of \"rushing to get the rubbish out in time\"."
+      },
+      {
+        "type": "paragraph",
+        "text": "If there's anything else you'd like to know about choosing an area, local amenities or the rental process, feel free to get in touch with me any time. I hope my local insights can help you find a home in Fukuoka where you can truly live comfortably."
+      }
+    ]
+  },
+  "en/rental-initial-costs-reikin-shikikin": {
+    "number": 3,
+    "sourceStatus": "已發佈",
+    "title": "Initial costs broken down: what exactly are key money and deposits?",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "\"Why does a flat in Fukuoka with a monthly rent of ¥60,000 come with a quote that adds up to nearly ¥300,000?\""
+      },
+      {
+        "type": "paragraph",
+        "text": "This is often the first reaction when clients from Hong Kong and Taiwan come to me for help. When renting in Hong Kong or Taiwan, we're used to the \"two months' deposit plus one month's rent\" model, but in Japan, on top of the rent, there is a hefty sum of \"initial costs\" to pay when you sign the contract. Today, let's break down the mysterious terms on this quote so you can spend your money where it counts and no longer feel lost."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "The big two: deposit vs. key money",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "These two terms are the most commonly confused, but just remember that one is \"held for you\" and the other is \"given away\":"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Deposit (shikikin, 敷金):** This is the familiar security deposit. You hand this money to the landlord as security; in Fukuoka it is most commonly one month's rent. When you move out, the \"cleaning fee\" or \"repair costs\" agreed in the contract (restoration on moving out, genjō kaifuku, 原状回復) are deducted, and the rest is returned to you.",
+          "**Key money (reikin, 礼金):** This is a uniquely Japanese custom; it literally means \"a gift to thank the landlord for renting the property to you\". **Key point: this money is not refundable.**"
+        ]
+      },
+      {
+        "type": "quote",
+        "text": "**Note:** Although more and more properties in the Fukuoka market now have no key money, paying **1–2 months' key money** is still normal in the following three situations, and a very small number of properties even ask for as much as **3 months'** key money:"
+      },
+      {
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "**Larger family-sized layouts** (such as 2LDK, 3LDK and above).",
+          "**New builds** (just completed) or **fully renovated** properties.",
+          "**High-end apartments in popular areas.**"
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "\"Hidden\" costs on the quote",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Besides the deposit and key money, I divide the other costs into two groups, \"essential\" and \"optional\", to help you see clearly which money you \"must pay\" and which is \"open to negotiation\"."
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "Essential costs (almost unavoidable)",
+        "level": 3
+      },
+      {
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "**Two months' rent paid in advance:** This usually covers pro-rated rent for the first month (calculated by the day) plus a full month's rent for the second month. This is the main reason the first payment looks especially large.",
+          "**Common-area fee / management fee:** A maintenance fee for the building's common areas (lifts, cleaning).",
+          "**Brokerage fee:** One month's rent plus consumption tax (10%).",
+          "**Fire insurance:** Compulsory; about **¥20,000** every two years, rising or falling with the size of the property.",
+          "**Lock replacement fee:** From about **¥20,000** for a standard lock; for keys with automatic sensor functions, or at some high-end apartments, it can be as much as **¥100,000**.",
+          "**Guarantee company fee:** Usually **50–100%** of the total rent.",
+          "**24-hour support service:** About **¥800–1,500 a month**. Provides emergency maintenance support late at night or on holidays (for example, water leaks or lost keys).",
+          "**Neighbourhood association fee:** A community fee of about **¥200–500 a month**."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "\"Optional services\" added by the management company (mostly open to negotiation)",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "Some items are actually added by default by the management company:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Interior disinfection fee:** About **¥15,000–20,000**, mainly to prevent insects and other pests.",
+          "**Air-conditioner cleaning fee:** Cleaning the air conditioner before you move in.",
+          "**Water purifier:** A water filter for the kitchen, about ¥1,000 a month.",
+          "**Security lock / fire extinguisher:** Anywhere from a few thousand yen to **¥10,000**."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-5",
+        "text": "Doing the maths: how much do you need to have ready?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "For renting in Fukuoka, a general rule of thumb is: **initial costs come to roughly 4 to 6 times the monthly rent.**"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**For example:** If the monthly rent is **¥60,000**, you should budget about **¥240,000–360,000** for initial costs."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-6",
+        "text": "So…",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "When you look at a quote, don't just look at the monthly rent. Divide the total amount by the number of months you expect to live there; that is your real cost of living there."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you're still unsure about your rental budget in Fukuoka, feel free to get in touch with me any time. I hope my local experience can help you avoid unnecessary detours."
+      }
+    ]
+  },
+  "en/city-gas-vs-lp-gas": {
+    "number": 4,
+    "sourceStatus": "已發佈",
+    "title": "City gas vs. LP gas: how much do the monthly rates differ?",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Once they've settled in Fukuoka and received their first gas bill, many friends from Hong Kong and Taiwan react the same way: \"Why is gas so expensive in Japan?\""
+      },
+      {
+        "type": "paragraph",
+        "text": "In fact, it isn't necessarily a problem with how much you use; it may well be because the place you're renting uses a different type of gas. In Japanese rentals, gas comes in two main types: city gas (toshi gasu, 都市ガス) and LP gas (propane gas, プロパンガス). Today, let's talk about the real price difference between the two, as well as some common misconceptions."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "The key question: is there really a big difference in rates?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "To be frank: **LP gas (liquefied petroleum gas) is indeed more expensive than city gas.**"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**The price gap:** In my practical experience, for the same usage, LP gas rates are **at least 50% higher**.",
+          "**The reason:** City gas is like tap water: it is delivered through underground pipes and supplied by large companies (such as Saibu Gas), so prices are relatively stable. LP gas, on the other hand, is supplied by gas companies that deliver cylinders to the building by hand. Because of the costs of manual handling, vehicle transport and equipment maintenance, each gas company sets its own prices. In Fukuoka, some small LP gas companies even charge twice as much as city gas."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "💡 A common misconception among friends from Hong Kong: where do the gas cylinders go?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "When I mention \"gas cylinders\" to clients from Hong Kong, many immediately picture the LPG canisters kept under the hob in older Hong Kong buildings, and worry that they'll take up space or be unsafe."
+      },
+      {
+        "type": "paragraph",
+        "text": "**But the reality in Fukuoka (and most of Japan) is:**"
+      },
+      {
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "**Centrally managed:** Even with LP gas, the cylinders are stored neatly in an outdoor space on the ground floor of the building (central management), and the gas is piped to each flat.",
+          "**Nothing for you to do:** The gas company regularly sends someone to check and replace them. You'll never see a gas cylinder in your home; the only time you'll notice it exists is when the gas bill arrives at the end of the month."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "How can you tell? Does looking at the balcony help?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Some online guides say you can tell by \"checking whether there's a gas cylinder on the balcony\", but for apartment buildings (manshon, マンション) in Fukuoka this trick isn't very reliable. That's because most buildings keep the cylinders **together behind the building on the ground floor or in a hidden open space**, so you often can't tell from the balcony."
+      },
+      {
+        "type": "paragraph",
+        "text": "In the Fukuoka rental market, properties with city gas are actually **in the minority**: in my experience only about **20–30%** of the market. Most ordinary apartment buildings use LP gas to save on development costs. So the most accurate way is still to ask the agent directly."
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "Renting advice: which should you choose?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "LP gas may be more expensive, but does that mean you should only rent places with city gas? It depends on your lifestyle:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**If you mostly eat out:** You usually eat out and only use gas for bathing. The price difference may then be just one or two thousand yen a month, so there's no need to give up a place you love over such a small gap.",
+          "**If you're a keen cook:** If you cook every day and make soups, or have a large household or take long showers, I'd suggest prioritising **city gas**, because the more you use, the bigger the advantage. ※ Note that properties with **city gas** really are scarce.",
+          "**A rare bonus:** Some properties are all-electric (ōru denka, オール電化), using electricity for both cooking and hot water, and there are very few of them on the rental market. If you happen to come across an all-electric property that fits your budget, you're genuinely lucky, and it's worth giving it priority."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-5",
+        "text": "Summary",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Renting isn't just about whether a place looks nice; the devil is in the details of the quote and your living costs. If you're still unsure about your rental budget in Fukuoka or about gas rates, feel free to get in touch with me any time. I hope my local experience can help you avoid unnecessary detours."
+      }
+    ]
+  },
+  "en/floor-plan-abbreviations-1k-1ldk": {
+    "number": 5,
+    "sourceStatus": "已發佈",
+    "title": "1K, 1LDK, 2LDK... how do you read these abbreviations, and which should you choose if you often cook Chinese food?",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "When you're house-hunting in Fukuoka and open a property website, you'll see abbreviations such as \"1K\", \"1LDK\" and \"2DK\" everywhere. If you're used to homes described by their number of bedrooms and living rooms, they can be a little baffling at first."
+      },
+      {
+        "type": "paragraph",
+        "text": "Today, let's decode these layout codes and share a few facts about Japanese building regulations, to help you choose the home that best suits your lifestyle."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "1. What do L, D, K and S stand for?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "These four letters are the core components of Japanese floor plans:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**L (Living):** Living room.",
+          "**D (Dining):** Dining room.",
+          "**K (Kitchen):** Kitchen.",
+          "**S (Service Room):** Service room (in Fukuoka it's usually called a \"storage room\", nando, 納戸)."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "**💡 Did you know? Why can a room only be labelled \"S\" when it is clearly a room?**"
+      },
+      {
+        "type": "paragraph",
+        "text": "Some properties are listed as \"1LDK+S\". That S may look like a room, but under Japanese law it cannot be called a habitable room (kyoshitsu, 居室). Under the Building Standards Act, a room used for living in must have windows with an area of at least **1/7 of the floor area**. If its light or ventilation falls short of this standard, however large it is, it can only be labelled \"S\". These rooms are usually used as storage rooms, studies or walk-in wardrobes."
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "2. How is 1K different from 1R?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "This is the question clients ask me most. Although both look like spaces for one person, there is one key structural difference: **a door**."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**1R (One Room):** The kitchen and the sleeping area are connected, with no partition at all. Walk through the front door and the living area, kitchen and bed are all right there, visible at a glance.",
+          "**1K (1 Kitchen):** The kitchen and the room are separated by **a solid wall and a door**."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The advantages of a 1K are better privacy and more efficient control of heating and cooling costs (you don't have to heat or cool the kitchen and hallway at the same time)."
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "3. Love cooking Chinese food? Then do your best to avoid 1R layouts!",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "If you plan to stir-fry often at home, fry ginger and garlic, or even make dishes that produce lots of cooking fumes, I strongly recommend you **avoid 1R layouts**."
+      },
+      {
+        "type": "paragraph",
+        "text": "**The reason is simple: you end up \"sharing\" the smells and cooking fumes.**"
+      },
+      {
+        "type": "paragraph",
+        "text": "1R layouts suit people who don't cook, or who only make simple meals (such as heating things in the microwave or boiling noodles). If you often cook Chinese food, the fatal flaws of a 1R are:"
+      },
+      {
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "**Fumes everywhere:** In a 1R, the kitchen is right next to your bed with no separation at all. Cook one stir-fry and your suits, coats and duvet may smell of that dish for days.",
+          "**Noise:** The hum of the fridge compressor will be right by your ear in the quiet of the night."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "**My advice:** If you'll be cooking Chinese food at home more than three times a week, choose at least a **1K**. That extra door keeps out most of the fumes and smells, protecting your wardrobe and your sleep."
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "4. 1LDK vs. 2DK: which is better value?",
+        "level": 2
+      },
+      {
+        "type": "list",
+        "items": [
+          "**1LDK:** A spacious living room, dining area and separate kitchen, plus one separate bedroom. Ideal for singles who value quality of life and like having friends over, or for newly married couples.",
+          "**2DK:** Two separate rooms, but a relatively small living/dining area (DK). These properties are usually older but cheaper to rent, and suit budget-conscious tenants who need to sleep in separate rooms or need a separate workspace. (They are also relatively uncommon in Fukuoka.)"
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-5",
+        "text": "Summary",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Choosing a home isn't just about whether the floor plan looks good; how the spaces are divided and how you move through them in daily life are what really matter."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you're weighing up which layout suits you best, or still have questions about Japanese floor plans, feel free to get in touch with me any time. I hope my first-hand local knowledge can help you find a home that's genuinely comfortable to live in."
+      }
+    ]
+  },
+  "en/unfurnished-rentals-and-appliances": {
+    "number": 7,
+    "sourceStatus": "已發佈",
+    "title": "Why don't Japanese rentals come furnished, and where can you buy good-value appliances when you first arrive in Fukuoka?",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "\"This flat has a great layout, but why is there nothing in it?\""
+      },
+      {
+        "type": "paragraph",
+        "text": "That is the first reaction of many friends from Hong Kong and Taiwan when they view properties in Fukuoka. In Hong Kong or Taiwan, a rental usually comes with a basic sofa, bed frame or wardrobe, but in Japan, apart from the very few properties advertised as furnished (kagu-tsuki, 家具付), the vast majority are let completely empty. Today let's look at the legal logic behind this, and at how to set up your new home when you first arrive in Fukuoka."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "1. Key concept: what is \"dedicated equipment\"?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Japanese rental contracts divide responsibility very clearly. The contract states exactly which items count as \"equipment\" (setsubi, 設備)."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**What counts as equipment:** Any item listed as equipment in the contract (most commonly the air conditioner, kitchen units and water heater) is the landlord's responsibility to maintain and repair.",
+          "**Legal responsibility:** If the air conditioner is listed as \"dedicated equipment\" and breaks down under normal use (provided you did not damage it deliberately or cause the fault by never cleaning it for years), you only need to report it to the management company, and the landlord must repair or even replace it.",
+          "**Why no furniture?** Precisely because the law defines the repair obligation for \"equipment\" so strictly, landlords prefer to provide a \"completely empty space\" to avoid repair disputes once furniture wears out or breaks, keeping the boundary of responsibility simple."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "2. Something agents may not tell you: \"items left for the next tenant\" (サービス設置)",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "When viewing a property, you may sometimes find an old fridge or microwave left in the flat that is not on the contract's equipment list. This is usually what is known as an \"item left for the next tenant\", which in Japanese is often called sābisu secchi (サービス設置) or zanchibutsu (残置物)."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Where they come from:** They are usually things the previous tenant left behind when moving out, to avoid paying the fee for disposing of bulky rubbish. If the landlord thinks they still work, they are left for the next tenant.",
+          "**Who repairs them?** **The landlord is not responsible for repairing these items.** If one breaks, you have to arrange the repair or disposal yourself; if you don't want it in the first place, you can try asking the landlord to remove it before the tenancy starts.",
+          "**What to check at viewings:** Whenever you see appliances already in a flat, always confirm whether they are \"equipment\" or \"items left for the next tenant\"."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "3. Japan's \"completely empty\" rental culture and restoration on moving out",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Besides the clear division of responsibility, tenants in Japan tend to stay longer and are used to furniture that suits their own style. An empty flat also means that every new tenant moves in to floors and walls that have been professionally cleaned, guaranteeing a basic standard of hygiene."
+      },
+      {
+        "type": "paragraph",
+        "text": "**💡 Tip:** Renting in Japan is built around \"restoration on moving out\" (genjō kaifuku, 原状回復). Simply put, you must hand the property back in the same condition the landlord handed it to you. If you buy lots of furniture, you must clear it all out when you leave; you cannot simply leave it for the next tenant."
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "4. Just arrived in Fukuoka: where can you buy good-value appliances?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "When furnishing an empty home, keeping to a budget is key. In Fukuoka, I often recommend these places to clients:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Nitori (ニトリ):** Japan's answer to IKEA, with designs made to fit the dimensions of Japanese homes. It is the first stop for setting up a new life.",
+          "**Best Denki (ベスト電器):** A very strong large electronics chain with local roots in Fukuoka. It doesn't have the complicated points schemes of other chains, but the savings are usually reflected directly in lower prices. If you're on a tight budget, some branches also have a second-hand appliance section.",
+          "**Bic Camera (ビックカメラ) & Yodobashi Camera (ヨドバシカメラ):** If you like the latest models, or plan to buy the \"big three\" (fridge, washing machine and TV) in one go, these two giants next to Tenjin and Hakata Station are the best choice.",
+          "**What sets them apart:** They have generous points schemes; if you plan to buy a computer or camera later, the points can be used like cash.",
+          "**Amazon / Rakuten:** If you prefer shopping online, ordering large appliances online for delivery is also an effortless option."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-5",
+        "text": "Summary",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Renting in Japan does mean spending a sum on furniture at the start, but the upside is that you can arrange everything exactly to your taste, and if \"equipment\" listed in the contract breaks down, the landlord is responsible for it."
+      },
+      {
+        "type": "paragraph",
+        "text": "When choosing a property, look beyond the space itself: which items count as \"equipment\" in the contract has a direct bearing on your future maintenance costs. If you have questions about the equipment of a particular property, or want to know where to buy appliances in Fukuoka, feel free to get in touch any time. I hope my first-hand local knowledge helps you get off to a smooth start in Fukuoka."
+      }
+    ]
+  },
+  "en/why-south-facing-homes-matter": {
+    "number": 8,
+    "sourceStatus": "已發佈",
+    "title": "Renting in Fukuoka in depth: why are Japanese people almost fanatical about south-facing homes?",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "If you have ever looked for a home in Fukuoka, you will have noticed that \"south-facing\" (minami-muki, 南向き) is one of the most popular search filters on property websites. Even between rooms of the same size on the same floor, the south-facing one will usually rent for noticeably more than the north-facing one."
+      },
+      {
+        "type": "paragraph",
+        "text": "Why are Japanese people so attached to sunlight? Behind it lies some very practical everyday logic, as well as legal obligations."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "1. Hanging out the washing is Japan's \"national sport\"",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Although washer-dryers are becoming more common, in Japan people are still very much in the habit of hanging their washing on the balcony in the sun."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Killing germs and odours:** Japanese people believe sun-dried clothes have \"the smell of the sun\", and that UV rays are an effective way to kill germs.",
+          "**Saving electricity:** Electricity is not cheap in Japan, and using a tumble dryer over the long term adds up.",
+          "**The south-facing advantage:** South-facing rooms get long, steady sunshine, so clothes dry thoroughly in the shortest time, avoiding the musty smell of washing dried in the shade."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "2. Damp is not just a health issue; it is a money issue",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "If a room gets no sunlight year after year, mould develops easily. Here I want to highlight a key piece of property knowledge:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**The tenant's duty of maintenance:** If you plan to rent in Japan, mould caused by damp is usually treated as the tenant's responsibility (legally, the \"duty of care\", zenkan chūi gimu, 善管注意義務).",
+          "**Extra costs when you move out:** **If mould is found on the walls or in corners when you move out, it does not count as normal wear and tear.** The landlord will usually ask you to pay hefty restoration costs (genjō kaifuku, 原状回復)."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "3. A \"hard indicator\" of asset value",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "In the Japanese mindset, \"south-facing\" is synonymous with holding value. Whether in rent levels or future resale prices, south-facing properties generally have the edge. If you choose a north-facing room, the starting rent may be a little cheaper, but when you later want to re-let or sell it, it may take a little longer to find a taker."
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "💡 Local insight: is south-facing always best?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "South-facing has many advantages, but I often remind friends: \"The best orientation really depends on your lifestyle and the actual surroundings of the property.\""
+      },
+      {
+        "type": "list",
+        "items": [
+          "**For view-seekers with high standards: could north-facing be more beautiful?** > This is an interesting visual phenomenon. **With the sun behind you, the view from a north-facing property is often the more beautiful one.** Looking out to the south usually means looking into the light, so the colours of the scenery appear dull; looking north, the light is behind you, and especially on a high floor with an open outlook, the blue sky, clouds and city buildings appear in vivid, saturated colour.",
+          "**Floor height matters more than the compass** > **\"A north-facing room on a high floor beats a south-facing room that is blocked.\"** As long as the floor is high enough, the steady diffuse light from the sky means a north-facing room actually gets decent light. More than the orientation, pay attention to whether anything next door blocks the light. A south-facing room whose window sits right up against the neighbouring building is actually darker and more oppressive than a north-facing room with a wide-open view.",
+          "**Protecting your furniture from the sun** > Long-term direct sunlight quickly fades and degrades wooden floors (especially if you like Japanese-style tatami floors), leather sofas and even your favourite books. If you have expensive furniture or collectibles, the steady, indirect light of a north-facing room can actually protect them better.",
+          "**Bathroom dryers are now widespread** > Many new flats in Fukuoka now come with a bathroom dryer as standard. If you usually dry your washing indoors, or only do the laundry after work, sunlight contributes much less to drying your clothes. In that case, putting the rent you save towards a north-facing room in a better location may well be better value."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "I hope these small local observations help you find the most comfortable corner of Fukuoka for you."
+      }
+    ]
+  },
+  "en/key-exchange-and-24-hour-support-fees": {
+    "number": 9,
+    "sourceStatus": "已發佈",
+    "title": "Can the \"lock replacement fee\" and \"24-hour support fee\" on your rental quote be waived?",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "After viewing properties in Fukuoka and reaching the quotation stage, many people are instantly overwhelmed by the long list of sundry charges on the cost estimate (mitsumorisho, 見積書). The two items people ask about most are **the \"lock replacement fee\" (kagi kōkan hiyō, 鍵交換費用) and the \"24-hour support service\" (24-jikan anshin sapōto, 24時間安心サポート)**."
+      },
+      {
+        "type": "paragraph",
+        "text": "Together these usually come to at least ¥20,000–30,000, so can you save this money?"
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "1. Lock replacement fee: a \"standard item\" for security reasons, almost 100% unavoidable",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "In Fukuoka property contracts, the lock replacement fee is almost **100% non-negotiable**. It is not only the landlord's requirement; it also protects the new tenant's privacy."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Why must the lock be changed?** While a property is vacant, being renovated or being shown to prospective tenants, its keys pass through the hands of countless agents, cleaning companies and contractors. To make sure you are the only person holding a key, changing the lock is standard procedure for rentals in Japan.",
+          "**You cannot choose the type:** The type of lock is determined by the building's own security design.",
+          "**Standard lock:** In Fukuoka, the going rate is about **¥15,000–25,000**.",
+          "**High-security lock:** For more secure keys, the electronic locks that come as standard in upmarket flats, or keys with sensor functions, the lock replacement fee can reach **¥50,000 or even ¥100,000**, depending on the features and the number of keys."
+        ]
+      },
+      {
+        "type": "quote",
+        "text": "**※** It is expensive, but in Japan break-ins by previous tenants who kept a spare key are not unheard of. This money buys you a good night's sleep for the next few years."
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "2. 24-hour support service fee: filling the management company's \"service gap\"",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "This fee is usually paid to an outsourced support company to deal with sudden problems at home. In Fukuoka it generally costs **¥800–1,500 a month**, and most management companies now make joining it a **compulsory** condition of the contract."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Why do management companies insist on it?** The vast majority of Japanese management companies work \"nine to six\", and most are closed at weekends and on public holidays. If a pipe bursts, the toilet blocks or a window breaks in the middle of the night on a Saturday, there is a good chance nobody will answer at the management company; the support company can then send someone out for emergencies 24 hours a day.",
+          "**A hidden bonus for foreign residents:** Some support companies offer **multilingual support**, which can be a real lifeline in an emergency.",
+          "**The most common scenario:** Besides repairs, the most common use is actually **\"lost key assistance\"**. If you lose your key in the middle of the night and cannot get in, the service usually includes a free or discounted call-out to open the lock, so you are not left stranded on the street at night or paying a steep private locksmith's fee."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "💡 Tips for choosing a property",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Japan's property market is highly systematised. There may be many initial costs, but the rules are clearly written. Rather than arguing over whether they can be waived, focus on **\"checking the value of the service\"**:"
+      },
+      {
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "Check how many keys you get, what features they have, and so on.",
+          "Check whether the support service covers your actual needs, such as foreign-language support or help with lost keys."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "I hope these small local observations give you more confidence as you look for your ideal home in Fukuoka."
+      }
+    ]
+  },
+  "en/shikibiki-deposit-deduction": {
+    "number": 11,
+    "sourceStatus": "已發佈",
+    "title": "What is shikibiki, western Japan's traditional deposit deduction, and should you be wary of properties that use it?",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "When looking for a home in Fukuoka, besides the usual deposit (shikikin, 敷金) and key money (reikin, 礼金), you may occasionally see a slightly mysterious term on the quote: **\"shikibiki\" (敷引)**."
+      },
+      {
+        "type": "paragraph",
+        "text": "For people used to the \"deposit / key money\" system of the Kanto region (Tokyo), this is a trap that is very easy to misunderstand. Today let's unpack this \"old-school rule\", which is gradually disappearing in Fukuoka but still exists."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "1. What exactly is shikibiki, and how is it different from a deposit?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Simply put, shikibiki is \"the part of your deposit you know you will not get back, even before you move in\"."
+      },
+      {
+        "type": "paragraph",
+        "text": "Under the ordinary deposit system, the money you pay should be returned to you after you move out, minus repair costs. Under shikibiki, however, the landlord sets a \"non-refundable\" amount in advance."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Example:** A deposit of 3 months' rent, with shikibiki of 2 months.",
+          "**In reality:** Even if you leave the flat as good as new, those 2 months' worth of money (the shikibiki) go straight to the landlord when you move out."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "2. Is shikibiki an \"all-you-can-eat\" repair fee?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "This is the central question: \"If shikibiki has already been deducted, do I still have to pay repair costs?\""
+      },
+      {
+        "type": "list",
+        "items": [
+          "**The usual case:** In common practice, shikibiki does already cover **basic interior cleaning** and **refurbishment for normal wear and tear**. But even if the actual cleaning costs less, the landlord will not refund the difference.",
+          "**The exception:** If you cause serious damage (such as holes in the walls, a lingering smell of smoke or scratches from pets) and **the repair cost exceeds the shikibiki amount**, the management company is still entitled to claim the extra from you."
+        ]
+      },
+      {
+        "type": "quote",
+        "text": "**※ Note:**Because each management company has its own interpretation, always ask one more question before signing: **\"Does this shikibiki amount cover all the basic cleaning costs when I move out?\"** Confirming what it covers is the way to avoid disputes over being charged twice."
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "💡 Is shikibiki \"disappearing\"?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "If you are looking at modern flats managed by large developers in Fukuoka, you may never come across shikibiki at all. The current trend in Fukuoka is as follows:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Mainstream practice:** In line with the national standard, most have switched to the Kanto-style \"key money / deposit\" format.",
+          "**Who still uses shikibiki?** Usually long-established local landlords (landowner-landlords), or management companies with a more traditional style."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "**Look at it another way:**"
+      },
+      {
+        "type": "paragraph",
+        "text": "Shikibiki properties may be becoming rarer, but there is no need to feel ripped off when you come across one. You can think of it as a kind of \"prepaid, fixed-amount repair fee\"."
+      },
+      {
+        "type": "paragraph",
+        "text": "When choosing a home, rather than getting hung up on what a charge is called, simply calculate the \"total initial outlay\". If a property has shikibiki but the monthly rent is relatively low and the space is large, its \"total cost over two years\" may still work out much better value than a new-build flat."
+      },
+      {
+        "type": "paragraph",
+        "text": "Once you understand how the rules behave, you can choose the home that suits you best in Fukuoka's rental market."
+      }
+    ]
+  },
+  "en/guarantor-company-screening-call": {
+    "number": 14,
+    "sourceStatus": "已發佈",
+    "title": "What does the guarantee company usually ask foreigners on the screening call?",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Submitting your rental application form does not mean the process is over. The most important step is usually the screening call from the guarantee company (hoshō kaisha, 保証会社)."
+      },
+      {
+        "type": "paragraph",
+        "text": "For many foreign residents, this call can feel more nerve-racking than a job interview. In fact, the guarantee company is not trying to make things difficult for you; it wants to confirm that \"you filled in this application form yourself\" and that \"you have basic communication skills\". It is just a standard step in the rental process. Here are the core questions that usually come up on the call:"
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "1. Basic identity check (always asked)",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "This is to guard against identity fraud. They will check the basic details on your application form, so be sure to answer accurately:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Full name**",
+          "**Date of birth**",
+          "**Name and address of the property you have applied for:** Keep the property details to hand. If you cannot even say where you are going to live, the screener will become suspicious."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "2. Your current situation (work, study and residence status)",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "What the guarantee company cares about most is whether the tenant \"can pay the rent reliably\" and \"has a stable residence status\"."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**If you are working:** The name of your employer, your job title and a brief description of your work (e.g. IT engineer, restaurant staff).",
+          "**If you are a student:** The name of your school (e.g. international student at a Japanese language school)."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "3. Emergency contact check",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "They will ask about your relationship with your emergency contact."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Who are they?** (A friend, colleague or relative.)",
+          "**※ Key point:** Be sure to let your emergency contact know in advance. If the guarantee company calls them and they hang up thinking it is a scam call, your screening may stall."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "4. The hidden \"language test\"",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "This point is crucial for foreign residents. Even though it is not a formal interview, the screener will judge from the conversation:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**\"If problems come up, can we communicate smoothly?\"**",
+          "**\"Do they understand the important rules in the lease (e.g. no subletting, rubbish sorting)?\"**"
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-5",
+        "text": "💡 3 things to prepare to improve your chances of passing",
+        "level": 2
+      },
+      {
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "**Keep your phone on:** For two to three days after applying, be sure to answer calls from \"unknown numbers\" or \"landlines starting with 03 / 06\". If you miss one, call back as soon as possible.",
+          "**Have the property details ready:** During the call, keep the flat's address, name, rent and other details to hand, so that your answers match the application form 100%.",
+          "**Have your residence card ready:** Some companies will also ask about your residence status (zairyū shikaku, 在留資格) and its expiry date."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-6",
+        "text": "A quick reminder",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Please remember that this is just one step in the process; the guarantee company will not deliberately make things hard for you. Answer sincerely and politely, and keep these three points in mind:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**No need to say more than asked:** Just \"answer directly\" the question you are asked; the more you say, the more likely you are to slip up.",
+          "**Don't say \"hai\" (はい) without thinking:** If you keep saying \"yes\" when you have not understood, and the screener realises you cannot actually communicate, it will count against your credibility. If you really have not understood, politely ask them to speak more slowly.",
+          "**Don't ask them questions back:** The guarantee company asks questions according to a set procedure. If you have questions about the contract or fees (such as the details of the guarantee company's charges), ask your **letting agent**. Guarantee companies have many internal departments, and the screener calling you usually does not know the specifics of those matters, so asking questions back will only complicate things."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "**So there is only one key: \"answer directly\" the question you are asked.**"
+      },
+      {
+        "type": "paragraph",
+        "text": "**What if you are busy when the call comes?**"
+      },
+      {
+        "type": "paragraph",
+        "text": "If you are on a train or in a meeting, politely tell them you cannot talk right now and will call back. What the guarantee company wants to see is a tenant who is \"responsible and able to communicate normally\"."
+      },
+      {
+        "type": "paragraph",
+        "text": "As long as your information is genuine and you stay calm, the call usually wraps up smoothly in about 5 minutes. Good luck to everyone with passing the screening in Fukuoka and getting the keys to the room you have set your heart on!"
+      }
+    ]
+  },
+  "en/pet-friendly-rentals-hidden-costs": {
+    "number": 16,
+    "sourceStatus": "已發佈",
+    "title": "Are pet-friendly rentals hard to find? A checklist of the hidden costs of renting with a pet in Fukuoka",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "More and more people are moving to Fukuoka with their beloved furry family members, but in the Japanese rental market the words \"pets allowed\" (petto-ka, ペット可) hide many details that cost both money and time. If you plan to look for a home with your pet, this article will help you prepare yourself in advance."
+      },
+      {
+        "type": "paragraph",
+        "text": "First, let's dispel a myth: a property marked \"pets allowed\" does not mean you can keep any animal you like. There is a clear \"pyramid of difficulty\"."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "1. Pet types ranked by difficulty",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "In Fukuoka's rental market, acceptance usually runs like this:"
+      },
+      {
+        "type": "paragraph",
+        "text": "**Small dogs (easiest) → medium dogs → cats → large dogs (extremely difficult)**"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Small dogs:** The mainstream option on the market. But every management company defines \"small\" differently, mostly by **weight** and **breed** (for example, a limit of 10kg or under). Be sure to ask before a viewing — even 1kg over can lead to a rejection.",
+          "**Cats:** Many people assume cats are quiet and should be easier to place than dogs. **In fact, properties that accept cats are surprisingly few!** Management companies mainly worry that cats will scratch the wallpaper (kabegami, 壁紙) and wooden floors, and that the smell of their waste is extremely hard to remove completely.",
+          "**Large dogs:** In the ordinary apartment market, properties that accept large dogs are genuinely \"extremely rare\" — almost non-existent!"
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "2. The price of keeping a pet: more than just an extra deposit",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "In Fukuoka, the extra financial burden of having your pet move in legally is usually greater than you might expect. It is not as simple as \"one more month's deposit\"; common forms of compensation include:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Higher key money:** The most common is **\"key money raised by 1–2 months' rent\"**. Some properties that allow several pets charge extra for each animal.",
+          "**Higher monthly rent:** Some properties raise the monthly rent by **¥5,000–10,000**, which you can think of as your pet's \"season ticket\".",
+          "**Pet cleaning fee paid in advance:** On top of the standard cleaning fee, some contracts require a separate \"pet deodorising/cleaning fee\" to be paid at signing. Depending on the type of pet, it is usually ¥30,000–100,000."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "These costs may hurt, but they are the landlord's way of managing the risk of \"special repairs\" for pet damage beyond normal wear and tear."
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "3. The essential \"pet CV\": the screening threshold",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "When you submit a rental application, a detailed \"pet CV\" is almost always required in addition to your own details. The management company decides whether to rent the property to you based on this information."
+      },
+      {
+        "type": "paragraph",
+        "text": "**You usually need to prepare:**"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Photo:** A front-facing photo of your pet (to confirm the breed and size).",
+          "**Basic details:** Name, breed, weight and age.",
+          "**Health certificates:** Vaccination certificates for rabies and combination vaccines."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "💡 Local insight: finding a pet-friendly home is a race between luck and time",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "If you have a pet and are looking for a home in Fukuoka, you must be mentally prepared for a **\"long campaign\"**."
+      },
+      {
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "**Allow extra time:** Because fewer properties meet the conditions and screening is stricter than for ordinary properties, I recommend allowing at least **2 months** more than other people for your search.",
+          "**Good properties are hard to come by:** Good pet-friendly properties are usually snapped up the moment they are listed. If you find a home where the conditions and location suit you and your pet is accepted, please don't hesitate too long — it really is a matter of timing and luck.",
+          "**Never keep a pet \"secretly\":** In strictly managed Japanese apartments, neighbours are very quick to report. If you are found to be in breach of contract, you will not only be forced to move out but will also **face hefty compensation**, which does great damage to the standing of both you and your pet."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Living with a pet may mean higher initial costs and a harder search, but as long as you prepare this \"reality checklist\" in advance, I'm sure you will find a corner of Fukuoka where you and your pet can both live with peace of mind."
+      }
+    ]
+  },
+  "en/restoration-costs-when-moving-out": {
+    "number": 20,
+    "sourceStatus": "草稿",
+    "title": "Restoration on moving out: how much will you really pay for nail holes and smoking?",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Many people renting in Japan think: \"I've paid a deposit, so they'll just take something off it when I move out.\""
+      },
+      {
+        "type": "paragraph",
+        "text": "But the truth is that the deposit is not a \"get out of jail free\" card. If the repair costs exceed the amount of the deposit, the management company has the right to bill you separately."
+      },
+      {
+        "type": "paragraph",
+        "text": "More importantly: some costs you never had to pay in the first place. Others you will almost certainly be responsible for. Once you understand where these two lines fall, you can live with peace of mind and move out cleanly."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "1. What does \"restoration on moving out\" actually mean?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "\"Restoration on moving out (genjō kaifuku, 原状回復)\" sounds like \"returning the property to the condition it was in before you moved in\", but that is not actually how Japanese law defines it."
+      },
+      {
+        "type": "paragraph",
+        "text": "According to the guidelines on disputes over restoration on moving out (原状回復をめぐるトラブルとガイドライン) issued by the Ministry of Land, Infrastructure, Transport and Tourism (MLIT), restoration on moving out is defined as:"
+      },
+      {
+        "type": "quote",
+        "text": "When moving out, the tenant is responsible for restoring **damage caused by their own intent or negligence** to its original condition."
+      },
+      {
+        "type": "paragraph",
+        "text": "The key words are \"intent or negligence\". Wear caused by normal everyday use is called \"normal wear and tear (tsūjō sonmō, 通常損耗)\", and under the guidelines this cost should be **borne by the landlord** and cannot be passed on to the tenant."
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "2. Costs you never had to pay",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Under the guidelines, the following count as normal wear and tear, and the tenant is **not liable**:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**The wall behind the fridge turning black** (electrical scorch marks) — this happens wherever a fridge stands and is not the tenant's fault",
+          "**Wallpaper or flooring by the window fading in the sun** — a natural phenomenon",
+          "**Light wear or scratches on floors and walls** — within the range of normal use"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "In other words, \"anything that would happen whoever lived here\" is usually the landlord's responsibility."
+      },
+      {
+        "type": "paragraph",
+        "text": "※ Note: some management companies may still try to charge the tenant. If this happens, you can cite the guidelines when negotiating with them."
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "3. Costs you will almost certainly be responsible for",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "The following are almost certainly the tenant's responsibility:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Smoking** — yellowed walls and ceilings and lingering smells; in serious cases the whole flat needs new wallpaper, which is not cheap",
+          "**Smells or damage caused by pets** — even if pets were allowed under the contract, the deodorising cost on moving out is usually still borne by the tenant",
+          "**Large nail or screw holes** — holes for air-conditioner installation, screws for shelving and so on count as damage beyond the normal range"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "**On nail holes: it's more complicated than you think, but not as scary**"
+      },
+      {
+        "type": "paragraph",
+        "text": "Putting nails in the wall is not a one-size-fits-all matter."
+      },
+      {
+        "type": "paragraph",
+        "text": "Small picture-hanging nails have a certain amount of protection under the guidelines, but in practice it depends on how the management company interprets them. More importantly, there is a detail many people don't know: if you have lived in the unit for a fairly long time and the wallpaper itself has already reached the age at which it needs replacing, the management company may waive the related charges even if there are nail holes, because \"it would have been replaced anyway\"."
+      },
+      {
+        "type": "paragraph",
+        "text": "※ Reminder: before putting up any nails, I suggest checking the management company's position first. Standards vary from company to company, so don't make assumptions."
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "4. The costs exceed the deposit — do you have to pay more?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "The answer is: yes."
+      },
+      {
+        "type": "paragraph",
+        "text": "The deposit (shikikin, 敷金) is a security, not a \"cap on repair costs\". If the costs on moving out exceed the deposit you originally paid, the management company can bill you separately, and there is no upper limit on the amount."
+      },
+      {
+        "type": "paragraph",
+        "text": "This is something many people don't expect, especially when:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Years of smoking mean the whole flat needs repainting and new wallpaper",
+          "Pets have damaged the floors or walls",
+          "Several years' worth of damage is settled all at once"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "So protecting yourself while you live there really starts on day one."
+      },
+      {
+        "type": "paragraph",
+        "text": "🏠 Local insight: do this one thing on your first day"
+      },
+      {
+        "type": "paragraph",
+        "text": "As an agent on the front line helping clients from Taiwan and Hong Kong find homes, there is one piece of advice I give clients more than any other:"
+      },
+      {
+        "type": "paragraph",
+        "text": "**Take photos on the very first day you get your keys.**"
+      },
+      {
+        "type": "paragraph",
+        "text": "Not random shots — photograph everything systematically:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Every wall** (including the skirting boards)",
+          "**Every corner of the floor**",
+          "**Every detail of the kitchen, bathroom and toilet**",
+          "**Existing damage, scratches and stains** — make sure these are especially clear"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Once you're done, save them to the cloud, not just on your phone."
+      },
+      {
+        "type": "paragraph",
+        "text": "When you move out, these photos are your strongest evidence of which damage was already there before you moved in and which was caused by normal use. Many moving-out disputes happen because there were no photos, and it ends up as your word against theirs."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you're preparing to move out in Fukuoka or have any questions about restoration costs, feel free to get in touch with me any time. I hope my first-hand local information helps you keep unnecessary costs to a minimum and move out cleanly."
+      }
+    ]
+  },
+  "en/parking-and-garage-certificates": {
+    "number": 21,
+    "sourceStatus": "已發佈",
+    "title": "What is a self-park multi-storey car park? A parking guide for drivers choosing a home in Fukuoka",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "If you plan to drive in Fukuoka, the \"first step\" in your home search is often not finding an apartment but finding a parking space. In Japan, and especially in a mid-sized city like Fukuoka, parking is a more concrete and more complicated issue than you might imagine."
+      },
+      {
+        "type": "paragraph",
+        "text": "Today we'll break down the different types of parking in Fukuoka, introduce the well-known \"self-park multi-storey car park\", and explain the \"parking certificate\" rules that every driver needs to know when choosing a home."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "1. The three main types of car park in Japan",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "When looking for a home in Fukuoka, you'll come across three main types of parking, each with its own pros and cons:"
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "① Surface parking (hiraoki chūshajō, 平置き駐車場)",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "The easiest type to understand: a single-level outdoor car park where you simply drive in and park. Small developments and older low-rise apartment buildings in the suburbs often have this kind of small outdoor car park. The advantage is easy access; the disadvantage is that most are open-air, with no cover when it rains."
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "② Mechanical car park (kikaishiki chūshajō, 機械式駐車場)",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "The most common type in mid- and high-rise apartment buildings in Fukuoka City. Machinery automatically stores cars in individual bays. There are two main sub-types:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Vertical rotating (multi-level rotary, built-in):** After the car enters, the machinery automatically moves vertically and rotates to store the car in its assigned bay.",
+          "**Horizontal sliding:** After you park, the car slides left or right into storage. This type is most commonly seen in small apartment buildings in central Fukuoka City."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "③ Self-park multi-storey car park (jisōshiki chūshajō, 自走式駐車場)",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "A self-park multi-storey car park is a design that \"takes a traditional car park and stacks it vertically\", fitting several times as many cars on one plot of land. The core concept of this kind of car park is:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "It isn't the machinery that moves — it's you.",
+          "You drive into the entry area, drive yourself up the ramps to each level, and find your own space to park. Collecting your car works the same way: you drive yourself back down and out."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "**Advantages of self-park:** high security (cars are kept inside an enclosed structure), a small footprint and no getting wet in the rain. It is the standard parking arrangement in many newly built high-rise apartment buildings in Fukuoka City."
+      },
+      {
+        "type": "heading",
+        "id": "section-5",
+        "text": "2. What is a parking certificate (shako shōmeisho, 車庫証明書)?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "This is a rule you must follow to buy a car in your own name in Japan, and it is also the part that many people from Hong Kong or Taiwan find the biggest hurdle."
+      },
+      {
+        "type": "paragraph",
+        "text": "**The legal basis of the parking certificate:** Under Japan's Garage Act, when registering a car, the owner must show that they \"have a place to keep it (a garage location)\" and submit a \"parking certificate (hokan basho shōmeisho, 保管場所証明書)\". Put simply: before registering a new car in Fukuoka, you must first make sure you have somewhere to park it."
+      },
+      {
+        "type": "paragraph",
+        "text": "**Watch out for these details:**"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**The certified parking space must be in your neighbourhood:** The parking location named on the certificate must be within a 2km radius of the address where the car is to be registered (i.e. your apartment address). Street parking far from your home or a distant car park does not meet this condition.",
+          "**The certificate \"expires\":** A parking certificate has a validity period (usually 1 month). You must submit a certificate that is still valid when registering the car, so the gap between receiving the certificate and registering needs careful planning.",
+          "**The rented space must match the certificate:** Even if your apartment comes with its own parking space, you must check whether that space can be used to \"apply for a parking certificate\". In some buildings the parking space often comes as a package with the flat; spaces rented separately from outside require more documents, so I recommend checking with your agent."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-6",
+        "text": "3. Monthly parking rates in different areas of Fukuoka",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Monthly parking fees often vary enormously by area and car park type. Here is a reference to actual local rates:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Chuo Ward (around Akasaka, Ohori Park and Yakuin):** One of the most popular residential areas in Fukuoka. The apartments are mostly mid- and high-rise buildings, and the car parks are mainly mechanical. The monthly rate is about ¥15,000–20,000. If you come across a rare surface space (hiraoki), it may actually cost more because of high land costs — spaces over ¥20,000 are not unusual.",
+          "**Hakata Ward and around Tenjin:** The commercial heart of the city, where every inch of land is precious and demand for parking far outstrips supply. Mechanical car parks cost about ¥15,000–20,000 a month; surface spaces are extremely rare here, and when they do appear the rent is usually on the high side.",
+          "**Suburbs such as Sawara Ward, Minami Ward and Higashi Ward:** Residential areas a little further from the city centre have a wider variety of parking, with a higher share of surface and self-park multi-storey car parks. Monthly rates are relatively affordable at about ¥5,000–12,000, and some older low-rise apartment buildings even offer on-site parking for ¥3,000–5,000."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "**※** Within the same building, surface parking usually costs more per month than mechanical parking, because a surface space takes up more land and landlords naturally reflect this in the price. When choosing a home, as well as comparing monthly rates, pay attention to how the type of parking affects day-to-day convenience."
+      },
+      {
+        "type": "heading",
+        "id": "section-7",
+        "text": "💡 Local insight: a practical formula for drivers choosing a home",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "If you plan to drive in Fukuoka, add the following points to your home-hunting checklist:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Check the type of car park:** Self-park, surface and mechanical car parks each feel different to use. If it's your first time using a mechanical or self-park car park, it's best to go and try it out in person before signing the contract.",
+          "**Measure your car:** In Fukuoka, most mechanical car parks (especially in older buildings) usually limit vehicles to an overall length within 4.8–5.0m, an overall width within 1.85m and an overall height of around 1.55m. If you drive a taller vehicle such as an SUV or MPV, it's best to check the specifications in advance."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "When you rent with a car in Fukuoka, parking goes far beyond \"a few thousand yen a month\". The legal requirements for parking certificates, the experience of using the car park and checking your car's dimensions are all extra homework to sort out before you move."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you're looking for a property with parking in Fukuoka or have questions about the types of parking certificate, feel free to get in touch with me any time. I hope my first-hand local information helps you find a corner where you and your car can both live with peace of mind."
+      }
+    ]
+  },
+  "en/balcony-rules-in-japanese-apartments": {
+    "number": 22,
+    "sourceStatus": "已發佈",
+    "title": "The hidden rules of balconies in Japanese apartments: can you fit your own security grilles or keep a washing machine there?",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "When viewing properties in Fukuoka, many people see a spacious balcony or one with an open view and immediately start picturing all kinds of lovely scenes: laying lush green turf, setting out a table and chairs for coffee, or even having a barbecue or a game of mahjong at the Mid-Autumn Festival."
+      },
+      {
+        "type": "paragraph",
+        "text": "But from the perspective of Japanese law and real estate, there are actually many red lines here that you must not cross. Today let's talk about this space that foreign residents often misunderstand."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "1. The key idea: the balcony is a \"common area\"",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Many people assume the balcony is included in the rent they pay and can be used however they like. In fact, under Japanese law the balcony is not part of the \"private areas\" inside the flat; like corridors and stairs, it belongs to the \"common areas\" of the whole building."
+      },
+      {
+        "type": "paragraph",
+        "text": "Tenants only have an \"exclusive right of use\" over the balcony, so its use is heavily restricted. In principle, anything that obstructs evacuation or spoils the building's appearance is prohibited."
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "2. Can you fit your own security grilles? (The Fire Service Act)",
+        "level": 2
+      },
+      {
+        "type": "list",
+        "items": [
+          "**The answer: absolutely not.**",
+          "**Blocking the escape route:** Japan's Fire Service Act clearly states that apartment balconies are a \"legal evacuation route\" for all residents. In a fire, everyone must escape via the escape hatch ladder in the balcony floor, or by breaking through the thin plastic partition shared with the neighbouring balcony (the partition reads: in an emergency, break through here to escape next door).",
+          "**Lives are at stake:** If you fit grilles without permission or pile up large items that block the route, and in a fire your neighbours cannot escape in time and are injured or killed, you will face serious legal liability and civil claims for compensation."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "3. Can you put a washing machine on the balcony, have a BBQ or play mahjong there?",
+        "level": 2
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Washing machine:** You can't just put it wherever you like. In most modern properties the washing machine socket is indoors (in the washroom). If you simply move the washing machine onto the balcony, there is no dedicated drain for it, and letting the water drain anywhere can lead to the disaster of a leak into the flat below. It can only go there in older apartments where the floor plan clearly marks the \"washing machine space (sentakuki okiba, 洗濯機置場)\" on the balcony."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "*※ Reminder:* Please be sure to check with your agent, because a very small number of properties have the unusual setup of \"nowhere to put a washing machine, indoors or out\". This must be confirmed before signing."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**BBQ and mahjong:** **Strictly prohibited.** Barbecue smoke and charcoal smells drift into the laundry your neighbours are drying, which is an absolute taboo in Japanese society, where \"not causing trouble for others\" is so highly valued. And noise from late-night mahjong, drinking and chatting can very easily prompt complaint letters from the management company in Japanese apartments, where buildings stand close together."
+        ]
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "4. Can you lay artificial turf or set out a table and chairs? (Building rules and appearance)",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "This is where most people trip up. Every building has its own rules of use, the building rules (kanri kiyaku, 管理規約):"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Tables, chairs and real turf:** If the rules expressly forbid them, you must remove them immediately. In particular, **real turf with soil is absolutely prohibited**, because soil blocks the balcony's drainage, and once water builds up it affects the whole building.",
+          "**The building's appearance:** Many apartment buildings sell themselves on the overall look of their exterior. If yours is the only flat with conspicuous turf or large items, the management company has the right to ask you to remove them as soon as it decides they \"spoil the appearance\".",
+          "**Exceptions:** Generally, only items that \"can be easily removed and do not affect drainage or evacuation\", and that do not breach the building rules, have a reasonable chance of being allowed. Whatever the case, **always consult the building's management company before you start decorating!**"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "When choosing a property and after moving in, understanding the \"shared and fire-safety nature\" of the balcony will help you live safely in Fukuoka while keeping good relations with your neighbours. Next time you stand on your balcony admiring the Fukuoka view, don't forget to look down at the evacuation sign by your feet — it is a very important part of Japan's residential safety system!"
+      }
+    ]
+  },
+  "en/delivery-boxes-in-fukuoka": {
+    "number": 23,
+    "sourceStatus": "草稿",
+    "title": "What you only learn after living in Fukuoka: how important are delivery lockers for online shoppers?",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Shopping online in Japan is a real pleasure. Prices are transparent, items are delivered to your door, and they usually arrive the next day."
+      },
+      {
+        "type": "paragraph",
+        "text": "But there is one reality that many people don't think about before moving to Fukuoka:"
+      },
+      {
+        "type": "paragraph",
+        "text": "**If you're not home that day, the courier won't ask a neighbour to sign for your parcel, and won't leave it at the door either.**"
+      },
+      {
+        "type": "paragraph",
+        "text": "A small missed-delivery slip (fuzai-hyō, 不在票, also called fuzai renraku-hyō, 不在連絡票) is left in your letterbox, and the parcel is taken away again. Next, you need to arrange a redelivery (saihaitatsu, 再配達)."
+      },
+      {
+        "type": "paragraph",
+        "text": "It doesn't sound difficult, but the process is more of a hassle than you might think."
+      },
+      {
+        "type": "paragraph",
+        "text": "Today let's talk about delivery lockers (takuhai box, 宅配ボックス) — and what your online shopping life in Fukuoka looks like without them."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "1. What are delivery lockers?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Delivery lockers are smart parcel lockers installed at the entrance of an apartment building. The courier locks the parcel straight into a compartment, and when you get home you collect it with a code or a key — no waiting for anyone and no need to fit around delivery times."
+      },
+      {
+        "type": "paragraph",
+        "text": "In Taiwan or Hong Kong, many buildings have a caretaker who receives parcels for you. But in Fukuoka this is almost unheard of. Most apartment buildings have no resident caretaker, so when a parcel arrives, you're the only one who can receive it."
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "2. Without delivery lockers, this is the reality",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "You get home to find a missed-delivery slip in your letterbox. It has a QR code or a phone number, asking you to book a new delivery time."
+      },
+      {
+        "type": "paragraph",
+        "text": "The process itself isn't too hard — scan the QR code, choose a time slot, confirm. But if your Japanese isn't quite there yet, even understanding the wording on the slip takes a while. And if you have to phone, the pressure is even greater."
+      },
+      {
+        "type": "paragraph",
+        "text": "What's more, even if you successfully book a slot, the parcel won't necessarily arrive on time."
+      },
+      {
+        "type": "paragraph",
+        "text": "I once booked a delivery for the 8am–12pm slot, and it didn't arrive until 12:30. Those hours waiting at home for a parcel were, honestly, simply wasted."
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "3. How hard is redelivery if your Japanese isn't fluent yet?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "This is something I especially want to say to international students and new residents who have just arrived in Fukuoka."
+      },
+      {
+        "type": "paragraph",
+        "text": "The barriers to redelivery are higher than you'd think:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "The instructions on the missed-delivery slip are entirely in Japanese, and you may not understand them at a glance the first time",
+          "Some delivery companies require a phone call, which can be quite stressful if your Japanese isn't fluent",
+          "The QR code booking page is also entirely in Japanese"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The three main delivery companies (Yamato Transport, Sagawa Express and Japan Post) each have different redelivery procedures. And there is usually a time limit — about a week or so; after that the parcel is returned to the sender, and sorting it out becomes even more troublesome."
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "4. Without delivery lockers, are there other options?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Yes, but each one has its limits:"
+      },
+      {
+        "type": "paragraph",
+        "text": "**①** **Convenience store pick-up**"
+      },
+      {
+        "type": "paragraph",
+        "text": "Have the parcel sent to a nearby 7-Eleven, Lawson or FamilyMart and collect it there. Convenient, but not every product supports it, and bulky items can't be sent this way."
+      },
+      {
+        "type": "paragraph",
+        "text": "**②** **Leave-at-door delivery (okihai, 置き配)**"
+      },
+      {
+        "type": "paragraph",
+        "text": "Ask for the parcel to be left outside your front door without a signature. Platforms such as Amazon support this, but it requires the property to let delivery staff reach your door — most apartment buildings in Fukuoka have strict entry control, so this option becomes pointless."
+      },
+      {
+        "type": "paragraph",
+        "text": "**③** **Delivery companies' own pick-up points**"
+      },
+      {
+        "type": "paragraph",
+        "text": "For example, Yamato's smart pick-up stations, where you can collect parcels yourself. Suits people who don't like waiting at home."
+      },
+      {
+        "type": "paragraph",
+        "text": "Together, these options can cover most situations — but each time there's an extra step, and over time it starts to feel like a chore."
+      },
+      {
+        "type": "heading",
+        "id": "section-5",
+        "text": "💡 Local insight: when choosing a home, delivery lockers deserve a place on your checklist",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "From an agent's point of view, whether a property has delivery lockers is something many clients tend to overlook when narrowing down their options."
+      },
+      {
+        "type": "paragraph",
+        "text": "A few things worth thinking through in advance:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**New builds (shinchiku, 新築) almost always have them**, while older wooden low-rise apartment buildings (mokuzō apāto, 木造アパート) mostly don't — you can start filtering right there",
+          "**Ask yourself how often you shop online**: buying one or two things now and then is fine, but if you're buying every week, the redelivery process will really wear you down",
+          "**It's also worth checking whether leave-at-door delivery is possible**: some properties have strict entry control and delivery staff can't get into the lobby, so this option doesn't work at all"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "It's not that you can't rent a place without delivery lockers — but if you know this reality in advance, you'll have a clearer idea when choosing a home of whether you can live with it."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you're looking for a home in Fukuoka or have questions about equipment and day-to-day details, feel free to get in touch with me any time. I hope my first-hand local information means you'll be a little less caught off guard, even before you move in."
+      }
+    ]
   }
 };

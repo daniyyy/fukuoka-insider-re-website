@@ -757,7 +757,7 @@ export const seedFaqItems: FaqItem[] = locales.flatMap((locale) =>
     relatedService: entry.service,
     showOn: entry.showOn,
     relatedTool: entry.tool,
-    // Guides exist in Traditional Chinese only (siteConfig.guideLocales).
-    relatedGuideCanonicalKey: entry.guide && locale === "zh-TW" ? `article-${entry.guide}` : undefined,
+    // Guides exist in Traditional Chinese and English; the link appears only when the article is published in that language.
+    relatedGuideCanonicalKey: entry.guide ? `article-${entry.guide}` : undefined,
   })),
 );

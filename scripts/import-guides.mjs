@@ -7,14 +7,16 @@ import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const root = new URL("..", import.meta.url).pathname;
-const locales = ["zh-TW"];
+const locales = ["zh-TW", "en"];
 
 const unescape = (text) => text.replace(/\\([\\`*_{}[\]()#+\-.!~|>])/g, "$1");
 const clean = (text) => unescape(text).replace(/\s+$/u, "");
 const stripBold = (text) => text.replace(/^\*\*(.*)\*\*$/u, "$1").trim();
 const stripPrefix = (text) => text.replace(/^(【[^】]*】)+\s*/u, "").trim();
 
-function parseArticle(source) {
+function parseArticle(source, locale) {
+  // Chinese lines join directly; English lines need a space between them.
+  const joiner = locale === "en" ? " " : "";
   const lines = source.replace(/\r\n/g, "\n").split("\n");
   const meta = {};
   let start = 0;
@@ -32,7 +34,7 @@ function parseArticle(source) {
   let title = "";
   const flush = () => {
     if (paragraph.length) {
-      const text = clean(paragraph.join(""));
+      const text = clean(paragraph.join(joiner));
       // A numbered bold heading accidentally joined to the end of a paragraph becomes its own heading.
       const joined = text.match(/^(.*[。？！?])\*\*(\d+\.\s.+)\*\*$/u);
       if (joined) raw.push({ type: "paragraph", text: joined[1] }, { type: "heading", depth: 0, text: joined[2] });
@@ -73,7 +75,7 @@ function parseArticle(source) {
     // Indented continuation of the previous list item.
     const last = raw.at(-1);
     if (/^\s{2,}/u.test(line) && !paragraph.length && (last?.type === "list" || last?.type === "ordered")) {
-      last.items[last.items.length - 1] += clean(line.trim());
+      last.items[last.items.length - 1] += joiner + clean(line.trim());
       continue;
     }
     paragraph.push(line.trim());
@@ -103,7 +105,7 @@ for (const locale of locales) {
   const dir = join(root, "content/guides", locale);
   for (const file of readdirSync(dir).filter((name) => name.endsWith(".md")).sort()) {
     const slug = file.replace(/^\d+-/u, "").replace(/\.md$/u, "");
-    const { meta, title, body } = parseArticle(readFileSync(join(dir, file), "utf8"));
+    const { meta, title, body } = parseArticle(readFileSync(join(dir, file), "utf8"), locale);
     output[`${locale}/${slug}`] = { number: Number(meta["篇號"]) || null, sourceStatus: meta["狀態"] ?? null, title, body };
   }
 }

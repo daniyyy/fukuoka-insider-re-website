@@ -91,6 +91,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
               <ul>
                 <li><Link href={`/${locale}/services`}>{t.services}</Link></li>
                 {hasGuides(locale) ? <li><Link href={`/${locale}/guides`}>{t.guides}</Link></li> : null}
+                {locale === "ja" ? <li><Link href="/en/guides">ガイド記事（中国語・英語）</Link></li> : null}
                 {hasFaq(locale) ? <li><Link href={`/${locale}/help`}>{t.help}</Link></li> : null}
                 <li><Link href={`/${locale}/tools`}>{t.tools}</Link></li>
                 <li><Link href={`/${locale}/about`}>{t.about}</Link></li>

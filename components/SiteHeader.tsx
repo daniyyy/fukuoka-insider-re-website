@@ -6,6 +6,7 @@ import { AnalyticsLink } from "@/components/analytics/AnalyticsLink";
 import { BrandLockup } from "@/components/BrandLockup";
 import { ArrowIcon } from "@/components/site/Icons";
 import { hasFaq, hasGuides, type Locale, siteConfig } from "@/config/site";
+import { serviceOverviewCopy } from "@/data/service-pages";
 
 const labels = {
   "zh-TW": {
@@ -21,7 +22,10 @@ const labels = {
     menuClose: "關閉選單",
     navigation: "主要導覽",
     language: "語言",
-    estimator: "租屋初期費用估算",
+    estimators: "費用估算",
+    rentalTool: "租屋初期費用",
+    purchaseTool: "買房費用",
+    contact: "聯絡我們",
   },
   ja: {
     services: "サービス",
@@ -36,7 +40,12 @@ const labels = {
     menuClose: "メニューを閉じる",
     navigation: "メインナビゲーション",
     language: "言語",
-    estimator: "賃貸初期費用の概算",
+    estimators: "費用の概算",
+    rentalTool: "賃貸初期費用",
+    purchaseTool: "購入費用",
+    contact: "お問い合わせ",
+    /** Japanese has no Guides of its own: link to the English ones, saying so before the tap (Danny, 2026-10-05). */
+    otherGuides: "ガイド記事（中国語・英語）",
   },
   en: {
     services: "Services",
@@ -51,7 +60,10 @@ const labels = {
     menuClose: "Close menu",
     navigation: "Main navigation",
     language: "Language",
-    estimator: "Rental Initial Cost Estimator",
+    estimators: "Cost Estimators",
+    rentalTool: "Rental initial costs",
+    purchaseTool: "Purchase costs",
+    contact: "Contact Us",
   },
 } as const;
 
@@ -150,13 +162,27 @@ export function SiteHeader({ locale, currentPath, localePaths, tone = "solid" }:
       {open ? (
         <div className="fi-menu" id={menuId}>
           <nav className="fi-shell fi-menu__inner" aria-label={copy.navigation}>
-            {links.map(([href, text]) => (
+            {/* Expanded menu (Danny, 2026-10-05): services and estimators are listed directly so every language has a full menu. */}
+            <div className="fi-menu__group">
+              <Link className="fi-menu__link" href={`/${locale}/services`} onClick={() => setOpen(false)}>{copy.services}</Link>
+              <ul className="fi-menu__sub">
+                {serviceOverviewCopy[locale].items.map((item) => (
+                  <li key={item.key}><Link href={`/${locale}${item.route}`} onClick={() => setOpen(false)}>{item.title}<ArrowIcon /></Link></li>
+                ))}
+              </ul>
+            </div>
+            {links.slice(1).map(([href, text]) => (
               <Link className="fi-menu__link" href={href} key={text} onClick={() => setOpen(false)}>{text}</Link>
             ))}
-            <Link className="fi-menu__tool" href={`/${locale}/tools/rental-initial-cost`} onClick={() => setOpen(false)}>
-              {copy.estimator}
-              <ArrowIcon />
-            </Link>
+            <Link className="fi-menu__link" href={consultationHref} onClick={() => setOpen(false)}>{copy.contact}</Link>
+            <div className="fi-menu__tools">
+              <p className="fi-menu__label">{copy.estimators}</p>
+              <Link className="fi-menu__tool" href={`/${locale}/tools/rental-initial-cost`} onClick={() => setOpen(false)}>{copy.rentalTool}<ArrowIcon /></Link>
+              <Link className="fi-menu__tool" href={`/${locale}/tools/purchase-cost`} onClick={() => setOpen(false)}>{copy.purchaseTool}<ArrowIcon /></Link>
+            </div>
+            {"otherGuides" in copy ? (
+              <Link className="fi-menu__aside" href="/en/guides" onClick={() => setOpen(false)}>{copy.otherGuides}<ArrowIcon /></Link>
+            ) : null}
             <LanguageLinks currentPath={currentPath} locale={locale} localePaths={localePaths} label={copy.language} />
             <AnalyticsLink
               className="fi-button fi-button--light fi-menu__cta"

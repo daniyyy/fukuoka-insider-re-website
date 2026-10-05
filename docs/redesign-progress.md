@@ -495,3 +495,10 @@
 - `components/site/LanguageSuggest.tsx` (mounted in `app/[locale]/layout.tsx`): when the browser prefers Japanese or English and the visitor is on another language, a dismissible note at the bottom links to that language's homepage. No redirect; no note when the browser lists Chinese or an HK/TW/Macau region (e.g. en-HK). Dismissal remembered in localStorage when available.
 - Checks: lint, typecheck, 26 tests, build; screenshots 360/390/834/1440 (zh-TW, ja, en), suggestion with ja-JP / en-US (shown) and en-HK (not shown); crawl zh-TW 34, ja 15, en 16, no errors or overflow.
 - Globe icon (line SVG, matches the site's icons) before the language links in the phone language bar, desktop navigation and mobile menu (Danny).
+
+## 2026-10-05 — English Guides and fuller phone menu
+- English translations of all 15 Guides (`content/guides/en/*.md`, same 篇號 and dates as zh-TW). `scripts/import-guides.mjs` imports zh-TW and en (30 articles); `data/guide-articles.ts` adds English excerpts, tags and photo alt text; English articles use the photo / generic English share image (per-article share images carry Chinese titles). `siteConfig.guideLocales` = zh-TW, en; FAQ English answers now link their English guide.
+- Phone menu (3 languages): Services with the 4 services listed beneath, Guides, FAQ, About, Contact Us, Cost Estimators (rental + purchase), then languages, Free Consultation and LINE / WhatsApp / Call. Japanese menu and footer add a low-key link 「ガイド記事（中国語・英語）」 → /en/guides. The language suggestion note hides while the menu is open.
+- Checks: lint, typecheck, 26 tests, build; menu screenshots zh-TW 390, ja 360, en 360; en guides index and article 1440/390; crawl zh-TW 34, ja 15, en 34 pages, no errors or overflow; sitemap lists the English guides.
+- For Danny (source articles, not changed — wording rule): 22 has an empty bullet; 23 uses 「•」 bullets that show as plain paragraphs; 20 「🏠 在地觀察」 is a paragraph, not a heading; 21 groups 天神 with 博多區 (Tenjin is in 中央區); 08 has a stray 「。」; 03, 04 and 07 have stray bold markers; 05 says a 1LDK has a 「獨立廚房」.
+- Still open: FAQ 「可以介紹搬家公司嗎？」 (movers not in the partner list).

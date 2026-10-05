@@ -44,10 +44,10 @@ export const siteConfig = {
   },
   locales: ["zh-TW", "ja", "en"] as const,
   /**
-   * Languages whose navigation links to Guides. Guides are written for Hong Kong / Taiwan readers (zh-TW).
-   * Japanese Guides are not planned; add "en" here once English articles are published.
+   * Languages whose navigation links to Guides. Written in zh-TW for Hong Kong / Taiwan readers; English translations
+   * added 2026-10-05 (Danny). Japanese Guides are not planned — the Japanese menu links to the English/Chinese Guides instead.
    */
-  guideLocales: ["zh-TW"] as const,
+  guideLocales: ["zh-TW", "en"] as const,
   /** Languages with an FAQ (Help page, FAQ blocks on home and service pages). Danny, 2026-09-30: no Japanese FAQ. */
   faqLocales: ["zh-TW", "en"] as const,
 } as const;
