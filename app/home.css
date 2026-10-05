@@ -19,7 +19,8 @@
   position: absolute; inset: 0;
   background: linear-gradient(180deg, rgb(var(--fi-night-rgb) / 0.42) 0%, rgb(var(--fi-night-rgb) / 0.18) 32%, rgb(var(--fi-night-rgb) / 0.86) 74%);
 }
-.fi-hero__inner { display: grid; gap: clamp(2.5rem, 7vh, 4.5rem); padding-top: calc(var(--fi-header-height) + 3rem); }
+.fi-hero__inner { display: grid; gap: clamp(2.5rem, 7vh, 4.5rem); padding-top: calc(var(--fi-header-height) + 5.25rem); }
+@media (min-width: 68.75rem) { .fi-hero__inner { padding-top: calc(var(--fi-header-height) + 3rem); } }
 .fi-hero__content { display: grid; gap: 1.5rem; max-width: 40rem; }
 .fi-hero__title span { display: block; }
 /* Chinese hero heading (zh-TW): serif, wider tracking, same scale as the English display line */

@@ -270,10 +270,23 @@ body {
 
 .fi-header__compact { display: flex; align-items: center; gap: 0.5rem; }
 .fi-header__cta-short { min-height: 2.75rem; padding: 0 1rem; font-size: 0.875rem; letter-spacing: 0.04em; white-space: nowrap; }
-/* Narrow phones (under 380px): keep the logo and buttons clear of each other. */
+/* Narrow phones (under 380px): tighten spacing so the full lockup (with REAL ESTATE) and both buttons fit. */
 @media (max-width: 23.74rem) {
-  .fi-header .fi-lockup--horizontal .fi-lockup__rule, .fi-header .fi-lockup--horizontal .fi-lockup__sub { display: none; }
+  .fi-header .fi-lockup--horizontal { gap: 0.5rem; }
+  .fi-header .fi-lockup--horizontal .fi-lockup__sub { letter-spacing: 0.12em; }
+  .fi-header__compact { gap: 0.375rem; }
+  .fi-header__cta-short { padding: 0 0.75rem; }
+  .fi-header .fi-header__toggle { width: 2.5rem; }
 }
+
+/* Language bar (phones and tablets only; desktop shows languages in the main navigation). */
+.fi-header__langbar { max-height: 2.5rem; overflow: hidden; border-bottom: 1px solid color-mix(in srgb, currentColor 14%, transparent); transition: max-height 220ms ease; }
+.fi-header__langbar .fi-shell { display: flex; justify-content: flex-end; }
+.fi-header__langbar .fi-locale { gap: 0; padding-left: 0; border-left: 0; font-size: 0.8125rem; }
+.fi-header__langbar .fi-locale a { min-width: 0; min-height: 2.25rem; padding: 0 0.625rem; }
+.fi-header__langbar .fi-locale a:last-child { padding-right: 0; }
+.fi-header.is-stuck .fi-header__langbar, .fi-header.is-open .fi-header__langbar { max-height: 0; border-bottom-color: transparent; }
+@media (min-width: 68.75rem) { .fi-header__langbar { display: none; } }
 .fi-header__toggle {
   display: grid; place-items: center;
   width: 2.75rem; height: 2.75rem; padding: 0;
@@ -394,3 +407,21 @@ html { scrollbar-color: var(--fi-line-strong) var(--fi-paper); accent-color: var
 .fi-motion .fi-frame:not(.fi-frame--hero):not(.is-in)::after { opacity: 0; inset: 0; }
 .fi-hakata { transition: clip-path 1600ms var(--fi-ease-out); }
 .fi-motion .fi-hakata:not(.is-in) { clip-path: inset(0 0 100% 0); }
+
+/* Browser-language suggestion (components/site/LanguageSuggest.tsx): floats above the page, never pushes content. */
+.fi-lang-suggest {
+  position: fixed; z-index: 60; left: var(--fi-gutter); right: var(--fi-gutter); bottom: 1rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem;
+  padding: 0.875rem 3.25rem 0.875rem 1.25rem;
+  background: var(--fi-ink); color: var(--fi-on-dark);
+  box-shadow: 0 18px 40px -24px rgb(var(--fi-ink-rgb) / 0.6);
+  font-size: var(--fi-size-small); line-height: 1.6;
+  animation: fi-fade-rise 500ms var(--fi-ease-out) both;
+}
+.fi-lang-suggest p { margin: 0; }
+.fi-lang-suggest__cta { font-weight: 600; text-decoration: underline; text-underline-offset: 0.3em; color: var(--fi-on-dark); }
+.fi-lang-suggest__close { position: absolute; top: 50%; right: 0.5rem; transform: translateY(-50%); display: grid; place-items: center; width: 2.5rem; height: 2.5rem; padding: 0; border: 0; background: transparent; color: inherit; cursor: pointer; }
+.fi-lang-suggest__close svg { width: 1.125rem; height: 1.125rem; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.fi-lang-suggest :focus-visible { outline: 2px solid var(--fi-on-dark); outline-offset: 2px; }
+@media (min-width: 45rem) { .fi-lang-suggest { left: auto; right: var(--fi-gutter); max-width: 30rem; } }
+@media (prefers-reduced-motion: reduce) { .fi-lang-suggest { animation: none; } }

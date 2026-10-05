@@ -102,6 +102,12 @@ export function SiteHeader({ locale, currentPath, localePaths, tone = "solid" }:
 
   return (
     <header className={classes}>
+      {/* Phones and tablets: languages always visible above the bar, so visitors who do not read Chinese find them without opening the menu. */}
+      <div className="fi-header__langbar">
+        <div className="fi-shell">
+          <LanguageLinks currentPath={currentPath} locale={locale} localePaths={localePaths} label={copy.language} />
+        </div>
+      </div>
       <div className="fi-shell fi-header__bar">
         <Link className="fi-header__brand" href={`/${locale}/`} aria-label="Fukuoka Insider Real Estate">
           <BrandLockup tone={onPhoto || open ? "light" : "dark"} />

@@ -489,3 +489,8 @@
 3. Submit sitemap in Google Search Console; turn on Cloudflare Web Analytics.
 4. Optional: click stats (D1 + STATS_KEY), after updating the privacy text.
 5. Before 2027-03-31: review tax rules and the Legal Affairs Bureau unit price table in the purchase estimator.
+
+## 2026-10-05 — Language switch on phones
+- Phones and tablets: a slim language bar 「繁中｜日本語｜EN」 above the header bar (collapses when the header sticks or the menu opens); desktop unchanged. 「REAL ESTATE」 stays on phones (Danny); on phones under 380px the spacing tightens instead.
+- `components/site/LanguageSuggest.tsx` (mounted in `app/[locale]/layout.tsx`): when the browser prefers Japanese or English and the visitor is on another language, a dismissible note at the bottom links to that language's homepage. No redirect; no note when the browser lists Chinese or an HK/TW/Macau region (e.g. en-HK). Dismissal remembered in localStorage when available.
+- Checks: lint, typecheck, 26 tests, build; screenshots 360/390/834/1440 (zh-TW, ja, en), suggestion with ja-JP / en-US (shown) and en-HK (not shown); crawl zh-TW 34, ja 15, en 16, no errors or overflow.
