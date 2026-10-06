@@ -64,7 +64,7 @@ This is something many people don't expect, especially when:
 
 So protecting yourself while you live there really starts on day one.
 
-🏠 Local insight: do this one thing on your first day
+### 🏠 Local insight: do this one thing on your first day
 
 As an agent on the front line helping clients from Taiwan and Hong Kong find homes, there is one piece of advice I give clients more than any other:
 

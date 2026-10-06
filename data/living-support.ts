@@ -72,6 +72,7 @@ export const livingSupportCopy: Record<Locale, LivingSupportCopy> = {
     othersLink: "個別諮詢",
     partnerLabel: "介紹合作夥伴",
     partners: [
+      { title: "搬家公司", body: "介紹搬家公司，協助搬運行李及家具。" },
       { title: "學校介紹", body: "子女升學或語言學習，按需要介紹學校。" },
       { title: "診所介紹", body: "介紹可以用英語看診的診所。" },
       { title: "簽證申請・續期", body: "介紹行政書士，協助簽證申請、變更及續期。" },
@@ -127,6 +128,7 @@ export const livingSupportCopy: Record<Locale, LivingSupportCopy> = {
     othersLink: "個別に相談する",
     partnerLabel: "パートナーのご紹介",
     partners: [
+      { title: "引越し業者のご紹介", body: "荷物や家具の運搬は、引越し業者をご紹介します。" },
       { title: "学校のご紹介", body: "お子さまの進学や語学学習に合わせて、学校をご紹介します。" },
       { title: "クリニックのご紹介", body: "英語で受診できるクリニックをご紹介します。" },
       { title: "ビザの申請・更新", body: "行政書士をご紹介し、ビザの申請・変更・更新をサポートします。" },
@@ -182,6 +184,7 @@ export const livingSupportCopy: Record<Locale, LivingSupportCopy> = {
     othersLink: "Ask about something else",
     partnerLabel: "Partner introductions",
     partners: [
+      { title: "Moving companies", body: "We introduce moving companies to carry your belongings and furniture." },
       { title: "Schools", body: "We introduce schools for your children or for language study." },
       { title: "Clinics", body: "We introduce clinics where you can see a doctor in English." },
       { title: "Visa applications and renewals", body: "We introduce an administrative scrivener (gyoseishoshi) for visa applications, changes and renewals." },

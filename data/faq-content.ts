@@ -501,8 +501,8 @@ const entries: FaqEntry[] = [
       en: "What does living support include?",
     },
     a: {
-      "zh-TW": "以下 6 項由我們的員工直接陪同或處理：水、電、瓦斯開通，租借家具家電，區役所手續同行及翻譯，手機合約，銀行開戶，以及生活用品購物同行。\n學校、可以用英語看診的診所、簽證申請及續期（行政書士），以及找工作（人才中介），可以介紹合作夥伴；其他需要也可以個別諮詢。",
-      en: "Our own staff handle six items directly: setting up electricity, gas and water, rental furniture and appliances, ward office procedures with interpreting, a mobile phone contract, opening a bank account, and shopping for everyday items.\nFor schools, clinics where you can see a doctor in English, visa applications and renewals (an administrative scrivener) and finding work (recruitment agencies), we can introduce partners. For anything else, just ask.",
+      "zh-TW": "以下 6 項由我們的員工直接陪同或處理：水、電、瓦斯開通，租借家具家電，區役所手續同行及翻譯，手機合約，銀行開戶，以及生活用品購物同行。\n搬家公司、學校、可以用英語看診的診所、簽證申請及續期（行政書士），以及找工作（人才中介），可以介紹合作夥伴；其他需要也可以個別諮詢。",
+      en: "Our own staff handle six items directly: setting up electricity, gas and water, rental furniture and appliances, ward office procedures with interpreting, a mobile phone contract, opening a bank account, and shopping for everyday items.\nFor moving companies, schools, clinics where you can see a doctor in English, visa applications and renewals (an administrative scrivener) and finding work (recruitment agencies), we can introduce partners. For anything else, just ask.",
     },
     tags: { "zh-TW": ["生活支援", "入住", "陪同", "合作夥伴"], en: ["living support", "moving in", "partners"] },
   },

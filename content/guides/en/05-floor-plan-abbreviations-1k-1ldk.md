@@ -47,7 +47,7 @@ If you plan to stir-fry often at home, fry ginger and garlic, or even make dishe
 
 #### 4. 1LDK vs. 2DK: which is better value?
 
-- **1LDK:** A spacious living room, dining area and separate kitchen, plus one separate bedroom. Ideal for singles who value quality of life and like having friends over, or for newly married couples.
+- **1LDK:** One spacious room combining the living room, dining area and kitchen (the LDK), plus one separate bedroom. Ideal for singles who value quality of life and like having friends over, or for newly married couples.
 - **2DK:** Two separate rooms, but a relatively small living/dining area (DK). These properties are usually older but cheaper to rent, and suit budget-conscious tenants who need to sleep in separate rooms or need a separate workspace. (They are also relatively uncommon in Fukuoka.)
 
 #### Summary

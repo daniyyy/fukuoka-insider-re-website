@@ -256,7 +256,7 @@ export const importedArticles: Record<string, ImportedArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "這兩個名詞最常讓人混淆，其實只要記住一個是「暫存」**，**一個是「送人」："
+        "text": "這兩個名詞最常讓人混淆，其實只要記住一個是**「暫存」**，一個是**「送人」**："
       },
       {
         "type": "list",
@@ -370,7 +370,7 @@ export const importedArticles: Record<string, ImportedArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "其實，這不一定是你的用量有問題，很可能是因為你租的房子用的是不同種類的瓦斯。在日本租房，瓦斯主要分為「都市瓦斯（都市ガス）」**與**「LP 瓦斯（プロパンガス）」。今天我們就來聊聊這兩者的真實價差，以及一些常見的誤區。"
+        "text": "其實，這不一定是你的用量有問題，很可能是因為你租的房子用的是不同種類的瓦斯。在日本租房，瓦斯主要分為**「都市瓦斯（都市ガス）」**與**「LP 瓦斯（プロパンガス）」**。今天我們就來聊聊這兩者的真實價差，以及一些常見的誤區。"
       },
       {
         "type": "heading",
@@ -555,7 +555,7 @@ export const importedArticles: Record<string, ImportedArticle> = {
       {
         "type": "list",
         "items": [
-          "**1LDK：** 擁有寬敞的客廳、餐廳和獨立廚房，加上一間獨立臥室。適合重視生活品質、喜歡在家招待朋友的單身貴族或新婚小夫妻。",
+          "**1LDK：** 客廳、餐廳與廚房合為一個寬敞的空間（LDK），加上一間獨立臥室。適合重視生活品質、喜歡在家招待朋友的單身貴族或新婚小夫妻。",
           "**2DK：** 有兩間獨立房間，但客廳/餐廳空間（DK）相對較小。這類物件通常屋齡較高，但租金相對便宜，適合需要「分房睡」或需要獨立工作空間的預算型租客。(在福岡也屬於比較少見的房型)"
         ]
       },
@@ -614,7 +614,7 @@ export const importedArticles: Record<string, ImportedArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "看房時，有時會發現屋內留有一台舊冰箱或微波爐，但合約設備清單上卻沒寫，這通常就是所謂的「贈與設備」**，**日語常叫「サービス設置」**或**「殘置物」。"
+        "text": "看房時，有時會發現屋內留有一台舊冰箱或微波爐，但合約設備清單上卻沒寫，這通常就是所謂的**「贈與設備」**，日語常叫**「サービス設置」**或**「殘置物」**。"
       },
       {
         "type": "list",
@@ -713,7 +713,7 @@ export const importedArticles: Record<string, ImportedArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "。如果房間長年照不到陽光，很容易發霉。這裡要特別提醒大家一個關鍵的不動產知識："
+        "text": "如果房間長年照不到陽光，很容易發霉。這裡要特別提醒大家一個關鍵的不動產知識："
       },
       {
         "type": "list",
@@ -1292,8 +1292,10 @@ export const importedArticles: Record<string, ImportedArticle> = {
         "text": "所以，住的期間如何保護自己，其實從第一天就要開始。"
       },
       {
-        "type": "paragraph",
-        "text": "🏠 在地觀察：入住第一天，做這一件事"
+        "type": "heading",
+        "id": "section-5",
+        "text": "🏠 在地觀察：入住第一天，做這一件事",
+        "level": 2
       },
       {
         "type": "paragraph",
@@ -1441,7 +1443,7 @@ export const importedArticles: Record<string, ImportedArticle> = {
         "type": "list",
         "items": [
           "**中央區（赤坂・大濠公園・薬院周邊）：**這一帶是福岡最具人氣的居住地段之一，公寓多為中高層大廈，停車場以機械式駐車場為主。月租行情大約在 15,000～20,000 日圓左右。若遇到稀有的平置き（平面停車位），因土地成本高，租金反而可能更貴，超過 20,000 日圓的物件並不罕見。",
-          "**博多區・天神周邊：**商業核心地帶，土地寸金尺土，停車位供不應求。機械式停車場月租約 15,000～20,000 日圓；平置き在此地帶極為罕見，出現時租金通常偏高。",
+          "**天神・博多站周邊：**商業核心地帶，土地寸金尺土，停車位供不應求。機械式停車場月租約 15,000～20,000 日圓；平置き在此地帶極為罕見，出現時租金通常偏高。",
           "**早良區・南區・東區等郊外：**離市中心稍遠的住宅區，停車位類型更多元，平置き與自走式停車場的比例較高。月租行情相對親民，約 5,000～12,000 日圓，部分老式低層公寓甚至提供 3,000～5,000 日圓的附設停車位。"
         ]
       },
@@ -1531,13 +1533,12 @@ export const importedArticles: Record<string, ImportedArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "*※ 提醒：* 請一定要向你的房仲查詢，因為極少部分物件甚至會是「室內、室外都無法放置洗衣機」的特殊規格，這在簽約前必須先確認。"
+        "text": "**※ 提醒：** 請一定要向你的房仲查詢，因為極少部分物件甚至會是「室內、室外都無法放置洗衣機」的特殊規格，這在簽約前必須先確認。"
       },
       {
         "type": "list",
         "items": [
-          "**BBQ 與打麻將：** **絕對禁止。** 烤肉的煙味與木炭味會飄進鄰居正在晾的衣服裡，在日本這種重視「不給他人添麻煩」的社會是絕對的禁忌。而深夜打麻將、喝酒聊天引起的噪音，在棟距較近的日本公寓也非常容易引來管理公司的申訴信。",
-          ""
+          "**BBQ 與打麻將：** **絕對禁止。** 烤肉的煙味與木炭味會飄進鄰居正在晾的衣服裡，在日本這種重視「不給他人添麻煩」的社會是絕對的禁忌。而深夜打麻將、喝酒聊天引起的噪音，在棟距較近的日本公寓也非常容易引來管理公司的申訴信。"
         ]
       },
       {
@@ -1644,16 +1645,12 @@ export const importedArticles: Record<string, ImportedArticle> = {
         "text": "重新派件的門檻比你想的高："
       },
       {
-        "type": "paragraph",
-        "text": "•      不在票上的說明全日文，第一次看未必能一眼看懂"
-      },
-      {
-        "type": "paragraph",
-        "text": "•      部分配送公司需要打電話，日語不夠流利的話壓力不小"
-      },
-      {
-        "type": "paragraph",
-        "text": "•      QR code的預約頁面同樣是全日文介面"
+        "type": "list",
+        "items": [
+          "不在票上的說明全日文，第一次看未必能一眼看懂",
+          "部分配送公司需要打電話，日語不夠流利的話壓力不小",
+          "QR code的預約頁面同樣是全日文介面"
+        ]
       },
       {
         "type": "paragraph",
@@ -1712,16 +1709,12 @@ export const importedArticles: Record<string, ImportedArticle> = {
         "text": "幾個建議提前想清楚："
       },
       {
-        "type": "paragraph",
-        "text": "•      **新建公寓（新築）基本上都有**，舊式木造公寓（木造アパート）則多半沒有——篩選時可以直接從這裡下手"
-      },
-      {
-        "type": "paragraph",
-        "text": "•      **問自己網購頻率高不高**：偶爾買一兩件不要緊，每週都在買的話，之後的重新派件流程真的會耗掉不少精神"
-      },
-      {
-        "type": "paragraph",
-        "text": "•      **玄關代放能不能用也值得確認**：部分物件門禁嚴，外送員進不了大廳，這個選項就完全失效"
+        "type": "list",
+        "items": [
+          "**新建公寓（新築）基本上都有**，舊式木造公寓（木造アパート）則多半沒有——篩選時可以直接從這裡下手",
+          "**問自己網購頻率高不高**：偶爾買一兩件不要緊，每週都在買的話，之後的重新派件流程真的會耗掉不少精神",
+          "**玄關代放能不能用也值得確認**：部分物件門禁嚴，外送員進不了大廳，這個選項就完全失效"
+        ]
       },
       {
         "type": "paragraph",
@@ -2284,7 +2277,7 @@ export const importedArticles: Record<string, ImportedArticle> = {
       {
         "type": "list",
         "items": [
-          "**1LDK:** A spacious living room, dining area and separate kitchen, plus one separate bedroom. Ideal for singles who value quality of life and like having friends over, or for newly married couples.",
+          "**1LDK:** One spacious room combining the living room, dining area and kitchen (the LDK), plus one separate bedroom. Ideal for singles who value quality of life and like having friends over, or for newly married couples.",
           "**2DK:** Two separate rooms, but a relatively small living/dining area (DK). These properties are usually older but cheaper to rent, and suit budget-conscious tenants who need to sleep in separate rooms or need a separate workspace. (They are also relatively uncommon in Fukuoka.)"
         ]
       },
@@ -3021,8 +3014,10 @@ export const importedArticles: Record<string, ImportedArticle> = {
         "text": "So protecting yourself while you live there really starts on day one."
       },
       {
-        "type": "paragraph",
-        "text": "🏠 Local insight: do this one thing on your first day"
+        "type": "heading",
+        "id": "section-5",
+        "text": "🏠 Local insight: do this one thing on your first day",
+        "level": 2
       },
       {
         "type": "paragraph",
@@ -3170,7 +3165,7 @@ export const importedArticles: Record<string, ImportedArticle> = {
         "type": "list",
         "items": [
           "**Chuo Ward (around Akasaka, Ohori Park and Yakuin):** One of the most popular residential areas in Fukuoka. The apartments are mostly mid- and high-rise buildings, and the car parks are mainly mechanical. The monthly rate is about ¥15,000–20,000. If you come across a rare surface space (hiraoki), it may actually cost more because of high land costs — spaces over ¥20,000 are not unusual.",
-          "**Hakata Ward and around Tenjin:** The commercial heart of the city, where every inch of land is precious and demand for parking far outstrips supply. Mechanical car parks cost about ¥15,000–20,000 a month; surface spaces are extremely rare here, and when they do appear the rent is usually on the high side.",
+          "**Around Tenjin and Hakata Station:** The commercial heart of the city, where every inch of land is precious and demand for parking far outstrips supply. Mechanical car parks cost about ¥15,000–20,000 a month; surface spaces are extremely rare here, and when they do appear the rent is usually on the high side.",
           "**Suburbs such as Sawara Ward, Minami Ward and Higashi Ward:** Residential areas a little further from the city centre have a wider variety of parking, with a higher share of surface and self-park multi-storey car parks. Monthly rates are relatively affordable at about ¥5,000–12,000, and some older low-rise apartment buildings even offer on-site parking for ¥3,000–5,000."
         ]
       },
@@ -3260,7 +3255,7 @@ export const importedArticles: Record<string, ImportedArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "*※ Reminder:* Please be sure to check with your agent, because a very small number of properties have the unusual setup of \"nowhere to put a washing machine, indoors or out\". This must be confirmed before signing."
+        "text": "**※ Reminder:** Please be sure to check with your agent, because a very small number of properties have the unusual setup of \"nowhere to put a washing machine, indoors or out\". This must be confirmed before signing."
       },
       {
         "type": "list",

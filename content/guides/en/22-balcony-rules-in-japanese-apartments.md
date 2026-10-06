@@ -26,7 +26,7 @@ Tenants only have an "exclusive right of use" over the balcony, so its use is he
 
 - **Washing machine:** You can't just put it wherever you like. In most modern properties the washing machine socket is indoors (in the washroom). If you simply move the washing machine onto the balcony, there is no dedicated drain for it, and letting the water drain anywhere can lead to the disaster of a leak into the flat below. It can only go there in older apartments where the floor plan clearly marks the "washing machine space (sentakuki okiba, 洗濯機置場)" on the balcony.
 
-*※ Reminder:* Please be sure to check with your agent, because a very small number of properties have the unusual setup of "nowhere to put a washing machine, indoors or out". This must be confirmed before signing.
+**※ Reminder:** Please be sure to check with your agent, because a very small number of properties have the unusual setup of "nowhere to put a washing machine, indoors or out". This must be confirmed before signing.
 
 - **BBQ and mahjong:** **Strictly prohibited.** Barbecue smoke and charcoal smells drift into the laundry your neighbours are drying, which is an absolute taboo in Japanese society, where "not causing trouble for others" is so highly valued. And noise from late-night mahjong, drinking and chatting can very easily prompt complaint letters from the management company in Japanese apartments, where buildings stand close together.
 

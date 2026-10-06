@@ -502,3 +502,8 @@
 - Checks: lint, typecheck, 26 tests, build; menu screenshots zh-TW 390, ja 360, en 360; en guides index and article 1440/390; crawl zh-TW 34, ja 15, en 34 pages, no errors or overflow; sitemap lists the English guides.
 - For Danny (source articles, not changed — wording rule): 22 has an empty bullet; 23 uses 「•」 bullets that show as plain paragraphs; 20 「🏠 在地觀察」 is a paragraph, not a heading; 21 groups 天神 with 博多區 (Tenjin is in 中央區); 08 has a stray 「。」; 03, 04 and 07 have stray bold markers; 05 says a 1LDK has a 「獨立廚房」.
 - Still open: FAQ 「可以介紹搬家公司嗎？」 (movers not in the partner list).
+
+## 2026-10-06 — Guide source fixes and movers partner
+- Danny asked for the translator-reported issues to be fixed (zh-TW and en together): 21 Tenjin no longer grouped with Hakata Ward (「天神・博多站周邊」 / "Around Tenjin and Hakata Station"); 05 1LDK described as one combined living/dining/kitchen space; 08 stray 「。」; 20 「🏠 在地觀察」 now a heading; 22 empty bullet removed and 「※ 提醒」 bold fixed; 23 「•」 lines now real lists; 03, 04, 07 bold markers moved onto the terms. `pnpm import:guides` rerun (30 articles).
+- Living Support partners: 「搬家公司」 / 引越し業者のご紹介 / Moving companies added first; FAQ 「生活支援包括什麼？」 lists movers among partners. Movers FAQ kept.
+- Checks: lint, typecheck, 26 tests, build; rendered articles have no stray markers, empty items or 「•」; partner list screenshots zh-TW 1440/390, ja 390, en 1440; crawl all locales clean.
