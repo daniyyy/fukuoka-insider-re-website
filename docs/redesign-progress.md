@@ -507,3 +507,7 @@
 - Danny asked for the translator-reported issues to be fixed (zh-TW and en together): 21 Tenjin no longer grouped with Hakata Ward (「天神・博多站周邊」 / "Around Tenjin and Hakata Station"); 05 1LDK described as one combined living/dining/kitchen space; 08 stray 「。」; 20 「🏠 在地觀察」 now a heading; 22 empty bullet removed and 「※ 提醒」 bold fixed; 23 「•」 lines now real lists; 03, 04, 07 bold markers moved onto the terms. `pnpm import:guides` rerun (30 articles).
 - Living Support partners: 「搬家公司」 / 引越し業者のご紹介 / Moving companies added first; FAQ 「生活支援包括什麼？」 lists movers among partners. Movers FAQ kept.
 - Checks: lint, typecheck, 26 tests, build; rendered articles have no stray markers, empty items or 「•」; partner list screenshots zh-TW 1440/390, ja 390, en 1440; crawl all locales clean.
+
+## 2026-10-06 — Opening hours
+- Hours changed to weekdays 10:30–17:30 (Danny) in `config/site.ts` (display text in 3 languages + structured data for search engines).
+- Danny's published articles collected in his local folder 定期發佈文章/已發佈文章 (one .md per article, Chinese + English); originals there deleted at his request. Not part of the repo.
