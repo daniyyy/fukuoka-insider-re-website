@@ -511,3 +511,8 @@
 ## 2026-10-06 — Opening hours
 - Hours changed to weekdays 10:30–17:30 (Danny) in `config/site.ts` (display text in 3 languages + structured data for search engines).
 - Danny's published articles collected in his local folder 定期發佈文章/已發佈文章 (one .md per article, Chinese + English); originals there deleted at his request. Not part of the repo.
+
+## 2026-10-13 — Launch preparation
+- Ricky approved launch. Checked: fukuokainsider.com DNS is on Cloudflare (proxied); www redirects to the bare domain; /re is a WordPress 404 (free). Public URL will be https://fukuokainsider.com/re.
+- The domain is in the Cloudflare account of the person who set it up for Ricky, not Danny's. Waiting for that person to add ktp21505@gmail.com as an Administrator of that account. Then: move the Worker build to that account (connect GitHub), switch code to launch mode (site URL https://fukuokainsider.com, delete .env.production, remove site-wide noindex and robots disallow; legal pages stay noindex), add route `fukuokainsider.com/re*`, verify, then Search Console sitemap + Web Analytics, and ask the WordPress manager to add a menu link to /re.
+- Legal pages: launch with current text (Danny), kept noindex until a professional review.
