@@ -32,7 +32,7 @@ export const siteConfig = {
     established: { "zh-TW": "2024年2月", ja: "2024年2月", en: "February 2024" },
     representative: { "zh-TW": "Ricky（代表取締役）", ja: "Ricky（代表取締役）", en: "Ricky (Representative Director)" },
     /** Registered full name, for the Privacy Policy (Danny 2026-10-15). */
-    representativeLegal: { "zh-TW": "NGAI CHUN KIT RICKY（代表取締役）", ja: "代表取締役 NGAI CHUN KIT RICKY", en: "NGAI CHUN KIT RICKY (Representative Director)" },
+    representativeLegal: { "zh-TW": "NGAI CHUN KIT RICKY（代表取締役）", ja: "NGAI CHUN KIT RICKY（代表取締役）", en: "NGAI CHUN KIT RICKY (Representative Director)" },
     association: { "zh-TW": "公益社団法人 福岡県宅地建物取引業協会 會員", ja: "公益社団法人 福岡県宅地建物取引業協会 会員", en: "Member, Fukuoka Real Estate Transaction Association" },
     associationName: { "zh-TW": "公益社団法人 福岡県宅地建物取引業協会", ja: "公益社団法人 福岡県宅地建物取引業協会", en: "Fukuoka Real Estate Transaction Association" },
     access: { "zh-TW": "福岡市地下鐵空港線「大濠公園」站，步行約 5 分鐘", ja: "福岡市地下鉄空港線「大濠公園」駅から徒歩約5分", en: "About 5 minutes' walk from Ohorikoen Station (Fukuoka City Subway Airport Line)" },
