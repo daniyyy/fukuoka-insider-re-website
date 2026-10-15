@@ -2,9 +2,10 @@ import type { MetadataRoute } from "next";
 
 import { siteConfig } from "@/config/site";
 
-// Keep the prototype out of search results until the public launch is approved.
+// Public since launch (Danny 2026-10-15).
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: "*", disallow: `${siteConfig.basePath}/` },
+    rules: { userAgent: "*", allow: "/", disallow: ["/api/", "/stats"] },
+    sitemap: `${siteConfig.siteUrl}${siteConfig.basePath}/sitemap.xml`,
   };
 }

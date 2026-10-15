@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Fukuoka Insider Real Estate",
   company: "株式会社Fukuoka Insider",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.fukuokainsider.com",
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? "/re",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://fukuoka.house",
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? "",
   contact: {
     address: "〒810-0074 福岡県福岡市中央区大手門1-5-2 九州外語ビル1階1号",
     /** English form of the same address, for English pages. */

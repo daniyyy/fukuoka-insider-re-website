@@ -13,15 +13,17 @@ export type LegalDocument = { title: string; /** Page heading when it differs fr
 const { company } = siteConfig;
 const { address, email, licence } = siteConfig.contact;
 const rep = siteConfig.company_profile.representative;
+const { telephone, telephoneInternational } = siteConfig.contact;
+const hours = siteConfig.company_profile.hours;
 
 export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
   privacy: {
     "zh-TW": {
       title: "隱私政策",
       intro: `${company}（以下稱「本公司」）重視您的個人資料。本政策說明本公司如何取得、使用及保管個人資料，並遵守日本《個人情報保護法》及相關法令。`,
-      updated: "制定日期：2026年9月29日",
+      updated: "制定日期：2026年9月29日｜最後更新：2026年10月15日",
       sections: [
-        { title: "事業者資料", body: [`${company}｜代表者：${rep["zh-TW"]}`, `地址：${address}`, `宅地建物取引業免許：${licence}`, `個人資料諮詢窗口：${email}`] },
+        { title: "事業者資料", body: [`${company}｜代表者：${rep["zh-TW"]}`, `地址：${address}`, `宅地建物取引業免許：${licence}`, `個人資料諮詢窗口：${email}／電話 ${telephone}（${hours["zh-TW"]}）`] },
         { title: "取得的個人資料", body: [
           "姓名、電話、Email、LINE／WhatsApp 等聯絡帳號。",
           "諮詢內容、希望條件、物業資料，以及與您往來的紀錄。",
@@ -29,7 +31,7 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
         ] },
         { title: "取得方式", body: [
           "透過諮詢表、LINE、WhatsApp、Email、電話、面談及社群媒體，由您直接提供。",
-          "本網站目前沒有使用分析工具或廣告 Cookie 收集瀏覽資料。網站主機可能為安全目的暫時記錄連線資料（例如 IP 位址）。日後如使用分析工具，會先更新本政策。",
+          "本網站使用 Cloudflare 的網站主機及瀏覽統計（Cloudflare Web Analytics）。瀏覽統計只計算瀏覽次數、來源國家、使用裝置等整體數據，不使用 Cookie，也不會用來識別個人。網站主機可能為安全目的暫時記錄連線資料（例如 IP 位址）。本網站不使用廣告 Cookie。",
         ] },
         { title: "使用目的", body: [
           "1. 回覆諮詢及聯絡。",
@@ -45,7 +47,7 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
           "由於房地產交易的性質，可能需要在必要範圍內向業主、管理公司、租賃保證公司、賣方／買方、其他房地產業者、金融機構、司法書士等提供資料。這種情況下，本公司會事先取得您的同意。",
         ] },
         { title: "使用外部服務", body: [
-          "本公司使用 Google 表單、Email、LINE、WhatsApp 等外部服務與您聯絡。這些服務由各營運公司按其隱私政策處理資料，資料可能保存在日本以外的地區（例如美國）。",
+          "本公司使用 Google 表單、Email、LINE、WhatsApp 等外部服務與您聯絡，網站主機則使用 Cloudflare。這些服務由各營運公司按其隱私政策處理資料，資料可能保存在日本以外的地區（例如美國）。",
         ] },
         { title: "安全管理", body: [
           "本公司會把可存取個人資料的人員限於業務上需要的負責人，管理電腦及帳戶的存取權限，並妥善保管和銷毀紙本文件。",
@@ -62,9 +64,9 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
       title: "プライバシーポリシー",
       heroTitle: "プライバシー|ポリシー",
       intro: `${company}（以下「当社」）は、お客様の個人情報を適切に取り扱うことを重要な責務と考え、個人情報の保護に関する法律その他の関係法令を遵守し、以下のとおり取り扱います。`,
-      updated: "制定日：2026年9月29日",
+      updated: "制定日：2026年9月29日｜最終改定：2026年10月15日",
       sections: [
-        { title: "事業者情報", body: [`${company}｜代表者：${rep.ja}`, `所在地：${address}`, `宅地建物取引業免許：${licence}`, `個人情報に関するお問い合わせ窓口：${email}`] },
+        { title: "事業者情報", body: [`${company}｜代表者：${rep.ja}`, `所在地：${address}`, `宅地建物取引業免許：${licence}`, `個人情報に関するお問い合わせ窓口：${email}／電話 ${telephone}（${hours.ja}）`] },
         { title: "取得する個人情報", body: [
           "氏名、電話番号、メールアドレス、LINE・WhatsApp 等の連絡先アカウント。",
           "ご相談内容、ご希望条件、物件情報、お客様とのやり取りの記録。",
@@ -72,7 +74,7 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
         ] },
         { title: "取得方法", body: [
           "相談フォーム、LINE、WhatsApp、メール、電話、面談、SNS を通じて、お客様から直接取得します。",
-          "本サイトでは現在、閲覧情報を収集するアクセス解析ツールや広告用 Cookie を使用していません。サーバーでは、セキュリティ確保のため接続情報（IPアドレス等）が一時的に記録される場合があります。解析ツールを導入する場合は、事前に本ポリシーを改定します。",
+          "本サイトは Cloudflare のサーバーおよびアクセス解析（Cloudflare Web Analytics）を利用しています。アクセス解析では閲覧数、アクセス元の国、利用端末などの全体的な数値のみを集計し、Cookie は使用せず、個人の特定にも利用しません。サーバーでは、セキュリティ確保のため接続情報（IPアドレス等）が一時的に記録される場合があります。広告用 Cookie は使用していません。",
         ] },
         { title: "利用目的", body: [
           "1. お問い合わせへの回答およびご連絡のため。",
@@ -88,7 +90,7 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
           "不動産取引の性質上、貸主、管理会社、家賃保証会社、売主・買主、他の宅地建物取引業者、金融機関、司法書士等へ、取引に必要な範囲で提供することがあります。その場合は、事前にご本人の同意を得ます。",
         ] },
         { title: "外部サービスの利用", body: [
-          "当社は、Google フォーム、メール、LINE、WhatsApp 等の外部サービスを利用してお客様と連絡を取ります。これらのサービスでは各提供事業者のプライバシーポリシーに基づいて情報が取り扱われ、日本国外（米国等）で保管される場合があります。",
+          "当社は、Google フォーム、メール、LINE、WhatsApp 等の外部サービスを利用してお客様と連絡を取り、本サイトのサーバーには Cloudflare を利用しています。これらのサービスでは各提供事業者のプライバシーポリシーに基づいて情報が取り扱われ、日本国外（米国等）で保管される場合があります。",
         ] },
         { title: "安全管理措置", body: [
           "個人情報にアクセスできる者を業務上必要な担当者に限定し、パソコン・アカウントのアクセス管理、書類の適切な保管・廃棄を行います。",
@@ -104,9 +106,9 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
     en: {
       title: "Privacy Policy",
       intro: `${company} ("we") takes the protection of your personal information seriously. This policy explains how we collect, use, and keep personal information in line with Japan's Act on the Protection of Personal Information and related laws.`,
-      updated: "Established: 29 September 2026",
+      updated: "Established: 29 September 2026 | Last updated: 15 October 2026",
       sections: [
-        { title: "Who we are", body: [`${company} | Representative: ${rep.en}`, `Address: ${siteConfig.contact.addressEn}`, `Real estate brokerage licence: ${licence}`, `Privacy enquiries: ${email}`] },
+        { title: "Who we are", body: [`${company} | Representative: ${rep.en}`, `Address: ${siteConfig.contact.addressEn}`, `Real estate brokerage licence: ${licence}`, `Privacy enquiries: ${email} / phone ${telephoneInternational} (${hours.en})`] },
         { title: "Information we collect", body: [
           "Your name, telephone number, email address, and messaging accounts such as LINE or WhatsApp.",
           "Your enquiry, preferred conditions, property details, and records of our communication.",
@@ -114,7 +116,7 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
         ] },
         { title: "How we collect it", body: [
           "Directly from you through our enquiry form, LINE, WhatsApp, email, telephone, meetings, and social media.",
-          "This website currently uses no analytics tools or advertising cookies. Our hosting provider may briefly record connection data (such as IP addresses) for security. We will update this policy before introducing any analytics.",
+          "This website is hosted by Cloudflare and uses Cloudflare Web Analytics. The analytics count only overall figures such as page views, visitors' countries and device types; they use no cookies and are not used to identify anyone. Our hosting provider may briefly record connection data (such as IP addresses) for security. We use no advertising cookies.",
         ] },
         { title: "Why we use it", body: [
           "1. To reply to your enquiries and contact you.",
@@ -130,7 +132,7 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
           "Real-estate transactions often require sharing information, to the extent necessary, with landlords, management companies, rent guarantee companies, sellers or buyers, other real-estate agents, financial institutions, and judicial scriveners. We ask for your consent before doing so.",
         ] },
         { title: "External services", body: [
-          "We use external services such as Google Forms, email, LINE, and WhatsApp to communicate with you. Each provider handles information under its own privacy policy, and data may be stored outside Japan (for example, in the United States).",
+          "We use external services such as Google Forms, email, LINE, and WhatsApp to communicate with you, and Cloudflare to host this website. Each provider handles information under its own privacy policy, and data may be stored outside Japan (for example, in the United States).",
         ] },
         { title: "Security", body: [
           "Access to personal information is limited to staff who need it for their work. We manage access to computers and accounts, and store and dispose of paper documents properly.",

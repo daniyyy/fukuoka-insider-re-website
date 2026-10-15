@@ -3,8 +3,8 @@
  *
  * Off until switched on in Cloudflare (see docs/analytics-and-deployment.md):
  * - D1 database bound as EVENTS_DB → clicks are counted (one row per click: day, event, language, area, detail).
- * - Secret STATS_KEY → the summary page /re/stats?key=<STATS_KEY> is available.
- * Without them, the event endpoint accepts and discards events, and /re/stats returns 404.
+ * - Secret STATS_KEY → the summary page /stats?key=<STATS_KEY> is available.
+ * Without them, the event endpoint accepts and discards events, and /stats returns 404.
  * No cookies, IP addresses or personal data are stored.
  */
 

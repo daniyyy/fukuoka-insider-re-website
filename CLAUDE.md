@@ -17,19 +17,19 @@ Reply to Danny in Traditional Chinese, concise, with few technical terms. Use En
 - Do not edit article wording unless Danny asks for a specific change. Article sources are `content/guides/zh-TW/*.md`; after changing a source run `pnpm import:guides`.
 - Copy changes: zh-TW is the source. The ja/en translation pass was done on 2026-10-01; from now on update zh-TW, ja and en together with the same structure. Guides are zh-TW only; FAQ is zh-TW and en only (`siteConfig.guideLocales`, `siteConfig.faqLocales`).
 - Do not publish brokerage fee amounts or legal fee caps on the site unless Danny asks.
-- Prototype only: keep noindex; do not deploy, change DNS, or touch the WordPress site www.fukuokainsider.com.
+- Public site: https://fukuoka.house (launched with Danny's confirmation, 2026-10-15). Do not touch the WordPress site www.fukuokainsider.com.
 - Ask Danny before changing page architecture, language policy, or anything in `03_DECISIONS.md`.
 - Work on a git branch, commit per stage, and update `docs/redesign-progress.md` at the end of each session.
 
 ## Deployment
 - GitHub `daniyyy/fukuoka-insider-re-website` (main) → Cloudflare Workers `fukuoka-insider-re-website` builds and deploys automatically on every push.
-- Test address: https://fukuoka-insider-re-website.ktp21505.workers.dev/ (noindex). Do not add a custom domain or route, or change DNS, without Danny's final confirmation.
+- Public address: https://fukuoka.house (Cloudflare custom domain, zone in Danny's Cloudflare account; domain registered at GoDaddy by Ricky). The site lives at the domain root (no /re). www.fukuoka.house, the old workers.dev test address and old /re/... links redirect to it (worker/index.ts). Ask Danny before changing DNS or domains.
 - Keep Danny's local folder (D:\☆Claude Workspace\danny-obs\Fukuoka Insider_Website) in sync with the same files and commit there too.
 - `vite.config.ts` must keep `assets: { binding: "ASSETS" }`; without it images and fonts are empty on Cloudflare.
 
 ## Commands
 - `pnpm install` — after dependency changes
-- `pnpm dev` → http://localhost:5173/re/zh-TW/
+- `pnpm dev` → http://localhost:5173/zh-TW
 - `pnpm lint`, `pnpm test`, `pnpm build` — run all three before committing
 - `pnpm import:guides` — rebuild `data/guide-articles.generated.ts` from the Markdown articles
 

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 import { setAnalyticsAdapter } from "@/lib/analytics/events";
 
-const endpoint = `${process.env.NEXT_PUBLIC_BASE_PATH ?? "/re"}/api/event`;
+const endpoint = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/api/event`;
 
 /**
  * Sends button-click events (free consultation, LINE/WhatsApp/phone, estimator use…) to the site's own

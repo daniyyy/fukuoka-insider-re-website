@@ -7,7 +7,7 @@ import { absoluteSiteUrl, guideCategoryPath, guidePath } from "@/lib/content/pat
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const fixedLocales = ["zh-TW", "ja", "en"] as const;
-  const fixedRoutes = ["", "/services", "/services/rent", "/services/buy-sell", "/services/property-management", "/services/living-support", "/about", "/contact", "/help", "/tools", "/tools/rental-initial-cost", "/tools/purchase-cost"];
+  const fixedRoutes = ["", "/services", "/services/rent", "/services/buy-sell", "/services/property-management", "/services/living-support", "/about", "/contact", "/help", "/tools", "/tools/rental-initial-cost", "/tools/purchase-cost", "/privacy", "/disclaimer", "/terms"];
   const fixed = fixedLocales.flatMap((locale) => fixedRoutes.filter((route) => route !== "/help" || hasFaq(locale)).map((route) => ({ url: absoluteSiteUrl(`/${locale}${route}`), changeFrequency: "monthly" as const })));
   const guides = await getAllPublishedGuideRecords();
   const categories = (await Promise.all(["zh-TW", "en"].map(async (locale) => {
