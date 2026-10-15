@@ -12,7 +12,7 @@ export type LegalDocument = { title: string; /** Page heading when it differs fr
 
 const { company } = siteConfig;
 const { address, email, licence } = siteConfig.contact;
-const rep = siteConfig.company_profile.representative;
+const rep = siteConfig.company_profile.representativeLegal;
 const { telephone, telephoneInternational } = siteConfig.contact;
 const hours = siteConfig.company_profile.hours;
 
