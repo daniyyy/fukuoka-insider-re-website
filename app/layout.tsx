@@ -23,12 +23,11 @@ import { MotionObserver } from "@/components/site/MotionObserver";
 // If the page script never starts (blocked or failed), motion is switched off after 4s so nothing stays hidden.
 const motionScript = `try{var d=document.documentElement;if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){d.classList.add("fi-motion");setTimeout(function(){if(!d.classList.contains("fi-motion-ready"))d.classList.remove("fi-motion")},4000)}}catch(e){}`;
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/re";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
   title: "Fukuoka Insider Real Estate",
   description: "Multilingual real estate support for building your life in Fukuoka.",
-  robots: { index: false, follow: false },
   icons: { icon: `${basePath}/favicon.svg`, apple: `${basePath}/apple-touch-icon.png` },
 };
 

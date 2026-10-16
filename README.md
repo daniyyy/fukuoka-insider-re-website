@@ -7,6 +7,6 @@ Multilingual (繁中 / 日本語 / English) lead-generation website for 株式�
 
 ```bash
 pnpm install
-pnpm dev        # http://localhost:5173/re/zh-TW/
+pnpm dev        # http://localhost:5173/zh-TW
 pnpm lint && pnpm test && pnpm build
 ```

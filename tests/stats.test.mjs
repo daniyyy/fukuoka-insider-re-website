@@ -16,7 +16,7 @@ function fakeD1() {
   };
   return { db, d1 };
 }
-const post = (body) => new Request("https://example.com/re/api/event", { method: "POST", body: JSON.stringify(body) });
+const post = (body) => new Request("https://example.com/api/event", { method: "POST", body: JSON.stringify(body) });
 
 test("click statistics count known events only", async () => {
   const { db, d1 } = fakeD1();
@@ -31,8 +31,8 @@ test("click statistics count known events only", async () => {
 test("stats page needs the key and the database", async () => {
   const { d1 } = fakeD1();
   const env = { EVENTS_DB: d1, STATS_KEY: "secret" };
-  assert.equal((await statsPage(new Request("https://example.com/re/stats?key=wrong"), env)).status, 404);
-  assert.equal((await statsPage(new Request("https://example.com/re/stats?key=secret"), env)).status, 200);
-  assert.equal((await statsPage(new Request("https://example.com/re/stats?key=secret"), {})).status, 404);
+  assert.equal((await statsPage(new Request("https://example.com/stats?key=wrong"), env)).status, 404);
+  assert.equal((await statsPage(new Request("https://example.com/stats?key=secret"), env)).status, 200);
+  assert.equal((await statsPage(new Request("https://example.com/stats?key=secret"), {})).status, 404);
   assert.equal((await recordEvent(post({ name: "calculator_start" }), {})).status, 204);
 });

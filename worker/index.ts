@@ -29,18 +29,28 @@ interface ExecutionContext {
 // dangerouslyAllowSVG: true in next.config.js and uncomment below:
 // const imageConfig: ImageConfig = { dangerouslyAllowSVG: true };
 
+/** The public domain (Danny 2026-10-15). */
+const PUBLIC_HOST = "fukuoka.house";
+
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
 
-    // Test address (*.workers.dev): the site lives under /re, so send the bare domain to the Chinese homepage.
-    // On www.fukuokainsider.com only /re/* is routed to this Worker, so this never affects WordPress.
-    if (url.pathname === "/") {
-      return Response.redirect(new URL("/re/zh-TW/", url).toString(), 302);
+    // One public address: www.fukuoka.house and the old test address (*.workers.dev) move to https://fukuoka.house,
+    // and old /re/... links (the prototype path) drop the prefix.
+    const path = url.pathname === "/re" ? "/" : url.pathname.startsWith("/re/") ? url.pathname.slice(3) : url.pathname;
+    const local = url.hostname === "localhost" || url.hostname === "127.0.0.1";
+    if (!local && (url.hostname === "www.fukuoka.house" || url.hostname.endsWith(".workers.dev")) || path !== url.pathname) {
+      const target = local ? new URL(url) : new URL(`https://${PUBLIC_HOST}`);
+      target.pathname = path;
+      target.search = url.search;
+      return Response.redirect(target.toString(), 301);
     }
 
-    if (url.pathname === "/re/api/event") return recordEvent(request, env);
-    if (url.pathname === "/re/stats") return statsPage(request, env);
+    if (url.pathname === "/") return Response.redirect(new URL("/zh-TW", url).toString(), 302);
+
+    if (url.pathname === "/api/event") return recordEvent(request, env);
+    if (url.pathname === "/stats") return statsPage(request, env);
 
     if (url.pathname === "/_vinext/image") {
       const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];
