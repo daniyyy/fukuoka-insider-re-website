@@ -73,7 +73,7 @@ export default async function AboutPage({ params }: PageProps) {
             <h2 className="fi-h2" id="people-title">{t.peopleTitle}</h2>
             <div className="fi-about-people__grid">
               <article className="fi-person">
-                <Image src={asset("/images/ricky.webp")} alt={`Ricky, ${t.rickyRole}`} width={478} height={597} loading="lazy" sizes="(min-width: 1100px) 30vw, 50vw" />
+                <Image src={asset("/images/ricky.webp")} alt={`Ricky, ${t.rickyRole}`} width={721} height={901} loading="lazy" sizes="(min-width: 1100px) 30vw, 50vw" />
                 <div className="fi-person__text">
                   <h3 className="fi-person__name">Ricky</h3>
                   <p className="fi-person__role">{t.rickyRole}</p>
