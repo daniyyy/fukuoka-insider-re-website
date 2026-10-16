@@ -523,3 +523,10 @@
 - Checked locally: lint, typecheck, 26 tests, build; crawl zh-TW 34 / ja 15 / en 34 pages clean; canonical/og point to fukuoka.house; images load at root.
 - To finish when the domain is active: (1) Cloudflare DNS for fukuoka.house: delete the two GoDaddy A records and the www CNAME; (2) Workers → fukuoka-insider-re-website → Settings → Domains & Routes → add custom domains fukuoka.house and www.fukuoka.house; (3) merge branch to main and push; (4) verify live; (5) Web Analytics on, Search Console + sitemap; (6) Instagram / WordPress links.
 - Privacy policy now shows the registered name NGAI CHUN KIT RICKY (Danny); other pages keep 「Ricky」.
+
+## 2026-10-16 — Live on https://fukuoka.house
+- Ricky changed the GoDaddy nameservers (23:14 JST); zone active in Danny's Cloudflare. Danny deleted the GoDaddy forwarding records (2 A + www CNAME) and added custom domains fukuoka.house and www.fukuoka.house to the Worker.
+- Branch `launch-fukuoka-house` merged into main (b5124af) and deployed (Workers Builds success).
+- Live checks: 80 sitemap/nav URLs return 200, no noindex (legal pages included), no workers.dev or /re/ links; canonical and og:image on fukuoka.house; robots.txt allows all and lists the sitemap; www.fukuoka.house, the workers.dev address and old /re/... links redirect to https://fukuoka.house.
+- Next for Danny: turn on Cloudflare Web Analytics for fukuoka.house (the privacy policy already says it is used); add fukuoka.house to Google Search Console and submit https://fukuoka.house/sitemap.xml; update Instagram bio, Google Business Profile and other links to https://fukuoka.house.
+- Danny's local folder (D:\☆Claude Workspace\danny-obs\Fukuoka Insider_Website) was found almost empty on 2026-10-13; not synced since. GitHub is complete — restore from there when Danny confirms.
