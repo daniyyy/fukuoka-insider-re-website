@@ -33,3 +33,7 @@ Originals are in the Danny's folder `照片/` (not in git). Web versions are exp
 - Danny 提供 Ricky 新照片（戴眼鏡、雙手交叉；螢幕截圖 575×597），較原本拿咪高峰那張正式。裁成網站人物照的 4:5 比例（478×597），用於首頁及關於我們。
 - 原檔：`assets/source/people/ricky-2-original.png`。舊照片（已修圖）保留為 `ricky-retouched.jpg`。
 - 解析度剛好夠用；日後如有更大的原檔可再替換。
+
+## 2026-10-16 — Ricky 新照片（活動演講）
+- Danny 提供 Ricky 在九州國際新世代藝術展（HORIZON）演講的照片。裁成 4:5 人物照（721×901，與 Danny 照片相同大小），用於首頁及關於我們。
+- 原檔（縮小至 2304×1536 保存）：`assets/source/people/ricky-3-original.jpg`。之前的照片保留為 `ricky-2-original.png`。

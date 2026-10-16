@@ -414,7 +414,7 @@ function FeaturedGuides({ title, intro, guides, allHref, allLabel }: { title: st
 }
 
 function Portrait({ person, alt, name, position }: { person: "ricky" | "danny"; alt: string; name: string; position: string }) {
-  const dimensions = person === "ricky" ? { width: 478, height: 597 } : { width: 721, height: 901 };
+  const dimensions = { width: 721, height: 901 };
   return (
     <figure className="fi-portrait">
       <Image src={asset(`/images/${person}.webp`)} alt={alt} width={dimensions.width} height={dimensions.height} loading="lazy" sizes="(min-width: 1100px) 22vw, 50vw" />
