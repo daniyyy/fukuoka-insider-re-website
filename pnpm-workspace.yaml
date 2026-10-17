@@ -1,3 +1,6 @@
+# Root-only workspace: the "packages" field keeps installs working with older pnpm versions (Cloudflare build, 2026-10-17).
+packages:
+  - "."
 allowBuilds:
   esbuild: true
   sharp: true
