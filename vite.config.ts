@@ -8,6 +8,8 @@ const localBindingConfig = {
   // vinext serves public/ files (images, fonts, icons) by handing them to the ASSETS binding.
   // Without this binding, deployed pages load but every image and font returns an empty file.
   assets: { binding: "ASSETS" },
+  // Deployment version, used to key the page cache in worker/index.ts (a new deploy never serves old pages).
+  version_metadata: { binding: "CF_VERSION_METADATA" },
 };
 
 export default defineConfig(async () => {
