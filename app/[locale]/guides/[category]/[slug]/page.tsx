@@ -41,7 +41,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const languages: Record<string, string> = { [locale]: canonical };
   if (translation) languages[otherLocale] = absoluteSiteUrl(guidePath(otherLocale, translation.category, translation.slug));
   return {
-    title: `${guide.seoTitle ?? guide.title} | Fukuoka Insider`, description: guide.seoDescription ?? guide.excerpt,
+    // Long titles drop the brand suffix so search results can show the whole article title.
+    title: (guide.seoTitle ?? guide.title).length > 45 ? (guide.seoTitle ?? guide.title) : `${guide.seoTitle ?? guide.title} | Fukuoka Insider`, description: guide.seoDescription ?? guide.excerpt,
     alternates: { canonical, languages },
     openGraph: { title: guide.seoTitle ?? guide.title, description: guide.seoDescription ?? guide.excerpt, url: canonical, type: "article", publishedTime: guide.publishedAt, modifiedTime: guide.updatedAt, images: [{ url: shareImage(guide, locale), width: 1200, height: 630, alt: guide.title }] },
   };

@@ -23,7 +23,7 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
       intro: `${company}（以下稱「本公司」）重視您的個人資料。本政策說明本公司如何取得、使用及保管個人資料，並遵守日本《個人情報保護法》及相關法令。`,
       updated: "制定日期：2026年9月29日｜最後更新：2026年10月15日",
       sections: [
-        { title: "事業者資料", body: [`${company}｜代表者：${rep["zh-TW"]}`, `地址：${address}`, `宅地建物取引業免許：${licence}`, `個人資料諮詢窗口：${email}／電話 ${telephone}（${hours["zh-TW"]}）`] },
+        { title: "事業者資料", body: [`${company}｜代表者：${rep["zh-TW"]}`, `地址：${address}`, `宅地建物取引業免許：${licence}`, `個人資料諮詢窗口：${email}`, `電話：${telephone}｜${hours["zh-TW"]}`] },
         { title: "取得的個人資料", body: [
           "姓名、電話、Email、LINE／WhatsApp 等聯絡帳號。",
           "諮詢內容、希望條件、物業資料，以及與您往來的紀錄。",
@@ -66,7 +66,7 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
       intro: `${company}（以下「当社」）は、お客様の個人情報を適切に取り扱うことを重要な責務と考え、個人情報の保護に関する法律その他の関係法令を遵守し、以下のとおり取り扱います。`,
       updated: "制定日：2026年9月29日｜最終改定：2026年10月15日",
       sections: [
-        { title: "事業者情報", body: [`${company}｜代表者：${rep.ja}`, `所在地：${address}`, `宅地建物取引業免許：${licence}`, `個人情報に関するお問い合わせ窓口：${email}／電話 ${telephone}（${hours.ja}）`] },
+        { title: "事業者情報", body: [`${company}｜代表者：${rep.ja}`, `所在地：${address}`, `宅地建物取引業免許：${licence}`, `個人情報に関するお問い合わせ窓口：${email}`, `電話：${telephone}｜${hours.ja}`] },
         { title: "取得する個人情報", body: [
           "氏名、電話番号、メールアドレス、LINE・WhatsApp 等の連絡先アカウント。",
           "ご相談内容、ご希望条件、物件情報、お客様とのやり取りの記録。",
@@ -108,7 +108,7 @@ export const legalCopy: Record<LegalKey, Record<Locale, LegalDocument>> = {
       intro: `${company} ("we") takes the protection of your personal information seriously. This policy explains how we collect, use, and keep personal information in line with Japan's Act on the Protection of Personal Information and related laws.`,
       updated: "Established: 29 September 2026 | Last updated: 15 October 2026",
       sections: [
-        { title: "Who we are", body: [`${company} | Representative: ${rep.en}`, `Address: ${siteConfig.contact.addressEn}`, `Real estate brokerage licence: ${licence}`, `Privacy enquiries: ${email} / phone ${telephoneInternational} (${hours.en})`] },
+        { title: "Who we are", body: [`${company} | Representative: ${rep.en}`, `Address: ${siteConfig.contact.addressEn}`, `Real estate brokerage licence: ${licence}`, `Privacy enquiries: ${email}`, `Phone: ${telephoneInternational} | ${hours.en}`] },
         { title: "Information we collect", body: [
           "Your name, telephone number, email address, and messaging accounts such as LINE or WhatsApp.",
           "Your enquiry, preferred conditions, property details, and records of our communication.",

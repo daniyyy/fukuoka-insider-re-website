@@ -40,6 +40,10 @@ const worker = {
     // and old /re/... links (the prototype path) drop the prefix.
     const path = url.pathname === "/re" ? "/" : url.pathname.startsWith("/re/") ? url.pathname.slice(3) : url.pathname;
     const local = url.hostname === "localhost" || url.hostname === "127.0.0.1";
+    if (!local && url.protocol === "http:") {
+      url.protocol = "https:";
+      return Response.redirect(url.toString(), 301);
+    }
     if (!local && (url.hostname === "www.fukuoka.house" || url.hostname.endsWith(".workers.dev")) || path !== url.pathname) {
       const target = local ? new URL(url) : new URL(`https://${PUBLIC_HOST}`);
       target.pathname = path;
