@@ -24,7 +24,7 @@ Reply to Danny in Traditional Chinese, concise, with few technical terms. Use En
 ## Deployment
 - GitHub `daniyyy/fukuoka-insider-re-website` (main) → Cloudflare Workers `fukuoka-insider-re-website` builds and deploys automatically on every push.
 - Public address: https://fukuoka.house (Cloudflare custom domain, zone in Danny's Cloudflare account; domain registered at GoDaddy by Ricky). The site lives at the domain root (no /re). www.fukuoka.house, the old workers.dev test address and old /re/... links redirect to it (worker/index.ts). Ask Danny before changing DNS or domains.
-- Keep Danny's local folder (D:\☆Claude Workspace\danny-obs\Fukuoka Insider_Website) in sync with the same files and commit there too.
+- Keep Danny's local folder (D:\Claude Workspace\danny-obs\Fukuoka Insider_Website) in sync with the same files and commit there too.
 - `vite.config.ts` must keep `assets: { binding: "ASSETS" }`; without it images and fonts are empty on Cloudflare.
 
 ## Commands
