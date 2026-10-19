@@ -28,7 +28,6 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const metadata: Metadata = {
   title: "Fukuoka Insider Real Estate",
   description: "Multilingual real estate support for building your life in Fukuoka.",
-  icons: { icon: `${basePath}/favicon.svg`, apple: `${basePath}/apple-touch-icon.png` },
 };
 
 export default function RootLayout({
@@ -40,6 +39,11 @@ export default function RootLayout({
     <html lang="zh-Hant" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: motionScript }} />
+        {/* Icons written straight into <head> (not streamed metadata) so Google's favicon crawler finds them without running scripts. */}
+        <link rel="icon" href={`${basePath}/favicon.ico`} sizes="48x48" />
+        <link rel="icon" href={`${basePath}/favicon.svg`} type="image/svg+xml" />
+        <link rel="icon" href={`${basePath}/icon-192.png`} type="image/png" sizes="192x192" />
+        <link rel="apple-touch-icon" href={`${basePath}/apple-touch-icon.png`} />
       </head>
       <body>
         {children}
