@@ -565,4 +565,5 @@
 - Homepage estimator lighter: rental card shows the total only (breakdown on the estimator page); buying items in two columns (tags on phones).
 - Contact page office photo: Danny's building entrance photo (IMG_7944, straightened).
 - Checked: lint, 26 tests, build; crawl of all three languages at 360/390/834 px clean (no errors, no horizontal scroll); in-site navigation and prefetch cache fine; reveals complete after in-site navigation. Demo video sent to Danny.
-- Waiting for Danny's OK before merging into main (merging deploys to fukuoka.house).
+- Danny approved (13:03); merged into main (0a46609), Cloudflare build succeeded, live on fukuoka.house.
+- Live check: a fast crawl right after the deploy (4 requests/s, cache empty) got error 1102 on 21 article pages, and for a minute even single requests to article pages failed (Workers Free 10 ms CPU limit; Cloudflare briefly throttles after repeated overruns). One minute later a normal-pace crawl of all 80 pages returned 200 with no retries, and all pages are now in the edge cache. Same limitation as on 2026-10-17: Workers Paid ($5/month) removes it; until then, avoid fast crawls right after a deploy.
