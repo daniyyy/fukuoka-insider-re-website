@@ -6,7 +6,6 @@ import { notFound, redirect } from "next/navigation";
 import { ArticleBody } from "@/components/guides/ArticleBody";
 import { AnalyticsLink } from "@/components/analytics/AnalyticsLink";
 import { GuideIndex } from "@/components/guides/GuideCard";
-import { HakataPanel } from "@/components/site/HakataPanel";
 import { ConsultBand } from "@/components/site/ConsultBand";
 import { ArrowIcon } from "@/components/site/Icons";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -87,6 +86,7 @@ export default async function GuideArticlePage({ params }: PageProps) {
     <div className="fi-page fi-article">
       <SiteHeader locale={locale} currentPath={guidePath(locale, guide.category, guide.slug)} localePaths={localePaths} />
       <main id="top">
+        <div className="fi-progress" aria-hidden="true" />
         <article>
           <header className="fi-article-hero">
             <div className="fi-shell fi-article-hero__grid">
@@ -105,7 +105,6 @@ export default async function GuideArticlePage({ params }: PageProps) {
                 <span>{guide.author ?? t.companyAuthor}</span>
               </p>
             </div>
-            <HakataPanel className="fi-hakata--article" />
             </div>
           </header>
           {guide.coverImage ? (

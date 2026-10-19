@@ -36,13 +36,13 @@ type ArticleMeta = {
 
 
 const articles: ArticleMeta[] = [
-  { slug: "guarantor-company-and-joint-guarantor", published: "2026-08-03", category: "renting", serviceContext: "rent", featuredOrder: 1, photo: "planning", tags: ["租屋", "保證公司", "申請"],
+  { slug: "guarantor-company-and-joint-guarantor", published: "2026-08-03", category: "renting", serviceContext: "rent", featuredOrder: 2, tags: ["租屋", "保證公司", "申請"],
     excerpt: "連帶保證人和保證公司有什麼分別？為什麼預繳租金也不能代替保證公司審查？",
     en: { excerpt: "What is the difference between a joint guarantor and a guarantee company, and why can't paying rent in advance replace a guarantee company's screening?", tags: ["renting", "guarantee company", "application"] } },
-  { slug: "rental-initial-costs-reikin-shikikin", published: "2026-08-03", category: "renting", serviceContext: "rent", featuredOrder: 2, photo: "apartment", tags: ["租屋", "初期費用"],
+  { slug: "rental-initial-costs-reikin-shikikin", published: "2026-08-03", category: "renting", serviceContext: "rent", featuredOrder: 1, photo: "apartment", tags: ["租屋", "初期費用"],
     excerpt: "月租 6 萬日圓，初期費用卻接近 30 萬？逐項拆解敷金、禮金與報價單上的其他費用。",
     en: { excerpt: "A monthly rent of ¥60,000 but initial costs of nearly ¥300,000? A line-by-line breakdown of the deposit, key money and the other costs on your quote.", tags: ["renting", "initial costs"] } },
-  { slug: "fukuoka-late-night-garbage-collection", published: "2026-08-03", category: "living-in-fukuoka", serviceContext: "living-support", featuredOrder: 3, photo: "street", tags: ["福岡生活", "垃圾", "選房"],
+  { slug: "fukuoka-late-night-garbage-collection", published: "2026-08-03", category: "living-in-fukuoka", serviceContext: "living-support", featuredOrder: 3, tags: ["福岡生活", "垃圾", "選房"],
     excerpt: "福岡在深夜收垃圾。租屋前看清楚大樓的垃圾場類型，入住後會方便很多。",
     en: { excerpt: "Fukuoka collects rubbish late at night. Check what kind of rubbish area a building has before you rent, and life after moving in will be much easier.", tags: ["living in Fukuoka", "rubbish", "choosing a home"] } },
   { slug: "city-gas-vs-lp-gas", published: "2026-08-05", category: "living-in-fukuoka", serviceContext: "living-support", tags: ["福岡生活", "瓦斯", "選房"],

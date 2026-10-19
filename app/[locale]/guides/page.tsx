@@ -5,7 +5,6 @@ import { notFound, redirect } from "next/navigation";
 import { GuideFeature, GuideRow } from "@/components/guides/GuideCard";
 import { GuideIndexPreview } from "@/components/guides/GuideIndexPreview";
 import { GuideTopics } from "@/components/guides/GuideTopics";
-import { HakataPanel } from "@/components/site/HakataPanel";
 import { ConsultBand } from "@/components/site/ConsultBand";
 import { ArrowIcon } from "@/components/site/Icons";
 import { PageHero } from "@/components/site/PageHero";
@@ -51,7 +50,7 @@ export default async function GuidesPage({ params }: PageProps) {
     <div className="fi-page fi-guides">
       <SiteHeader locale={locale} currentPath={`/${locale}/guides`} localePaths={{ "zh-TW": "/zh-TW/guides", en: "/en/guides", ja: "/ja/" }} />
       <main id="top">
-        <PageHero title={t.heroTitle} lead={t.intro} id="guides-title" className="fi-page-hero--hakata" aside={<HakataPanel className="fi-hakata--hero" />} />
+        <PageHero title={t.heroTitle} lead={t.intro} id="guides-title" />
 
         {featured.length ? (
           <section className="fi-guides-feature" aria-labelledby="featured-title">

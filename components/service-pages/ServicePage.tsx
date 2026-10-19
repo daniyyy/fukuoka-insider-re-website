@@ -89,11 +89,11 @@ export async function ServicePage({ locale, service }: { locale: Locale; service
           <>
           <section className="fi-service-audience" aria-labelledby="audience-title">
             <div className="fi-shell fi-service-audience__grid">
-              <h2 className="fi-h2" id="audience-title">{sections.audienceTitle}</h2>
+              <h2 className="fi-service-audience__title" id="audience-title">{sections.audienceTitle}</h2>
               <ul className="fi-service-audience__list">
                 {sections.audiences.map((item) => (
                   <li key={item.title}>
-                    <h3 className="fi-h3">{item.title}</h3>
+                    <h3 className="fi-service-audience__name">{item.title}</h3>
                     <p>{item.body}</p>
                   </li>
                 ))}
@@ -150,6 +150,12 @@ export async function ServicePage({ locale, service }: { locale: Locale; service
                     <ArrowIcon />
                   </Link>
                 ) : null}
+                <div className="fi-service-limits">
+                  <h3 className="fi-service-limits__title" id="limits-title">{sections.limitsTitle}</h3>
+                  <ul className="fi-service-limits__list" aria-labelledby="limits-title">
+                    {sections.limits.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                </div>
               </div>
               <div className="fi-sheet">
                 <div className="fi-sheet__head">
@@ -171,14 +177,6 @@ export async function ServicePage({ locale, service }: { locale: Locale; service
             </div>
           </section>
 
-          <section className="fi-service-limits" aria-labelledby="limits-title">
-            <div className="fi-shell fi-service-limits__grid">
-              <h2 className="fi-service-limits__title" id="limits-title">{sections.limitsTitle}</h2>
-              <ul className="fi-service-limits__list">
-                {sections.limits.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </div>
-          </section>
           </>
         ) : <LivingSupportSections locale={locale} />}
 
@@ -225,9 +223,6 @@ export async function ServicePage({ locale, service }: { locale: Locale; service
               {others.map((item) => (
                 <li key={item.key}>
                   <Link className="fi-related-card" href={`/${locale}${item.route}`}>
-                    <span className="fi-related-card__image">
-                      <Image src={asset(serviceImages[item.key].src)} alt="" width={serviceImages[item.key].width} height={serviceImages[item.key].height} loading="lazy" sizes="(min-width: 1100px) 24vw, 100vw" />
-                    </span>
                     <span className="fi-related-card__text">
                       <span className="fi-related-card__title">{item.title}</span>
                       <span className="fi-related-card__desc">{item.audience}</span>

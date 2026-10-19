@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 
 import { ArrowIcon } from "@/components/site/Icons";
+import { useTweenedNumber } from "@/components/site/useTweenedNumber";
 import { AmountInput } from "@/components/tools/RentalEstimator";
 import type { Locale } from "@/config/site";
 import { toolsCopy } from "@/data/tools";
@@ -21,7 +22,7 @@ type Card = (typeof cards)[number];
  * Tablets and desktop show the two cards side by side; phones swipe between them, with a 租屋／買房 switch above.
  * Commercial properties are not estimated (different cost structure); a line under the cards points to consultation.
  */
-export function EstimatorTeaser({ locale }: { locale: Locale }) {
+export function EstimatorTeaser({ locale, compact = false }: { locale: Locale; compact?: boolean }) {
   const t = toolsCopy[locale].teaser;
   const rentalCopy = toolsCopy[locale].tools["rental-initial-cost"];
   const unit = rentalCopy.unitYen ?? "";
@@ -34,6 +35,7 @@ export function EstimatorTeaser({ locale }: { locale: Locale }) {
   const result = valid ? calculateRentalInitialCost({ ...rentalExample, rent: value }) : null;
   const lineAmount = (key: string) => result?.lines.find((line) => line.key === key)?.amount ?? 0;
   const mainTotal = mainRentalItems.reduce((sum, key) => sum + lineAmount(key), 0);
+  const shownTotal = useTweenedNumber(result ? result.total : null);
   const assumption = t.assumption
     .replace("{fee}", formatYen(rentalExample.commonFee, locale))
     .replace("{other}", formatYen(rentalExample.otherMonthly, locale));
@@ -53,7 +55,7 @@ export function EstimatorTeaser({ locale }: { locale: Locale }) {
   };
 
   return (
-    <div className="fi-estimates">
+    <div className={compact ? "fi-estimates fi-estimates--compact" : "fi-estimates"}>
       <div className="fi-estimates__switch" role="group" aria-label={t.switchLabel}>
         {cards.map((card) => (
           <button type="button" key={card} aria-pressed={active === card} aria-controls={`estimate-${card}`} onClick={() => show(card)}>
@@ -70,16 +72,17 @@ export function EstimatorTeaser({ locale }: { locale: Locale }) {
           </header>
           <label className="fi-estimate-card__label" htmlFor="teaser-rent">{t.rentLabel}</label>
           <AmountInput id="teaser-rent" value={rent} unit={unit} invalid={!valid} onChange={setRent} />
-          <div className="fi-estimate-card__result" aria-live="polite">
+          <div className="fi-estimate-card__result">
             <span>{t.resultLabel}</span>
-            <strong>{result ? formatYen(result.total, locale) : "—"}</strong>
+            <strong aria-hidden="true">{shownTotal !== null ? formatYen(shownTotal, locale) : "—"}</strong>
+            <span className="fi-visually-hidden" aria-live="polite">{result ? formatYen(result.total, locale) : "—"}</span>
           </div>
-          <ul className="fi-estimate-card__lines" aria-label={rentalCopy.resultTitle}>
+          {compact ? null : <ul className="fi-estimate-card__lines" aria-label={rentalCopy.resultTitle}>
             {mainRentalItems.map((key) => (
               <li key={key}><span>{rentalCopy.fields[key].label}</span><span>{result ? formatYen(lineAmount(key), locale) : "—"}</span></li>
             ))}
             <li><span>{rentalCopy.fields.other.label}</span><span>{result ? formatYen(result.total - mainTotal, locale) : "—"}</span></li>
-          </ul>
+          </ul>}
           <p className="fi-estimate-card__note">{assumption}</p>
           <Link className="fi-button fi-estimate-card__cta" href={`/${locale}/tools/rental-initial-cost${valid ? `?rent=${value}` : ""}`}>{t.cta}<ArrowIcon /></Link>
         </article>

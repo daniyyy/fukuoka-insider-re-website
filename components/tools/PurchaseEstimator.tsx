@@ -1,5 +1,6 @@
 "use client";
 
+import { TweenedValue } from "@/components/site/useTweenedNumber";
 import Link from "next/link";
 import { useRef, useState } from "react";
 
@@ -325,7 +326,7 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
           {result ? (
             <div className="fi-estimator__sticky" aria-hidden="true">
               <span>{t.result.costsTotal}<small>{t.result.reference}</small></span>
-              <strong>{formatYen(result.costsTotal, locale)}</strong>
+              <strong><TweenedValue value={result.costsTotal} format={(v) => formatYen(v, locale)} /></strong>
             </div>
           ) : null}
         </div>
@@ -341,7 +342,7 @@ export function PurchaseEstimator({ locale }: { locale: Locale }) {
               <dl className="fi-estimator__rows">{rows(result.later)}</dl>
               <div className="fi-estimator__total" aria-live="polite">
                 <span>{t.result.costsTotal}</span>
-                <strong>{formatYen(result.costsTotal, locale)}</strong>
+                <strong><TweenedValue value={result.costsTotal} format={(v) => formatYen(v, locale)} /></strong>
               </div>
               <p className="fi-estimator__reference">{t.result.percent(result.costsPercent, result.typicalPercent[0], result.typicalPercent[1])}</p>
               <p className="fi-estimator__monthly"><span>{t.result.grandTotal}</span><span>{formatYen(result.grandTotal, locale)}</span></p>

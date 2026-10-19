@@ -555,3 +555,14 @@
 - Shot list given to Danny (A: office exterior/interior, hands at work, residential streets, building exteriors with rights, empty interiors; B: guide-topic covers; C: atmosphere).
 - Portrait grading options shown (A natural unified, B warm monochrome; recommended B). No files changed yet.
 - Waiting for Danny: portrait option; reduce repeated images; shorten service pages (layout only); whether he will shoot list A.
+
+## 2026-10-19 — Visual upgrade, step 3a: motion and detail (branch `claude/motion-polish`, not yet on main)
+- Danny: portraits stay as they are (no black-and-white); do the other suggestions; focus on detail and motion (hover, how images appear, buttons and cards). He added 4 office exterior photos.
+- Motion layer `app/motion.css` + rewritten `components/site/MotionObserver.tsx` (see DESIGN.md "Motion update"): button fill wipe and arrow loop, round arrow buttons fill from the centre, ink rule under index rows on hover, text-link underline redraw, photos rise from below, linked photos zoom slowly, cards lift, content fade-and-rise with stagger, header hides on scroll down, estimator totals count (`components/site/useTweenedNumber.tsx`), scroll drift on hero and feature photos, article reading-progress thread, FAQ answers open smoothly (where supported). Active nav item underlined.
+- Fewer repeats: "Other services" text cards; guides 保證公司 / 半夜收垃圾 use typographic covers (validation no longer requires a photo for featured guides); 初期費用 is now featured first.
+- Hakata stripe only on the homepage「福岡生活資訊」(removed from Guides, category and article heroes).
+- Service pages shorter: 「這項服務適合」 is a compact strip under the hero; 「事先說明」 sits under the preparation text; section spacing tighter. Rent page desktop 6,203 → 5,168 px.
+- Homepage estimator lighter: rental card shows the total only (breakdown on the estimator page); buying items in two columns (tags on phones).
+- Contact page office photo: Danny's building entrance photo (IMG_7944, straightened).
+- Checked: lint, 26 tests, build; crawl of all three languages at 360/390/834 px clean (no errors, no horizontal scroll); in-site navigation and prefetch cache fine; reveals complete after in-site navigation. Demo video sent to Danny.
+- Waiting for Danny's OK before merging into main (merging deploys to fukuoka.house).

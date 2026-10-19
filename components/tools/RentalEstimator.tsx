@@ -1,5 +1,6 @@
 "use client";
 
+import { TweenedValue } from "@/components/site/useTweenedNumber";
 import Link from "next/link";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
@@ -283,7 +284,7 @@ export function RentalEstimator({ locale, guides = { items: {} } }: { locale: Lo
           {result ? (
             <div className="fi-estimator__sticky" aria-hidden="true">
               <span>{t.total}<small>{t.reference}</small></span>
-              <strong>{formatYen(result.total, locale)}</strong>
+              <strong><TweenedValue value={result.total} format={(v) => formatYen(v, locale)} /></strong>
             </div>
           ) : null}
         </div>
@@ -302,7 +303,7 @@ export function RentalEstimator({ locale, guides = { items: {} } }: { locale: Lo
               </dl>
               <div className="fi-estimator__total" aria-live="polite">
                 <span>{t.total}</span>
-                <strong>{formatYen(result.total, locale)}</strong>
+                <strong><TweenedValue value={result.total} format={(v) => formatYen(v, locale)} /></strong>
               </div>
               <p className="fi-estimator__reference">{t.reference}</p>
             </>

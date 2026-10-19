@@ -81,6 +81,7 @@ type SiteHeaderProps = {
 export function SiteHeader({ locale, currentPath, localePaths, tone = "solid" }: SiteHeaderProps) {
   const [open, setOpen] = useState(false);
   const [stuck, setStuck] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const menuId = "site-mobile-menu";
   const copy = labels[locale];
   const links: [string, string][] = [
@@ -94,10 +95,29 @@ export function SiteHeader({ locale, currentPath, localePaths, tone = "solid" }:
 
   useEffect(() => {
     const threshold = tone === "overlay" ? 140 : 8;
-    const update = () => setStuck(window.scrollY > threshold);
+    // Hide the bar while reading down the page; bring it back as soon as the visitor scrolls up.
+    let last = window.scrollY;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const y = window.scrollY;
+      setStuck(y > threshold);
+      const delta = y - last;
+      if (Math.abs(delta) > 6) {
+        setHidden(delta > 0 && y > 480);
+        last = y;
+      }
+      if (y < 120) setHidden(false);
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
     update();
-    window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, [tone]);
 
   useEffect(() => {
@@ -110,7 +130,7 @@ export function SiteHeader({ locale, currentPath, localePaths, tone = "solid" }:
   }, [open]);
 
   const onPhoto = tone === "overlay" && !stuck && !open;
-  const classes = ["fi-header", `fi-header--${tone}`, stuck ? "is-stuck" : "", open ? "is-open" : ""].filter(Boolean).join(" ");
+  const classes = ["fi-header", `fi-header--${tone}`, stuck ? "is-stuck" : "", open ? "is-open" : "", hidden && !open ? "is-hidden" : ""].filter(Boolean).join(" ");
 
   return (
     <header className={classes}>
@@ -126,7 +146,7 @@ export function SiteHeader({ locale, currentPath, localePaths, tone = "solid" }:
         </Link>
         <nav className="fi-header__nav" aria-label={copy.navigation}>
           {links.map(([href, text]) => (
-            <Link className="fi-header__link" href={href} key={text}>{text}</Link>
+            <Link className="fi-header__link" href={href} key={text} aria-current={currentPath?.startsWith(href) ? "page" : undefined}>{text}</Link>
           ))}
           <LanguageLinks currentPath={currentPath} locale={locale} localePaths={localePaths} label={copy.language} />
           <AnalyticsLink

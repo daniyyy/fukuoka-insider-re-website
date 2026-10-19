@@ -37,3 +37,12 @@ Originals are in the Danny's folder `照片/` (not in git). Web versions are exp
 ## 2026-10-16 — Ricky 新照片（活動演講）
 - Danny 提供 Ricky 在九州國際新世代藝術展（HORIZON）演講的照片。裁成 4:5 人物照（721×901，與 Danny 照片相同大小），用於首頁及關於我們。
 - 原檔（縮小至 2304×1536 保存）：`assets/source/people/ricky-3-original.jpg`。之前的照片保留為 `ricky-2-original.png`。
+
+## 2026-10-19 — Office building entrance (Danny)
+- Danny took 4 photos outside the Otemon office (IMG_7942–7945). Used: IMG_7944 (building entrance), perspective-corrected (verticals straightened), cropped 4:3 around the entrance, light grade (saturation −14%, contrast +4%, slightly warm). Web file `public/images/office/fukuoka-insider-building.webp` (1600×1199), contact page「辦公室」. Original: `assets/source/photos/office/IMG_7944.HEIC`.
+- Not used: IMG_7942 (car number plates in frame), IMG_7943 (empty road), IMG_7945 (street with other businesses' signs).
+- The old desk photo `office/fukuoka-insider-office-desk.webp` is no longer used on the site.
+
+## 2026-10-19 — Fewer repeated images
+- Guides「保證公司」and「半夜收垃圾」no longer use photos (they repeated the property-management and buy-sell images); featured guides without a photo get a typographic cover (category colour, the title's key phrase, logo symbol). 「初期費用」keeps the studio photo and is now the first featured guide.
+- Service pages: "Other services" are text cards (no thumbnails).
