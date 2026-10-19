@@ -222,7 +222,7 @@
   transform-origin: top; transition: transform 900ms var(--fi-ease-out);
 }
 .fi-guide-cover__top { display: flex; align-items: center; gap: 0.75rem; font-size: var(--fi-size-meta); font-weight: 500; letter-spacing: 0.06em; opacity: 0.86; }
-.fi-guide-cover__top img { width: 1.75rem; height: auto; }
+.fi-guide-cover .fi-guide-cover__top img { width: 1.5rem; height: auto; aspect-ratio: auto; object-fit: contain; transition: none; }
 .fi-guide-cover__phrase {
   max-width: 88%;
   font-family: var(--fi-font-serif); font-weight: 600;
