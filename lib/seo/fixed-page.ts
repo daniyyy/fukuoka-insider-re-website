@@ -13,7 +13,8 @@ export function fixedPageMetadata(locale: Locale, route: string, title: string, 
   const canonical = absoluteSiteUrl(path(locale));
   const image = { url: ogImageUrl(locale, ogKey), width: 1200, height: 630, alt: title };
   return {
-    title: `${title} | Fukuoka Insider`,
+    // Long titles drop the brand suffix so search results can show the whole title.
+    title: title.length > 45 ? title : `${title} | Fukuoka Insider`,
     description,
     alternates: { canonical, languages: Object.fromEntries(siteConfig.locales.map((language) => [language, absoluteSiteUrl(path(language))])) },
     openGraph: { title, description, url: canonical, siteName: siteConfig.name, type: "website", images: [image] },

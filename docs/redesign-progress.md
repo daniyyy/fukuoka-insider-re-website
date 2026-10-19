@@ -541,3 +541,8 @@
 ## 2026-10-19 — Google showed the fukuoka.cc icon for fukuoka.house
 - Cause: before launch fukuoka.house forwarded to fukuoka.cc, so Google cached that site's icon; our icon links were streamed into <body> (vinext metadata) and /favicon.ico returned 404, so Google's favicon crawler kept the old one.
 - Fix: public/favicon.ico (16/32/48, from the「[ I」symbol) and public/icon-192.png added; icon links written directly in <head> in app/layout.tsx (metadata.icons removed). Google refreshes favicons on its own schedule (days to weeks); requesting re-indexing of https://fukuoka.house/zh-TW in Search Console can speed it up.
+
+## 2026-10-19 — SEO wording
+- Danny found fukuoka.house does not show for 「福岡 不動產」. Technical SEO was already in place; causes: site 3 days old, competitive keyword, no backlinks yet, and the site said 「房地產」 while Taiwanese visitors search 「不動產」.
+- Changed (3 languages): homepage title/description (不動產, 租屋, 買房, 物業管理, Hong Kong / Taiwan clients), hero intro starts 「我們是福岡的不動產公司」, rent / buy-sell / property-management page titles with what visitors look for; long titles drop the brand suffix (lib/seo/fixed-page.ts).
+- Suggested to Danny (bigger effect): Google Business Profile with the website, links from Instagram / Threads / fukuokainsider.com, keep publishing guides.

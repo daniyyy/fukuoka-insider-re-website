@@ -124,7 +124,7 @@ export const serviceDetailCopy: { [K in ServiceKey]: Record<Locale, K extends "l
   rent: {
     "zh-TW": {
       title: "租屋服務",
-      metaTitle: "福岡租屋服務",
+      metaTitle: "福岡租屋｜中文協助找房到簽約",
       description: "在福岡找住宅、辦公室或店舖，可用中文、廣東話、日語或英語與我們溝通。人在海外，也可以先開始諮詢。",
       highlights: ["住宅", "辦公室", "商業空間"],
       imageNote: "圖片為示意圖，並非實際出租物件。",
@@ -167,7 +167,7 @@ export const serviceDetailCopy: { [K in ServiceKey]: Record<Locale, K extends "l
     },
     ja: {
       title: "賃貸",
-      metaTitle: "福岡の賃貸サポート",
+      metaTitle: "福岡の賃貸｜中国語・英語で部屋探しから契約まで",
       description: "福岡で住まい・オフィス・店舗を探す方を、中国語・広東語・日本語・英語でサポートします。海外からでもご相談いただけます。",
       highlights: ["住居", "オフィス", "店舗・事業用"],
       imageNote: "画像はイメージです。実際の募集物件ではありません。",
@@ -210,7 +210,7 @@ export const serviceDetailCopy: { [K in ServiceKey]: Record<Locale, K extends "l
     },
     en: {
       title: "Rental",
-      metaTitle: "Renting in Fukuoka",
+      metaTitle: "Renting in Fukuoka | Help from Search to Signing",
       description: "Find a home, office, or shop in Fukuoka with support in Mandarin, Cantonese, Japanese, or English. You can start from overseas.",
       highlights: ["Homes", "Offices", "Commercial space"],
       imageNote: "Illustrative image, not an actual listing.",
@@ -255,7 +255,7 @@ export const serviceDetailCopy: { [K in ServiceKey]: Record<Locale, K extends "l
   "buy-sell": {
     "zh-TW": {
       title: "房產買賣",
-      metaTitle: "福岡房產買賣",
+      metaTitle: "福岡買房・賣房｜海外買家適用",
       description: "計劃在福岡買房，或考慮出售福岡的物業，都可以從整理條件與資料開始，由宅地建物取引士提供專業支援。",
       highlights: ["買房", "賣房"],
       imageNote: "圖片為福岡住宅區情境，並非指定出售物業。",
@@ -298,7 +298,7 @@ export const serviceDetailCopy: { [K in ServiceKey]: Record<Locale, K extends "l
     },
     ja: {
       title: "不動産売買",
-      metaTitle: "福岡の不動産売買",
+      metaTitle: "福岡の不動産売買｜海外からの購入にも対応",
       description: "福岡での購入、または福岡の物件の売却をご検討の方へ。条件と資料の整理から、宅地建物取引士がサポートします。",
       highlights: ["購入", "売却"],
       imageNote: "写真は福岡の住宅街のイメージで、特定の販売物件ではありません。",
@@ -341,7 +341,7 @@ export const serviceDetailCopy: { [K in ServiceKey]: Record<Locale, K extends "l
     },
     en: {
       title: "Buy & Sell",
-      metaTitle: "Buying and Selling Property in Fukuoka",
+      metaTitle: "Buying and Selling Property in Fukuoka | Overseas Buyers Welcome",
       description: "Whether you plan to buy in Fukuoka or sell a Fukuoka property, we start by organising your criteria and documents, with support from a Licensed Real Estate Transaction Specialist.",
       highlights: ["Buying", "Selling"],
       imageNote: "The photograph shows a Fukuoka neighbourhood, not a property for sale.",
@@ -386,7 +386,7 @@ export const serviceDetailCopy: { [K in ServiceKey]: Record<Locale, K extends "l
   "property-management": {
     "zh-TW": {
       title: "物業管理",
-      metaTitle: "福岡物業管理",
+      metaTitle: "福岡物業管理｜海外業主代管",
       description: "您不在福岡時，由我們按約定範圍處理出租物業或度假別墅的日常事項，並定期向您回報。",
       highlights: ["出租物業管理", "第二居所管理"],
       audienceTitle: "這項服務適合",
@@ -428,7 +428,7 @@ export const serviceDetailCopy: { [K in ServiceKey]: Record<Locale, K extends "l
     },
     ja: {
       title: "物件管理",
-      metaTitle: "福岡の物件管理",
+      metaTitle: "福岡の物件管理｜海外オーナーの管理代行",
       description: "オーナー様が福岡にいなくても、合意した範囲で賃貸物件や別荘の日常業務を行い、定期的にご報告します。",
       highlights: ["賃貸管理", "セカンドハウス管理"],
       audienceTitle: "このような方に",
@@ -470,7 +470,7 @@ export const serviceDetailCopy: { [K in ServiceKey]: Record<Locale, K extends "l
     },
     en: {
       title: "Property Management",
-      metaTitle: "Property Management in Fukuoka",
+      metaTitle: "Property Management in Fukuoka | For Overseas Owners",
       description: "When you can't be in Fukuoka, we handle day-to-day matters for your rental property or holiday home within the agreed scope, and report back regularly.",
       highlights: ["Rental management", "Second-home management"],
       audienceTitle: "Who this is for",

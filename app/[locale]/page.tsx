@@ -69,7 +69,7 @@ type HomepageCopy = {
 const copy: Record<Locale, HomepageCopy> = {
   "zh-TW": {
     heroLines: ["福岡生活，", "由在地人帶路。"],
-    intro: "我們在福岡為日本及海外客戶提供租屋、房產買賣與物業管理服務，可用中文、廣東話、日語或英語與我們溝通。",
+    intro: "我們是福岡的不動產公司，為日本及海外客戶提供租屋、房產買賣與物業管理服務，可用中文、廣東話、日語或英語與我們溝通。",
     cta: "免費諮詢",
     servicesHeading: "服務與支援",
     services: [
@@ -110,7 +110,7 @@ const copy: Record<Locale, HomepageCopy> = {
   },
   ja: {
     heroLines: ["Build Your Life", "in Fukuoka."],
-    intro: "福岡で、国内外のお客様の賃貸・不動産売買・物件管理に対応しています。中国語・広東語・日本語・英語でご相談いただけます。",
+    intro: "福岡の不動産会社として、国内外のお客様の賃貸・不動産売買・物件管理に対応しています。中国語・広東語・日本語・英語でご相談いただけます。",
     cta: "無料相談",
     servicesHeading: "サービスとサポート",
     services: [
@@ -151,7 +151,7 @@ const copy: Record<Locale, HomepageCopy> = {
   },
   en: {
     heroLines: ["Build Your Life", "in Fukuoka."],
-    intro: "We help clients in Japan and overseas with rentals, property transactions, and management in Fukuoka. Talk to us in Mandarin, Cantonese, Japanese, or English.",
+    intro: "We are a Fukuoka real estate company helping clients in Japan and overseas with rentals, property transactions, and management. Talk to us in Mandarin, Cantonese, Japanese, or English.",
     cta: "Free Consultation",
     servicesHeading: "Services & Support",
     services: [
@@ -195,8 +195,14 @@ const copy: Record<Locale, HomepageCopy> = {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  const title = locale === "zh-TW" ? "福岡房地產服務" : locale === "ja" ? "福岡の不動産サービス" : "Real Estate Services in Fukuoka";
-  return fixedPageMetadata(locale, "", title, copy[locale].intro);
+  // Search titles and descriptions (Danny 2026-10-19): the words visitors search for — 不動產, 租屋, 買房, Hong Kong / Taiwan.
+  const title = { "zh-TW": "福岡不動產｜租屋・買房・物業管理｜中文服務", ja: "福岡の不動産｜賃貸・売買・物件管理｜中国語・英語対応", en: "Fukuoka Real Estate | Renting, Buying & Property Management" }[locale];
+  const description = {
+    "zh-TW": "福岡的不動產公司，為香港、台灣及海外客戶提供租屋、買房、賣房及物業管理服務，可用中文、廣東話、日語或英語溝通。持有宅地建物取引業免許。",
+    ja: "福岡の不動産会社。賃貸・売買・物件管理を、中国語・広東語・日本語・英語でサポートします。香港・台湾など海外のお客様にも対応しています。宅地建物取引業免許保有。",
+    en: "A Fukuoka real estate company helping clients from Hong Kong, Taiwan and overseas with renting, buying, selling and property management, in Mandarin, Cantonese, Japanese or English. Licensed real estate brokerage.",
+  }[locale];
+  return fixedPageMetadata(locale, "", title, description);
 }
 
 const serviceRoutes = ["rent", "buy-sell", "property-management", "living-support"] as const;
