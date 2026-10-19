@@ -119,7 +119,7 @@ export default async function ContactPage({ params }: PageProps) {
           <div className="fi-shell fi-contact-office__grid">
             <figure className="fi-contact-office__figure">
               <div className="fi-frame">
-                <Image src={asset("/images/office/fukuoka-insider-office-desk.webp")} alt={locale === "zh-TW" ? "Fukuoka Insider 辦公室內的接待桌" : locale === "ja" ? "Fukuoka Insider 事務所の受付" : "The reception desk at the Fukuoka Insider office"} width={572} height={429} loading="lazy" sizes="(min-width: 1100px) 40vw, 100vw" />
+                <Image src={asset("/images/office/fukuoka-insider-building.webp")} alt={locale === "zh-TW" ? "Fukuoka Insider 辦公室所在大樓的入口" : locale === "ja" ? "Fukuoka Insider 事務所が入るビルの入口" : "The entrance of the building where the Fukuoka Insider office is"} width={1600} height={1199} loading="lazy" sizes="(min-width: 1100px) 40vw, 100vw" />
               </div>
             </figure>
             <div className="fi-contact-office__copy">

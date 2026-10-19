@@ -282,7 +282,7 @@ export default async function LocaleHome({
               <h2 className="fi-h2" id="estimate-title">{toolsCopy[locale].teaser.title.split("|").map((phrase) => <span className="fi-phrase" key={phrase}>{phrase}</span>)}</h2>
               <p className="fi-body">{toolsCopy[locale].teaser.body}</p>
             </header>
-            <EstimatorTeaser locale={locale} />
+            <EstimatorTeaser locale={locale} compact />
           </div>
         </section>
 

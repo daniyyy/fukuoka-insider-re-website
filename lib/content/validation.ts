@@ -28,7 +28,7 @@ export function contentValidationErrors(source: EditorialSource): string[] {
     pairing.add(translationKey);
     if (!hasText(guide.title) || !hasText(guide.excerpt) || !guide.body.length) errors.push(`Guide ${guide.id} needs title, summary, and body`);
     if (guide.coverImage !== undefined && (!guide.coverImage.startsWith("/images/") || !hasText(guide.coverAlt))) errors.push(`Guide ${guide.id} has an unsupported image path or missing image alt text`);
-    if (guide.featured && !guide.coverImage) errors.push(`Featured Guide ${guide.id} needs a photograph`);
+    // Featured guides without a photograph get a typographic cover (components/guides/GuideCard.tsx, 2026-10-19).
     if (guide.status === "published") {
       if (!validDate(guide.publishedAt) || !validDate(guide.editorialApprovedAt)) errors.push(`Published Guide ${guide.id} needs publication and editorial approval dates`);
     } else if (guide.publishedAt) {

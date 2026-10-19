@@ -15,6 +15,7 @@ import "./design-system.css";
 import "./home.css";
 import "./services.css";
 import "./pages.css";
+import "./motion.css";
 
 import { EventBeacon } from "@/components/analytics/EventBeacon";
 import { MotionObserver } from "@/components/site/MotionObserver";

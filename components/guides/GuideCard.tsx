@@ -8,7 +8,33 @@ import { guidePath } from "@/lib/content/paths";
 import type { GuideLocale, GuideSummary } from "@/lib/content/types";
 import { Phrases } from "@/components/site/Phrases";
 
-/** Photo card for featured guides: photograph, category, full title, summary. */
+/** Key phrase for a typographic cover: the title up to its first break (、，：？！ or : ? !). */
+function coverPhrase(title: string) {
+  const match = title.match(/^(.+?)[，,：:？?！!]/);
+  const phrase = (match ? match[1] : title).trim();
+  return phrase.length >= 4 ? phrase : title;
+}
+
+/**
+ * Typographic cover for guides without a photograph (Danny 2026-10-19: no stock or generated images on guides).
+ * Category colour, the title's key phrase in serif, the logo symbol and one gold Hakata thread.
+ */
+function GuideCover({ guide }: { guide: GuideSummary }) {
+  const locale = guide.locale as GuideLocale;
+  const dark = guide.category === "renting";
+  return (
+    <span className={`fi-guide-card__image fi-guide-cover fi-guide-cover--${guide.category}`} aria-hidden="true">
+      <span className="fi-guide-cover__top">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={asset(dark ? "/images/brand/symbol-light.svg" : "/images/brand/symbol-dark.svg")} alt="" width={22} height={22} />
+        <span>{guideCategoryCopy[locale][guide.category].label}</span>
+      </span>
+      <span className="fi-guide-cover__phrase">{coverPhrase(guide.title)}</span>
+    </span>
+  );
+}
+
+/** Photo card for featured guides: photograph (or typographic cover), category, full title, summary. */
 export function GuideCard({ guide, lead = false, headingLevel = 3, priority = false }: { guide: GuideSummary; lead?: boolean; headingLevel?: 2 | 3; priority?: boolean }) {
   const Heading = headingLevel === 2 ? "h2" : "h3";
   const locale = guide.locale as GuideLocale;
@@ -26,7 +52,7 @@ export function GuideCard({ guide, lead = false, headingLevel = 3, priority = fa
               sizes={lead ? "(min-width: 1100px) 55vw, 100vw" : "(min-width: 1100px) 30vw, (min-width: 720px) 50vw, 100vw"}
             />
           </span>
-        ) : null}
+        ) : <GuideCover guide={guide} />}
         <span className="fi-guide-card__category">{guideCategoryCopy[locale][guide.category].label}</span>
         <Heading className="fi-guide-card__title"><Phrases text={guide.title} /></Heading>
         <p className="fi-guide-card__summary">{guide.excerpt}</p>

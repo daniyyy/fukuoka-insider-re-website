@@ -4,7 +4,6 @@ import { notFound, redirect } from "next/navigation";
 
 import { GuideIndex } from "@/components/guides/GuideCard";
 import { GuideTopics } from "@/components/guides/GuideTopics";
-import { HakataPanel } from "@/components/site/HakataPanel";
 import { ConsultBand } from "@/components/site/ConsultBand";
 import { ArrowIcon } from "@/components/site/Icons";
 import { PageHero } from "@/components/site/PageHero";
@@ -55,7 +54,7 @@ export default async function GuideCategoryPage({ params }: PageProps) {
     <div className="fi-page fi-guides">
       <SiteHeader locale={locale} currentPath={guideCategoryPath(locale, category)} localePaths={{ [locale]: guideCategoryPath(locale, category), [alternateLocale]: alternateGuides.length ? guideCategoryPath(alternateLocale, category) : `/${alternateLocale}/guides`, ja: "/ja/" }} />
       <main id="top">
-        <PageHero title={categoryCopy.label} lead={categoryCopy.description} id="category-title" className="fi-page-hero--hakata" aside={<HakataPanel className="fi-hakata--hero" />} crumbs={[{ href: `/${locale}/guides`, label: t.allGuides }, { label: categoryCopy.label }]} />
+        <PageHero title={categoryCopy.label} lead={categoryCopy.description} id="category-title" crumbs={[{ href: `/${locale}/guides`, label: t.allGuides }, { label: categoryCopy.label }]} />
         {guides.length ? (
           <section className="fi-guides-list fi-guides-list--category" id="index" aria-labelledby="category-title">
             <div className="fi-shell">
