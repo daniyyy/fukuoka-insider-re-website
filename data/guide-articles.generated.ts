@@ -3743,5 +3743,301 @@ export const importedArticles: Record<string, ImportedArticle> = {
         "text": "If you're looking for a home in Fukuoka or have questions about equipment and day-to-day details, feel free to get in touch with me any time. I hope my first-hand local information means you'll be a little less caught off guard, even before you move in."
       }
     ]
+  },
+  "en/how-early-to-start-renting-in-fukuoka": {
+    "number": 53,
+    "sourceStatus": "已發佈",
+    "title": "How far ahead should you start looking for a rental in Fukuoka? \"The earlier you book, the safer\" is a misunderstanding",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Many friends from Hong Kong and Taiwan who are planning a move to Fukuoka think the same thing: \"If I lock in a flat six months ahead, I can move straight in and feel secure.\""
+      },
+      {
+        "type": "paragraph",
+        "text": "But in Fukuoka, earlier is not necessarily better."
+      },
+      {
+        "type": "paragraph",
+        "text": "The answer is: start looking about 6 weeks before your move-in date, and decide on your application about 4 weeks before at the latest."
+      },
+      {
+        "type": "paragraph",
+        "text": "Say you want to move in on 1 December. Counting back, the timeline looks roughly like this:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**About 6 weeks before move-in (mid-October):** start looking for a place",
+          "**About 5 weeks before (late October):** decide on your application, at the latest about 4 weeks before (end of October)",
+          "**The following 3 to 4 weeks (November):** screening → cleaning → signing the lease",
+          "**1 December:** move in"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "※ Reminder: February to April is the peak moving season, and properties go quickly. Fukuoka's rental stock is fairly tight to begin with, and Japanese people are looking for homes too, so it is a little harder for foreign residents. During this period, start even earlier."
+      },
+      {
+        "type": "paragraph",
+        "text": "Where do these timings come from? Let's break them down one by one."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "1. An application is not one step; it takes 3 to 4 weeks",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Many clients assume that once they like a property, they \"apply\" (mōshikomi, 申込) and can then move in."
+      },
+      {
+        "type": "paragraph",
+        "text": "In reality, going from application to move-in in Fukuoka usually takes 3 to 4 weeks:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Application → screening → cleaning → signing the lease → move-in"
+      },
+      {
+        "type": "paragraph",
+        "text": "Screening includes a check by the guarantee company (hoshō kaisha, 保証会社). For details, see my earlier article \"What does the guarantee company usually ask foreigners on the screening call?\""
+      },
+      {
+        "type": "paragraph",
+        "text": "So if you want to move in on 1 December and only apply in mid-November, it is usually too late."
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "2. Why is \"the earlier you book, the safer\" a misunderstanding?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "From the management company's (kanri gaisha, 管理会社) point of view, it is very simple:"
+      },
+      {
+        "type": "paragraph",
+        "text": "If you book a property for move-in six months from now, that flat has to stay empty for six months."
+      },
+      {
+        "type": "paragraph",
+        "text": "For those six months, the landlord receives no rent at all."
+      },
+      {
+        "type": "paragraph",
+        "text": "So most management companies will not accept this kind of arrangement. Instead, they will ask you to **bring forward the start date of the lease (keiyaku kaishibi, 契約開始日)**. In other words, you have not even moved in, but the rent has already started to be charged."
+      },
+      {
+        "type": "paragraph",
+        "text": "※ Note: booking early is essentially paying for peace of mind. Unless you are happy to pay extra rent for nothing, applying too early makes no sense."
+      },
+      {
+        "type": "paragraph",
+        "text": "There are two exceptions, however:"
+      },
+      {
+        "type": "paragraph",
+        "text": "① **\"Move in within 1 month\" is not a hard rule.** A difference of about a week either way can usually be discussed, but in the end it depends on each management company's judgement, and every case is different."
+      },
+      {
+        "type": "paragraph",
+        "text": "② **New-build properties.** If your move-in date lines up with the completion date, you can apply early. For example, if a building is completed on 1 June, you can apply in February and move in on 1 June. But if you apply in February and want to wait until 1 September to move in, that will not work: a completed building cannot sit there without collecting rent either."
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "3. Should you keep waiting for new listings?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "How do listings appear? Roughly like this:"
+      },
+      {
+        "type": "paragraph",
+        "text": "A tenant gives notice to leave to the management company (in most of Fukuoka, 1 month in advance) → once the management company receives it, the listing usually goes online within about a week → cleaning and repairs after the tenant moves out → only then can you actually move in"
+      },
+      {
+        "type": "paragraph",
+        "text": "For example:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "1 Sept: a tenant gives notice that they will move out on 1 Oct",
+          "Within about a week after 1 Sept: the property is listed online",
+          "1 Oct: the tenant moves out",
+          "Around 1 Nov: cleaning and repairs are finished, and you can actually move in"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "In other words, from the tenant moving out to you being able to move in takes about a month."
+      },
+      {
+        "type": "paragraph",
+        "text": "When a property is listed, the current tenant may not have left yet. This does not affect your application; you just cannot view the flat for the time being."
+      },
+      {
+        "type": "paragraph",
+        "text": "Also, how long cleaning and repairs really take is only known after the previous tenant has moved out. If the flat is left in a poor state, it will take longer than expected."
+      },
+      {
+        "type": "paragraph",
+        "text": "So the answer to \"should I keep waiting for new listings?\" depends on how long you have until your move-in date: if you still have 6 weeks or more, you can wait a little longer; once you are about 5 weeks away, it is best to decide, rather than leaving it to the last 4 weeks."
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "💡 Local insight: the one who loses out is usually the one who is too late, not too early",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Helping clients from Hong Kong and Taiwan find homes on the front line, what I see is this: many clients think applying for a flat is a simple matter, and only after going through application, screening, cleaning and signing do they find out it takes 3 to 4 weeks."
+      },
+      {
+        "type": "paragraph",
+        "text": "Please add these suggestions to your preparation list:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Set your move-in date first, then count backwards:** don't look for a flat first and think about when to move in later.",
+          "**Don't be fooled by \"book early\":** unless you are willing to pay rent early, booking early brings no benefit.",
+          "**Don't leave it to the last minute:** decide about 4 weeks before at the latest; deciding 5 weeks before will be more comfortable."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "If you are planning a move to Fukuoka, or have questions about how to schedule your move-in date, feel free to get in touch with me any time. I hope my first-hand local information can help you time your move-in just right."
+      }
+    ]
+  },
+  "en/emergency-contact-without-japanese-friends": {
+    "number": 55,
+    "sourceStatus": "已發佈",
+    "title": "No Japanese friends or family? What to do about the \"emergency contact\"",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "When applying for a rental in Fukuoka, many people get stuck halfway through the form on the same box: \"emergency contact\" (kinkyū renrakusaki, 緊急連絡先)."
+      },
+      {
+        "type": "paragraph",
+        "text": "The box usually asks for someone who lives in Japan and speaks Japanese. If you have just arrived in Fukuoka, or are still in Hong Kong or Taiwan, and there is simply nobody like that around you, what can you do?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Let's start with the conclusion: you must fill in this box, and without it you cannot apply."
+      },
+      {
+        "type": "paragraph",
+        "text": "But its requirements and responsibilities are a different matter from those of a joint guarantor. Today let's unpack this box, and talk about what options you have when you have no friends or family in Japan."
+      },
+      {
+        "type": "heading",
+        "id": "section-1",
+        "text": "1. What is an emergency contact? How is it different from a joint guarantor?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "An emergency contact is a person the management company can call when it cannot reach the tenant, or in an emergency. It is a **required box** on the application form."
+      },
+      {
+        "type": "paragraph",
+        "text": "A joint guarantor (rentai hoshōnin, 連帯保証人) is different. When a tenant cannot pay the rent, the joint guarantor has to take on the financial liability."
+      },
+      {
+        "type": "paragraph",
+        "text": "An emergency contact does not take on financial liability such as rent, and that is the biggest difference between the two. For the details of guarantee companies and joint guarantors, see my earlier article \"[Guarantee companies and joint guarantors: do foreigners really have to apply?](/en/guides/renting/guarantor-company-and-joint-guarantor)\""
+      },
+      {
+        "type": "paragraph",
+        "text": "※ Note: in practice, the management company may ask your emergency contact to help get in touch with you, so before they agree, make sure they know this."
+      },
+      {
+        "type": "heading",
+        "id": "section-2",
+        "text": "2. What kind of person do management companies usually ask for?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "The most common requirements are:"
+      },
+      {
+        "type": "paragraph",
+        "text": "① **Someone who lives in Japan**"
+      },
+      {
+        "type": "paragraph",
+        "text": "② **Someone who speaks Japanese:** because the management company will phone them directly to check"
+      },
+      {
+        "type": "paragraph",
+        "text": "③ **Not much restriction on the relationship:** a friend, a colleague or a relative are all fine"
+      },
+      {
+        "type": "paragraph",
+        "text": "You need to provide five details about them: **name, how the name is read, mobile phone number, date of birth and address**."
+      },
+      {
+        "type": "paragraph",
+        "text": "A few management companies ask for 2 emergency contacts, and some may also ask for one more emergency contact in your home country."
+      },
+      {
+        "type": "paragraph",
+        "text": "※ Reminder: during the application screening, your emergency contact will receive a confirmation call. Please talk to them before you apply."
+      },
+      {
+        "type": "heading",
+        "id": "section-3",
+        "text": "3. What if you have no friends or family in Japan?",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "If you cannot provide an emergency contact, you cannot apply."
+      },
+      {
+        "type": "paragraph",
+        "text": "So if you are planning to come to Fukuoka, I suggest you look for online groups **early**, especially ones for foreign residents who also live in Fukuoka. They have been through this themselves, know what an emergency contact involves, and the role does not carry the financial liability that a joint guarantor's does."
+      },
+      {
+        "type": "paragraph",
+        "text": "That said, you cannot just pick any stranger. I suggest getting to know someone and building a little trust first, and only then asking for their help, and you must always get their consent beforehand. Their personal details, such as address and date of birth, will be handed over to the management company."
+      },
+      {
+        "type": "heading",
+        "id": "section-4",
+        "text": "💡 Local insight: prepare your emergency contact before you start looking for a flat",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Without an emergency contact you cannot apply, and if you only find this out at the application stage, your whole timetable will be pushed back. Going from application to move-in already takes 3 to 4 weeks, so you cannot afford to waste more time."
+      },
+      {
+        "type": "paragraph",
+        "text": "Please add these suggestions to your preparation list:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Find the person first, then the flat:** treat the emergency contact as the first step before you start looking.",
+          "**Explain things to them clearly first:** they may receive a confirmation call in Japanese, and may also be asked by the management company to help get in touch with you.",
+          "**Have the five details ready:** name, how the name is read, mobile phone number, date of birth and address, so you can fill them in straight away when you apply."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "If you are looking for a flat in Fukuoka but cannot find a suitable emergency contact, or have questions about the application documents, feel free to get in touch with me any time. I hope my first-hand local information can help you get through the application smoothly."
+      }
+    ]
   }
 };
