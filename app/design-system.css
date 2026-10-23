@@ -335,6 +335,12 @@ body {
   .fi-header__nav { display: flex; }
   .fi-header__compact, .fi-menu { display: none; }
 }
+.fi-header__link, .fi-locale, .fi-header__cta { white-space: nowrap; }
+/* Narrow desktops (1100–1279px): tighter gaps so the header never wraps. */
+@media (min-width: 68.75rem) and (max-width: 79.99rem) {
+  .fi-header__nav { gap: 1.25rem; font-size: 0.875rem; }
+  .fi-locale { padding-left: 1rem; }
+}
 
 /* Footer */
 .fi-footer { padding: 5.5rem 0 2.5rem; background: var(--fi-night); color: var(--fi-on-dark-muted); }
