@@ -1,13 +1,30 @@
+import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
 
 import type { GuideBodyBlock } from "@/lib/content/types";
 
-/** Renders **bold** spans inside article text without injecting HTML. */
+/** Renders **bold** spans and [text](/in-site/path) links inside article text without injecting HTML. */
 function Inline({ text }: { text: string }) {
-  const parts: ReactNode[] = text.split(/\*\*/u).map((part, index) =>
-    index % 2 === 1 ? <strong key={index}>{part}</strong> : <Fragment key={index}>{part}</Fragment>,
-  );
+  const parts: ReactNode[] = text.split(/\*\*/u).map((part, index) => {
+    const content = <Links text={part} />;
+    return index % 2 === 1 ? <strong key={index}>{content}</strong> : <Fragment key={index}>{content}</Fragment>;
+  });
   return <>{parts}</>;
+}
+
+/** Only in-site links (starting with a single "/") are turned into links; anything else stays plain text. */
+function Links({ text }: { text: string }) {
+  const nodes: ReactNode[] = [];
+  const pattern = /\[([^\]]+)\]\((\/[^)\s]*)\)/gu;
+  let last = 0;
+  for (const match of text.matchAll(pattern)) {
+    const start = match.index ?? 0;
+    if (start > last) nodes.push(text.slice(last, start));
+    nodes.push(<Link href={match[2]} key={`${start}-${match[2]}`}>{match[1]}</Link>);
+    last = start + match[0].length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return <>{nodes}</>;
 }
 
 export function ArticleBody({ blocks }: { blocks: GuideBodyBlock[] }) {

@@ -574,3 +574,4 @@
 - `ArticleMeta.en` is now optional: the English listing text is added when the English article is written (Danny: English only after he is happy with the Chinese). Until then the EN language switch on these two pages goes to /en/guides.
 - Checked: lint, 26 tests, build; both pages and the Guides list render locally, no horizontal scroll at 390/1440; both in the sitemap.
 - Workflow and content plan live in `定期發佈文章/` (local only, git-ignored); CONTENT_PLAN there updated.
+- Danny asked for a link to the guarantor article inside #55: article text now supports in-site links written as `[text](/path)` (only paths starting with "/"; `components/guides/ArticleBody.tsx`, underline style in `app/pages.css`). #55 links 〈保證公司與連帶保證人…〉 to `/zh-TW/guides/renting/guarantor-company-and-joint-guarantor`; wording unchanged. Lint, 26 tests, build ok.

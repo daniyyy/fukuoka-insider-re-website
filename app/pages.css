@@ -342,6 +342,8 @@
 .fi-prose h2 { margin-top: 3.5rem; font-family: var(--fi-font-serif); font-weight: 600; font-size: 1.625rem; line-height: 1.5; color: var(--fi-ink); }
 .fi-prose h3 { margin-top: 2.5rem; font-family: var(--fi-font-serif); font-weight: 600; font-size: 1.25rem; line-height: 1.5; color: var(--fi-ink); }
 .fi-prose p { margin-bottom: 0; }
+.fi-prose a { color: var(--fi-ink); text-decoration: underline; text-decoration-color: var(--fi-gold); text-decoration-thickness: 1px; text-underline-offset: 0.28em; transition: text-decoration-thickness 0.2s ease; }
+.fi-prose a:hover { text-decoration-thickness: 2px; }
 .fi-prose ul, .fi-prose ol { padding-left: 1.25rem; list-style: none; }
 .fi-prose ul > li { position: relative; }
 .fi-prose ul > li::before { content: ""; position: absolute; left: -1.25rem; top: 0.95em; width: 0.5rem; height: 1px; background: var(--fi-slate); }

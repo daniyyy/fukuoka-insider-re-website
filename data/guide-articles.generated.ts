@@ -1936,7 +1936,7 @@ export const importedArticles: Record<string, ImportedArticle> = {
       },
       {
         "type": "paragraph",
-        "text": "緊急聯絡人不用承擔租金等金錢責任，這是兩者最大的分別。保證公司與連帶保證人的細節，可以參考我之前寫的〈保證公司與連帶保證人，外國人一定要申請嗎？〉。"
+        "text": "緊急聯絡人不用承擔租金等金錢責任，這是兩者最大的分別。保證公司與連帶保證人的細節，可以參考我之前寫的〈[保證公司與連帶保證人，外國人一定要申請嗎？](/zh-TW/guides/renting/guarantor-company-and-joint-guarantor)〉。"
       },
       {
         "type": "paragraph",
