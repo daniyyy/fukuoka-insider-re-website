@@ -9,6 +9,7 @@ import type { Guide, GuideCategory, GuideLocale } from "@/lib/content/types";
  * First batch (10 articles) published on Danny's instruction, 2026-09-29. Display dates set by Danny (2026-10-05):
  * five in early August, then about one a week (at most two).
  * Remaining five published on Danny's instruction, 2026-10-05 (dates continue the weekly pattern).
+ * #53 and #55 published on Danny's instruction, 2026-10-23 (display dates 2026-10-16 and 2026-10-23, set by Danny); Chinese only until the English versions are written.
  *
  * English translations (content/guides/en/*.md, Danny 2026-10-05: "translate the guides, in sync with the Chinese"):
  * an English article appears only when its Markdown exists, and it follows the Chinese publication date.
@@ -30,8 +31,8 @@ type ArticleMeta = {
   featuredOrder?: number;
   /** Set only after Danny says「發布」. Adds publishedAt and editorialApprovedAt. */
   published?: string;
-  /** Listing text for the English translation. */
-  en: { excerpt: string; tags: string[] };
+  /** Listing text for the English translation; added when the English article is written (after Danny approves the Chinese). */
+  en?: { excerpt: string; tags: string[] };
 };
 
 
@@ -81,6 +82,10 @@ const articles: ArticleMeta[] = [
   { slug: "delivery-boxes-in-fukuoka", published: "2026-10-05", category: "living-in-fukuoka", serviceContext: "living-support", tags: ["福岡生活", "宅配", "選房"],
     excerpt: "經常網購的話，大樓有沒有宅配盒子差很多。沒有的話，還有什麼辦法。",
     en: { excerpt: "If you shop online often, whether your building has delivery lockers makes a big difference. If it doesn't, here are your other options.", tags: ["living in Fukuoka", "home delivery", "choosing a home"] } },
+  { slug: "how-early-to-start-renting-in-fukuoka", published: "2026-10-16", category: "renting", serviceContext: "rent", tags: ["租屋", "申請", "入住時間"],
+    excerpt: "入住前約 6 週開始找，最遲約 4 週前決定申請。為什麼「越早訂越安心」其實是誤解。" },
+  { slug: "emergency-contact-without-japanese-friends", published: "2026-10-23", category: "renting", serviceContext: "rent", tags: ["租屋", "申請", "緊急聯絡人"],
+    excerpt: "租屋申請表上的「緊急聯絡人」一定要填。它和連帶保證人有什麼不同，沒有日本親友時可以怎樣準備。" },
 ];
 
 const toGuide = (meta: ArticleMeta, locale: GuideLocale): Guide | null => {
@@ -97,7 +102,7 @@ const toGuide = (meta: ArticleMeta, locale: GuideLocale): Guide | null => {
     slug: meta.slug,
     category: meta.category,
     title: article.title,
-    excerpt: en ? meta.en.excerpt : meta.excerpt,
+    excerpt: en ? (meta.en?.excerpt ?? meta.excerpt) : meta.excerpt,
     body: article.body,
     status: meta.published ? "published" : "ready-for-review",
     publishedAt: meta.published,
@@ -108,7 +113,7 @@ const toGuide = (meta: ArticleMeta, locale: GuideLocale): Guide | null => {
     coverAlt: meta.photo ? photos[meta.photo].alt[locale] : undefined,
     // The per-article share images carry the Chinese title; English articles use the photo or the English Guides image.
     ogImage: en ? undefined : `/og/guides/${meta.slug}.jpg`,
-    tags: en ? meta.en.tags : meta.tags,
+    tags: en ? (meta.en?.tags ?? meta.tags) : meta.tags,
     author: "Fukuoka Insider Real Estate",
     serviceContext: meta.serviceContext,
   };

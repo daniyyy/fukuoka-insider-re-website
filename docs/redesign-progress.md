@@ -567,3 +567,10 @@
 - Checked: lint, 26 tests, build; crawl of all three languages at 360/390/834 px clean (no errors, no horizontal scroll); in-site navigation and prefetch cache fine; reveals complete after in-site navigation. Demo video sent to Danny.
 - Danny approved (13:03); merged into main (0a46609), Cloudflare build succeeded, live on fukuoka.house.
 - Live check: a fast crawl right after the deploy (4 requests/s, cache empty) got error 1102 on 21 article pages, and for a minute even single requests to article pages failed (Workers Free 10 ms CPU limit; Cloudflare briefly throttles after repeated overruns). One minute later a normal-pace crawl of all 80 pages returned 200 with no retries, and all pages are now in the edge cache. Same limitation as on 2026-10-17: Workers Paid ($5/month) removes it; until then, avoid fast crawls right after a deploy.
+
+## 2026-10-23 — Guides #53 and #55 published
+- Danny: put the two finished articles in `定期發佈文章/待發佈/` on the site and publish them; #53 dated 2026-10-16, #55 dated 2026-10-23 (older number first; Danny only said "one 10/16, one 10/23").
+- Added `content/guides/zh-TW/53-how-early-to-start-renting-in-fukuoka.md` and `55-emergency-contact-without-japanese-friends.md` (wording unchanged; front matter 狀態 set to 已發佈). Ran `pnpm import:guides` (32 articles). Two entries in `data/guide-articles.ts` with `published`; category renting, no cover photo (typographic cover). Share images `public/og/guides/<slug>.jpg` made in the same style as the others.
+- `ArticleMeta.en` is now optional: the English listing text is added when the English article is written (Danny: English only after he is happy with the Chinese). Until then the EN language switch on these two pages goes to /en/guides.
+- Checked: lint, 26 tests, build; both pages and the Guides list render locally, no horizontal scroll at 390/1440; both in the sitemap.
+- Workflow and content plan live in `定期發佈文章/` (local only, git-ignored); CONTENT_PLAN there updated.
