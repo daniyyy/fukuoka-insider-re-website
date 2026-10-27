@@ -576,3 +576,9 @@
 - Workflow and content plan live in `定期發佈文章/` (local only, git-ignored); CONTENT_PLAN there updated.
 - Danny asked for a link to the guarantor article inside #55: article text now supports in-site links written as `[text](/path)` (only paths starting with "/"; `components/guides/ArticleBody.tsx`, underline style in `app/pages.css`). #55 links 〈保證公司與連帶保證人…〉 to `/zh-TW/guides/renting/guarantor-company-and-joint-guarantor`; wording unchanged. Lint, 26 tests, build ok.
 - Danny approved the header fix and asked for English versions of #53 and #55: `content/guides/en/53-…md`, `55-…md` (same structure as the Chinese; #55 links to the English guarantor article), `en` listing text added in `data/guide-articles.ts`. Header nav no longer wraps at 1100–1279px (`app/design-system.css`). Lint, 26 tests, build ok; EN pages checked at 390/834/1440 (no horizontal scroll). Guides now 17 articles in zh-TW, 17 in en.
+
+## 2026-10-27 — Names and opening hours (branch `claude/names-hours`, waiting for Danny's OK to deploy)
+- Team (home + About): names are now "Ricky Ngai" and "Danny Chan" (photo alt text too).
+- Company overview representative: "NGAI CHUN KIT RICKY ナイ シュン キット リッキー（代表取締役）" in zh-TW and ja; English shows "NGAI CHUN KIT RICKY (Representative Director)" without the katakana.
+- Opening hours Mon–Fri 09:30–18:30 (config/site.ts, all three languages; search-engine data follows). Danny noted the earlier 10:30–17:30 was a shortened display time; he is checking with Ricky.
+- Lint, 26 tests, build ok; zh-TW/ja/en About and home checked.

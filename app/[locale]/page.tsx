@@ -362,8 +362,8 @@ export default async function LocaleHome({
               <Link className="fi-text-link" href={`/${locale}/about`}>{t.aboutCta}<Arrow /></Link>
             </div>
             <div className="fi-home-about__people">
-              <Portrait person="ricky" alt={alt("Ricky，代表取締役", "Ricky（代表取締役）", "Ricky, Representative Director")} name="Ricky" position={locale === "en" ? "Representative Director" : "代表取締役"} />
-              <Portrait person="danny" alt={alt("Danny，宅地建物取引士", "Danny（宅地建物取引士）", "Danny, Licensed Real Estate Transaction Specialist")} name="Danny" position={locale === "en" ? "Licensed Real Estate Transaction Specialist" : "宅地建物取引士"} />
+              <Portrait person="ricky" alt={alt("Ricky Ngai，代表取締役", "Ricky Ngai（代表取締役）", "Ricky Ngai, Representative Director")} name="Ricky Ngai" position={locale === "en" ? "Representative Director" : "代表取締役"} />
+              <Portrait person="danny" alt={alt("Danny Chan，宅地建物取引士", "Danny Chan（宅地建物取引士）", "Danny Chan, Licensed Real Estate Transaction Specialist")} name="Danny Chan" position={locale === "en" ? "Licensed Real Estate Transaction Specialist" : "宅地建物取引士"} />
             </div>
           </div>
         </section>

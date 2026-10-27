@@ -73,17 +73,17 @@ export default async function AboutPage({ params }: PageProps) {
             <h2 className="fi-h2" id="people-title">{t.peopleTitle}</h2>
             <div className="fi-about-people__grid">
               <article className="fi-person">
-                <Image src={asset("/images/ricky.webp")} alt={`Ricky, ${t.rickyRole}`} width={721} height={901} loading="lazy" sizes="(min-width: 1100px) 30vw, 50vw" />
+                <Image src={asset("/images/ricky.webp")} alt={`Ricky Ngai, ${t.rickyRole}`} width={721} height={901} loading="lazy" sizes="(min-width: 1100px) 30vw, 50vw" />
                 <div className="fi-person__text">
-                  <h3 className="fi-person__name">Ricky</h3>
+                  <h3 className="fi-person__name">Ricky Ngai</h3>
                   <p className="fi-person__role">{t.rickyRole}</p>
                   <p className="fi-person__body">{t.rickyBody}</p>
                 </div>
               </article>
               <article className="fi-person">
-                <Image src={asset("/images/danny.webp")} alt={`Danny, ${t.dannyRole}`} width={721} height={901} loading="lazy" sizes="(min-width: 1100px) 30vw, 50vw" />
+                <Image src={asset("/images/danny.webp")} alt={`Danny Chan, ${t.dannyRole}`} width={721} height={901} loading="lazy" sizes="(min-width: 1100px) 30vw, 50vw" />
                 <div className="fi-person__text">
-                  <h3 className="fi-person__name">Danny</h3>
+                  <h3 className="fi-person__name">Danny Chan</h3>
                   <p className="fi-person__role">{t.dannyRole}</p>
                   <p className="fi-person__body">{t.dannyBody}</p>
                 </div>
