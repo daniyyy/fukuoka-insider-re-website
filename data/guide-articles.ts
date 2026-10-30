@@ -10,6 +10,7 @@ import type { Guide, GuideCategory, GuideLocale } from "@/lib/content/types";
  * five in early August, then about one a week (at most two).
  * Remaining five published on Danny's instruction, 2026-10-05 (dates continue the weekly pattern).
  * #53 and #55 published on Danny's instruction, 2026-10-23 (display dates 2026-10-16 and 2026-10-23, set by Danny); English versions added the same day.
+ * #59 published on Danny's instruction, 2026-10-30 (display date 2026-10-30); Chinese only until Danny is happy with it.
  *
  * English translations (content/guides/en/*.md, Danny 2026-10-05: "translate the guides, in sync with the Chinese"):
  * an English article appears only when its Markdown exists, and it follows the Chinese publication date.
@@ -88,6 +89,8 @@ const articles: ArticleMeta[] = [
   { slug: "emergency-contact-without-japanese-friends", published: "2026-10-23", category: "renting", serviceContext: "rent", tags: ["租屋", "申請", "緊急聯絡人"],
     excerpt: "租屋申請表上的「緊急聯絡人」一定要填。它和連帶保證人有什麼不同，沒有日本親友時可以怎樣準備。",
     en: { excerpt: "The \"emergency contact\" box on a rental application must be filled in. How it differs from a joint guarantor, and what you can do if you have no friends or family in Japan.", tags: ["renting", "application", "emergency contact"] } },
+  { slug: "early-termination-notice-and-penalty", published: "2026-10-30", category: "renting", serviceContext: "rent", tags: ["租屋", "解約", "違約金"],
+    excerpt: "住宅通常提前 1 個月通知（解約予告）；住得不夠久就搬走，還可能要付短期解約違約金。兩件事要分開看，找房時就要確認。" },
 ];
 
 const toGuide = (meta: ArticleMeta, locale: GuideLocale): Guide | null => {

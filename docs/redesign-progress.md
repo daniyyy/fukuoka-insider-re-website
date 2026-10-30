@@ -582,3 +582,8 @@
 - Company overview representative: "NGAI CHUN KIT RICKY ナイ シュン キット リッキー（代表取締役）" in zh-TW and ja; English shows "NGAI CHUN KIT RICKY (Representative Director)" without the katakana.
 - Opening hours Mon–Fri 09:30–18:30 (config/site.ts, all three languages; search-engine data follows). Danny noted the earlier 10:30–17:30 was a shortened display time; he is checking with Ricky.
 - Lint, 26 tests, build ok; zh-TW/ja/en About and home checked.
+
+## 2026-10-30 — Guide #59 published (zh-TW)
+- Danny: finalized and said 發布 for #59「中途解約：要提前多久通知？會被收違約金嗎？」, display date 2026-10-30.
+- Added `content/guides/zh-TW/59-early-termination-notice-and-penalty.md` (wording as approved; front matter 狀態 set to 已發佈) with an in-site link to the restoration-costs guide (`/zh-TW/guides/renting/restoration-costs-when-moving-out`, Danny's wording of the reminder line). Ran `pnpm import:guides` (35 articles). One entry in `data/guide-articles.ts` with `published: "2026-10-30"`, category renting, no cover photo (typographic cover), no English yet (English only after Danny is happy with the Chinese). Share image `public/og/guides/early-termination-notice-and-penalty.jpg` made in the same style as #53/#55.
+- Checked: lint, 26 tests, build ok; page renders at 1440/834/390 with no horizontal scroll; link to the restoration guide works.
